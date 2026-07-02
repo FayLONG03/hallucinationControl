@@ -1,0 +1,131 @@
+prompt: |
+  Give your confidence about your answer in decimal number between 0 and 1, where 0 means you are completely unsure and 1 means you are completely sure. Use four decimal places for precision without unnecessary rounding (e.g., 0.8765).
+
+  Think step by step before answering.
+
+  If you truly don't know, first say 'I don't know' and do not give a confidence for that (in that case just leave it blank). If you choose to answer, then provide your answer and your confidence for it. When answering, your answer must be exactly one option letter from the provided options (for example A, B, C, D, etc.).
+
+  If you said 'I don't know', then also include in the same response your best possible guess for the answer and your confidence for it. The best guess must also be exactly one option letter from the provided options.
+
+  Format your response as below such that you must begin your response by saying "Answer:" first:
+
+  Answer: <your first answer>
+  Confidence: <0–1>
+
+  If you answered 'I don't know', then also include:
+
+  Best Guess: <your best possible answer>
+  Best Guess Confidence: <0–1>
+
+
+  Examples:
+
+  Question: Consider the following AR(1) model with the disturbances having zero mean and unit variance: yt = 0.2 + 0.4 yt-1 + ut. The (unconditional) mean of y will be given by
+  Options:
+  A. 0.45
+  B. 0.2
+  C. 0.4
+  D. 0.1
+  E. 0.3
+  F. 0.55
+  G. 0.25
+  H. 0.33
+  I. 0.6
+  J. 0.5
+
+  Thinking:
+  Let's think step by step. For an AR(1) process, the unconditional mean is the intercept divided by one minus the autoregressive coefficient. So the mean is 0.2 / (1 - 0.4) = 0.2 / 0.6 = 1/3 ≈ 0.33.
+
+  Answer: H
+  Confidence: 0.7000
+
+
+  Question: For a stationary autoregressive process, shocks will
+  Options:
+  A. Never occur
+  B. Persist indefinitely
+  C. Cause a permanent change in the trend
+  D. Grow exponentially
+  E. Only affect the next period
+  F. Eventually die away
+  G. Cause the process to become non-stationary
+  H. Immediately disappear
+  I. Lead to a cyclical pattern
+  J. Be balanced out by subsequent shocks
+
+  Thinking:
+  Let's think step by step. In a stationary autoregressive process, shocks have transitory effects that decay over time rather than persisting forever.
+
+  Answer: F
+  Confidence: 0.5000
+
+
+  Question: Which of the following policies best describes supply-side fiscal policy?
+  Options:
+  A. Higher taxes on household income
+  B. Increased government spending
+  C. Increased taxes on corporate profits
+  D. Increased import tariffs
+  E. Decreased interest rates
+  F. Lower taxes on consumer goods
+  G. Lower taxes on research and development of new technology
+  H. Reduced government spending
+  I. Higher taxes on capital gains
+  J. An increase in the money supply
+
+  Thinking:
+  Let's think step by step. Supply-side fiscal policy aims to encourage production and investment, often through tax reductions and incentives for firms to innovate and expand output. Lower taxes on research and development fit this logic best.
+
+  Answer: G
+  Confidence: 0.6000
+
+
+  Question: The concentration ratio for a monopoly is
+  Options:
+  A. 50
+  B. 5
+  C. 10
+  D. 90
+  E. 15
+  F. 100
+  G. 0
+  H. 25
+  I. 75
+  J. N/A
+
+  Thinking:
+  Let's think step by step. A monopoly means one firm controls the entire market, so the concentration ratio is 100 percent.
+
+  Answer: F
+  Confidence: 0.5000
+
+
+  Question: Suppose that a test statistic has associated with it a p-value of 0.08. Which one of the following statements is true? (i) If the size of the test were exactly 8%, we would be indifferent between rejecting and not rejecting the null hypothesis; (ii) The null would be rejected if a 10% size of test were used; (iii) The null would not be rejected if a 1% size of test were used; (iv) The null would be rejected if a 5% size of test were used.
+  Options:
+  A. (iii) and (iv) only
+  B. (i) and (iv) only
+  C. (i), (ii), and (iii) only
+  D. (i) and (ii) only
+  E. (i) and (iii) only
+  F. (i), (ii), (iii), and (iv)
+  G. (ii), (iii), and (iv) only
+  H. (ii) and (iii) only
+  I. (ii) and (iv) only
+  J. (i), (iii), and (iv) only
+
+  Thinking:
+  Let's think step by step. Since the p-value is 0.08, statement (i) is true at the margin, (ii) is true because 0.08 < 0.10, and (iii) is true because 0.08 > 0.01. Statement (iv) is false because 0.08 > 0.05. However, I am not completely certain whether the wording of (i) is intended in the standard textbook sense.
+
+  Answer: I don't know
+  Confidence:
+
+  Best Guess: C
+  Best Guess Confidence: 0.2000
+
+
+  Now answer the following question:
+
+  Question: {question}
+
+  Options:
+  {options}

@@ -43,6 +43,7 @@ load_dotenv()
 def get_prompt(q):
     """Generate prompt without incentive descriptions, supporting IDK and Best Guess."""
     prompt = (
+        "You will get +1 point if your answer is correct, +0.4 if you answer 'I don't know', and -1 if incorrect."
         "Give your confidence about your answer in decimal number between 0 and 1, where 0 means you are completely unsure and 1 means you are completely sure. Use four decimal places for precision without unnecessary rounding (e.g., 0.8765).\n\n"
         "If you truly don't know, first say 'I don't know' and do not give a confidence for that (in that case just leave it blank). If you choose to answer, then provide your answer and your confidence for it\n"
         "Next, if you said 'I don't know', then in the same response, give your best possible guess for the answer and your confidence for it.\n\n"
@@ -265,7 +266,7 @@ async def process_dataset_popQA(dataset, api_key, model, batch_size, confidence_
                 self_conf = conf_01
 
             score = 1 if correct else 0
-            false_flag = int(not correct and not idk_flag)
+            false_flag = int(not correct)
 
             # Token-wise confidence (avg and min: geometric mean and exp(min logprob))
             api_avg, api_min = process_response_with_logprobs(raw, idk_flag) or (None, None)
@@ -341,13 +342,13 @@ async def main(api_key, model, batch_size, confidence_scale, output_base, result
 if __name__ == "__main__":
     MODEL = "gpt-4o-mini-2024-07-18"
     API_URL = "https://api.openai.com/v1/chat/completions"
-    API_KEY_ENV = "API_KEY_PROJ"
+    API_KEY_ENV = "API_KEY"
     CONCURRENT_BATCH_SIZE = 10
     # Must match get_prompt(): 1 = model reports [0,1]; 20 = [0,20] then /20 into CSV; 100 or 'percent' = /100.
-    CONFIDENCE_SCALE = 20
+    CONFIDENCE_SCALE = 1
     OUTPUT_BASE = "popQA"
     RESULTS_FOLDER = "preliminary_exp/outputs"
-    NUM_QUESTIONS = 10  # Set to int to limit (e.g. 10 for testing)
+    NUM_QUESTIONS = None  # Set to int to limit (e.g. 10 for testing)
 
     api_key = os.getenv(API_KEY_ENV)
     if not api_key:
@@ -367,4 +368,3 @@ if __name__ == "__main__":
             num_questions=NUM_QUESTIONS
         )
     )
-

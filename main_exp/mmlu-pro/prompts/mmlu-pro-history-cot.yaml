@@ -1,0 +1,108 @@
+prompt: |
+  Give your confidence about your answer in decimal number between 0 and 1, where 0 means you are completely unsure and 1 means you are completely sure. Use four decimal places for precision without unnecessary rounding (e.g., 0.8765).
+
+  Think step by step before answering.
+
+  If you truly don't know, first say 'I don't know' and do not give a confidence for that (in that case just leave it blank). If you choose to answer, then provide your answer and your confidence for it. When answering, your answer must be exactly one option letter from the provided options (for example A, B, C, D, etc.).
+
+  If you said 'I don't know', then also include in the same response your best possible guess for the answer and your confidence for it. The best guess must also be exactly one option letter from the provided options.
+
+  Format your response as below such that you must begin your response by saying "Answer:" first:
+
+  Answer: <your first answer>
+  Confidence: <0–1>
+
+  If you answered 'I don't know', then also include:
+
+  Best Guess: <your best possible answer>
+  Best Guess Confidence: <0–1>
+
+
+  Examples:
+
+  Question: According to classical conditioning theory, which of the following best describes extinction?
+  Options:
+  A. The initial acquisition of a conditioned response
+  B. The spontaneous recovery of a conditioned response after a rest period
+  C. The weakening of a conditioned response when the conditioned stimulus is repeatedly presented without the unconditioned stimulus
+  D. The strengthening of a conditioned response through reinforcement
+  E. The generalization of a conditioned response to similar stimuli
+
+  Thinking:
+  Let's think step by step. Extinction in classical conditioning occurs when the conditioned stimulus is repeatedly presented without the unconditioned stimulus, causing the conditioned response to weaken.
+
+  Answer: C
+  Confidence: 0.9513
+
+
+  Question: Which of the following best describes the process of habituation in learning?
+  Options:
+  A. An innate reflex that never changes
+  B. A decrease in response after repeated exposure to a stimulus
+  C. An increase in response after repeated exposure to a stimulus
+  D. A sudden recovery of an extinguished response
+
+  Thinking:
+  Let's think step by step. Habituation refers to a decrease in behavioral response after repeated exposure to a stimulus without important consequences.
+
+  Answer: B
+  Confidence: 0.8531
+
+
+  Question: In social psychology, which of the following phenomena reflects a change in behavior due to real or imagined group pressure?
+  Options:
+  A. Conformity
+  B. Reaction formation
+  C. Cognitive dissonance
+  D. Projection
+  E. Reinforcement
+  F. Operant conditioning
+  G. Observational learning
+  H. Self-serving bias
+
+  Thinking:
+  Let's think step by step. Conformity is specifically about changing behavior or beliefs in response to actual or perceived social pressure.
+
+  Answer: A
+  Confidence: 0.6298
+
+
+  Question: Which of the following findings best supports the existence of implicit memory?
+  Options:
+  A. Improved recall of a word list after repeated rehearsal
+  B. Accurate recollection of childhood events
+  C. Faster completion of word fragments for previously seen words without conscious recall
+  D. Increased confidence in eyewitness testimony
+  E. Better performance on intelligence tests after practice
+
+  Thinking:
+  Let's think step by step. Implicit memory is shown when prior experience affects performance without conscious recollection. Faster word-fragment completion for previously seen words is a standard example.
+
+  Answer: C
+  Confidence: 0.7821
+
+
+  Question: Which of the following brain structures is most directly involved in the regulation of basic physiological drives such as hunger and thirst?
+  Options:
+  A. Hippocampus
+  B. Amygdala
+  C. Cerebellum
+  D. Hypothalamus
+  E. Thalamus
+
+  Thinking:
+  Let's think step by step. Basic physiological drives are regulated through homeostasis, and the hypothalamus is the brain structure most directly responsible for hunger, thirst, and related regulatory functions. However, I am not completely certain whether the question expects a broader sensory or memory-related interpretation.
+
+  Answer: I don't know
+  Confidence:
+
+  Best Guess: D
+  Best Guess Confidence: 0.3243
+
+
+  Now answer the following question:
+
+  Question: {question}
+
+  Options:
+  {options}

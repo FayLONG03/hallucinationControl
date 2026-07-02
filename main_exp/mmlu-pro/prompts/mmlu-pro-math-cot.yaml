@@ -1,0 +1,131 @@
+prompt: |
+  Give your confidence about your answer in decimal number between 0 and 1, where 0 means you are completely unsure and 1 means you are completely sure. Use four decimal places for precision without unnecessary rounding (e.g., 0.8765).
+
+  Think step by step before answering.
+
+  If you truly don't know, first say 'I don't know' and do not give a confidence for that (in that case just leave it blank). If you choose to answer, then provide your answer and your confidence for it. When answering, your answer must be exactly one option letter from the provided options (for example A, B, C, D, etc.).
+
+  If you said 'I don't know', then also include in the same response your best possible guess for the answer and your confidence for it. The best guess must also be exactly one option letter from the provided options.
+
+  Format your response as below such that you must begin your response by saying "Answer:" first:
+
+  Answer: <your first answer>
+  Confidence: <0–1>
+
+  If you answered 'I don't know', then also include:
+
+  Best Guess: <your best possible answer>
+  Best Guess Confidence: <0–1>
+
+
+  Examples:
+
+  Question: Find the characteristic of the ring 2Z.
+  Options:
+  A. 0
+  B. 30
+  C. 3
+  D. 10
+  E. 12
+  F. 50
+  G. 2
+  H. 100
+  I. 20
+  J. 5
+
+  Thinking:
+  Let's think step by step. The ring 2Z is isomorphic to the integers under ordinary addition and multiplication restricted to even integers, and no positive integer n makes n·a = 0 for all a in 2Z. Therefore the characteristic is 0.
+
+  Answer: A
+  Confidence: 0.9500
+
+
+  Question: Let V be the set of all real polynomials p(x). Let transformations T, S be defined on V by T:p(x) -> xp(x) and S:p(x) -> p'(x) = d/dx p(x), and interpret (ST)(p(x)) as S(T(p(x))). Which of the following is true?
+  Options:
+  A. ST + TS is the identity map of V onto itself.
+  B. TS = 0
+  C. ST = 1
+  D. ST - TS = 0
+  E. ST = T
+  F. ST = 0
+  G. ST = TS
+  H. ST - TS is the identity map of V onto itself.
+  I. TS = T
+  J. ST = S
+
+  Thinking:
+  Let's think step by step. ST(p) = (xp(x))' = p(x) + xp'(x), while TS(p) = x p'(x). Subtracting gives ST(p) - TS(p) = p(x), so ST - TS is the identity operator.
+
+  Answer: H
+  Confidence: 0.9200
+
+
+  Question: Let A be the set of all ordered pairs of integers (m, n) such that 7m + 12n = 22. What is the greatest negative number in the set B = {{m + n : (m, n) in A}}?
+  Options:
+  A. -5
+  B. 0
+  C. -3
+  D. -7
+  E. -4
+  F. -6
+  G. -1
+  H. -2
+  I. -9
+  J. N/A
+
+  Thinking:
+  Let's think step by step. We need integer solutions to 7m + 12n = 22, then inspect {{m+n}}. I can find one solution and reason about shifts by the homogeneous equation, but I am not completely certain that the candidate value I identify is the greatest negative one without checking more carefully.
+
+  Answer: I don't know
+  Confidence:
+
+  Best Guess: E
+  Best Guess Confidence: 0.5421
+
+
+  Question: A total of 30 players will play basketball at a park. There will be exactly 5 players on each team. Which statement correctly explains how to find the number of teams needed?
+  Options:
+  A. Multiply 5 by 5 to find 25 teams.
+  B. Divide 30 by 5 to find 6 teams.
+  C. Add 5 to 30 to find 35 teams.
+  D. Subtract 30 from 5 to find -25 teams.
+  E. Divide 5 by 30 to find 0.1667 teams.
+  F. Add 5 to 30 then divide by 2 to find 17.5 teams.
+  G. N/A
+  H. N/A
+  I. N/A
+  J. N/A
+
+  Thinking:
+  Let's think step by step. The number of teams is total players divided by players per team, so 30 / 5 = 6 teams.
+
+  Answer: B
+  Confidence: 0.9900
+
+
+  Question: Joe was in charge of lights for a dance. The red light blinks every two seconds, the yellow light every three seconds, and the blue light every five seconds. If we include the very beginning and very end of the dance, how many times during a seven minute dance will all the lights come on at the same time? (Assume that all three lights blink simultaneously at the very beginning of the dance.)
+  Options:
+  A. 3
+  B. 15
+  C. 6
+  D. 5
+  E. 4
+  F. 8
+  G. 2
+  H. 10
+  I. 12
+  J. 7
+
+  Thinking:
+  Let's think step by step. The lights blink together every LCM(2,3,5)=30 seconds. Seven minutes is 420 seconds, so the simultaneous times are 0, 30, 60, ..., 420. That gives 420/30 + 1 = 14 + 1 = 15 times.
+
+  Answer: B
+  Confidence: 0.9000
+
+
+  Now answer the following question:
+
+  Question: {question}
+
+  Options:
+  {options}

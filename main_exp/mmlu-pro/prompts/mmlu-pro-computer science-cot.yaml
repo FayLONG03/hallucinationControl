@@ -1,0 +1,124 @@
+prompt: |
+  Give your confidence about your answer in decimal number between 0 and 1, where 0 means you are completely unsure and 1 means you are completely sure. Use four decimal places for precision without unnecessary rounding (e.g., 0.8765).
+
+  Think step by step before answering.
+
+  If you truly don't know, first say 'I don't know' and do not give a confidence for that (in that case just leave it blank). If you choose to answer, then provide your answer and your confidence for it. When answering, your answer must be exactly one option letter from the provided options (for example A, B, C, D, etc.).
+
+  If you said 'I don't know', then also include in the same response your best possible guess for the answer and your confidence for it. The best guess must also be exactly one option letter from the provided options.
+
+  Format your response as below such that you must begin your response by saying "Answer:" first:
+
+  Answer: <your first answer>
+  Confidence: <0–1>
+
+  If you answered 'I don't know', then also include:
+
+  Best Guess: <your best possible answer>
+  Best Guess Confidence: <0–1>
+
+
+  Examples:
+
+  Question: Which of the following protocols is used to secure data sent between a client and server on the web, protecting against eavesdropping and tampering?
+  Options:
+  A. FTP
+  B. SMTP
+  C. HTTP
+  D. HTTPS
+  E. TCP
+  F. UDP
+  G. IP
+  H. ARP
+  I. ICMP
+  J. Telnet
+
+  Thinking:
+  Let's think step by step. Secure web communication requires encryption and authentication at the application layer. HTTPS is HTTP over TLS/SSL, which provides confidentiality and integrity against eavesdropping and tampering. The other listed protocols do not provide this application-layer security guarantee.
+
+  Answer: D
+  Confidence: 0.9431
+
+
+  Question: A spam filter flags an email as “spam” with probability 0.9 if the email is truly spam, and with probability 0.1 if it is not spam. In a mailbox, 20% of emails are truly spam. If an email is flagged as spam, what is the probability that it is truly spam?
+  Options:
+  A. 0.20
+  B. 0.50
+  C. 0.60
+  D. 0.69
+  E. 0.75
+  F. 0.82
+  G. 0.90
+  H. 0.95
+
+  Thinking:
+  Let's think step by step. Let S be the event “truly spam” and F be “flagged.” We want P(S|F). By Bayes' rule, P(S|F) = P(F|S)P(S) / P(F). Here P(F|S)=0.9 and P(S)=0.2. Also P(F)=P(F|S)P(S)+P(F|¬S)P(¬S)=0.9·0.2+0.1·0.8=0.18+0.08=0.26. So P(S|F)=0.18/0.26≈0.6923, which matches 0.69.
+
+  Answer: D
+  Confidence: 0.5864
+
+
+  Question: Consider the following pseudocode intended to find the maximum value in an array of integers A of length N. Assume max is initialized to 0 before the loop. Which statement best describes its correctness?
+
+  for i = 1 to N:
+      if A[i] > max:
+          max = A[i]
+
+  Options:
+  A. The code is correct as long as N > 0
+  B. The code always returns the maximum element regardless of initialization
+  C. The code is incorrect because max must be initialized to A[1]
+  D. The code is incorrect because it fails when all elements are negative
+  E. The code is correct only if the array is sorted
+  F. The code is incorrect because the loop index should start at 0
+
+  Thinking:
+  Let's think step by step. With max initialized to 0, the loop only updates max when it sees a value greater than 0. If all elements are negative, no A[i] will exceed 0, so the algorithm returns 0, which is not the maximum array element. Therefore it fails on the all-negative case.
+
+  Answer: D
+  Confidence: 0.4721
+
+
+  Question: Define the following terms, making clear the distinctions between them:
+  a) Stack
+  b) Queue
+  Options:
+  A. A stack follows LIFO order and a queue follows FIFO order, but stacks cannot overflow while queues can
+  B. A stack follows FIFO order, a queue follows LIFO order, and both are types of hash tables
+  C. A stack follows LIFO order, a queue follows FIFO order, and both are abstract data types commonly supported in programming languages
+  D. A stack holds key-value pairs, a queue holds ordered pairs
+  E. A stack is implemented only with arrays, a queue only with linked lists
+  F. A stack and queue are interchangeable data structures with identical behavior
+
+  Thinking:
+  Let's think step by step. A stack is LIFO: the most recently inserted element is removed first. A queue is FIFO: the earliest inserted element is removed first. These are abstract data types defined by access order, independent of implementation details.
+
+  Answer: C
+  Confidence: 0.8896
+
+
+  Question: Which of the following statements accurately distinguishes volatile memory from non-volatile memory?
+  Options:
+  A. Volatile memory loses its stored information when power is removed, while non-volatile memory retains it
+  B. Volatile memory is slower than non-volatile memory for all operations
+  C. Volatile memory retains data when the power is off, non-volatile memory does not
+  D. Non-volatile memory has lower latency than volatile memory
+  E. Volatile memory is always solid-state, non-volatile always magnetic
+  F. Non-volatile memory cannot be used for read operations
+
+  Thinking:
+  Let's think step by step. The defining distinction is persistence without power: volatile memory loses contents when power is removed, while non-volatile memory retains data. However, I am not completely certain whether some alternative wording in the options is intended to create nuance.
+
+  Answer: I don't know
+  Confidence:
+
+  Best Guess: A
+  Best Guess Confidence: 0.5021
+
+
+  Now answer the following question:
+
+  Question: {question}
+
+  Options:
+  {options}
