@@ -557,13 +557,18 @@ def evaluate_verbal_conf(
 ) -> dict:
     """Exp 2: Verbal Conf.
 
-    Metrics computed directly from the result file, using the model's own IDK
-    decision as the abstention policy; the verbal confidence column is used only
-    for Brier/ECE. No token probability is involved.
+    Rank rows by the verbal confidence column and accept the top-k to match the
+    run's own IDK coverage (coverage-matched thresholding, as in
+    coverage_matched_baseline.py). The coverage target is simply the number of
+    rows the model chose to answer (``idk_flag == 0``); the full IDK metric
+    report is not computed.
     """
     rows = load_rows(csv_path, score_col=conf_col)
-    idk_policy = compute_reference_policy_metrics(
+    target_answered = sum(1 for r in rows if r["idk_flag"] == 0)
+    verbal_conf_threshold = compute_threshold_policy_metrics(
         rows,
+        target_answered=target_answered,
+        score_col=conf_col,
         num_bins=num_bins,
         reward_correct=reward_correct,
         reward_incorrect=reward_incorrect,
@@ -574,7 +579,7 @@ def evaluate_verbal_conf(
         "experiment": "verbal_conf",
         "csv": str(csv_path),
         "conf_col": conf_col,
-        "idk_policy": idk_policy,
+        "verbal_conf_threshold": verbal_conf_threshold,
     }
 
 

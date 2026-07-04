@@ -155,8 +155,8 @@ def run_exp2_verbal_conf(
     results_folder: Path = Path("baseline/outputs"),
     conf_col: str = "self_confidence",
 ) -> dict:
-    """Exp 2: run the verbal-confidence prompt, then evaluate the IDK policy
-    directly from the file (verbal confidence used only for Brier/ECE)."""
+    """Exp 2: run the verbal-confidence prompt, then evaluate the coverage-matched
+    verbal-confidence threshold (coverage matched to the run's own IDK coverage)."""
     dataset = PopQADataset(confidence_scale=confidence_scale, variant="verbal")
     csv_path = generate_csv(
         client,
@@ -167,7 +167,9 @@ def run_exp2_verbal_conf(
         results_folder=results_folder,
     )
     payload = evaluation.evaluate_verbal_conf(csv_path, conf_col=conf_col)
-    evaluation.print_metrics("Exp 2 - Verbal Conf (direct)", payload["idk_policy"])
+    evaluation.print_metrics(
+        "Exp 2 - Verbal Conf threshold (coverage-matched)", payload["verbal_conf_threshold"]
+    )
     _save_metrics(csv_path, payload)
     return {"csv_path": str(csv_path), "metrics": payload}
 
@@ -180,14 +182,13 @@ if __name__ == "__main__":
     API_KEY_ENV = "OPENROUTER_API_KEY"
     CONFIDENCE_SCALE = 1  # must match the verbal prompt's reported range
     BATCH_SIZE = 10
-    NUM_QUESTIONS = None  # int to limit (e.g. 10 for a smoke test)
+    NUM_QUESTIONS = None  # int to limit (e.g. 10 for a smoke test); None = full set
     RESULTS_FOLDER = Path("baseline/outputs")
 
     # Models to run, as OpenRouter model IDs. GPT-5 models reject a custom
     # temperature, so we omit it (temperature=None) for those.
     MODELS = [
         {"model": "openai/gpt-4o-mini", "temperature": 0.0},
-        {"model": "openai/gpt-5-mini", "temperature": None},
     ]
 
     api_key = os.getenv(API_KEY_ENV)

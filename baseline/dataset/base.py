@@ -21,6 +21,8 @@ from typing import Any
 
 from model.base import Completion
 
+from .prompts import PROMPTS
+
 
 class BaseDataset(ABC):
     """Abstract dataset: loading, prompting, and scoring."""
@@ -28,15 +30,30 @@ class BaseDataset(ABC):
     #: Short identifier used for output filenames (e.g. "popQA").
     name: str
 
+    #: Example field holding the question text; override if a dataset differs.
+    question_field: str = "question"
+
+    def __init__(self, confidence_scale: float = 1, variant: str = "verbal") -> None:
+        # 1 = model reports [0,1]; 20 = [0,20] then /20; 100/'percent' = /100.
+        self.confidence_scale = confidence_scale
+        # "idk"    -> Exp 1 (IDK & Token Prob): no verbal confidence.
+        # "verbal" -> Exp 2 (Verbal Conf): self-reported confidence in [0, 1].
+        if variant not in PROMPTS:
+            raise ValueError(f"variant must be one of {sorted(PROMPTS)}, got {variant!r}")
+        self.variant = variant
+
     @abstractmethod
     def load(self, num_questions: int | None = None) -> list[dict[str, Any]]:
         """Return a list of raw examples (each a dict of fields)."""
         raise NotImplementedError
 
-    @abstractmethod
     def build_prompt(self, example: dict[str, Any]) -> str:
-        """Build the model prompt for a single example."""
-        raise NotImplementedError
+        """Build the model prompt for a single example.
+
+        The prompt text is shared across all datasets (see ``prompts.py``); the
+        only per-dataset variation is which field carries the question.
+        """
+        return PROMPTS[self.variant](example[self.question_field])
 
     @abstractmethod
     def parse(
