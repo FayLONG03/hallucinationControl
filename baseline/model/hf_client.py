@@ -68,7 +68,11 @@ class HFClient(BaseClient):
 
     def _apply_template(self, prompt: str):
         messages = [{"role": "user", "content": prompt}]
-        kwargs = {"add_generation_prompt": True, "return_tensors": "pt"}
+        kwargs = {
+            "add_generation_prompt": True,
+            "return_tensors": "pt",
+            "return_dict": True,
+        }
         if self.enable_thinking is not None:
             kwargs["enable_thinking"] = self.enable_thinking
         return self.tokenizer.apply_chat_template(messages, **kwargs)
@@ -76,8 +80,11 @@ class HFClient(BaseClient):
     def _generate_one(self, prompt: str) -> Completion:
         torch = self._torch
         try:
-            input_ids = self._apply_template(prompt).to(self.hf_model.device)
-            attention_mask = torch.ones_like(input_ids)
+            encoded = self._apply_template(prompt).to(self.hf_model.device)
+            input_ids = encoded["input_ids"]
+            attention_mask = encoded.get(
+                "attention_mask", torch.ones_like(input_ids)
+            )
             input_len = input_ids.shape[1]
 
             gen_kwargs = {
