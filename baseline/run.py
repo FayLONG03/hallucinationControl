@@ -15,6 +15,7 @@ Configure the run in the ``__main__`` block at the bottom, or import
 
 from __future__ import annotations
 
+import argparse
 import asyncio
 import csv
 import json
@@ -31,7 +32,7 @@ from dotenv import load_dotenv
 
 from dataset.base import BaseDataset
 from dataset.popqa import PopQADataset
-from model import OpenAIClient
+from model import HFClient, OpenAIClient
 from model.base import BaseClient
 
 import eval as evaluation
@@ -185,24 +186,73 @@ if __name__ == "__main__":
     NUM_QUESTIONS = None  # int to limit (e.g. 10 for a smoke test); None = full set
     RESULTS_FOLDER = Path("baseline/outputs")
 
-    # Models to run, as OpenRouter model IDs. GPT-5 models reject a custom
-    # temperature, so we omit it (temperature=None) for those.
-    MODELS = [
-        {"model": "openai/gpt-4o-mini", "temperature": 0.0},
-    ]
+    # Registry of available models, keyed by the short name used for `--model`
+    # and output filenames. Each entry sets ``provider``:
+    #   "openai" -> hosted OpenAI-style API (uses API_URL / API_KEY_ENV).
+    #              GPT-5 models reject a custom temperature; use temperature=None.
+    #   "hf"     -> local transformers model run on the GPU. ``model_id`` is the
+    #              HuggingFace repo; ``model`` is the short name for filenames.
+    MODEL_REGISTRY = {
+        "llama-3-8b-instruct": {
+            "provider": "hf",
+            "model_id": "meta-llama/Meta-Llama-3-8B-Instruct",
+            "model": "llama-3-8b-instruct",
+            "temperature": 0.0,
+        },
+        "qwen3-4b-instruct": {
+            "provider": "hf",
+            "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+            "model": "qwen3-4b-instruct",
+            "temperature": 0.0,
+        },
+        "gpt-4o-mini": {
+            "provider": "openai",
+            "model": "openai/gpt-4o-mini",
+            "temperature": 0.0,
+        },
+    }
 
-    api_key = os.getenv(API_KEY_ENV)
-    if not api_key:
-        print(f"Error: set {API_KEY_ENV} in your environment or .env file.")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Baseline PopQA experiment runner.")
+    parser.add_argument(
+        "-m",
+        "--model",
+        choices=[*MODEL_REGISTRY, "all"],
+        default="llama-3-8b-instruct",
+        help="Which model to run (or 'all' to run every registered model).",
+    )
+    args = parser.parse_args()
 
-    for cfg in MODELS:
-        client = OpenAIClient(
+    if args.model == "all":
+        MODELS = list(MODEL_REGISTRY.values())
+    else:
+        MODELS = [MODEL_REGISTRY[args.model]]
+
+    def build_client(cfg: dict) -> BaseClient:
+        provider = cfg.get("provider", "openai")
+        if provider == "hf":
+            return HFClient(
+                model_id=cfg["model_id"],
+                model=cfg.get("model"),
+                temperature=cfg.get("temperature", 0.0),
+                enable_thinking=cfg.get("enable_thinking"),
+            )
+        # OpenAI-compatible provider. A model may override the endpoint/key env
+        # (e.g. Gemini via Google's OpenAI-compatible endpoint); otherwise it
+        # falls back to the shared OpenRouter defaults.
+        api_key_env = cfg.get("api_key_env", API_KEY_ENV)
+        api_key = os.getenv(api_key_env)
+        if not api_key:
+            print(f"Error: set {api_key_env} in your environment or .env file.")
+            sys.exit(1)
+        return OpenAIClient(
             api_key=api_key,
             model=cfg["model"],
-            api_url=API_URL,
-            temperature=cfg["temperature"],
+            api_url=cfg.get("api_url", API_URL),
+            temperature=cfg.get("temperature", 0.0),
         )
+
+    for cfg in MODELS:
+        client = build_client(cfg)
 
         print("\n" + "=" * 70)
         print(f"[{cfg['model']}] Experiment 1: IDK & Token Prob")
