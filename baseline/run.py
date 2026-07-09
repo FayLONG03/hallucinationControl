@@ -230,6 +230,24 @@ if __name__ == "__main__":
             "model": "openai/gpt-4o-mini",
             "temperature": 0.0,
         },
+        # GPT-5-mini is a reasoning model; it rejects a custom temperature and
+        # does not support logprobs. api_confidence_avg/min will be None — Exp 1
+        # IDK-policy metrics are valid, but the token-prob threshold is not.
+        "gpt-5-mini": {
+            "provider": "openai",
+            "model": "openai/gpt-5-mini",
+            "temperature": None,
+            "logprobs": False,
+        },
+        # Gemini 3.1 Flash Lite via OpenRouter (OpenAI-compatible endpoint).
+        # Logprobs are not available for Gemini 3.x models. Same caveat as
+        # gpt-5-mini: token-prob threshold results are not meaningful.
+        "gemini-3.1-flash-lite": {
+            "provider": "openai",
+            "model": "google/gemini-3.1-flash-lite",
+            "temperature": 0.0,
+            "logprobs": False,
+        },
     }
 
     parser = argparse.ArgumentParser(description="Baseline PopQA experiment runner.")
@@ -269,6 +287,7 @@ if __name__ == "__main__":
             model=cfg["model"],
             api_url=cfg.get("api_url", API_URL),
             temperature=cfg.get("temperature", 0.0),
+            logprobs=cfg.get("logprobs", True),
         )
 
     for cfg in MODELS:
