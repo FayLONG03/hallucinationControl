@@ -138,7 +138,17 @@ def run_exp1_idk_token_prob(
         batch_size=batch_size,
         results_folder=results_folder,
     )
-    payload = evaluation.evaluate_idk_and_token_prob(csv_path, token_col=token_col)
+    reference_csv = evaluation.resolve_reference_csv(dataset.name, client.model)
+    if reference_csv is None:
+        print(
+            f"No reference run found for ({dataset.name}, {client.model}); "
+            "matching coverage to the run's own IDK policy."
+        )
+    else:
+        print(f"Matching token-prob coverage to reference run {reference_csv}")
+    payload = evaluation.evaluate_idk_and_token_prob(
+        csv_path, token_col=token_col, reference_csv=reference_csv
+    )
     evaluation.print_metrics("Exp 1 - IDK policy (direct)", payload["idk_policy"])
     evaluation.print_metrics(
         "Exp 1 - Token-prob threshold (coverage-matched)", payload["token_prob_threshold"]
@@ -167,7 +177,17 @@ def run_exp2_verbal_conf(
         batch_size=batch_size,
         results_folder=results_folder,
     )
-    payload = evaluation.evaluate_verbal_conf(csv_path, conf_col=conf_col)
+    reference_csv = evaluation.resolve_reference_csv(dataset.name, client.model)
+    if reference_csv is None:
+        print(
+            f"No reference run found for ({dataset.name}, {client.model}); "
+            "matching coverage to the run's own IDK policy."
+        )
+    else:
+        print(f"Matching verbal-conf coverage to reference run {reference_csv}")
+    payload = evaluation.evaluate_verbal_conf(
+        csv_path, conf_col=conf_col, reference_csv=reference_csv
+    )
     evaluation.print_metrics(
         "Exp 2 - Verbal Conf threshold (coverage-matched)", payload["verbal_conf_threshold"]
     )

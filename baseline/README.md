@@ -52,13 +52,22 @@ ways over the same run:
   - `idk_policy`: directly from the file, using the model's own IDK as the
     abstention decision.
   - `token_prob_threshold`: rank rows by `api_confidence_avg` (geometric mean of
-    answer-span token probabilities) and accept the top-k to match the IDK
-    policy's coverage, exactly like `coverage_matched_baseline.py`.
+    answer-span token probabilities) and accept the top-k to match a target
+    coverage, exactly like `coverage_matched_baseline.py`.
 
 **2. Verbal Conf** (`variant="verbal"`) — prompt additionally asks for a
-self-reported confidence in [0, 1]. Metrics are computed directly from the
-file's IDK decisions; the verbal confidence is used only for Brier/ECE. **No
-token probability is involved.**
+self-reported confidence in [0, 1]. Rows are ranked by `self_confidence` and the
+top-k accepted to match a target coverage. **No token probability is involved.**
+
+**Coverage source.** Both threshold baselines are coverage-matched to the
+corresponding **reference run** in `reference_data_results/<dataset>/`, keyed by
+dataset and model (e.g. PopQA + `llama-3-8b-instruct` →
+`reference_data_results/popQA/popqa_llama.csv`). The target coverage is that
+reference run's answered fraction (`idk_flag == 0`); `run.py` resolves the file
+via `eval.resolve_reference_csv(...)`. If no reference exists for the pair (e.g.
+the empty `triviaQA`/`simpleQA` folders), it falls back to the run's own IDK
+coverage. The `idk_policy` view of Exp 1 is computed from the model's own IDK
+decisions and is **not** affected by the reference.
 
 Each run writes `popQA-<variant>-<model>-<timestamp>.csv` and a matching
 `.eval.json` with the full metric payload.

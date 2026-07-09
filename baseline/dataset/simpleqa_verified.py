@@ -89,12 +89,15 @@ class SimpleQAVerifiedDataset(BaseDataset):
 
         idk_flag = bool(re.search(r"i don't know", content or "", re.IGNORECASE))
         gold = _gold_answers(example)
+        # Shared _is_correct expects PopQA's stringified-list form; pass str(gold)
+        # so single-char answers (e.g. ["7"]) don't misfire its decode heuristic.
+        gold_repr = str(gold)
 
         if idk_flag:
-            correct = _is_correct(best, gold)
+            correct = _is_correct(best, gold_repr)
             self_conf = best_conf_01
         else:
-            correct = _is_correct(ans, gold)
+            correct = _is_correct(ans, gold_repr)
             self_conf = conf_01
 
         api_avg, api_min = _aggregate_logprobs(completion.tokens, idk_flag)

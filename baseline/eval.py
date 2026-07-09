@@ -213,10 +213,12 @@ def base_metrics(
     far_answered_ci_95 = wilson_ci(surfaced_wrong, answered_n, confidence_level)
     far_overall_ci_95 = wilson_ci(total_wrong, total, confidence_level)
 
-    # FAR (guess): among the second-round best-guess rows (idk_flag == 1), the
-    # fraction whose best guess was wrong. This is a property of the run's IDK
-    # decisions, independent of the accept/abstain policy of this report.
-    guess_rows = [r for r in rows if r["idk_flag"] == 1]
+    # FAR (guess): among the abstained rows (those NOT accepted into the top-k),
+    # the fraction whose answer would have been wrong had it been surfaced. This
+    # is the risk avoided by abstaining, under this report's accept/abstain
+    # policy. For the logged reference policy the abstained set is exactly the
+    # model's IDK rows (idk_flag == 1).
+    guess_rows = abstained_rows
     guess_n = len(guess_rows)
     guess_wrong = sum(1 - r["correct"] for r in guess_rows)
     far_guess = guess_wrong / guess_n if guess_n else float("nan")
@@ -494,6 +496,84 @@ def evaluate(
 
 
 # ---------------------------------------------------------------------------
+# Reference coverage (external reference_data_results runs)
+# ---------------------------------------------------------------------------
+
+# Root of the logged reference runs whose answered coverage the threshold
+# baselines are matched to. Structured as ``<root>/<dataset>/<dataset>_<model>.csv``.
+REFERENCE_ROOT = Path(__file__).resolve().parent / "reference_data_results"
+
+# dataset.name -> (subfolder under REFERENCE_ROOT, reference filename prefix).
+DATASET_REFERENCE_DIR = {
+    "popQA": ("popQA", "popqa"),
+    "triviaQA": ("triviaQA", "triviaqa"),
+    "simpleQA-verified": ("simpleQA", "simpleqa"),
+}
+
+# Short model name (from ``client.model``, provider prefix stripped) -> the
+# model tag used in the reference filenames.
+MODEL_REFERENCE_TAG = {
+    "llama-3-8b-instruct": "llama",
+    "qwen3-4b-instruct": "qwen",
+    "gpt-4o-mini": "gpt4omini",
+    "gpt-5-mini": "gpt5mini",
+}
+
+
+def resolve_reference_csv(
+    dataset_name: str,
+    model: str,
+    *,
+    root: Path | str = REFERENCE_ROOT,
+) -> Path | None:
+    """Locate the reference run CSV for a (dataset, model) pair.
+
+    Returns the path to ``<root>/<dataset>/<prefix>_<tag>.csv`` if it exists,
+    otherwise ``None`` (e.g. datasets/models without a logged reference yet).
+    """
+    dataset_entry = DATASET_REFERENCE_DIR.get(dataset_name)
+    if dataset_entry is None:
+        return None
+    subfolder, prefix = dataset_entry
+
+    model_short = model.split("/")[-1]
+    tag = MODEL_REFERENCE_TAG.get(model_short)
+    if tag is None:
+        return None
+
+    candidate = Path(root) / subfolder / f"{prefix}_{tag}.csv"
+    return candidate if candidate.exists() else None
+
+
+def reference_coverage(reference_csv: Path | str, baseline_total: int) -> dict:
+    """Coverage target for a threshold baseline, taken from a reference run.
+
+    The target is the reference run's answered count (``idk_flag == 0``). When
+    the reference and baseline row counts differ, the reference *coverage
+    fraction* is applied to the baseline total instead, so the two remain
+    coverage-matched on differently sized runs.
+    """
+    reference_rows = load_rows(reference_csv)
+    ref_total = len(reference_rows)
+    ref_answered = sum(1 for r in reference_rows if r["idk_flag"] == 0)
+    ref_cov = ref_answered / ref_total if ref_total else float("nan")
+
+    if ref_total == baseline_total:
+        target = ref_answered
+    else:
+        target = round(ref_cov * baseline_total)
+    target = max(0, min(baseline_total, target))
+
+    return {
+        "reference_csv": str(reference_csv),
+        "reference_total": ref_total,
+        "reference_answered": ref_answered,
+        "reference_coverage": ref_cov,
+        "target_answered": target,
+    }
+
+
+# ---------------------------------------------------------------------------
 # Experiment-level entry points
 # ---------------------------------------------------------------------------
 
@@ -501,6 +581,7 @@ def evaluate_idk_and_token_prob(
     csv_path: Path | str,
     *,
     token_col: str = "api_confidence_avg",
+    reference_csv: Path | str | None = None,
     num_bins: int = 10,
     reward_correct: float = 1.0,
     reward_incorrect: float = -1.0,
@@ -512,10 +593,12 @@ def evaluate_idk_and_token_prob(
     Two metric views over the *same* run:
       - ``idk_policy``: computed directly from the result file, using the
         model's own "I don't know" as the abstention decision (Brier/ECE use
-        the token-probability column).
+        the token-probability column). Unaffected by the reference.
       - ``token_prob_threshold``: rank rows by the token-probability column and
-        accept the top-k to match the IDK policy's coverage (coverage-matched
-        thresholding, as in coverage_matched_baseline.py).
+        accept the top-k to match a target coverage. When ``reference_csv`` is
+        given, the coverage is matched to that reference run's answered coverage
+        (from ``reference_data_results``); otherwise it falls back to this run's
+        own IDK coverage.
     """
     rows = load_rows(csv_path, score_col=token_col)
     idk_policy = compute_reference_policy_metrics(
@@ -526,9 +609,17 @@ def evaluate_idk_and_token_prob(
         reward_abstain=reward_abstain,
         confidence_level=confidence_level,
     )
+
+    if reference_csv is not None:
+        coverage_source = reference_coverage(reference_csv, len(rows))
+        target_answered = coverage_source["target_answered"]
+    else:
+        coverage_source = None
+        target_answered = idk_policy["answered_examples"]
+
     token_prob_threshold = compute_threshold_policy_metrics(
         rows,
-        target_answered=idk_policy["answered_examples"],
+        target_answered=target_answered,
         score_col=token_col,
         num_bins=num_bins,
         reward_correct=reward_correct,
@@ -540,6 +631,8 @@ def evaluate_idk_and_token_prob(
         "experiment": "idk_and_token_prob",
         "csv": str(csv_path),
         "token_col": token_col,
+        "reference_csv": str(reference_csv) if reference_csv else None,
+        "coverage_source": coverage_source,
         "idk_policy": idk_policy,
         "token_prob_threshold": token_prob_threshold,
     }
@@ -549,6 +642,7 @@ def evaluate_verbal_conf(
     csv_path: Path | str,
     *,
     conf_col: str = "self_confidence",
+    reference_csv: Path | str | None = None,
     num_bins: int = 10,
     reward_correct: float = 1.0,
     reward_incorrect: float = -1.0,
@@ -557,14 +651,22 @@ def evaluate_verbal_conf(
 ) -> dict:
     """Exp 2: Verbal Conf.
 
-    Rank rows by the verbal confidence column and accept the top-k to match the
-    run's own IDK coverage (coverage-matched thresholding, as in
-    coverage_matched_baseline.py). The coverage target is simply the number of
-    rows the model chose to answer (``idk_flag == 0``); the full IDK metric
-    report is not computed.
+    Rank rows by the verbal confidence column and accept the top-k to match a
+    target coverage (coverage-matched thresholding, as in
+    coverage_matched_baseline.py). When ``reference_csv`` is given, the coverage
+    is matched to that reference run's answered coverage (from
+    ``reference_data_results``); otherwise it falls back to this run's own IDK
+    coverage (``idk_flag == 0``).
     """
     rows = load_rows(csv_path, score_col=conf_col)
-    target_answered = sum(1 for r in rows if r["idk_flag"] == 0)
+
+    if reference_csv is not None:
+        coverage_source = reference_coverage(reference_csv, len(rows))
+        target_answered = coverage_source["target_answered"]
+    else:
+        coverage_source = None
+        target_answered = sum(1 for r in rows if r["idk_flag"] == 0)
+
     verbal_conf_threshold = compute_threshold_policy_metrics(
         rows,
         target_answered=target_answered,
@@ -579,6 +681,8 @@ def evaluate_verbal_conf(
         "experiment": "verbal_conf",
         "csv": str(csv_path),
         "conf_col": conf_col,
+        "reference_csv": str(reference_csv) if reference_csv else None,
+        "coverage_source": coverage_source,
         "verbal_conf_threshold": verbal_conf_threshold,
     }
 
