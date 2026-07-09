@@ -164,7 +164,7 @@ class PopQADataset(BaseDataset):
         conf_01 = _confidence_to_01(conf, self.confidence_scale)
         best_conf_01 = _confidence_to_01(best_conf, self.confidence_scale)
 
-        idk_flag = bool(re.search(r"i don't know", content or "", re.IGNORECASE))
+        idk_flag = bool(ans) and bool(re.search(r"i don't know", ans, re.IGNORECASE))
         gold = example["possible_answers"]
 
         if idk_flag:

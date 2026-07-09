@@ -287,7 +287,7 @@ class QwenClient:
 
                     ans, conf, best, best_conf = extract_fields(out)
                     timestamp_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    idk_flag = bool(re.search(r"i don't know", out or "", re.IGNORECASE))
+                    idk_flag = bool(ans) and bool(re.search(r"i don't know", ans, re.IGNORECASE))
 
                     if idk_flag:
                         correct = self.is_correct(best, gold)
