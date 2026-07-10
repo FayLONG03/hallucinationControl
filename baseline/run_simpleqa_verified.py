@@ -124,6 +124,18 @@ if __name__ == "__main__":
             "model": "openai/gpt-4o-mini",
             "temperature": 0.0,
         },
+        "gpt-5-mini": {
+            "provider": "openai",
+            "model": "openai/gpt-5-mini",
+            "temperature": None,
+            "logprobs": False,
+        },
+        "gemini-3.1-flash-lite": {
+            "provider": "openai",
+            "model": "google/gemini-3.1-flash-lite",
+            "temperature": 0.0,
+            "logprobs": False,
+        },
     }
 
     parser = argparse.ArgumentParser(description="Baseline SimpleQA-Verified experiment runner.")
@@ -161,6 +173,7 @@ if __name__ == "__main__":
             model=cfg["model"],
             api_url=cfg.get("api_url", API_URL),
             temperature=cfg.get("temperature", 0.0),
+            logprobs=cfg.get("logprobs", True),
         )
 
     for cfg in MODELS:
