@@ -132,7 +132,13 @@ def resolve_idk_score(scheme: str, ri: float, ra: float | None) -> float:
     return ri
 
 
-def recompute(df: pd.DataFrame, rc: float, ri: float, idk_score: float) -> pd.DataFrame:
+def recompute(
+    df: pd.DataFrame,
+    rc: float | None,
+    ri: float | None,
+    idk_score: float | None,
+) -> pd.DataFrame:
+    """Rewards are None for the reward-free ablation runs, which carry no score."""
     idk = df["first_answer"].apply(is_idk)
 
     def grade(i: int) -> int:
@@ -142,13 +148,13 @@ def recompute(df: pd.DataFrame, rc: float, ri: float, idk_score: float) -> pd.Da
     correct = pd.Series([grade(i) for i in range(len(df))], index=df.index)
     idk_int = idk.astype(int)
 
-    score = np.where(idk_int == 1, idk_score, np.where(correct == 1, rc, ri))
-    if np.all(score == score.astype(int)):
-        score = score.astype(int)
-
     out = df.copy()
     out["correct"] = correct.astype(int)
-    out["score"] = score
+    if rc is not None:
+        score = np.where(idk_int == 1, idk_score, np.where(correct == 1, rc, ri))
+        if np.all(score == score.astype(int)):
+            score = score.astype(int)
+        out["score"] = score
     out["idk_flag"] = idk_int
     out["false_answer_flag"] = ((correct == 0) & (idk_int == 0)).astype(int)
     return out
@@ -197,29 +203,40 @@ def main() -> None:
             print(f"⏭️  {name}: skipped (no {'/'.join(missing)})")
             continue
 
-        _model, scheme, rc, ri, ra = parse_filename(path)
-        rc_f, ri_f = float(rc), float(ri)
-        ra_f = float(ra) if ra is not None else None
-        idk_score = resolve_idk_score(scheme, ri_f, ra_f)
+        # The reward-free ablation runs have no score column and no rewards in
+        # the filename (which parse_filename would misread as the timestamp), so
+        # only the three grading columns are recomputed for them.
+        if "score" not in df.columns:
+            scheme, rc, ri, ra = "no_reward", None, None, None
+        else:
+            _model, scheme, rc, ri, ra = parse_filename(path)
+
+        if rc is None:
+            rc_f = ri_f = ra_f = idk_score = None
+            header = f"    scheme={scheme} (no rewards, no score)  rows={len(df)}"
+        else:
+            rc_f, ri_f = float(rc), float(ri)
+            ra_f = float(ra) if ra is not None else None
+            idk_score = resolve_idk_score(scheme, ri_f, ra_f)
+            if ra_f is not None:
+                source = "from filename"
+            elif scheme.lower().startswith("b_control"):
+                source = "B_control default"
+            else:
+                source = "= reward_incorrect"
+            header = (
+                f"    scheme={scheme} rewards=({rc_f:+g}, {ri_f:+g})  "
+                f"abstain={idk_score:+g} ({source})  rows={len(df)}"
+            )
 
         out = recompute(df, rc_f, ri_f, idk_score)
 
-        changed = {
-            c: int((df[c].values != out[c].values).sum())
-            for c in ("idk_flag", "correct", "score", "false_answer_flag")
-        }
-        if ra_f is not None:
-            source = "from filename"
-        elif scheme.lower().startswith("b_control"):
-            source = "B_control default"
-        else:
-            source = "= reward_incorrect"
+        cols = [c for c in ("idk_flag", "correct", "score", "false_answer_flag") if c in out.columns]
+        changed = {c: int((df[c].values != out[c].values).sum()) for c in cols}
         print(
             f"{'🔎' if args.dry_run else '✅'} {name}\n"
-            f"    scheme={scheme} rewards=({rc_f:+g}, {ri_f:+g})  "
-            f"abstain={idk_score:+g} ({source})  rows={len(out)}\n"
-            f"    changed: idk={changed['idk_flag']} correct={changed['correct']} "
-            f"score={changed['score']} false={changed['false_answer_flag']}"
+            f"{header}\n"
+            f"    changed: " + " ".join(f"{c}={n}" for c, n in changed.items())
         )
 
         if args.dry_run:

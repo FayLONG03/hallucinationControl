@@ -544,10 +544,33 @@ def parse_filename(filename):
     if reward_match:
         rewards = reward_match.group(1).split("_")
     else:
-        raise ValueError(
-            f"Could not parse rewards from filename: {basename!r}. Expected "
-            "`..._results_<rc>_<ri>[_<ra>][_YYYYMMDD_HHMMSS].csv`"
+        # The norm_ablation runs never wrote `_results_`: they carry the variant
+        # in its place (`popqa_B_norm_+1_-1_+0.4_remove_norm2_...`) and some
+        # spell the decimal point as `p` (`+0p4`). Rewards are still a run of 2-3
+        # numbers, but here the sign is what identifies them -- an unsigned match
+        # would swallow the timestamp.
+        reward_match = re.search(
+            r'_([+-]\d+(?:[.p]\d+)?(?:_[+-]\d+(?:[.p]\d+)?){1,2})(?=_|\.csv)',
+            basename,
         )
+        if not reward_match:
+            raise ValueError(
+                f"Could not parse rewards from filename: {basename!r}. Expected "
+                "`..._results_<rc>_<ri>[_<ra>][_YYYYMMDD_HHMMSS].csv`"
+            )
+        rewards = [r.replace("p", ".") for r in reward_match.group(1).split("_")]
+        if scheme == "unknown":
+            # The variant sits on either side of the rewards depending on the run
+            # (`popqa_B_norm_+1_-1_+0.4_remove_norm2_...` puts it after,
+            # `popqa_..._keep_norms_1_2_+1_-1_+0p4_...` before), so join both ends
+            # or the four remove_norm runs would all be plain `B_norm`.
+            head = basename[len("popqa_"):reward_match.start()].strip("_")
+            tail = basename[reward_match.end():].removesuffix(".csv")
+            tail = re.sub(r'_?\d{8}_\d{6}$', '', tail).strip("_")
+            if tail and tail not in head:
+                scheme = f"{head}_{tail}" if head else tail
+            else:
+                scheme = head or "unknown"
 
     reward_correct = rewards[0]
     reward_incorrect = rewards[1]
