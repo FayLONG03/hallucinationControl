@@ -507,32 +507,52 @@ def summarize(df, label):
 def parse_filename(filename):
     """
     Parse experiment filename to extract model name, scheme and reward values.
-    Example: main_exp/outputs/popqa/gpt5_results/popqa_scheme_b_norm_results_+1_+0_+0.4_20260308_221816.csv
-    Returns: (model_name, scheme_name, reward_correct, reward_incorrect, reward_abstain)
+
+    Handles both reward layouts, with the trailing timestamp optional:
+      - three rewards (schemes that pay an abstain reward, e.g. B / B_norm):
+        popqa_B_norm_results_+1_-1_+0.4_20260114_181906.csv
+      - two rewards (schemes with no abstain reward, e.g. A / A_baseline /
+        B_control): popqa_A_results_+1_0.csv
+
+    Returns: (model_name, scheme_name, reward_correct, reward_incorrect,
+    reward_abstain). ``reward_abstain`` is None when the scheme has no abstain
+    reward, which is also what marks a scheme as *not* paying for abstention.
     """
 
     basename = os.path.basename(filename)
-    
-    # Extract model name from directory path (e.g., gpt5_results -> gpt5)
+
+    # Model name: prefer a `<model>_results/` directory, else the parent folder
+    # (e.g. outputs/popqa_gpt4omini/... -> gpt4omini).
     model_match = re.search(r'/([^/]+)_results/', filename)
-    model = model_match.group(1) if model_match else "gpt5"
-    
+    if model_match:
+        model = model_match.group(1)
+    else:
+        parent = os.path.basename(os.path.dirname(filename))
+        model = parent[len("popqa_"):] if parent.startswith("popqa_") else (parent or "gpt5")
+
     # Extract scheme name (between popqa_ and _results)
     scheme_match = re.search(r'popqa_(.+?)_results', basename)
     scheme = scheme_match.group(1) if scheme_match else "unknown"
-    
-    # Extract reward values (format: +1_-1_+0.4 or +1_0_+0.4)
-    # Rewards are between _results_ and timestamp (8 digits)
-    reward_match = re.search(r'_results_([+-]?\d+(?:\.\d+)?)_([+-]?\d+(?:\.\d+)?)_([+-]?\d+(?:\.\d+)?)_\d{8}', basename)
+
+    # Rewards follow `_results_` as 2 or 3 signed numbers, optionally followed
+    # by a `_YYYYMMDD_HHMMSS` timestamp before the extension. Some filenames
+    # doubled the separator (`..._+0.8__20260107_222320.csv`), so allow `_+`.
+    reward_match = re.search(
+        r'_results_([+-]?\d+(?:\.\d+)?(?:_[+-]?\d+(?:\.\d+)?){1,2})(?:_+\d{8}_\d{6})?\.csv$',
+        basename,
+    )
     if reward_match:
-        reward_correct = reward_match.group(1)
-        reward_incorrect = reward_match.group(2)
-        reward_abstain = reward_match.group(3)
+        rewards = reward_match.group(1).split("_")
     else:
-        reward_correct = "+1"
-        reward_incorrect = "-1"
-        reward_abstain = "+0.4"
-    
+        raise ValueError(
+            f"Could not parse rewards from filename: {basename!r}. Expected "
+            "`..._results_<rc>_<ri>[_<ra>][_YYYYMMDD_HHMMSS].csv`"
+        )
+
+    reward_correct = rewards[0]
+    reward_incorrect = rewards[1]
+    reward_abstain = rewards[2] if len(rewards) > 2 else None
+
     return model, scheme, reward_correct, reward_incorrect, reward_abstain
 
 
@@ -604,9 +624,9 @@ def main():
     # Parse filename to get model name, scheme and reward settings
     model_name, scheme_name, r_correct, r_incorrect, r_abstain = parse_filename(filepath)
     
-    # Build reward setting string (exclude abstain reward for scheme_a)
+    # Build reward setting string; only schemes that pay for abstention have one.
     reward_parts = [r_correct, r_incorrect]
-    if scheme_name.lower().startswith("scheme_b"):
+    if r_abstain is not None:
         reward_parts.append(r_abstain)
     reward_setting = ", ".join(reward_parts)
     

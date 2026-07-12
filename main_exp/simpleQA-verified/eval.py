@@ -607,33 +607,32 @@ def parse_filename(filename):
     """
     basename = os.path.basename(filename)
 
+    # Model name: prefer a `<model>_results/` directory, else the parent folder.
     model_match = re.search(r"/([^/]+)_results/", filename)
-    model = model_match.group(1) if model_match else "gpt5"
+    model = model_match.group(1) if model_match else os.path.basename(os.path.dirname(filename))
 
     scheme_match = re.search(r"simpleqa_verified_(.+?)_results", basename)
     scheme = scheme_match.group(1) if scheme_match else "unknown"
 
+    # Rewards follow `_results_` as 2 or 3 signed numbers, optionally followed
+    # by a `_YYYYMMDD_HHMMSS` timestamp before the extension. `_+` tolerates a
+    # doubled separator. reward_abstain is None when the scheme has no abstain
+    # reward (e.g. scheme_a, pure_eval).
     reward_match = re.search(
-        r"_results_([+-]?\d+(?:\.\d+)?)_([+-]?\d+(?:\.\d+)?)_([+-]?\d+(?:\.\d+)?)_\d{8}",
+        r"_results_([+-]?\d+(?:\.\d+)?(?:_[+-]?\d+(?:\.\d+)?){1,2})(?:_+\d{8}_\d{6})?\.csv$",
         basename,
     )
     if reward_match:
-        reward_correct = reward_match.group(1)
-        reward_incorrect = reward_match.group(2)
-        reward_abstain = reward_match.group(3)
+        rewards = reward_match.group(1).split("_")
     else:
-        reward_match2 = re.search(
-            r"_results_([+-]?\d+(?:\.\d+)?)_([+-]?\d+(?:\.\d+)?)_\d{8}",
-            basename,
+        raise ValueError(
+            f"Could not parse rewards from filename: {basename!r}. Expected "
+            "`simpleqa_verified_<scheme>_results_<rc>_<ri>[_<ra>][_YYYYMMDD_HHMMSS].csv`"
         )
-        if reward_match2:
-            reward_correct = reward_match2.group(1)
-            reward_incorrect = reward_match2.group(2)
-            reward_abstain = "+0.4"
-        else:
-            reward_correct = "+1"
-            reward_incorrect = "-1"
-            reward_abstain = "+0.4"
+
+    reward_correct = rewards[0]
+    reward_incorrect = rewards[1]
+    reward_abstain = rewards[2] if len(rewards) > 2 else None
 
     return model, scheme, reward_correct, reward_incorrect, reward_abstain
 
@@ -654,9 +653,9 @@ def main():
     print(f"\n📊 Analyzing result file: {filepath}")
     model_name, scheme_name, r_correct, r_incorrect, r_abstain = parse_filename(filepath)
 
-    # Build reward setting string (exclude abstain reward unless scheme_b)
+    # Build reward setting string; only schemes that pay for abstention have one.
     reward_parts = [r_correct, r_incorrect]
-    if scheme_name.lower().startswith("scheme_b"):
+    if r_abstain is not None:
         reward_parts.append(r_abstain)
     reward_setting = ", ".join(reward_parts)
 

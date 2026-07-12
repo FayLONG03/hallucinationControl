@@ -23,7 +23,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 21,2026-01-14 16:57:51,285,25692,"What is Charles Strachey, 4th Baron O'Hagan's occupation?","[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Politician,0.5,1,0.4,1,0
 22,2026-01-14 16:57:51,2251,81374,What is Akari Hayami's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Voice actress,0.6,1,0.4,1,0
 23,2026-01-14 16:57:51,381,81374,What is Richard Martin's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Politician,0.3,0,0.4,1,0
-24,2026-01-14 16:57:51,103,43223,"What is Harvey Peltier, Sr.'s occupation?","[""lawyer"", ""attorney"", ""solicitor"", ""barrister"", ""lawyers"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Businessman,0.5,0,-1.0,1,1
+24,2026-01-14 16:57:51,103,43223,"What is Harvey Peltier, Sr.'s occupation?","[""lawyer"", ""attorney"", ""solicitor"", ""barrister"", ""lawyers"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Businessman,0.5,0,-1.0,0,1
 25,2026-01-14 16:57:51,126,81374,What is Paris's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,"Paris is a city, not a person with an occupation.",0.9,0,0.4,1,0
 26,2026-01-14 16:57:51,112,12939,What is Fairfax M. Cone's occupation?,"[""businessperson"", ""business person"", ""dealer"", ""businesswoman"", ""business man"", ""business woman"", ""businessman""]",Advertising executive,0.9,,,0,-1.0,0,1
 27,2026-01-14 16:57:51,1718,81374,What is Colleen Zenk Pinter's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",Actress,0.95,,,1,1.0,0,0
@@ -53,7 +53,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 51,2026-01-14 16:57:51,1072,81374,What is Robert Viharo's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Author,0.6,0,0.4,1,0
 52,2026-01-14 16:57:51,1494,81374,What is Ankita Sharma's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Actress,0.6,1,0.4,1,0
 53,2026-01-14 16:57:51,31792,6776,What is Robby Krieger's occupation?,"[""guitarist"", ""guitar player"", ""guitarists""]",Musician,0.98,,,0,-1.0,0,1
-54,2026-01-14 16:57:51,135900,20559,What is Paul's occupation?,"[""missionary"", ""Christian missionary""]",,,Teacher,0.3,0,-1.0,1,1
+54,2026-01-14 16:57:51,135900,20559,What is Paul's occupation?,"[""missionary"", ""Christian missionary""]",,,Teacher,0.3,0,-1.0,0,1
 55,2026-01-14 16:57:51,206,25692,What is Shozaburo Nakamura's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Artist,0.5,0,0.4,1,0
 56,2026-01-14 16:57:51,1419,25550,What is Esquerita's occupation?,"[""pianist"", ""songwriter"", ""song writer""]",Musician,0.95,,,0,-1.0,0,1
 57,2026-01-14 16:57:51,43,11157,What is Derek Wheatley's occupation?,"[""novelist"", ""barrister"", ""barrister-at-law"", ""Bar-at-law""]",I don't know,,Author,0.3,0,0.4,1,0
@@ -130,7 +130,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 128,2026-01-14 16:57:51,110,25692,What is Gideon Olin's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Author,0.3,0,0.4,1,0
 129,2026-01-14 16:57:51,685,6987,What is Cecil Aldin's occupation?,"[""illustrator""]",Artist,0.9,,,0,-1.0,0,1
 130,2026-01-14 16:57:51,15171,81374,What is Malcolm David Kelley's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",Actor and musician,0.95,,,1,1.0,0,0
-131,2026-01-14 16:57:51,87,25692,What is James Alex Msekela's occupation?,"[""diplomat"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Unknown,0.1,0,-1.0,1,1
+131,2026-01-14 16:57:51,87,25692,What is James Alex Msekela's occupation?,"[""diplomat"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Unknown,0.1,0,-1.0,0,1
 132,2026-01-14 16:57:51,3184,25692,What is Nancy Landon Kassebaum's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",Politician,0.95,,,1,1.0,0,0
 133,2026-01-14 16:57:51,3147,28389,What is Reinhold Mack's occupation?,"[""audio engineer"", ""recording engineer"", ""sound producer"", ""sound director"", ""sound engineer"", ""music engineer"", ""musical engineer"", ""record producer"", ""music producer"", ""composer""]",Music producer,0.95,,,1,1.0,0,0
 134,2026-01-14 16:57:51,155,24952,What is Del Quentin Wilber's occupation?,"[""journalist"", ""journo"", ""journalists""]",Journalist,0.95,,,1,1.0,0,0
@@ -160,7 +160,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 158,2026-01-14 16:57:51,333,24952,What is Maurizio Belpietro's occupation?,"[""journalist"", ""journo"", ""journalists"", ""television presenter"", ""host"", ""hostess"", ""TV host"", ""television host"", ""TV presenter"", ""TV anchor"", ""television anchor""]",Journalist,0.9,,,1,1.0,0,0
 159,2026-01-14 16:57:51,10374,42844,What is Dash's occupation?,"[""record producer"", ""music producer""]",I don't know,,"Dash is a character from the animated film ""The Incredibles,"" and his occupation is a superhero.",0.75,0,0.4,1,0
 160,2026-01-14 16:57:51,344,24952,What is Baton Haxhiu's occupation?,"[""journalist"", ""journo"", ""journalists""]",I don't know,,Politician,0.5,0,0.4,1,0
-161,2026-01-14 16:57:51,5158,28389,What is Johnson's occupation?,"[""composer""]",,,Politician,0.5,0,-1.0,1,1
+161,2026-01-14 16:57:51,5158,28389,What is Johnson's occupation?,"[""composer""]",,,Politician,0.5,0,-1.0,0,1
 162,2026-01-14 16:57:51,542,20559,What is Samuel Wells Williams's occupation?,"[""missionary"", ""Christian missionary""]",Missionary and linguist,0.9,,,1,1.0,0,0
 163,2026-01-14 16:57:51,81,25692,What is Walter Köbel's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Author,0.3,0,0.4,1,0
 164,2026-01-14 16:57:51,197,25692,What is Debbie Johnson's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Teacher,0.3,0,0.4,1,0
@@ -172,7 +172,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 170,2026-01-14 16:57:51,42,25692,What is Patrick Mulvany's occupation?,"[""farmer"", ""agriculturist"", ""grower"", ""raiser"", ""cultivator"", ""agriculturer"", ""farmer (occupation)"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Agricultural consultant,0.5,0,0.4,1,0
 171,2026-01-14 16:57:51,548,2296,What is Graham Collier's occupation?,"[""composer"", ""bandleader"", ""Wind band conductor"", ""Harmony orchestra leader""]",Musician,0.9,,,0,-1.0,0,1
 172,2026-01-14 16:57:51,85,24952,What is Arcangelo Ghisleri's occupation?,"[""journalist"", ""journo"", ""journalists""]",I don't know,,Artist,0.3,0,0.4,1,0
-173,2026-01-14 16:57:51,263,25692,What is Carlos María Ramírez's occupation?,"[""journalist"", ""journo"", ""journalists"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Politician,0.3,0,-1.0,1,1
+173,2026-01-14 16:57:51,263,25692,What is Carlos María Ramírez's occupation?,"[""journalist"", ""journo"", ""journalists"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Politician,0.3,0,-1.0,0,1
 174,2026-01-14 16:57:51,381,81374,What is Tina Sloan's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",Actress,0.95,,,1,1.0,0,0
 175,2026-01-14 16:57:51,154,81374,What is Andrew Trischitta's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Actor,0.5,1,0.4,1,0
 176,2026-01-14 16:57:51,1922,81374,What is Gerard Kennedy's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Politician,0.6,0,0.4,1,0
@@ -200,13 +200,13 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 198,2026-01-14 16:57:51,220,3476,What is Otto Frankel's occupation?,"[""geneticist""]",I don't know,,Author,0.3,0,0.4,1,0
 199,2026-01-14 16:57:51,257,25747,What is Hate Man's occupation?,"[""philosopher""]",I don't know,,Social media personality,0.5,0,0.4,1,0
 200,2026-01-14 16:57:51,75,5896,What is Rich Brightman's occupation?,"[""singer-songwriter"", ""singer songwriter"", ""singer/songwriter"", ""singersongwriter"", ""singer-songwriter""]",I don't know,,Author,0.3,0,0.4,1,0
-201,2026-01-14 16:57:51,3629,42844,What is Mr. Porter's occupation?,"[""record producer"", ""music producer""]",,,Teacher,0.3,0,-1.0,1,1
+201,2026-01-14 16:57:51,3629,42844,What is Mr. Porter's occupation?,"[""record producer"", ""music producer""]",,,Teacher,0.3,0,-1.0,0,1
 202,2026-01-14 16:57:51,215,25692,What is Felix Walker's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Politician,0.5,1,0.4,1,0
 203,2026-01-14 16:57:51,279,28389,What is Javad Maroufi's occupation?,"[""composer""]",I don't know,,Author,0.5,0,0.4,1,0
 204,2026-01-14 16:57:51,73,26544,What is Franz Seitz Sr.'s occupation?,"[""film director"", ""movie director"", ""director"", ""motion picture director"", ""screenwriter"", ""scenarist"", ""writer"", ""screen writer"", ""script writer"", ""scriptwriter"", ""film producer"", ""movie producer"", ""producer""]",I don't know,,Film Producer,0.5,1,0.4,1,0
 205,2026-01-14 16:57:51,75216,81374,What is Chris Jericho's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",Professional wrestler,0.95,,,0,-1.0,0,1
 206,2026-01-14 16:57:51,66,25692,What is Frederick Dundas's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Historian,0.3,0,0.4,1,0
-207,2026-01-14 16:57:51,1155,38478,What is Aim's occupation?,"[""disc jockey"", ""DJ"", ""dee jay"", ""dj"", ""D.J."", ""disk jockey"", ""dee-jay"", ""deejay"", ""disquaire"", ""discaire""]",,,Aim is a musician.,0.3,0,-1.0,1,1
+207,2026-01-14 16:57:51,1155,38478,What is Aim's occupation?,"[""disc jockey"", ""DJ"", ""dee jay"", ""dj"", ""D.J."", ""disk jockey"", ""dee-jay"", ""deejay"", ""disquaire"", ""discaire""]",,,Aim is a musician.,0.3,0,-1.0,0,1
 208,2026-01-14 16:57:51,2403,81374,What is Nadia Giosia's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",Chef and television personality,0.9,,,0,-1.0,0,1
 209,2026-01-14 16:57:51,304,22041,"What is Adele Capell, Countess of Essex's occupation?","[""socialite"", ""prominent person""]",I don't know,,Singer,0.3,0,0.4,1,0
 210,2026-01-14 16:57:51,4437,2030,What is Edward Francis Hutton's occupation?,"[""financier""]",Businessman,0.9,,,0,-1.0,0,1
@@ -271,8 +271,8 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 269,2026-01-14 16:57:51,114,25692,What is Frederick Berry's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Politician,0.3,1,0.4,1,0
 270,2026-01-14 16:57:51,322,24952,What is Susan Soltero's occupation?,"[""journalist"", ""journo"", ""journalists""]",I don't know,,Author,0.3,0,0.4,1,0
 271,2026-01-14 16:57:51,711,2030,What is Joseph R. Perella's occupation?,"[""financier""]",Investment banker,0.9,,,0,-1.0,0,1
-272,2026-01-14 16:57:51,205,28389,What is Stanley Peiris's occupation?,"[""composer""]",,,Author,0.3,0,-1.0,1,1
-273,2026-01-14 16:57:51,322,25692,What is P. Palaniappan's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Researcher,0.3,0,-1.0,1,1
+272,2026-01-14 16:57:51,205,28389,What is Stanley Peiris's occupation?,"[""composer""]",,,Author,0.3,0,-1.0,0,1
+273,2026-01-14 16:57:51,322,25692,What is P. Palaniappan's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",,,Researcher,0.3,0,-1.0,0,1
 274,2026-01-14 16:57:51,1652,5896,What is Alice's occupation?,"[""pianist"", ""singer-songwriter"", ""singer songwriter"", ""singer/songwriter"", ""singersongwriter"", ""singer-songwriter""]",I don't know,,Teacher,0.3,0,0.4,1,0
 275,2026-01-14 16:57:51,92,5720,What is J. Da Silva's occupation?,"[""cricket umpire"", ""umpire""]",I don't know,,Researcher,0.3,0,0.4,1,0
 276,2026-01-14 16:57:51,93,6538,What is Carsten Carlsen's occupation?,"[""composer"", ""pianist""]",I don't know,,Author,0.3,0,0.4,1,0
@@ -286,7 +286,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 284,2026-01-14 16:57:51,34,25692,What is Levi P. Powers's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Author,0.5,0,0.4,1,0
 285,2026-01-14 16:57:51,17881,81374,What is Kamya Panjabi's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",Actress,0.95,,,1,1.0,0,0
 286,2026-01-14 16:57:51,714,81374,What is Robert Gwilym's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Actor,0.6,1,0.4,1,0
-287,2026-01-14 16:57:51,1440,81374,What is Min's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",,,Min could be a student or a professional in a specific field.,0.3,0,-1.0,1,1
+287,2026-01-14 16:57:51,1440,81374,What is Min's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",,,Min could be a student or a professional in a specific field.,0.3,0,-1.0,0,1
 288,2026-01-14 16:57:51,72,14886,What is John Strange's occupation?,"[""diplomat""]",I don't know,,Author,0.5,0,0.4,1,0
 289,2026-01-14 16:57:51,745,81374,What is Everley Gregg's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",I don't know,,Social media influencer,0.6,0,0.4,1,0
 290,2026-01-14 16:57:51,245402,38478,What is Ruby Rose's occupation?,"[""disc jockey"", ""DJ"", ""dee jay"", ""dj"", ""D.J."", ""disk jockey"", ""dee-jay"", ""deejay"", ""disquaire"", ""discaire"", ""actor"", ""actress"", ""actors"", ""actresses"", ""television presenter"", ""host"", ""hostess"", ""TV host"", ""television host"", ""TV presenter"", ""TV anchor"", ""television anchor""]",Actress and model,0.95,,,1,1.0,0,0
@@ -358,7 +358,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 356,2026-01-14 16:57:51,164,6538,What is Bernard Peiffer's occupation?,"[""pianist""]",I don't know,,Artist,0.5,0,0.4,1,0
 357,2026-01-14 16:57:51,85,25692,What is Elvin Penner's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Politician,0.5,1,0.4,1,0
 358,2026-01-14 16:57:51,144,81374,What is Keiko Aizawa's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses"", ""seiyū"", ""Japanese voice actress"", ""seiyuu"", ""seiyu"", ""Japanese voice actor""]",I don't know,,Voice actress,0.6,1,0.4,1,0
-359,2026-01-14 16:57:51,74,23111,What is Rodrigo Arocena's occupation?,"[""mathematician""]",,,Academic,0.5,0,-1.0,1,1
+359,2026-01-14 16:57:51,74,23111,What is Rodrigo Arocena's occupation?,"[""mathematician""]",,,Academic,0.5,0,-1.0,0,1
 360,2026-01-14 16:57:51,1371,26544,What is Robert Florey's occupation?,"[""screenwriter"", ""scenarist"", ""writer"", ""screen writer"", ""script writer"", ""scriptwriter"", ""actor"", ""actress"", ""actors"", ""actresses""]",Film director,0.9,,,0,-1.0,0,1
 361,2026-01-14 16:57:51,163,25692,What is Petros Efthymiou's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Politician,0.5,1,0.4,1,0
 362,2026-01-14 16:57:51,56,25692,What is Fidel Antuña Batista's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Politician,0.3,1,0.4,1,0
@@ -488,7 +488,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 486,2026-01-14 16:57:51,5804,81374,What is Ali Hillis's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",Voice actress,0.95,,,1,1.0,0,0
 487,2026-01-14 16:57:51,757,25692,What is Dinesh Singh's occupation?,"[""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Politician,0.5,1,0.4,1,0
 488,2026-01-14 16:57:51,90,11011,What is Virginia Haviland's occupation?,"[""librarian"", ""library staff""]",Author and librarian,0.85,,,1,1.0,0,0
-489,2026-01-14 16:57:51,1915,81374,What is Val McLane's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",,,Author,0.3,0,-1.0,1,1
+489,2026-01-14 16:57:51,1915,81374,What is Val McLane's occupation?,"[""actor"", ""actress"", ""actors"", ""actresses""]",,,Author,0.3,0,-1.0,0,1
 490,2026-01-14 16:57:51,261,28389,What is Heinrich Hofmann's occupation?,"[""composer"", ""pianist""]",Painter,0.95,,,0,-1.0,0,1
 491,2026-01-14 16:57:51,54,25692,What is Frances Josephy's occupation?,"[""journalist"", ""journo"", ""journalists"", ""politician"", ""political leader"", ""political figure"", ""polit."", ""pol""]",I don't know,,Author,0.6,0,0.4,1,0
 492,2026-01-14 16:57:51,854,25747,What is Pyotr Lavrov's occupation?,"[""philosopher""]",Philosopher and revolutionary,0.85,,,1,1.0,0,0
@@ -709,7 +709,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 707,2026-01-14 16:57:51,141,179051,In what city was Şeref Has born?,"[""Istanbul"", ""İstanbul""]",I don't know,,Istanbul,0.3,1,0.4,1,0
 708,2026-01-14 16:57:51,414,10199,In what city was Kalevi Kull born?,"[""Tartu"", ""Dorpat"", ""Dörpt"", ""Derpt"", ""Tarbatu"", ""Jurjev"", ""Tartto"", ""Tartus""]",I don't know,,Tartu,0.5,1,0.4,1,0
 709,2026-01-14 16:57:51,60,215,In what city was Esau Tjiuoro born?,"[""Okakarara""]",I don't know,,Windhoek,0.3,0,0.4,1,0
-710,2026-01-14 16:57:51,97,60419,In what city was Gerard Thomas born?,"[""Antwerp"", ""Antwerpen"", ""City of Antwerp"", ""Anvers""]",,,New York,0.3,0,-1.0,1,1
+710,2026-01-14 16:57:51,97,60419,In what city was Gerard Thomas born?,"[""Antwerp"", ""Antwerpen"", ""City of Antwerp"", ""Anvers""]",,,New York,0.3,0,-1.0,0,1
 711,2026-01-14 16:57:51,81,42420,In what city was Ricardo Sánchez born?,"[""Guadalajara"", ""Guadalajara, Jalisco"", ""Guadalajara, Jalisco, Mexico"", ""Guadalajara, Mexico"", ""Guadalajara, México""]",I don't know,,Madrid,0.3,0,0.4,1,0
 712,2026-01-14 16:57:51,1346,11294,In what city was Leena Peisa born?,"[""Vantaa"", ""Vanda"", ""Helsingin maalaiskunta"", ""Helsinge kommun"", ""Helsinge"", ""Helsingin pitäjä""]",I don't know,,Helsinki,0.3,0,0.4,1,0
 713,2026-01-14 16:57:51,85312,14868,In what city was Robert Kraft born?,"[""Brookline"", ""Brookline, Massachusetts""]",Brookline,0.9999,,,1,1.0,0,0
@@ -1076,7 +1076,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 1074,2026-01-14 16:57:51,102,131670,In what city was Jean Dorion born?,"[""Montreal"", ""Montréal"", ""City of Montreal"", ""Montreal, Quebec"", ""Ville de Montréal"", ""Ville de Montreal""]",I don't know,,Montreal,0.6,1,0.4,1,0
 1075,2026-01-14 16:57:51,185,13920,In what city was Klaus Wunder born?,"[""Erfurt""]",I don't know,,Berlin,0.3,0,0.4,1,0
 1076,2026-01-14 16:57:51,94,740,In what city was Heiko Balz born?,"[""Burg"", ""Burg bei Magdeburg"", ""Burg (bei Magdeburg)"", ""Burg (b Magdeburg)"", ""Stadt Burg""]",I don't know,,Berlin,0.3,0,0.4,1,0
-1077,2026-01-14 16:57:51,534,257506,In what city was KK born?,"[""Minnesota"", ""MN"", ""Land of 10,000 Lakes"", ""Minnesota, United States"", ""State of Minnesota"", ""Minn."", ""US-MN""]",,,Kolkata,0.5,0,-1.0,1,1
+1077,2026-01-14 16:57:51,534,257506,In what city was KK born?,"[""Minnesota"", ""MN"", ""Land of 10,000 Lakes"", ""Minnesota, United States"", ""State of Minnesota"", ""Minn."", ""US-MN""]",,,Kolkata,0.5,0,-1.0,0,1
 1078,2026-01-14 16:57:51,81,88244,In what city was Margot Shumway born?,"[""Cincinnati"", ""Cincy"", ""Cincinnati, Ohio"", ""Cinti"", ""Cincinnati, OH"", ""Cin City""]",I don't know,,New York,0.2,0,0.4,1,0
 1079,2026-01-14 16:57:51,136,112627,In what city was Norbert Grund born?,"[""Prague"", ""Praha"", ""Hlavní město Praha"", ""City of Prague""]",I don't know,,Berlin,0.3,0,0.4,1,0
 1080,2026-01-14 16:57:51,108,16942,In what city was Jaakko Laakso born?,"[""Turku"", ""Åbo"", ""Aboa""]",I don't know,,Helsinki,0.3,0,0.4,1,0
@@ -2415,7 +2415,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 2413,2026-01-14 16:57:51,135,40751,What genre is Seed?,"[""massively multiplayer online role-playing game"", ""MMORPG"", ""MMO"", ""RPG"", ""mmorpg""]",I don't know,,Science Fiction,0.6,0,0.4,1,0
 2414,2026-01-14 16:57:51,12248,36816,What genre is Analyze This?,"[""comedy film"", ""comedy movie""]",Comedy,0.95,,,1,1.0,0,0
 2415,2026-01-14 16:57:51,137,40906,What genre is The Shot?,"[""reality television"", ""reality TV"", ""reality television program"", ""reality TV program"", ""reality television show"", ""television reality program"", ""television reality show"", ""TV reality program"", ""TV reality show""]",Short story,0.95,,,0,-1.0,0,1
-2416,2026-01-14 16:57:51,304,144161,What genre is ID A?,"[""thriller"", ""suspense"", ""thriller television program"", ""thriller TV program"", ""thriller television show"", ""thriller TV show"", ""suspense television program"", ""suspense TV program"", ""suspense television show"", ""suspense TV show""]",,,Electronic,0.5,0,-1.0,1,1
+2416,2026-01-14 16:57:51,304,144161,What genre is ID A?,"[""thriller"", ""suspense"", ""thriller television program"", ""thriller TV program"", ""thriller television show"", ""thriller TV show"", ""suspense television program"", ""suspense TV program"", ""suspense television show"", ""suspense TV show""]",,,Electronic,0.5,0,-1.0,0,1
 2417,2026-01-14 16:57:51,21978,291,What genre is Christine?,"[""horror literature""]",Horror,0.95,,,1,1.0,0,0
 2418,2026-01-14 16:57:51,1365,140450,What genre is Ball?,"[""rock music"", ""rock and roll"", ""rock"", ""Rock""]",I don't know,,Sports,0.5,0,0.4,1,0
 2419,2026-01-14 16:57:51,3345,2952,What genre is Little Things?,"[""traditional music"", ""traditional folk music"", ""popular melody"", ""folk music"", ""music traditions"", ""musical folklore"", ""pop music"", ""pop"", ""Pop""]",Drama,0.9,,,0,-1.0,0,1
@@ -5966,7 +5966,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 5964,2026-01-14 17:39:36,3811,55741,Who was the director of Walking and Talking?,"[""Nicole Holofcener""]",Nicole Holofcener,0.9876,,,1,1.0,0,0
 5965,2026-01-14 17:39:36,1786,40023,Who was the director of Dolls?,"[""Takeshi Kitano"", ""Beat Takeshi"", ""Kitano Takeshi""]",Takeshi Kitano,0.95,,,1,1.0,0,0
 5966,2026-01-14 17:39:36,78,194,Who was the director of Me First?,"[""Fernando Ayala""]",I don't know,,John Doe,0.3,0,0.4,1,0
-5967,2026-01-14 17:39:36,3867,3039,Who was the director of A?,"[""Michelle MacLaren"", ""Michelle Maxwell MacLaren""]",,,Alfred Hitchcock,0.3,0,-1.0,1,1
+5967,2026-01-14 17:39:36,3867,3039,Who was the director of A?,"[""Michelle MacLaren"", ""Michelle Maxwell MacLaren""]",,,Alfred Hitchcock,0.3,0,-1.0,0,1
 5968,2026-01-14 17:39:36,4140,339,Who was the director of The Wave?,"[""Alex Grasshoff"", ""Alexander Grasshoff""]",Dennis Gansel,0.9999,,,0,-1.0,0,1
 5969,2026-01-14 17:39:36,3443,4747,Who was the director of Tamas?,"[""Govind Nihalani""]",Govind Nihalani,0.95,,,1,1.0,0,0
 5970,2026-01-14 17:39:36,204,203,Who was the director of Sunrise?,"[""Raymond Longford"", ""John Walter Longford""]",F.W. Murnau,0.9999,,,0,-1.0,0,1
@@ -6325,7 +6325,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 6323,2026-01-14 17:39:36,233,2958,Who was the director of The First Time?,"[""Frank Tashlin"", ""Francis Fredrick von Taschlein"", ""Tish Tash""]",Jonathan Kasdan,0.9999,,,0,-1.0,0,1
 6324,2026-01-14 17:39:36,190,42965,Who was the director of A Boy... a Girl?,"[""John Derek""]",I don't know,,David Leland,0.6,0,0.4,1,0
 6325,2026-01-14 17:39:36,1606,7251,Who was the director of April 18?,"[""Balachandra Menon""]",I don't know,,John Doe,0.2,0,0.4,1,0
-6326,2026-01-14 17:39:36,143,468,Who was the director of A?,"[""Jan Lenica""]",,,Alfred Hitchcock,0.3,0,-1.0,1,1
+6326,2026-01-14 17:39:36,143,468,Who was the director of A?,"[""Jan Lenica""]",,,Alfred Hitchcock,0.3,0,-1.0,0,1
 6327,2026-01-14 17:39:36,6847,223466,Who was the director of Alice?,"[""Woody Allen"", ""Allan Stewart Konigsberg"", ""Allen Stewart Konigsberg"", ""Heywood Allen""]",Tim Burton,0.95,,,0,-1.0,0,1
 6328,2026-01-14 17:39:36,709,27332,Who was the director of Family Life?,"[""Ken Loach"", ""Kenneth Loach"", ""Kenneth Charles Loach""]",I don't know,,0.5,0.5,0,0.4,1,0
 6329,2026-01-14 17:39:36,99370,30967,Who was the director of The Omen?,"[""Richard Donner"", ""Richard Donald Schwartzberg""]",Richard Donner,0.95,,,1,1.0,0,0
@@ -11172,7 +11172,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 11170,2026-01-14 18:19:06,1671,107313,What is the religion of LeMoyne–Owen College?,"[""Protestantism"", ""Protestant religion"", ""Protestant Church"", ""Christian Protestantism"", ""Protestant churches"", ""Protestant Christianity"", ""Protestant"", ""Protestants""]",I don't know,,Christian,0.6,1,0.4,1,0
 11171,2026-01-14 18:19:06,17049,233485,What is the religion of Bilal ibn Ribah?,"[""Islam"", ""Islamic religion"", ""Mohammedanism"", ""Muslim religion"", ""al-’islām"", ""religion of the Muslims""]",Islam,1.0,,,1,1.0,0,0
 11172,2026-01-14 18:19:06,21579,56744,What is the religion of Loyalist?,"[""Anglicanism"", ""Anglicanism, Anglican Church""]",I don't know,,Protestant,0.6,0,0.4,1,0
-11173,2026-01-14 18:19:06,344,233485,What is the religion of Abdulla al-Hadj?,"[""Islam"", ""Islamic religion"", ""Mohammedanism"", ""Muslim religion"", ""al-’islām"", ""religion of the Muslims""]",,,Islam,0.8,0,-1.0,1,1
+11173,2026-01-14 18:19:06,344,233485,What is the religion of Abdulla al-Hadj?,"[""Islam"", ""Islamic religion"", ""Mohammedanism"", ""Muslim religion"", ""al-’islām"", ""religion of the Muslims""]",,,Islam,0.8,0,-1.0,0,1
 11174,2026-01-14 18:19:06,370,195995,What is the religion of Timothy Manning?,"[""Catholic Church"", ""Roman Catholic Church"", ""Church"", ""Roman Apostolic Catholic Church""]",I don't know,,Christianity,0.6,0,0.4,1,0
 11175,2026-01-14 18:19:06,151391,56744,What is the religion of James VI and I?,"[""Anglicanism"", ""Anglicanism, Anglican Church"", ""Church of Scotland"", ""CoS"", ""the Kirk""]",Protestantism,0.95,,,0,-1.0,0,1
 11176,2026-01-14 18:19:06,66197,213455,What is the religion of Arabs?,"[""Islam"", ""Islamic religion"", ""Mohammedanism"", ""Muslim religion"", ""al-’islām"", ""religion of the Muslims"", ""Christianity"", ""Christian faith""]",Islam,0.95,,,1,1.0,0,0
@@ -11703,7 +11703,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 11701,2026-01-14 18:19:06,208,197767,What sport does Kabinburi F.C. play?,"[""association football"", ""football"", ""soccer""]",Football (Soccer),0.95,,,1,1.0,0,0
 11702,2026-01-14 18:19:06,27,197767,What sport does 1995 Cook Islands Round Cup play?,"[""association football"", ""football"", ""soccer""]",I don't know,,Rugby,0.6,0,0.4,1,0
 11703,2026-01-14 18:19:06,319,197767,What sport does Mario Rigamonti play?,"[""association football"", ""football"", ""soccer""]",I don't know,,Soccer,0.5,1,0.4,1,0
-11704,2026-01-14 18:19:06,139,197767,What sport does Kuki play?,"[""association football"", ""football"", ""soccer""]",,,Soccer,0.3,0,-1.0,1,1
+11704,2026-01-14 18:19:06,139,197767,What sport does Kuki play?,"[""association football"", ""football"", ""soccer""]",,,Soccer,0.3,0,-1.0,0,1
 11705,2026-01-14 18:19:06,23539,149108,What sport does Cris Carter play?,"[""American football"", ""gridiron football"", ""🏈"", ""football"", ""American rules football""]",American football,0.9999,,,1,1.0,0,0
 11706,2026-01-14 18:19:06,200,197767,What sport does Gregor Balažic play?,"[""association football"", ""football"", ""soccer""]",I don't know,,Soccer,0.5,1,0.4,1,0
 11707,2026-01-14 18:19:06,57,12053,What sport does Hans Pieren play?,"[""alpine skiing""]",I don't know,,Ski jumping,0.6,0,0.4,1,0
@@ -11798,7 +11798,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 11796,2026-01-14 18:19:06,58,197767,What sport does Abdoul Thiam play?,"[""association football"", ""football"", ""soccer""]",I don't know,,Soccer,0.5,1,0.4,1,0
 11797,2026-01-14 18:19:06,2992,197767,What sport does goalkeeper play?,"[""field hockey"", ""hockey"", ""international rules football"", ""bandy"", ""Russian ice hockey"", ""lacrosse"", ""La Crosse"", ""Gaelic football"", ""floorball"", ""innebandy"", ""unihockey"", ""salibandy"", ""hurling"", ""association football"", ""football"", ""soccer"", ""ice hockey"", ""water polo"", ""handball"", ""Olympic handball"", ""European team handball"", ""European handball"", ""Borden ball"", ""Pallammanu"", ""team handball""]","Soccer (or Football, depending on the region)",0.9999,,,1,1.0,0,0
 11798,2026-01-14 18:19:06,74,197767,What sport does Lobos BUAP Premier play?,"[""association football"", ""football"", ""soccer""]",Football (Soccer),0.95,,,1,1.0,0,0
-11799,2026-01-14 18:19:06,54,197767,What sport does Harry Clay play?,"[""association football"", ""football"", ""soccer""]",,,Baseball,0.3,0,-1.0,1,1
+11799,2026-01-14 18:19:06,54,197767,What sport does Harry Clay play?,"[""association football"", ""football"", ""soccer""]",,,Baseball,0.3,0,-1.0,0,1
 11800,2026-01-14 18:19:06,452,149310,What sport does Roosevelt Chapman play?,"[""basketball"", ""hoops"", ""b-ball"", ""basket ball"", ""BB"", ""Basketball""]",Basketball,0.95,,,1,1.0,0,0
 11801,2026-01-14 18:19:06,355,197767,What sport does Henk Timmer play?,"[""association football"", ""football"", ""soccer""]",Football (soccer),0.95,,,1,1.0,0,0
 11802,2026-01-14 18:19:06,144,59363,What sport does Joe Bretto play?,"[""ice hockey""]",I don't know,,Football,0.3,0,0.4,1,0
@@ -11876,7 +11876,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 11874,2026-01-14 18:19:06,28,197767,What sport does Miroslav Milutinović play?,"[""association football"", ""football"", ""soccer""]",I don't know,,Soccer,0.5,1,0.4,1,0
 11875,2026-01-14 18:19:06,80,197767,What sport does Best play?,"[""association football"", ""football"", ""soccer""]",I don't know,,Basketball,0.5,0,0.4,1,0
 11876,2026-01-14 18:19:06,35717,149310,What sport does Jerry West play?,"[""basketball"", ""hoops"", ""b-ball"", ""basket ball"", ""BB"", ""Basketball""]",Basketball,0.9999,,,1,1.0,0,0
-11877,2026-01-14 18:19:06,98,197767,What sport does Cassiá play?,"[""association football"", ""football"", ""soccer""]",,,Soccer,0.5,0,-1.0,1,1
+11877,2026-01-14 18:19:06,98,197767,What sport does Cassiá play?,"[""association football"", ""football"", ""soccer""]",,,Soccer,0.5,0,-1.0,0,1
 11878,2026-01-14 18:19:06,471,149108,What sport does 2014 UMass Minutemen football team play?,"[""American football"", ""gridiron football"", ""🏈"", ""football"", ""American rules football""]",American football,1.0,,,1,1.0,0,0
 11879,2026-01-14 18:19:06,3769,197767,What sport does Chertsey Town F.C. play?,"[""association football"", ""football"", ""soccer""]",Football,0.9999,,,1,1.0,0,0
 11880,2026-01-14 18:19:06,12082,53595,What sport does James Haskell play?,"[""rugby union"", ""rugby""]",Rugby,0.98,,,1,1.0,0,0
@@ -11917,7 +11917,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 11915,2026-01-14 18:19:06,9081,149310,What sport does Bob Lanier play?,"[""basketball"", ""hoops"", ""b-ball"", ""basket ball"", ""BB"", ""Basketball""]",Basketball,0.9999,,,1,1.0,0,0
 11916,2026-01-14 18:19:06,82,197767,What sport does Barrie Aitchison play?,"[""association football"", ""football"", ""soccer""]",I don't know,,Rugby,0.3,0,0.4,1,0
 11917,2026-01-14 18:19:06,25844,197767,What sport does Leyton Orient F.C. play?,"[""association football"", ""football"", ""soccer""]",Football (Soccer),0.9999,,,1,1.0,0,0
-11918,2026-01-14 18:19:06,316,197767,What sport does Jean play?,"[""association football"", ""football"", ""soccer""]",,,Soccer,0.3,0,-1.0,1,1
+11918,2026-01-14 18:19:06,316,197767,What sport does Jean play?,"[""association football"", ""football"", ""soccer""]",,,Soccer,0.3,0,-1.0,0,1
 11919,2026-01-14 18:19:06,261,197767,What sport does Wallidan F.C. play?,"[""association football"", ""football"", ""soccer""]",Football (Soccer),0.95,,,1,1.0,0,0
 11920,2026-01-14 18:19:06,39,149310,What sport does Oyanaisis Gelis play?,"[""basketball"", ""hoops"", ""b-ball"", ""basket ball"", ""BB"", ""Basketball""]",I don't know,,Basketball,0.5,1,0.4,1,0
 11921,2026-01-14 18:19:06,101,527,Who is the author of The Story of the Daughters of Quchan?,"[""Afsaneh Najmabadi""]",I don't know,,Shahrnush Parsipur,0.6,0,0.4,1,0
@@ -13605,7 +13605,7 @@ dataset_id,timestamp,s_pop,o_pop,question,possible_answers,first_answer,first_co
 13603,2026-01-14 18:19:06,9747,998,Who is the mother of Koxinga?,"[""Tagawa Matsu""]",Cheng I Sao,0.75,,,0,-1.0,0,1
 13604,2026-01-14 18:19:06,16762,5994,Who is the mother of August Coppola?,"[""Italia Coppola"", ""Italia Pennino"", ""Italia Pennino Coppola""]",I don't know,,"I believe it might be a common name, but I cannot confirm.",0.2,0,0.4,1,0
 13605,2026-01-14 18:19:06,3483,8962,Who is the mother of Wheeler Dryden?,"[""Hannah Chaplin"", ""Hannah Harriet Pedlingham Hill"", ""Lily Harley"", ""Hannah Pedlingham"", ""Hannah Harriet Pedlingham Chaplin""]",I don't know,,"I believe it might be a historical figure or a public personality, but I cannot confirm.",0.2,0,0.4,1,0
-13606,2026-01-14 18:19:06,632,1775,Who is the mother of Dasanavalaya Sorasongkram?,"[""Galyani Vadhana"", ""Galyani Vadhana, Princess of Naradhiwas""]",,,"I believe it may be a historical or cultural figure, but I cannot provide a specific name.",0.2,0,-1.0,1,1
+13606,2026-01-14 18:19:06,632,1775,Who is the mother of Dasanavalaya Sorasongkram?,"[""Galyani Vadhana"", ""Galyani Vadhana, Princess of Naradhiwas""]",,,"I believe it may be a historical or cultural figure, but I cannot provide a specific name.",0.2,0,-1.0,0,1
 13607,2026-01-14 18:19:06,62130,63016,Who is the mother of Princess Kako of Akishino?,"[""Kiko, Princess Akishino"", ""Princess Akishino"", ""Princess Kiko"", ""Princess Kiko of Akishino""]",Princess Kiko of Akishino,0.9999,,,1,1.0,0,0
 13608,2026-01-14 18:19:06,4939,413,Who is the mother of Dinara Safina?,"[""Rauza Islanova"", ""Rauza Muhamedzhanovna Islanova""]",I don't know,,Elena Safina,0.75,0,0.4,1,0
 13609,2026-01-14 18:19:06,350454,6704,Who is the mother of George Washington?,"[""Mary Ball Washington"", ""Mary Ball"", ""Mary Washington""]",Mary Ball Washington,0.98,,,1,1.0,0,0
