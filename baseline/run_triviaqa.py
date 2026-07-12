@@ -55,7 +55,12 @@ def run_exp1_idk_token_prob(
         batch_size=batch_size,
         results_folder=results_folder,
     )
-    payload = evaluation.evaluate_idk_and_token_prob(csv_path, token_col=token_col)
+    reference_csv = evaluation.reference_for_run(
+        dataset.name, client.model, matching="token-prob"
+    )
+    payload = evaluation.evaluate_idk_and_token_prob(
+        csv_path, token_col=token_col, reference_csv=reference_csv
+    )
     evaluation.print_metrics("Exp 1 - IDK policy (direct)", payload["idk_policy"])
     evaluation.print_metrics(
         "Exp 1 - Token-prob threshold (coverage-matched)", payload["token_prob_threshold"]
@@ -74,7 +79,8 @@ def run_exp2_verbal_conf(
     conf_col: str = "self_confidence",
 ) -> dict:
     """Exp 2: run the verbal-confidence prompt, then evaluate the coverage-matched
-    verbal-confidence threshold (coverage matched to the run's own IDK coverage)."""
+    verbal-confidence threshold (coverage matched to the reference run when one
+    exists, else to this run's own IDK coverage)."""
     dataset = TriviaQADataset(confidence_scale=confidence_scale, variant="verbal")
     csv_path = generate_csv(
         client,
@@ -84,7 +90,12 @@ def run_exp2_verbal_conf(
         batch_size=batch_size,
         results_folder=results_folder,
     )
-    payload = evaluation.evaluate_verbal_conf(csv_path, conf_col=conf_col)
+    reference_csv = evaluation.reference_for_run(
+        dataset.name, client.model, matching="verbal-conf"
+    )
+    payload = evaluation.evaluate_verbal_conf(
+        csv_path, conf_col=conf_col, reference_csv=reference_csv
+    )
     evaluation.print_metrics(
         "Exp 2 - Verbal Conf threshold (coverage-matched)", payload["verbal_conf_threshold"]
     )

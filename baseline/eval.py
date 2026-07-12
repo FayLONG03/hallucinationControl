@@ -545,6 +545,24 @@ def resolve_reference_csv(
     return candidate if candidate.exists() else None
 
 
+def reference_for_run(dataset_name: str, model: str, *, matching: str) -> Path | None:
+    """Resolve the reference run for a (dataset, model) pair and report the choice.
+
+    ``matching`` names the score being coverage-matched (e.g. "token-prob"), and
+    only shapes the log line. A ``None`` return is not an error: the caller then
+    falls back to matching the run's own IDK coverage.
+    """
+    reference_csv = resolve_reference_csv(dataset_name, model)
+    if reference_csv is None:
+        print(
+            f"No reference run found for ({dataset_name}, {model}); "
+            "matching coverage to the run's own IDK policy."
+        )
+    else:
+        print(f"Matching {matching} coverage to reference run {reference_csv}")
+    return reference_csv
+
+
 def reference_coverage(reference_csv: Path | str, baseline_total: int) -> dict:
     """Coverage target for a threshold baseline, taken from a reference run.
 
