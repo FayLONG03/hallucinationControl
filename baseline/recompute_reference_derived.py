@@ -88,8 +88,8 @@ def is_idk(first_answer) -> bool:
     return bool(text) and bool(IDK_RE.search(text))
 
 
-def recompute(df: pd.DataFrame, rc: float, ri: float, ra: float) -> pd.DataFrame:
-    gold = df["answer"].apply(parse_gold)
+def recompute(df: pd.DataFrame, rc: float, ri: float, ra: float, gold_col: str = "answer") -> pd.DataFrame:
+    gold = df[gold_col].apply(parse_gold)
     idk = df["first_answer"].apply(is_idk)
 
     def grade(i: int) -> int:
@@ -116,12 +116,18 @@ def main() -> None:
     ap.add_argument("--reward-incorrect", type=float, default=-1.0)
     ap.add_argument("--reward-abstain", type=float, default=0.4)
     ap.add_argument("--no-backup", action="store_true", help="Skip writing a .bak copy")
+    ap.add_argument(
+        "--gold-col",
+        default="answer",
+        help="Column holding the gold aliases. Reference CSVs use 'answer'; "
+        "the baseline run CSVs written by run.py use 'possible_answers'.",
+    )
     args = ap.parse_args()
 
     for path in args.csv:
         df = pd.read_csv(path)
         before_idk = int((df["idk_flag"] == 1).sum()) if "idk_flag" in df else -1
-        out = recompute(df, args.reward_correct, args.reward_incorrect, args.reward_abstain)
+        out = recompute(df, args.reward_correct, args.reward_incorrect, args.reward_abstain, args.gold_col)
         if not args.no_backup:
             shutil.copy2(path, f"{path}.bak")
         out.to_csv(path, index=False)
