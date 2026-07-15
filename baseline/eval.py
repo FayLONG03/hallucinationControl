@@ -517,6 +517,7 @@ MODEL_REFERENCE_TAG = {
     "qwen3-4b-instruct": "qwen",
     "gpt-4o-mini": "gpt4omini",
     "gpt-5-mini": "gpt5mini",
+    "gemini-3.1-flash-lite": "gemini",
 }
 
 

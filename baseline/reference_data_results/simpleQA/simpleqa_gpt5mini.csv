@@ -1,0 +1,1001 @@
+dataset_id,timestamp,question,answer,first_answer,first_confidence,best_guess,best_guess_confidence,correct,score,idk_flag,false_answer_flag
+0,2026-03-20 08:40:04,"How much money, in euros, was the surgeon held responsible for Stella Obasanjo's death ordered to pay her son?","['120,000 euros']","€150,000",0.86,,,0,-1.0,0,1
+1,2026-03-20 08:40:06,What is the name of the former Prime Minister of Iceland who worked as a cabin crew member until 1971?,['Jóhanna Sigurðardóttir'],Davíð Oddsson,0.8725,,,0,-1.0,0,1
+2,2026-03-20 08:40:09,To whom did Mehbooba Mufti Sayed contest the 2019 Lok Sabha elections and lose?,['Hasnain Masoodi'],I don't know,,Mehbooba Mufti Sayeed contested the 2019 Lok Sabha election from Srinagar and lost to Farooq Abdullah.,0.4567,0,0.4,1,0
+3,2026-03-20 08:40:10,In which year did Melbourne's Monash Gallery of Art (MGA) rebrand and become the Museum of Australian Photography (MAPh)?,['2023'],2013,0.62,,,0,-1.0,0,1
+4,2026-03-20 08:40:12,"Who requested the Federal Aviation Administration (FAA) implement a 900 sq mi (2,300 km2) temporary flight restriction zone over the operations areas of the Deepwater Horizon?",['The Coast Guard'],The request came from the U.S. Coast Guard (specifically the Coast Guard Commandant/Coast Guard on-scene command).,0.72,,,1,1.0,0,0
+5,2026-03-20 08:40:14,What signature piece of the MOBA did Scott Wilson discover on the curb between two trash cans?,['Lucy in the Field with Flowers'],I don't know,,"a signature piece of the MOBA called the ""Mask of Agamemnon""",0.1023,0,0.4,1,0
+6,2026-03-20 08:40:16,On which U.S. TV station did the Canadian reality series *To Serve and Protect* debut?,['KVOS-TV'],I don't know,,It debuted on the U.S. station Court TV.,0.25,0,0.4,1,0
+7,2026-03-20 08:40:17,"The WWI Q-Ship ""Salvia"" was partially reconstructed with a false counter-stern to resemble what kind of ship?",['tramp steamer (or collier)'],A schooner,0.75,,,0,-1.0,0,1
+8,2026-03-20 08:40:19,"In 1810, François Aimé Louis Dumoulin published a collection of how many engravings themed on the journey of ""Robinson Crusoe""?",['150 (acceptable range: anything between 148 and 152)'],18 engravings,0.62,,,0,-1.0,0,1
+9,2026-03-20 08:40:20,"What day, month, and year was Carrie Underwood's album ""Cry Pretty"" certified Gold by the RIAA?","['Oct 23, 2018']","October 22, 2020",0.82,,,0,-1.0,0,1
+10,2026-03-20 08:40:23,"In which month and year did Khusro Bakhtiar (former Federal Minister for Planning, Development, and Reforms, Pakistan) announce that the government was considering establishing a Pak-China business council to promote the private sector's role in the China-Pakistan Economic Corridor (CPEC)?",['June 2019'],August 2016,0.72,,,0,-1.0,0,1
+11,2026-03-20 08:40:25,What is the first and last name of the woman whom the British linguist Bernard Comrie married in 1985?,['Akiko Kumahira'],I don't know,,Rachel (last name unknown),0.2,0,0.4,1,0
+12,2026-03-20 08:40:27,What is the name of the kibbutz that Simon Le Bon lived on in 1978?,['Gvulot.'],Kibbutz Kfar Ruppin,0.74,,,0,-1.0,0,1
+13,2026-03-20 08:40:28,"On what day, month, and year was Algerian artist Mohammed Racim born?","['June 24, 1896']",24 May 1896,0.96,,,0,-1.0,0,1
+14,2026-03-20 08:40:29,"What day, month, and year was Vladislav Kaborda born?","['July 24, 1995']",I don't know,,,,0,0.4,1,0
+15,2026-03-20 08:40:30,What is the latitude of Lilongwe in decimal format?,['33.7738 (acceptable range: anything between 33.7586 and 33.8022)'],13.9833° S,0.9,,,0,-1.0,0,1
+16,2026-03-20 08:40:32,Who was Racing's top scorer in the Copa Libertadores 1967?,['Norberto Raffo'],Juan José Pizzuti,0.2414,,,0,-1.0,0,1
+17,2026-03-20 08:40:34,What was Beloit College's Center for the Sciences renamed in 2017?,['Marjorie and James Sanger Center for the Sciences.'],The Center for the Sciences at Beloit College was renamed the Jack L. and Verda M. Schmidt Center for the Sciences in 2017.,0.72,,,0,-1.0,0,1
+18,2026-03-20 08:40:35,"Who was the Swedish footballer who spent his entire career as a winger for the club GAIS in the Swedish Allsvenskan from 1949 to 1960 and passed away on February 26, 2017?",['Frank Jacobsson'],"Bengt ""Zamora"" Gustafsson",0.25,,,0,-1.0,0,1
+19,2026-03-20 08:40:36,What position was Everton in when Rafael Benítez was sacked in the 2021-22 Premier League season?,['15th place'],16th,0.9423,,,0,-1.0,0,1
+20,2026-03-20 08:40:39,Who replaced Don Santos in the band group Immature?,"['Kelton ""LDB"" Kessee']",Kelton Kessee,0.624,,,0,-1.0,0,1
+21,2026-03-20 08:40:41,What is the length in meters of Abdullah Bridge in Srinagar including the fly-over and viaduct?,['390 metres (acceptable range: anything between 386 and 394 metres)'],I don't know,,390.0000 meters,0.25,0,0.4,1,0
+22,2026-03-20 08:40:42,How many acres did the University of Alabama purchase to expand its campus in 2010?,['168 acres (acceptable range: anything between 166 and 170 acres)'],The University of Alabama purchased 340 acres to expand its campus in 2010.,0.52,,,0,-1.0,0,1
+23,2026-03-20 08:40:43,What is the first vampire number in recreational mathematics obtained by a 3x3-digit multiplication?,['102510'],126000,0.27,,,0,-1.0,0,1
+24,2026-03-20 08:40:44,In which district of Uttarakhand was Ila Pant (an Indian politician) born?,['Nainital district'],Almora district,0.74,,,0,-1.0,0,1
+25,2026-03-20 08:40:45,Who replaced Bradie Tennell in the 2021 Skate America?,['Starr Andrews'],I don't know,,Kimmy Repond,0.25,0,0.4,1,0
+26,2026-03-20 08:40:47,What company was Natasha Merle a civil rights fellow at from 2013 to 2015 in New York City?,"[' Fried, Frank, Harris, Shriver & Jacobson']",I don't know,,The Legal Aid Society,0.25,0,0.4,1,0
+27,2026-03-20 08:40:48,"According to Henry Scadding, author of ""Toronto of Old,"" how many people died on the HMS Ontario in 1780?",['172 (acceptable range: anything between 170 and 174)'],120,0.43,,,0,-1.0,0,1
+28,2026-03-20 08:40:49,"On June 24, 2018, how many more votes did the winning candidate get in total than Muharrem İnce?","['10,990,502 (acceptable range: anything between 10,440,976 and 11,540,028)']",I don't know,,"3,526,745",0.12,0,0.4,1,0
+29,2026-03-20 08:40:50,"What day, month, and year was Notepad++ version 7.8.8 released?","['June 28, 2020']",19 May 2020,0.68,,,0,-1.0,0,1
+30,2026-03-20 08:40:51,How many houses did the village of Bure Nangal in Batala have according to the 2011 Census of India?,['211 (acceptable range: anything between 208 and 214)'],389,0.36,,,0,-1.0,0,1
+31,2026-03-20 08:40:54,Who laid the foundation stone of Jamia Millia Islamia?,['Mahmud Hasan Deobandi.'],Mahatma Gandhi,0.83,,,0,-1.0,0,1
+32,2026-03-20 08:40:55,Which All India Rank (AIR) did Arvind Kejriwal achieve in 1985?,['563'],I don't know,,,,0,0.4,1,0
+33,2026-03-20 08:40:56,How many daughters did the mathematician Hsien-Chung Wang have?,['3'],Hsien-Chung (Henry) Wang had three daughters.,0.39,,,0,-1.0,0,1
+34,2026-03-20 08:40:58,"The ""Un'alma innamorata"" was written by what composer in 1707?",['George Frideric Handel'],Alessandro Scarlatti,0.72,,,0,-1.0,0,1
+35,2026-03-20 08:40:59,"What is the name of the district with the Regional Transport Office (RTO) code SK-06 in Sikkim, India?",['Soreng'],East Sikkim (Gangtok district),0.82,,,0,-1.0,0,1
+36,2026-03-20 08:41:00,How many losses did Adolf Anderssen have in his 1864 chess match against Berthold Suhle?,['3'],0,0.76,,,0,-1.0,0,1
+37,2026-03-20 08:41:01,"What is Harees, a famous dish of Armenia and the Arabian Peninsula, called in Zanzibar?",['boko boko'],I don't know,,Harisa,0.4,0,0.4,1,0
+38,2026-03-20 08:41:02,For how many days was Frida Kahlo's first solo exhibit held?,['15'],14 days,0.62,,,0,-1.0,0,1
+39,2026-03-20 08:41:03,Who was the first person to be an American diplomatic minister to Romania and Serbia?,['Eugene Schuyler'],Eugene Schuyler,0.56,,,1,1.0,0,0
+40,2026-03-20 08:41:04,What prize was El Anatsui awarded in 1998 in Osaka?,['Bronze Prize'],The Grand Prize (the International Grand Prize) at the 1998 Osaka Triennale (or Osaka International Triennale of Contemporary Art),0.81,,,0,-1.0,0,1
+41,2026-03-20 08:41:05,"In the crest of the Agnew clan, what animal is depicted ""issuant and regardant Proper""?",['Eagle'],A stag (deer),0.72,,,0,-1.0,0,1
+42,2026-03-20 08:41:07,At what zoo did August Scherl demonstrate his gyro-monorail to the public?,['Berlin Zoological Gardens'],Tierpark Hagenbeck (Hagenbeck's Tierpark in Hamburg),0.6125,,,0,-1.0,0,1
+43,2026-03-20 08:41:08,How many egg-shaped layers of float glass is William Cochran's sculpture *Pillar of Fire* made of?,['370 (acceptable range: anything between 366 and 374)'],I don't know,,37,0.2167,1,0.4,1,0
+44,2026-03-20 08:41:10,In which year did Maharaj Kishan Bhan (an Indian pediatrician and clinical scientist) receive the Padma Bhushan for civil services?,['2013'],2015,0.92,,,0,-1.0,0,1
+45,2026-03-20 08:41:11,What year did Australian politician William Lawrence Morrison graduate from the University of Sydney?,['1949'],1902,0.64,,,0,-1.0,0,1
+46,2026-03-20 08:41:13,What is the name of the sole survivor of the Saha Airlines 2019 Boeing 707 crash?,['Farshad Mahdavinejad'],I don't know,,"Parviz (or Parviz Khojasteh) — often reported as ""Parviz"" in early reports",0.15,0,0.4,1,0
+47,2026-03-20 08:41:14,In which specific issue did Black Condor II perish?,['Infinite Crisis #1'],I don't know,,Black Condor II perished in Avro Lancaster bomber KB 732 being shot down over the Netherlands (Holland) during World War II,0.2175,0,0.4,1,0
+48,2026-03-20 08:41:15,Which TV station did Belva Davis make her debut on?,['KTVU'],KTVU,0.82,,,1,1.0,0,0
+49,2026-03-20 08:41:16,"After the War of 1812, Edward William McBride (1791-1834) worked as what for the king's printer, John Cameron, on the York Gazette until April 1815?",['Assistant'],I don't know,,He worked as a printer's apprentice (or assistant compositor) for the king's printer on the York Gazette.,0.26,1,0.4,1,0
+50,2026-03-20 08:41:17,"In June 1637, Thomas Ballard of Wandsworth accused Richard Kestian of publicly calling him a liar at which man's house in Putney in front of justices of the peace?",['Sir Abraham Dawes'],I don't know,,,,0,0.4,1,0
+51,2026-03-20 08:41:18,"What day, month, and year did Emperor Xizong of Jin become the emperor of the Jin dynasty?","['10 February, 1135']",1 October 1135,0.75,,,0,-1.0,0,1
+52,2026-03-20 08:41:20,What prize did Jun Takahashi win in 1997?,['The New Face Prize'],He won the Soen Award (Soen Prize) in 1997.,0.9365,,,0,-1.0,0,1
+53,2026-03-20 08:41:21,Who is the god the Hawaiian name Kamaʻehuakanaloa refers to?,['Kanaloa'],The name Kamaʻehuakanaloa refers to the Hawaiian god Kāne.,0.64,,,1,1.0,0,0
+54,2026-03-20 08:41:22,"What was the song for the lip sync in Episode 5, Season 1 of RPDR?","['""Stronger"" by Britney Spears']","""I Don't Feel Like Dancin'"" — Scissor Sisters (the lip-sync song performed in Episode 5, Season 1 of RuPaul's Drag Race)",0.62,,,0,-1.0,0,1
+55,2026-03-20 08:41:23,What was the name of the minor planet discovered by the Soviet astronomer in the name of Pyotr Kapitsa in 1982?,['3437 Kapitsa'],3437 Kapitsa,0.68,,,1,1.0,0,0
+56,2026-03-20 08:41:24,"Which peninsular plateau of India extends 900 km, with many peaks rising above 1,000 m?",['Satpura Range'],Deccan Plateau,0.78,,,0,-1.0,0,1
+57,2026-03-20 08:41:25,What was the name of the first elephant born in Valencia Bioparc?,['Makena'],I don't know,,,,0,0.4,1,0
+58,2026-03-20 08:41:26,What was the nationality of the scientists who used lasers to measure Usain Bolt’s performance in the different stages of a 100-meter race held in September 2011?,['Belgian'],British,0.86,,,0,-1.0,0,1
+59,2026-03-20 08:41:31,In how many games did Matija Radović appear for the Hofstra Pride during the 2017-18 season?,['25'],I don't know,,,,0,0.4,1,0
+60,2026-03-20 08:41:32,Who won the gold medal in men's foil at the first modern European Fencing Championships?,['Andrea Borella'],I don't know,,Nedo Nadi,0.25,0,0.4,1,0
+61,2026-03-20 08:41:33,"As of the 2020 Census, what was the population of Wheatland, Iowa?",['775 (acceptable range: anything between 767 and 783)'],"1,296",0.85,,,0,-1.0,0,1
+62,2026-03-20 08:41:34,In which year was Srinagar declared a UNESCO Creative City?,['2021'],I don't know,,2021,0.25,1,0.4,1,0
+63,2026-03-20 08:41:35,How many of his early oil portraits did English sculptor Robert Adams exhibit in the Northampton Public Library in April 1946?,['14'],Robert Adams exhibited 6 of his early oil portraits in the Northampton Public Library in April 1946.,0.62,,,0,-1.0,0,1
+64,2026-03-20 08:41:36,In which city was the first International Association for Engineering Geology and the Environment congress held?,['Paris'],"The first International Association for Engineering Geology and the Environment (IAEG) congress was held in Lisbon, Portugal.",0.62,,,0,-1.0,0,1
+65,2026-03-20 08:41:37,"New Yorker Edward A. Tuttle's patent application was granted on October 11, 1881, for what kind of machine?",['Exercising Machine'],Sewing machine,0.27,,,0,-1.0,0,1
+66,2026-03-20 08:41:39,What is the name of the seminal film that Lygia Pape made in 1975 focusing on gender and sexuality?,['Eat Me'],I don't know,,O Corpo Dividido (The Divided Body),0.324,0,0.4,1,0
+67,2026-03-20 08:41:40,"According to the 2021 World Bank data, which country has the largest renewable freshwater resources per capita?",['Iceland'],Guyana,0.65,,,0,-1.0,0,1
+68,2026-03-20 08:41:41,"After Bessie Smith's car accident, which arm was amputated?",['The right arm'],Her right arm,0.52,,,0,-1.0,0,1
+69,2026-03-20 08:41:42,Which two instruments was John Cage's experimental piece *Two^5* written for?,['Tenor trombone and piano'],two amplified toy pianos,0.3487,,,0,-1.0,0,1
+70,2026-03-20 08:41:43,From which university did David Hibbett receive his Bachelor of Arts degree?,['University of Massachusetts Amherst'],University of Massachusetts Amherst,0.75,,,1,1.0,0,0
+71,2026-03-20 08:41:44,Which one of the 1990 Fly Girls from the series In Living Color stayed for five seasons?,['Deidre Lang'],Jennifer Lopez,0.88,,,0,-1.0,0,1
+72,2026-03-20 08:41:45,Which specific ocean was the asteroid 224 Oceana named after?,['Pacific Ocean'],The asteroid 224 Oceana was named after the Ocean (specifically the Atlantic Ocean).,0.32,,,0,-1.0,0,1
+73,2026-03-20 08:41:47,In what district was the English songwriter Robert Patrick Weston born?,['Islington'],I don't know,,"He was born in the district of Brixton, London.",0.25,0,0.4,1,0
+74,2026-03-20 08:41:48,What coach was Mike Young an assistant to at Radford University?,['Oliver Purnell'],Oliver Purnell,0.8745,,,1,1.0,0,0
+75,2026-03-20 08:41:49,"The Dante-Alighieri monument, located on Allée des Poètes along Rue D'Auteuil, was created by L'atelier Attitude and inspired by the work of what Italian-born sculptor?",['Carlo Balboni'],I don't know,,Pietro Canonica,0.25,0,0.4,1,0
+76,2026-03-20 08:41:50,"Who was the father of the Russian stage actress and singer ""Baroness Olga Vadimovna von Root?""",['Baron Vadim Nikolayevich von Root'],I don't know,,Her father was Vadim von Root,0.15,0,0.4,1,0
+77,2026-03-20 08:41:51,How many years was the attraction Horizons at EPCOT sponsored by General Electric?,['10'],19 years,0.73,,,0,-1.0,0,1
+78,2026-03-20 08:41:52,What item was found in a damaged wooden coffin in July 2018 by Ramadan Badry Hussein?,['Mask'],a mummified head,0.52,,,0,-1.0,0,1
+79,2026-03-20 08:41:53,Who designed Buenos Aires's Palais de Glace?,['J. L. Ruiz Basadre'],Martín Noel,0.62,,,0,-1.0,0,1
+80,2026-03-20 08:41:54,"What was the name of the man who served as Reeve of North Red Deer, Alberta, between 1924 and 1925?",['A.M. Donnelly.'],I don't know,,,,0,0.4,1,0
+81,2026-03-20 08:41:55,"Which architect was tasked with finishing the chapel in the newly built Papal apartment when its construction remained incomplete after Pope Paul IV moved in, in October 1556?",['Pirro Ligorio'],Ippolito Scalza,0.33,,,0,-1.0,0,1
+82,2026-03-20 08:42:04,"Which famous drummer opened a Wahoo's Fish Taco restaurant in Norco, California, in 2004?",['Travis Barker'],Mike Portnoy,0.35,,,0,-1.0,0,1
+83,2026-03-20 08:42:09,"What was the age gap between George Frederic Watts and his first wife, Ellen Terry?",['30 years.'],34 years,0.82,,,0,-1.0,0,1
+84,2026-03-20 08:42:10,"What was the name of the indoor scrambler ride themed around the Battle of Hastings that was an opening day attraction when Busch Gardens, The Old Country in Williamsburg, Virginia, first opened in 1975?",['The Catapult'],I don't know,,,,0,0.4,1,0
+85,2026-03-20 08:42:17,In which year was Neelam Sanjiva Reddy first elected to the Lok Sabha from Hindupur?,['1967'],1957,0.82,,,0,-1.0,0,1
+86,2026-03-20 08:42:18,"In what year was the Chinese survey conducted that obtained the figure of 29,029.24 feet (8,848.11 meters) for Mount Everest's height?",['1975'],1975,0.82,,,1,1.0,0,0
+87,2026-03-20 08:42:19,Into which Hall of Fame was Zippo Pine Bar inducted in 1992?,['National Snaffle Bit Association'],American Quarter Horse Hall of Fame,0.8125,,,0,-1.0,0,1
+88,2026-03-20 08:42:21,What was the original scientific name given to *Calytrix acutifolia* by John Lindley in 1839?,['Lhotskya acutifolia'],Calytrix acerosa,0.21,,,0,-1.0,0,1
+89,2026-03-20 08:42:22,"In which month and year did ""Flying"" magazine publish ""Battling the Big Lie: John King's Crusade to Change Aviation's Culture""?",['March 2001'],December 2021,0.72,,,0,-1.0,0,1
+90,2026-03-20 08:42:23,"What year was ""Discussion sur l’évolution de l’univers"" by Georges Lemaitre published?",['1933'],1931,0.82,,,0,-1.0,0,1
+91,2026-03-20 08:42:24,Who was Ghana's Minister of Information at the time of the Kulungugu bomb attack?,['Tawia Adamafio'],I don't know,,Kofi Baako,0.25,0,0.4,1,0
+92,2026-03-20 08:42:26,Which digits of the forefeet are vestigial and tiny on the Isoodon obesulus?,['the first digits'],I believe the vestigial and tiny digits on the forefeet of Isoodon obesulus are the first and fifth digits (digits I and V).,0.6,,,0,-1.0,0,1
+93,2026-03-20 08:42:27,Which team won the Coppa Italia Serie C in the 1981-82 season?,['Vicenza.'],Genoa,0.25,,,0,-1.0,0,1
+94,2026-03-20 08:42:29,"What two football teams were mentioned in the libel case against ""The Saturday Evening Post"" in 1963?",['University of Georgia and University of Alabama'],I don't know,,the Green Bay Packers and the New York Giants,0.15,0,0.4,1,0
+95,2026-03-20 08:42:30,"Which city in Nepal is known as the ""City of Nine Hills?""",['Nuwakot'],Pokhara,0.9,,,0,-1.0,0,1
+96,2026-03-20 08:42:31,"On what day, month, and year was Joeri Verlinden born?",['22 January 1988'],Joeri Verlinden was born on 22 August 1988.,0.86,,,0,-1.0,0,1
+97,2026-03-20 08:42:33,Off of what coast of Morrowind does the DLC Dragonborn take place?,['North'],Off the coast of Vvardenfell,0.9275,,,0,-1.0,0,1
+98,2026-03-20 08:42:34,Which was the second largest republic in the Soviet Union by area?,['Kazakh Soviet Socialist Republic'],Kazakhstan,0.98,,,0,-1.0,0,1
+99,2026-03-20 08:42:35,"Le Chatelier's thermoelectric pyrometer, as discussed in the 1900 report ""Clays of New York, Their Properties and Uses,"" was considered accurate within how many degrees Fahrenheit?",['10 (acceptable range: anything between 9 and 11 degrees Fahrenheit)'],25 degrees Fahrenheit,0.42,,,0,-1.0,0,1
+100,2026-03-20 08:42:36,What compilation did Machine Girl release in 2015?,['Phantom Tracks'],WLFGRL,0.73,,,0,-1.0,0,1
+101,2026-03-20 08:42:38,Who did Buzz Thomas defeat in the 2006 election for the Michigan State Senate - 4th District?,['Karen Fobbs'],Incumbent Jackie Vaughn III,0.0938,,,0,-1.0,0,1
+102,2026-03-20 08:42:41,"On April 1, 1952, at which university did Hidegorô Nakano become a professor?",['Hokkaido University'],I don't know,,Osaka University,0.32,0,0.4,1,0
+103,2026-03-20 08:42:42,What years was Antonio de Padua María Severino López de Santa Anna y Pérez de Lebrón vice president?,['1837 to 1839'],1827–1829 and 1831–1832,0.2,,,0,-1.0,0,1
+104,2026-03-20 08:42:43,"Which newspaper did György Lukács write, ""The possession of the power of the state is also a moment for the destruction of the oppressing classes. A moment we have to use""?",['Népszava'],I don't know,,Népszava,0.21,1,0.4,1,0
+105,2026-03-20 08:42:44,Who drew a map of 64 stars of the Pleiades from his observations in 1779 and then published it in 1786?,['Edme-Sébastien Jeaurat'],Charles Messier,0.25,,,0,-1.0,0,1
+106,2026-03-20 08:42:45,Which Google Sheets function is specifically designed to convert a Unix epoch timestamp to a regular datetime in the UTC timezone?,['EPOCHTODATE'],"TO_DATE( (timestamp/1000) / 86400 + DATE(1970,1,1) )",0.27,"TO_DATE( (timestamp/1000) / 86400 + DATE(1970,1,1) )",,0,-1.0,0,1
+107,2026-03-20 08:42:46,"What day, month, and year was the ""Playlist: The Very Best of Heather Headley"" released?","['May 29, 2012']",13 October 2008,0.32,,,0,-1.0,0,1
+108,2026-03-20 08:42:48,What is the height of Vickerman Hill in New York in feet?,['1142 feet (acceptable range: anything between 1130 and 1154 feet)'],"Vickerman Hill has an elevation of 1,473 feet.",0.62,,,0,-1.0,0,1
+109,2026-03-20 08:42:49,Who is known as the first rock star of the Middle East?,['Lydia Canaan'],Marcel Khalife,0.23,,,0,-1.0,0,1
+110,2026-03-20 08:42:50,"How many shots did Inter attempt on target in the Champions League Final match between Bayern and Inter on May 23, 2010?",['7'],2,0.75,,,0,-1.0,0,1
+111,2026-03-20 08:42:51,What is the name of the university in Nepal that was established in 2016 A.D. and is located in Lalitpur?,['Nepal Open University'],Nepal Open University,0.6789,,,1,1.0,0,0
+112,2026-03-20 08:42:52,"Specify the month, and year in which Activision Blizzard announced the upcoming establishment of a new esports division.","['October, 2015']",July 2015,0.62,,,0,-1.0,0,1
+113,2026-03-20 08:42:54,Which was the first Indian album to have more than 1 billion streams on Spotify?,['Moosetape'],I don't know,,"Badshah — ""KGF (Chapter 2)"" soundtrack",0.12,0,0.4,1,0
+114,2026-03-20 08:42:55,What was the name of the choir that performed at the 2019 Cape Town International Jazz Festival?,['Soweto Gospel Choir'],I don't know,,Joy of Jazz Choir,0.15,0,0.4,1,0
+115,2026-03-20 08:42:56,In what year did the biochemist Mildred Cohn receive the Golden Plate Award from the American Academy of Achievement?,['1984'],1986,0.5723,,,0,-1.0,0,1
+116,2026-03-20 08:42:57,Who preceded Oscar Alende as governor of the Province of Buenos Aires?,['Emilio Alvaro Bonnecarrere'],Victorio Tetamanti,0.24,,,0,-1.0,0,1
+117,2026-03-20 08:42:58,"Who joined Rose Matafeo in July 2020 on the comedy show Tiny Tour of Aotearoa, traveling across New Zealand?",['Guy Montgomery'],Eli Matthewson,0.14,,,0,-1.0,0,1
+118,2026-03-20 08:42:59,What was Yoido Full Gospel Church's membership in 1968?,['8000 (acceptable range: anything between 7920 and 8080)'],"40,000",0.72,,,0,-1.0,0,1
+119,2026-03-20 08:43:01,"What was the age range of the drivers whose EEG data was collected in the 2021 research paper titled ""EEG-Based Driving Fatigue Detection Using a Two-Level Learning Hierarchy Radial Basis Function"" by Ziwu Ren et al.?",['23-27'],22–28 years old,0.72,,,0,-1.0,0,1
+120,2026-03-20 08:43:02,Which medal in the 1932 Summer Olympics art competition did Frederick William MacMonnies receive?,['Silver'],Gold medal,0.82,,,0,-1.0,0,1
+121,2026-03-20 08:43:03,What university did Berlinda Tolbert major in theater at?,['North Carolina School of the Arts'],I don't know,,University of Michigan,0.25,0,0.4,1,0
+122,2026-03-20 08:43:04,"What town in the Southwest region of Western Australia, located 212 kilometers south of Perth and midway between Bunbury and Busselt, was originally inhabited by the Wardandi Noongar people?",['Capel'],Donnybrook,0.82,,,0,-1.0,0,1
+123,2026-03-20 08:43:05,"What day, month, and year was Massimo Cacciari, an Italian philosopher and politician, born?","['June 5, 1944']",5 June 1944,0.98,,,0,-1.0,0,1
+124,2026-03-20 08:43:06,"The Arvida Theatre, built in 1927 in Saguenay, Québec, was built according to the plans of which architect?",['Alfred Lamontagne'],Ovila (Ovide) Letellier,0.21,,,0,-1.0,0,1
+125,2026-03-20 08:43:08,"What was the day, month, and year when Mario-Rafael Ionian, an Austrian former competitive figure skater, was born?",['14 October 1990.'],17 December 1985,0.86,,,0,-1.0,0,1
+126,2026-03-20 08:43:10,"On what date, month, and year was the Public Order Ordinance commenced in Hong Kong?",['17 November 1967'],4 January 1967,0.72,,,0,-1.0,0,1
+127,2026-03-20 08:43:11,What was the title of chemist Mary Letitia Caldwell's Ph.D. thesis?,['An experimental study of certain basic amino acids'],I don't know,,"""On the Preparation and Properties of Certain Quaternary Ammonium Compounds""",0.24,0,0.4,1,0
+128,2026-03-20 08:43:12,"In the match between Sri Lanka and West Indies, Final at Colombo, Oct 07, 2012, who was the match referee?",['Jeff Crowe'],Ranjan Madugalle,0.86,,,0,-1.0,0,1
+129,2026-03-20 08:43:14,Who won the Heinz Hopf Prize in 2019?,['Ehud Hrushovski'],Camillo De Lellis,0.75,,,0,-1.0,0,1
+130,2026-03-20 08:43:15,"What day, month, and year was the first Sazae-san strip run by the Asahi Shimbun published?","['November 30, 1949']","August 21, 1946",0.86,,,0,-1.0,0,1
+131,2026-03-20 08:43:16,What is the ChemSpider ID of diazepam?,['2908'],2116,0.99,,,0,-1.0,0,1
+132,2026-03-20 08:43:17,"When (day, month, year), where, and by whom was the central sports club organization IFK founded?","['1 February 1895, Stockholm, by Louis Zettersten and Pehr Ehnemark']","1 February 1895, Stockholm, Sweden, by two students, Louis Zettersten and Isidor Behrens (founding initiated at the Café Ferrari; organized by the students' association)",0.27,,,0,-1.0,0,1
+133,2026-03-20 08:43:19,What were the original names of the first three ships in the Sea Organization associated with the Church of Scientology?,"['Avon River, Enchanter, and HMS Royal Scotsman']",I don't know,,"The first three Sea Org ships were originally named the Daisy, the Athena, and the Apollo.",0.12,0,0.4,1,0
+134,2026-03-20 08:43:20,Which college in Srinagar was accredited as the College for Potential Excellence by the University Grants Commission (India) in April 2010?,['Islamia College of Science and Commerce'],Amar Singh College,0.82,,,0,-1.0,0,1
+135,2026-03-20 08:43:21,"What day, month, and year did William II of Holland become King of Germany?","['October 3, 1247']",25 January 1248,0.32,,,0,-1.0,0,1
+136,2026-03-20 08:43:21,"Which DropoutTV series is a spin-off of ""Game Changer"" inspired by its ""Noise Boys"" episodes?",['Make Some Noise'],I don't know,,,,0,0.4,1,0
+137,2026-03-20 08:43:23,"The Partial Solar Eclipse of January 1, 1805 was a part of which Saros series?",['Saros 109'],Saros 111,0.64,,,0,-1.0,0,1
+138,2026-03-20 08:43:24,"In which month and year did Jose Maria Canlas Sison marry his wife, Julie de Lima, in a Catholic church?",['January 1960'],I don't know,,March 1959,0.25,0,0.4,1,0
+139,2026-03-20 08:43:25,"What was Jeffrey Epstein's released bond in dollars on July 27, 2006, at the Palm Beach County jail?","['$3,000 bond']","$100,000",0.8475,,,0,-1.0,0,1
+140,2026-03-20 08:43:26,"On what day, month, and year did Mira Sintra-Meleças railway station open for revenue service?",['29 November 2004'],1 June 1892,0.62,,,0,-1.0,0,1
+141,2026-03-20 08:43:27,"What day, month, and year was the municipality of Tipacoque, Boyacá, Colombia, created?","['November 28th, 1968']",21 November 1875,0.62,,,0,-1.0,0,1
+142,2026-03-20 08:43:29,In which year of the Olympics did Seiko become the Official Timer?,['1964'],Seiko became the Official Timer at the 1964 Olympics.,0.85,,,1,1.0,0,0
+143,2026-03-20 08:43:29,What is the second-largest island in the world?,['New Guinea'],New Guinea,0.95,,,1,1.0,0,0
+144,2026-03-20 08:43:30,"On what day, month, and year was Dr. Sanduk Ruit conferred with the National Order of Merit of Bhutan in Gold?",['17 December 2015'],17 November 2018,0.72,,,0,-1.0,0,1
+145,2026-03-20 08:43:31,How many and which colors does the Zambian flag have?,"['Four - Green, Red, Black, Orange.']","The Zambian flag has four colors: green, red, black, and orange (often described as copper).",0.98,,,0,-1.0,0,1
+146,2026-03-20 08:43:33,"Other than being a choreographer for the TV series In Living Color, what other job did Rosie Perez do on the show?",['segment producer'],She was a featured dancer (performer) on the show.,0.8125,,,0,-1.0,0,1
+147,2026-03-20 08:43:34,"Which streamer won the ""Best Variety Streamer"" award at The Streamer Awards in 2022?",['moistcr1tikal'],I don't know,,Kai Cenat,0.4,0,0.4,1,0
+148,2026-03-20 08:43:35,Which female chemist was awarded the Garvan–Olin Medal in 1952?,['Gladys A. Emerson'],Ione M. Kennedy,0.09,,,0,-1.0,0,1
+149,2026-03-20 08:43:36,In which Swiss municipality was the painter Jean Preudhomme baptized in 1732?,['Rolle'],Payerne,0.48,,,0,-1.0,0,1
+150,2026-03-20 08:43:37,"How many UN Volunteers served in 54 United Nations missions, agencies, funds, and programs across the globe in 2019?","['8,282 (acceptable range: anything between 8199 and 8365)']","10,000",0.35,,,0,-1.0,0,1
+151,2026-03-20 08:43:38,"Who was the chief guest of the eighteenth convocation of Indira Gandhi National Open University, New Delhi, held in 2007?",['Justice K. G. Balakrishnan'],Pratibha Patil,0.71,,,0,-1.0,0,1
+152,2026-03-20 08:43:39,"In which month and year did American mathematics professor and blackjack researcher Edward Oakley Thorp first get married to his wife, Vivian?",['January 1956'],September 1957,0.62,,,0,-1.0,0,1
+153,2026-03-20 08:43:40,"The first public showings of the theatrical work ""Another Day in America"" by Laurie Anderson were in which city?",['Calgary'],New York City,0.62,,,0,-1.0,0,1
+154,2026-03-20 08:43:42,In which year was the Kangri cancer effect first studied?,['1866'],1920,0.46,,,0,-1.0,0,1
+155,2026-03-20 08:43:43,"On which day, month, and year did Anugrah Narayan Sinha become the Deputy Premier cum Finance Minister of Bihar province?","['July 20, 1937']",15 August 1946,0.72,,,0,-1.0,0,1
+156,2026-03-20 08:43:44,Who was the Friday night headliner of ArcTanGent 2013 on the Arc stage?,['65daysofstatic'],This was the band Toundra.,0.62,,,0,-1.0,0,1
+157,2026-03-20 08:43:45,From what university did Bill Brown (professor at the University of Chicago and critical theorist) receive his B.A.?,['Duke University'],Washington University in St. Louis,0.52,,,0,-1.0,0,1
+158,2026-03-20 08:43:46,What year did Cornelia Parker have her first solo museum exhibition?,['2000'],1991,0.54,,,0,-1.0,0,1
+159,2026-03-20 08:43:47,The first clock installed outside of the family farm of Alberto Olvera Hernández was for the Santiago Apostol Church in which small town in Mexico?,['Chignahuapan'],,,,,0,-1.0,0,1
+160,2026-03-20 08:43:48,"What neologism, which gained widespread use in the 21st century, identifies the date on which the day and night are exactly the same?",['equilux'],I don't know,,"dayequalnight (or ""day–night parity day"")",0.12,0,0.4,1,0
+161,2026-03-20 08:43:50,Which football club won the inaugural Hessenpokal?,['Eintracht Frankfurt'],I don't know,,Eintracht Frankfurt II,0.2426,1,0.4,1,0
+162,2026-03-20 08:43:51,"For which garden was the ""Neptune and Triton"" sculpture carved?",['Garden of the Villa Montalto'],I don't know,,,,0,0.4,1,0
+163,2026-03-20 08:43:52,What is the maximum depth of the Mediterranean Sea in meters?,['5109 m (acceptable range: anything between 5057 and 5161 m)'],"5,267 meters",0.92,,,0,-1.0,0,1
+164,2026-03-20 08:43:53,What is the name of the project that won the 2008 ACM Software System Award?,['Gamma Parallel Database System'],The project honored by the 2008 ACM Software System Award is the Java HotSpot Virtual Machine (HotSpot).,0.62,,,0,-1.0,0,1
+165,2026-03-20 08:43:54,"What is the name of the man who purchased Belmont on St. Saviour's Hill, Jersey, UK, in 1822?",['Sir Colin Halkett'],I don't know,,,,0,0.4,1,0
+166,2026-03-20 08:43:55,What is the name of the drug previously known to treat bacterial infections that Dr. William Schwartz discovered also acts as a diuretic in people with congestive heart failure?,['Sulfanilamide (also know as para-aminobenzenesulfonamide)'],I don't know,,Chlorothiazide,0.24,0,0.4,1,0
+167,2026-03-20 08:43:57,"What is the name of the 11th song on ""The Last Unicorn"" soundtrack album?",['The Tree'],"The 11th song is ""That Old Song""",0.7423,,,0,-1.0,0,1
+168,2026-03-20 08:43:58,What is the name and surname of the photographer who first invented a tool to coat calotype paper called the Buckle Brush?,['Samuel Buckle'],I don't know,,,,0,0.4,1,0
+169,2026-03-20 08:43:59,"What was Bindy Johal's age in years when he immigrated to Vancouver, British Columbia, with his parents during his childhood?",['4 years.'],6,0.72,,,0,-1.0,0,1
+170,2026-03-20 08:44:01,"What month, date, and year was Sicily Sewell released from the TV show ""One on One""?",['20 Jun 2005'],"Sicily Sewell's character was written out / she departed ""One on One"" in February 2005.",0.24,,,0,-1.0,0,1
+171,2026-03-20 08:44:02,"What month, day, and year was the Köln Frankfurter Straße station opened?",['13 June 2004'],13 June 2004,0.82,,,1,1.0,0,0
+172,2026-03-20 08:44:05,What was the name of New York's National Academy of Design in 1825?,['The New York Drawing Association'],"The National Academy of Design was founded in 1825 as the National Academy of Design (originally styled the New York Drawing Association or the New York Drawing Society is sometimes cited), but its formal name at founding was the National Academy of Design.",0.42,,,1,1.0,0,0
+173,2026-03-20 08:44:07,"What river borders the west of Goldsboro, NC?",['The Little River'],Neuse River,0.8725,,,0,-1.0,0,1
+174,2026-03-20 08:44:08,"Where is Leonard Perry Jr., the college basketball coach, originally from?","['Dallas, Texas']",I don't know,,"Honolulu, Hawaii",0.21,0,0.4,1,0
+175,2026-03-20 08:44:09,What was the name of the common-law husband of the Indian-Canadian serial killer Simmi Kahlon?,['Harnek Mahal'],I don't know,,Baljit Singh,0.25,0,0.4,1,0
+176,2026-03-20 08:44:10,What camera has the world's first dual-driven shutter system?,['Sony Alpha 1'],Canon EOS-1D X Mark II,0.21,,,0,-1.0,0,1
+177,2026-03-20 08:44:11,"On what month, day, and year did Ketanji Brown Jackson's service as a circuit judge end?",['29 June 2022'],"June 17, 2021",0.85,,,0,-1.0,0,1
+178,2026-03-20 08:44:13,"Which art dealership did Peter Arrell Browne Widener buy ""Portrait of Elena Grimaldi Cattaneo"" from in 1906?",['Knoedler'],I don't know,,"He purchased ""Portrait of Elena Grimaldi Cattaneo"" in 1906 from the art dealership of the Parisian dealer Durand-Ruel.",0.26,0,0.4,1,0
+179,2026-03-20 08:44:14,"What is the name of the man buried at Paddington Cemetery in London in 1767, with an epitaph that reads, ""Tho' sweet as Orpheus thou couldst bring / Soft pleadings from the trembling string""?",['Matthew Dubourg'],I don't know,,Joseph Saunders,0.25,0,0.4,1,0
+180,2026-03-20 08:44:15,"What two other events did Phanas of Pellene manage to win in the Olympics of 512 BCE, besides the race in armor, also known as the hoplitodromos?","['The stadion, and the double race (Diaulos).']",I don't know,,the long race (dolichos) and the stadion (short sprint),0.25,0,0.4,1,0
+181,2026-03-20 08:44:16,What school was Aleister Crowley first sent to at the age of 8?,"[""H. T. Habershon's evangelical Christian boarding school""]",Malvern Cross Preparatory School (in Hastings),0.52,,,0,-1.0,0,1
+182,2026-03-20 08:44:17,"What was the year when the Express Tribune (newspaper) reported, ""The Aga Khan University Hospital has become the first medical center to introduce the new advanced brain surgery technology, Neuro-Robotic Exoscope, in Pakistan""?",['2016'],2022,0.53,,,0,-1.0,0,1
+183,2026-03-20 08:44:19,"What was Darnell's occupation before he was a mechanic in the series ""Girlfriends""?",['airport baggage handler'],I don't know,,He worked as a barber.,0.25,0,0.4,1,0
+184,2026-03-20 08:44:20,"Which famous video game character is featured in the music video for Die Ärzte's song ""Men Are Pigs""?",['Lara Croft'],Mario,0.8421,,,0,-1.0,0,1
+185,2026-03-20 08:44:23,Which ward in Tokyo was the AT-1 phono cartridge created in?,['Shinjuku'],Chiyoda Ward,0.72,,,0,-1.0,0,1
+186,2026-03-20 08:44:24,In what year did Welsh broadcaster Louise Elliott join Jamie Owen as host of a weekday morning show on BBC Radio Wales?,['2007'],2013,0.62,,,0,-1.0,0,1
+187,2026-03-20 08:44:25,"The drawing of William Buell Sr.'s (1751-1832) house he built, displayed on the historic plaque installed in 2006 at the intersection of Water Street West and Home Street in Brockville, Ontario, was drawn in 1887 by which Brockville artist?",['Fred Gordon'],I don't know,,,,0,0.4,1,0
+188,2026-03-20 08:44:26,What is the height of the Space Shuttle Atlantis in meters?,['17.2 meters (acceptable range: anything between 17.03 and 17.37 meters)'],17.2 meters,0.94,,,1,1.0,0,0
+189,2026-03-20 08:44:28,What was the name of the location where the stone came from to replace the 199 wooden steps at Whitby Abbey in 1774?,['Sneaton'],The stone came from Calder Bridge (also called Calderstone Quarry) near Whitby.,0.53,,,0,-1.0,0,1
+190,2026-03-20 08:44:29,"What is the name of the first Catholic church in The Woodlands, Texas?",['Sts. Simon and Jude'],I don't know,,,,0,0.4,1,0
+191,2026-03-20 08:44:31,How many years was the scholarship that Mary Fairchild MacMonnies Low won from the St. Louis School of Fine Arts for?,['three'],I don't know,,,,0,0.4,1,0
+192,2026-03-20 08:44:33,What was the name of the NS Class 1311 train in the NS Class 1300 series?,['Best'],I don't know,,"NS 1311 was named ""Hercules""",0.25,0,0.4,1,0
+193,2026-03-20 08:44:34,How many assists did Kostas Tsimikas have across all competitions in the 2021-2022 season?,['6'],6,0.24,,,1,1.0,0,0
+194,2026-03-20 08:44:35,In what year was Paul Holdengräber awarded the Austrian Decoration for Science and Art?,['2010'],2015,0.8462,,,0,-1.0,0,1
+195,2026-03-20 08:44:36,"On which day, month, and year was Max Vuyisile Sisulu born?",['23 August 1945'],Max Vuyisile Sisulu was born on 21 May 1945.,0.94,,,0,-1.0,0,1
+196,2026-03-20 08:44:37,What is the wheelbase of the 1969 Honda CL125 in millimeters?,['1270 mm (acceptable range: anything between 1257 and 1283 mm)'],1265 mm,0.52,,,0,-1.0,0,1
+197,2026-03-20 08:44:38,"What are the dimensions in centimeters of the painting ""Holy Mount Athos"" from The Slav Epic?",['405 x 480 cm (acceptable range: [400-409] x [475-485] cm)'],,,,,0,-1.0,0,1
+198,2026-03-20 08:44:39,Who won the 19th edition of the Women’s Asian Individual Squash Championships (AISC)-2017?,['Joshna Chinappa'],Joshna Chinappa,0.86,,,1,1.0,0,0
+199,2026-03-20 08:44:41,What baseball team won the Burrard League Championship in 1940?,['Asahis'],I don't know,,Vancouver Burrard Orioles,0.15,0,0.4,1,0
+200,2026-03-20 08:44:42,"In which year did Julian Bradley, the first Black Republican to serve in the Wisconsin Senate and only the second Black Republican to serve in the Wisconsin Legislature, first move to La Crosse, Wisconsin, with his mother?",['1992'],1991,0.72,,,0,-1.0,0,1
+201,2026-03-20 08:44:43,"Who started a ""Free Theatre"" at the Ferrer Center in late 1914?",['Moritz Jagendorf'],I don't know,,Norman Thomas,0.25,0,0.4,1,0
+202,2026-03-20 08:44:46,What is the name of the school where the Kaki Tree Project did its first planting?,['Ryuhoku Elementary School.'],I don't know,,The Kaki Tree Project did its first planting at Kaki Primary School,0.25,0,0.4,1,0
+203,2026-03-20 08:44:47,In what year did Swiss painter Benjamin Samuel Bolomey become a pupil of Joseph-Marie Vien?,['1758'],1754,0.42,,,0,-1.0,0,1
+204,2026-03-20 08:44:48,"What is the name of the eighth track on the album ""These Two Windows"" by Alec Benjamin?",['Alamo'],I Don't Know,,If We Have Each Other,0.25,0,0.4,1,0
+205,2026-03-20 08:44:49,"Who served as the first Deputy Commissioner of the Pherzawl District, located in the southern part of Manipur, India?",['Shri A.Tombikanta Singh'],I don't know,,,,0,0.4,1,0
+206,2026-03-20 08:44:50,"What day, month, and year did the 7th All-Africa Games end?","['September 19, 1999']","September 23, 1999",0.8347,,,0,-1.0,0,1
+207,2026-03-20 08:44:51,During which years was Otto Schlüter a professor of geography at the University of Halle?,['1911 to 1959'],Otto Schlüter was a professor of geography at the University of Halle from 1912 to 1938.,0.72,,,0,-1.0,0,1
+208,2026-03-20 08:44:52,"Who set the Guinness World Record by building the largest Nerf gun, measuring 3.81 meters (12 feet 6 inches), on October 15, 2021?",['Michael Pick'],Mark Rober,0.82,,,0,-1.0,0,1
+209,2026-03-20 08:44:53,What was the title of the engineer and scientist Ahmet Cemal Eringen's Ph.D. dissertation?,"['Solution of the Two-dimensional Mixed-mixed Boundary Value Problem of Elasticity For Rectangular, Orthotropic Media And Application To The Buckling Of Sandwich Beams[1]']",I don't know,,"""On the Theory of Nonlocal Continuum Mechanics""",0.25,0,0.4,1,0
+210,2026-03-20 08:44:54,"Which year did Emmanuel Radnitzky, an American visual artist, enroll in the Ferrer School?",['1912'],1914,0.76,,,0,-1.0,0,1
+211,2026-03-20 08:44:55,"How many balls did Hardik Pandya play in the Indian Premier League 2019 final match between CSK and MI on May 12, 2019?",['10'],14,0.82,,,0,-1.0,0,1
+212,2026-03-20 08:44:56,In what year was Bonaya Adhi Godana first elected to the National Assembly of Kenya?,['1988'],1997,0.87,,,0,-1.0,0,1
+213,2026-03-20 08:44:57,Which month and year was William Harrison Standley appointed as the American Ambassador to the USSR?,['February 1942'],December 1942,0.8462,,,0,-1.0,0,1
+214,2026-03-20 08:44:58,"What was the magnitude of the solar eclipse that occurred on June 21, 2001?",['1.0495 (acceptable range: anything between 1.04 and 1.06)'],0.9993,0.64,,,0,-1.0,0,1
+215,2026-03-20 08:44:59,What color is the third stripe from the top of the aromantic pride flag created in 2014?,['Whitehttps://www.sfgmc.org/blog/pride-flags#block-yui_3_17_2_1_1683145657332_180414'],Green,0.72,,,0,-1.0,0,1
+216,2026-03-20 08:45:01,What are the stud dimensions of the LEGO part with ID 54093?,['20 x 56 in studs'],The part 54093 is a 2x2 round corner plate (quarter circle) with stud dimensions of 2 studs by 2 studs overall; the single stud diameter is the standard LEGO stud (about 4.8 mm) and the spacing (stud pitch) is 8.0 mm between stud centers.,0.25,,,0,-1.0,0,1
+217,2026-03-20 08:45:02,"Specify the day, month, and year Canon introduced two new UHDgc 2/3-inch Portable Zoom Lenses designed for 4K UHD broadcast cameras.","['April 2, 2019']",7 September 2016,0.62,,,0,-1.0,0,1
+218,2026-03-20 08:45:03,What was the first and last name of the recipient of the Annie Jump Cannon Award in Astronomy in 1952?,['Ida Barney'],Bart J. Bok,0.1375,,,0,-1.0,0,1
+219,2026-03-20 08:45:04,"What is the surname of the individual who won the Faraday Lectureship Prize, previously known as the Faraday Lectureship, in 1970?",['Herzberg'],I don't know,,Kealy,0.12,0,0.4,1,0
+220,2026-03-20 08:45:05,How many total lunar eclipses were there in 1982?,['3'],0,0.82,,,0,-1.0,0,1
+221,2026-03-20 08:45:06,"How many children did Swiss painter Johann Caspar Füssli have with his wife, Elisabeth?",['18'],10,0.52,,,0,-1.0,0,1
+222,2026-03-20 08:45:07,In what year was British chemist John Shipley Rowlinson appointed a Fellow of the Royal Academy of Engineering?,['1976'],1997,0.64,,,0,-1.0,0,1
+223,2026-03-20 08:45:08,"On what day, month, and year did the first Bennett Cup auto race, for a prize sponsored by New York Herald publisher James Gordon Bennett Jr., begin as five entrants departed from the Parc de Saint-Cloud, near Paris, on a 566-kilometer (352 miles) trip to Lyon?","['June 14, 1900']","June 26, 1900",0.82,,,0,-1.0,0,1
+224,2026-03-20 08:45:09,Who succeeded Stefano Moshi as presiding bishop of the Evangelical Lutheran Church in Tanzania?,['Sebastian Kolowa'],I don't know,,Fredrick S. K. M. M. Chambalo,0.12,0,0.4,1,0
+225,2026-03-20 08:45:12,From which university did Raissa M. D'Souza complete her B.S. in physics?,['University of Illinois at Urbana–Champaign.'],"University of California, Berkeley",0.86,,,0,-1.0,0,1
+226,2026-03-20 08:45:12,Who played baritone saxophone on the 1958 album *Basie Reunion*?,['Jack Washington'],Charlie Fowlkes,0.72,,,0,-1.0,0,1
+227,2026-03-20 08:45:13,From which Israeli university did Judith Feist Hemmendinger receive her master's degree?,['Bar-Ilan University'],I don't know,,Hebrew University of Jerusalem,0.25,0,0.4,1,0
+228,2026-03-20 08:45:14,Cylindrovertilla kingi is endemic to which country?,['Australia'],Australia,0.88,,,1,1.0,0,0
+229,2026-03-20 08:45:16,"What new species introduced in D&D's Unearthed Arcana 2022 ""Character Origins"" has a head resembling that of an animal?",['Ardlings'],I don't know,,"Owlfolk (owl-like humanoids introduced in UA ""Character Origins"" 2022)",0.25,0,0.4,1,0
+230,2026-03-20 08:45:18,Who was Patricia Bullrich's first husband?,['Marcelo Langieri'],Juan Carlos Blangini,0.76,,,0,-1.0,0,1
+231,2026-03-20 08:45:19,"Who among the people who proposed the three-stage system in an article titled ""Stone Age Cultures of South Africa"" was a civil engineer?",['Clarence van Riet Lowe'],I don't know,,Thomas Rupert Jones,0.2,0,0.4,1,0
+232,2026-03-20 08:45:21,"At which university was Seiko Harumi affiliated when she published ""The Facilitative Use of Learner-Initiated Translanguaging in Japanese EFL Contexts""?",['The School of Oriental and African Studies University of London'],Seiko Harumi was affiliated with Kanda University of International Studies.,0.68,,,0,-1.0,0,1
+233,2026-03-20 08:45:21,"What day, month, and year did the original ActRaiser soundtrack come out in Japan?","['January 25, 1991']","July 19, 1990",0.72,,,0,-1.0,0,1
+234,2026-03-20 08:45:22,"What day, month, and year was the article ""An Electric Self-Sensing and Variable-Stiffness Artificial Muscle"" by Chen Liu, James J. C. Busfield, and Ketao Zhang first published?",['08 July 2023'],17 December 2019,0.51,,,0,-1.0,0,1
+235,2026-03-20 08:45:23,"On which day, month, and year was the SROSS-C satellite launched from the Satish Dhawan Space Centre in India?",['20 May 1992'],20 May 1992,0.68,,,1,1.0,0,0
+236,2026-03-20 08:45:24,"Which version (XX.Y) of OBS Studio had this update in its patch notes: ""Added support for multiple audio tracks in Simple output recording [pkv]""?",['29.1'],21.1,0.32,,,0,-1.0,0,1
+237,2026-03-20 08:45:26,What was the name of the pre-2000s band with which the author of *Batman R.I.P.* toured and recorded?,['The Mixers'],I don't know,,"The author is Grant Morrison, and the pre-2000s band he toured and recorded with was The Pope (a band Morrison was associated with in the 1980s).",0.25,0,0.4,1,0
+238,2026-03-20 08:45:27,"What was the strike rate of Manish Pandey in the 2019 IPL match between KKR and SRH on March 24, 2019?",['160 (acceptable range: anything between 158 and 162)'],136.8421,0.7246,,,0,-1.0,0,1
+239,2026-03-20 08:45:32,Who was the 38th mayor of Toronto?,['Charles Alfred Maguire.'],I don't know,,William Lyon Mackenzie King,0.02,0,0.4,1,0
+240,2026-03-20 08:45:33,Which major American political party was the first to have a keynote speech delivered by a woman at its national convention?,['Republican Party'],Democratic Party,0.62,,,0,-1.0,0,1
+241,2026-03-20 08:45:34,What is the initial name of the political party that Emmanuel Macron founded?,['En Marche!'],En Marche!,0.98,,,1,1.0,0,0
+242,2026-03-20 08:45:36,At what age did Kichizo Yoshida start learning to craft fine bags?,['12'],I don't know,,He began learning to craft fine bags at age 15.,0.25,0,0.4,1,0
+243,2026-03-20 08:45:37,What was P. V. Sanjay Kumar's position just before being appointed as a judge of the Supreme Court of India?,['chief justice of the Manipur High Court'],Chief Justice of the Chhattisgarh High Court,0.88,,,0,-1.0,0,1
+244,2026-03-20 08:45:38,How many goals did the Selkirk Fishermen score in Game 2 of the 1920 Memorial Cup against the Toronto Canoe Club Paddlers?,['4'],I don't know,,3,0.24,0,0.4,1,0
+245,2026-03-20 08:45:39,"Which release of the software 7-Zip included the patch note, ""7-Zip now can unpack DMG archives that use LZFSE compression method."" with its release?",['18.01'],22.01,0.632,,,0,-1.0,0,1
+246,2026-03-20 08:45:40,"What was the halftime score between Liverpool and Leicester in the game from December 30, 2022?",['Liverpool 2 - 1 Leicester'],2–0 to Liverpool,0.82,,,0,-1.0,0,1
+247,2026-03-20 08:45:41,What was the name of the Andalusi poet Mansa Musa met on his return journey from his pilgrimage to Mecca between 1324 and 1325?,['Abu Ishaq al-Sahili.'],I don't know,,Abū l-ʿAbbās al-Suhaylī (also known as al-Suhaylī),0.25,0,0.4,1,0
+248,2026-03-20 08:45:42,"According to the 2011 Nepal census, what percentage of the population of Nepal speaks Urdu?",['2.61% (acceptable range: anything between 2.58% and 2.64%)'],0.2%,0.62,,,0,-1.0,0,1
+249,2026-03-20 08:45:44,"What certification did Alan Walker's album, ""Different World,"" receive in the region of Singapore?",['Platinum'],Platinum,0.7321,,,1,1.0,0,0
+250,2026-03-20 08:45:48,"What was the former name of the Shastri Nagar Metro Station of the Delhi Metro in Delhi, India?",['Vivekanandapuri'],I don't know,,Vikas Puri Halt,0.25,0,0.4,1,0
+251,2026-03-20 08:45:49,"What is the first and last name of Margaret Bourchier, Countess of Bath's first husband?",['Thomas Kitson'],I don't know,,Sir Thomas Knevet,0.24,0,0.4,1,0
+252,2026-03-20 08:45:50,"What was Granat, an X- and gamma-ray astronomical observatory studying high-energy emissions from galactic and extragalactic sources, originally called?",['Astron 2'],"Sputnik 28 (also spelled ""Sputnik-28"")",0.842,,,0,-1.0,0,1
+253,2026-03-20 08:45:51,Who won the ICA's Hall Medal in 2011?,['Olga Polverino'],I don't know,,,,0,0.4,1,0
+254,2026-03-20 08:45:52,"On what day, month, and year did Kim Tae-young, a South Korean professional footballer, score the K-League's historic 10,000th goal against his own net?",['09 November 2008'],27 September 2008,0.82,,,0,-1.0,0,1
+255,2026-03-20 08:45:53,What is the name of the 10th King of Nepal?,['Birendra Bir Bikram Shah Dev'],King Prithvi Bir Bikram Shah Dev,0.62,,,0,-1.0,0,1
+256,2026-03-20 08:45:54,At what age was M. S. Subbulakshmi's first recording released?,['10 years'],16 years old,0.72,,,0,-1.0,0,1
+257,2026-03-20 08:45:55,What is the length in meters of the TCG Yavuz (F240) ship of the Turkish Navy?,['110.50 m (acceptable range: anything between 109.39 and 111.61 m)'],143.7 meters,0.86,,,0,-1.0,0,1
+258,2026-03-20 08:45:56,What is the DrugBank accession number of barium sulfate?,['DB11150'],I don't know,,,,0,0.4,1,0
+259,2026-03-20 08:45:57,What is the only country in the world to invoke Napoleon in its national anthem?,['Poland'],Haiti,0.9375,,,0,-1.0,0,1
+260,2026-03-20 08:45:58,At which university did the mathematician William Prager study civil engineering and receive his diploma in 1925?,['Technische Universität Darmstadt'],Technical University of Berlin (Technische Hochschule Berlin),0.84,,,0,-1.0,0,1
+261,2026-03-20 08:46:00,In what year did Jon Kleinberg become a fellow of the Association for Computing Machinery?,['2013'],2007,0.86,,,0,-1.0,0,1
+262,2026-03-20 08:46:01,Where did Adore Delano attend high school?,['Sierra High School.'],"Ivarhill High School (also spelled Ivanhoe High School) in Los Angeles — actually, Adore Delano (Daniel Noriega) attended Heritage Christian School and later went to a private high school in Azusa; sources indicate he graduated from Azusa High School.",0.1123,,,0,-1.0,0,1
+263,2026-03-20 08:46:02,What was the name of India's first-ever cricket team formed by the Parsi community in Mumbai?,['Oriental Cricket Club'],Oriental Cricket Club,0.82,,,1,1.0,0,0
+264,2026-03-20 08:46:04,"Which architect designed the old post office at the corner of Jacques-Cartier and Saint-Jacques streets in Saint-Jean-sur-Richelieu, which was completed in 1909?",['J. E. H. Benoît'],I don't know,,"David O. Barrow (David O. Barrow / or architect from Dominion Public Works, possibly Thomas Seaton Scott)",0.25,0,0.4,1,0
+265,2026-03-20 08:46:08,Which Singapore island is the nation's easternmost point?,['Pedra Branca'],Pedra Branca (Pulau Pedra Branca),0.75,,,1,1.0,0,0
+266,2026-03-20 08:46:09,What is the exact number of visitors who visited Edinburgh Castle in 2018?,"['2,111,578 (acceptable range: anything between 2,006,000 and 2,217,157)']",I don't know,,"1,358,000",0.25,0,0.4,1,0
+267,2026-03-20 08:46:10,Who were the runners-up for the 2000 doubles competition for the WTA Finals?,['Nicole Arendt and Manon Bollegraf.'],Martina Hingis and Anna Kournikova,0.82,,,0,-1.0,0,1
+268,2026-03-20 08:46:11,How many photographs comprise Isa Genzken's Der Spiegel?,['121 (acceptable range: anything between 119 and 123)'],"13,500",0.68,,,0,-1.0,0,1
+269,2026-03-20 08:46:12,"In what year did Carlo Alberto Galluzzi serve as Vice-Chair of the Delegation for Relations with the Member States of ASEAN, the ASEAN Interparliamentary Organization (AIPO), and the Republic of Korea?",['1989'],1989,0.48,,,1,1.0,0,0
+270,2026-03-20 08:46:13,In the spring of which year did Henry Martin Nevius join the law office of future U.S. Secretary of War Russell A. Alger?,['1861'],1867,0.4583,,,0,-1.0,0,1
+271,2026-03-20 08:46:14,"In which year did Ranuccio Bianchi Bandinelli, an Italian archaeologist and art historian, found the Dialoghi di archeologia with his students?",['1967'],1967,0.72,,,1,1.0,0,0
+272,2026-03-20 08:46:15,At which international show jumping event did Susie Hutchison and Samsung Woodstock get blocked mid-round by the ring crew?,['Volvo FEI World Cup Final'],I don't know,,,,0,0.4,1,0
+273,2026-03-20 08:46:16,In which year did Pramod Kale (an Indian engineer) win the Shri Hari Om Ashram Prerit Vikram Sarabhai Award for System Analysis and Management Problems?,['1975'],1983,0.64,,,0,-1.0,0,1
+274,2026-03-20 08:46:17,Who won the 2016 Wisden-MCC (Melbourne Cricket Council) Cricket Photograph of the Year?,['Saqib Majeed'],I don't know,,,,0,0.4,1,0
+275,2026-03-20 08:46:18,What was Pioneer's first LaserDisc player made for consumers with a solid-state laser?,['LD-700'],Pioneer LD-V1000,0.62,,,0,-1.0,0,1
+276,2026-03-20 08:46:19,"Within plus or minus one minute, when did Jorge Miramón score a goal in the La Liga match between Levante UD and Real Sociedad that happened on June 6, 2022?",['53rd minute (acceptable range: anything between 52nd and 54th minute)'],"Jorge Miramón scored in the 88th minute (around 88:00, i.e., approximately 87–89 minutes).",0.82,,,0,-1.0,0,1
+277,2026-03-20 08:46:20,"What is the first and last name of the host who interviewed military pilot Eugene Bullard on NBC’s ""Today Show""?",['Dave Garroway'],I don't know,,,,0,0.4,1,0
+278,2026-03-20 08:46:21,"What is the accession number given by the Metropolitan Museum of Art for Hendrick Goltzius' ""Farnese Hercules""?",['17.37.59'],I don't know,,,,0,0.4,1,0
+279,2026-03-20 08:46:22,"As of 2010, what was the population of the village of Manyazybash in Russia?",['30 (acceptable range: anything between 29 and 31)'],58,0.79,,,0,-1.0,0,1
+280,2026-03-20 08:46:24,"With what time to the nearest second did Joeri Adams end the race, ranking in first position, in the 2007 UCI Cyclo-cross World Championships – Men's junior race?",['41:18 (acceptable range: anything between 41:17 and 41:19)'],44 minutes 36 seconds,0.65,,,0,-1.0,0,1
+281,2026-03-20 08:46:25,Who originally recorded the scientific name of the white-headed duck as *Anas leucocephala* in 1769?,['Giovanni Antonio Scopoli'],Pieter Boddaert,0.82,,,0,-1.0,0,1
+282,2026-03-20 08:46:26,In what year did Edward Baker Jelks earn a Ph.D. in archaeology?,['1965'],1957,0.76,,,0,-1.0,0,1
+283,2026-03-20 08:46:28,"What is the last name of the individual who won the Marlow Medal and Prize, an early-career award in physical chemistry given by the Royal Society of Chemistry, in 2022?",['Curchod'],I don't know,,Taylor,0.2,0,0.4,1,0
+284,2026-03-20 08:46:29,"What was the population of Konaruiyeh, a village in Esfandaqeh Rural District, in the Central District of Jiroft County, Kerman Province, Iran, at the 2006 census?",['219 (acceptable range: anything between 216 and 222)'],219,0.88,,,1,1.0,0,0
+285,2026-03-20 08:46:30,"What was the population of Spring Rock Township, Clinton County, Iowa, at the time of the 2000 Census?",['1142 (acceptable range: anything between 1129 and 1154)'],628,0.88,,,0,-1.0,0,1
+286,2026-03-20 08:46:31,Who was the 18th Chief Minister of Karnataka?,['H. D. Kumaraswamy'],H. D. Kumaraswamy,0.78,,,1,1.0,0,0
+287,2026-03-20 08:46:32,"On what day, month, and year was the Dogra Art Museum (Jammu) inaugurated by the first President of India, Dr. Rajendra Prasad?","['18th of April, 1954']",18 April 1954,0.63,,,0,-1.0,0,1
+288,2026-03-20 08:46:34,What is the real name of the Japanese criminal known as the Ninja of Heisei?,['Mitsuaki Tanigawa'],Ichioka Yūji (市岡 祐二),0.51,,,0,-1.0,0,1
+289,2026-03-20 08:46:35,"What is the name of the political unit where Abdul Bari, an Indian academic and social reformer who sought to bring about social reform in Indian society, served as president from 1946 until his death?","['Bihar Pradesh (or ""Provincial"") Congress Committee']",I don't know,,The political unit was the Muslim League (All-India Muslim League),0.25,0,0.4,1,0
+290,2026-03-20 08:46:36,How many votes did Alisher Usmanov receive when he won the 2008 election for President of the Fédération Internationale d'Escrime?,['66 votes'],Alisher Usmanov received 63 votes.,0.51,,,0,-1.0,0,1
+291,2026-03-20 08:46:37,"When holding the Crescent Axe from Demon's Souls (2009) in two hands, what is the physical damage reduction when blocking?",['55% (acceptable range: anything between 54% and 56%)'],I don't know,,60%,0.15,0,0.4,1,0
+292,2026-03-20 08:46:38,"On what month, day, and year was the cave known as Ursa Minor first discovered in Sequoia National Park, California, United States?","['August 19, 2006']",I don't know,,"October 12, 1946",0.12,0,0.4,1,0
+293,2026-03-20 08:46:39,In what month and year did Theresa Kuffour (former First Lady of Ghana) die?,['October 2023'],May 2023,0.84,,,0,-1.0,0,1
+294,2026-03-20 08:46:40,Who won the World Senior Chess Championship Women's Tournament held in 1993?,['Tatiana Zatulovskaya'],Nona Gaprindashvili,0.84,,,0,-1.0,0,1
+295,2026-03-20 08:46:41,"On what date, month, and year was Patricio Echegaray, an Argentine politician born in San José de Jáchal, born?","['October 17, 1946']",17 October 1946,0.92,,,0,-1.0,0,1
+296,2026-03-20 08:46:43,"Who crowned Reita Faria, the winner of Miss World 1966?",['Lesley Langley'],Reita Faria was crowned Miss World 1966 by the outgoing titleholder Petra Schürmann.,0.87,,,0,-1.0,0,1
+297,2026-03-20 08:46:44,"In the 2016 World Rugby Nations Cup, what was the final score of the match between Namibia and Emerging Italy?",['Namibia 38 - 26 Emerging Italy'],Namibia 21–26 Emerging Italy,0.6723,,,0,-1.0,0,1
+298,2026-03-20 08:46:45,"What day, month, and year was David Crombie appointed an Officer of the Order of Canada?",['13 May 2004'],26 June 2009,0.82,,,0,-1.0,0,1
+299,2026-03-20 08:46:46,Which Indian agriculture is known as Golden Zest?,['Saffron Cultivation'],I don't know,,Mango cultivation (particularly Alphonso mangoes),0.25,0,0.4,1,0
+300,2026-03-20 08:46:47,Who won the Chilean National Prize for Exact Sciences in 2019?,['Dora Altbir'],Ilya Shapiro,0.005,,,0,-1.0,0,1
+301,2026-03-20 08:46:48,"On which day, month, and year was the domain ""hindustantimes.com"" registered?","['August 14, 1996']",I don't know,,1998-05-25,0.32,0,0.4,1,0
+302,2026-03-20 08:46:49,In which two countries is Anisotenes cacotechna found?,['Papua New Guinea and Indonesia'],Papua New Guinea and Indonesia,0.64,,,1,1.0,0,0
+303,2026-03-20 08:46:50,Which university did Ritesh Batra attend but drop out of?,['New York University'],I don't know,,Columbia University,0.42,0,0.4,1,0
+304,2026-03-20 08:46:51,How many children did gay rights activist Morris Kight have?,['2'],2,0.72,,,1,1.0,0,0
+305,2026-03-20 08:46:53,What is the population of Port Huron as per the 2020 Census?,['28983 (acceptable range: anything between 27533 and 30433)'],"28,478",0.93,,,0,-1.0,0,1
+306,2026-03-20 08:46:54,What is the second song on Side Two of the album Rewind by Johnny Rivers?,"['""For Emily, Whenever I May Find Her""']",I don't know,,"""Rockin' Pneumonia and the Boogie Woogie Flu""",0.22,0,0.4,1,0
+307,2026-03-20 08:46:55,What is the name of the zoologist who formally described the brown cuckoo-dove in 1821?,['Coenraad Jacob Temminck'],John Latham,0.85,,,0,-1.0,0,1
+308,2026-03-20 08:46:56,What was the title of the single that Shubh released in 2021 with Irman Thiara?,"[""Don't Look""]","""We Rollin""",0.72,,,0,-1.0,0,1
+309,2026-03-20 08:46:57,"What day, month, and year was Elisabeth Udolf-Strobl born?",['12 April 1956'],Elisabeth Udolf-Strobl was born on 9 May 1956.,0.56,,,0,-1.0,0,1
+310,2026-03-20 08:46:58,What was the first palace in Rome to be erected from the ground up in the new Renaissance style?,['The Palazzo della Cancelleria'],Palazzo Venezia,0.42,,,0,-1.0,0,1
+311,2026-03-20 08:46:59,In which month and year was Bob Rusay dismissed from Cannibal Corpse?,['February 1993'],May 1993,0.8725,,,0,-1.0,0,1
+312,2026-03-20 08:47:01,"From which university did the Surgeon General of California, Diana Ramos, earn her bachelor's degree?",['University of Southern California.'],"Diana Ramos earned her bachelor's degree from the University of California, Berkeley.",0.82,,,0,-1.0,0,1
+313,2026-03-20 08:47:02,Which chief minister ordered the construction of a mosque at the site of a Hindu temple in Jammu in 1986?,['Gul Shah'],Jagmohan,0.72,,,0,-1.0,0,1
+314,2026-03-20 08:47:03,In what year did Galip Ulsoy receive the Charles Russ Richards Memorial Award from ASME and Pi Tau Sigma?,['2013'],1996,0.78,,,0,-1.0,0,1
+315,2026-03-20 08:47:04,Which American chemist was the first female president of the Electrochemical Society?,['Joan Berkowitz'],Helen M. Free,0.62,,,0,-1.0,0,1
+316,2026-03-20 08:47:06,"When using EIS with the Sigma FP, what is my maximum shutter speed?","['1/4,000 sec']",1/250 s,0.54,,,0,-1.0,0,1
+317,2026-03-20 08:47:07,"What day, month, and year was the first ride on the White Mountain Central Railroad in New Hampshire?",['30 July 1958'],"October 11, 1975",0.62,,,0,-1.0,0,1
+318,2026-03-20 08:47:08,What is the name of Nepal's first technical university established as part of a 2010 government bill?,['Agriculture and Forestry University'],I don't know,,"Kathmandu University (established 1991) — but if referring to the 2010 bill creating a dedicated technical university, likely ""Nepal Technical University"" (often referred to as Nepal Technical University or Technical University of Nepal).",0.42,0,0.4,1,0
+319,2026-03-20 08:47:09,In what year was Elliott Fitch Shepard nominated for United States Attorney for the Southern District of New York by President Rutherford B. Hayes?,['1881'],1877,0.52,,,0,-1.0,0,1
+320,2026-03-20 08:47:10,What year was the first SoCal Sword Fight tournament held?,['2012'],2005,0.72,,,0,-1.0,0,1
+321,2026-03-20 08:47:11,In which stadium was the IPL 2015 20th match played?,['M. Chinnaswamy Stadium'],I don't know,,"Wankhede Stadium, Mumbai",0.25,0,0.4,1,0
+322,2026-03-20 08:47:12,What female disc jockey sued the Maryland Racing Commission for the right to be granted a license in 1968?,['Kathy Kusner'],"Jeanette ""Jiggs"" Chase",0.21,,,0,-1.0,0,1
+323,2026-03-20 08:47:14,"What was the Hampstead, London, street address of art collector Margaret Gardiner's home?",['35 Downshire Hill'],I don't know,,"5 Fitzroy Square, London",0.2,0,0.4,1,0
+324,2026-03-20 08:47:15,Who was the medalist at the V. M. Goldschmidt Award in 2015?,['Miriam Kastner'],I don't know,,Jennifer A. D. Dickey,0.1,0,0.4,1,0
+325,2026-03-20 08:47:16,"What is the name of the small town near which the Douglas C-47A ZS-EJK, operated by Comair Ltd, crashed into a mountain in October 1982?",['Graskop'],I don't know,,Duiwelskloof,0.25,0,0.4,1,0
+326,2026-03-20 08:47:18,In which stadium did Die Ärzte play on New Year's Eve 2006?,['RheinEnergieStadion'],I don't know,,,,0,0.4,1,0
+327,2026-03-20 08:47:19,In what month and year did Eric Xing join the Mohamed bin Zayed University of Artificial Intelligence?,['January 2021'],July 2021,0.86,,,0,-1.0,0,1
+328,2026-03-20 08:47:22,In which year was Alexandra Park declared a local nature reserve?,['2013'],I don't know,,2006,0.35,0,0.4,1,0
+329,2026-03-20 08:47:23,What's the first typhoon of the 2019 Pacific typhoon season called?,['Wutip'],Typhoon Wutip,0.91,,,1,1.0,0,0
+330,2026-03-20 08:47:23,What year did the University of Michigan begin development of the MICRO Information Management System based on D.L. Childs' Set-Theoretic Data model?,['1970'],1974,0.76,,,0,-1.0,0,1
+331,2026-03-20 08:47:24,In what year was Alexej von Jawlensky expelled from Germany?,['1914'],1937,0.68,,,0,-1.0,0,1
+332,2026-03-20 08:47:27,Who was Bullard Mountain named after in the Boundary Ranges in Alaska?,['Benjamin Bullard'],I don't know,,"Bullard Mountain was likely named after a person with the surname Bullard who was involved in Alaskan mining, surveying, or prospecting—possibly a local prospector or a member of an early exploration or surveying party (e.g., a prospector or engineer named Bullard).",0.25,0,0.4,1,0
+333,2026-03-20 08:47:28,In which version of React was the switch from using the id attribute to data-reactid to track DOM nodes implemented?,['v0.4.0'],React 0.12,0.64,,,0,-1.0,0,1
+334,2026-03-20 08:47:29,How many children did Gilbert Hani and Mary Hani have?,['6'],I don't know,,4,0.25,0,0.4,1,0
+335,2026-03-20 08:47:30,How many children did Hank Williams have?,['2'],2,0.98,,,1,1.0,0,0
+336,2026-03-20 08:47:31,Who formally approved the Jubilee Field Phase 1 Development Plan and Unitisation Agreement in July 2009? Just name the office of the person.,['Minister of Energy in Ghana'],Office of the President of Ghana,0.845,,,0,-1.0,0,1
+337,2026-03-20 08:47:33,Who was awarded the Stampacchia Gold Medal in 2012?,['Ovidiu Savin'],Ivo Babuška,0.21,,,0,-1.0,0,1
+338,2026-03-20 08:47:34,"In what month and year was Nikolai Talyzin dismissed from Nikolai Ryzhkov's government, along with many other conservatives, during the period of perestroika?",['September 1989'],August 1990,0.72,,,0,-1.0,0,1
+339,2026-03-20 08:47:35,In what year did Stepan Prokopovich Timoshenko receive the Worcester Reed Warner Medal?,['1935'],1953,0.7412,,,0,-1.0,0,1
+340,2026-03-20 08:47:36,"In which year did Dina Nath Walli (an Indian watercolor artist and poet from Srinagar city) return to Srinagar, where he concentrated on landscape painting in watercolors?",['1936'],1956,0.56,,,0,-1.0,0,1
+341,2026-03-20 08:47:37,What is the fuselage length of the Bell 430 rotorcraft in meters?,['13.44 m (acceptable range: anything between 13.30 and 13.58 m)'],16.74 meters,0.56,,,0,-1.0,0,1
+342,2026-03-20 08:47:38,"What is the first line in Mariah Carey's ""Hero"" song?","[""There's a hero (if you look inside your heart)""]",There's a hero if you look inside your heart,0.9786,,,1,1.0,0,0
+343,2026-03-20 08:47:39,"When diver Vicki Manalo joined the swimming program at the Crystal Plunge in North Beach, San Francisco, CA, what were the first and last names of the man assigned as her coach?",['Jimmy Hughes'],I don't know,,,,0,0.4,1,0
+344,2026-03-20 08:47:40,"Which Aseprite version had the patch note: ""Added option to enable the 'Snap to Grid' option for the brush preview #4137""?",['v1.3-rc8'],Aseprite v1.3.0,0.32,,,0,-1.0,0,1
+345,2026-03-20 08:47:41,Which company launched India’s first commercial MCU chip?,['Mindgrove'],"Tata Elxsi (through Tata Elxsi’s semiconductor division) — specifically, Tata Elxsi launched India’s first commercial MCU chip.",0.12,,,0,-1.0,0,1
+346,2026-03-20 08:47:42,Who was known for playing the trombone for The Jazzmen at the time of Kenny Ball's death?,['John Bennett'],I don't know,,,,0,0.4,1,0
+347,2026-03-20 08:47:44,In what grade was the model and actress Hunter Schafer diagnosed with gender dysphoria?,['9th'],She was diagnosed with gender dysphoria in 6th grade.,0.82,,,0,-1.0,0,1
+348,2026-03-20 08:47:44,What is the third ionization energy of molybdenum in kilojoules per mole?,['2618 (acceptable range: anything between 2591 and 2645)'],2720 kJ/mol,0.32,,,0,-1.0,0,1
+349,2026-03-20 08:47:45,Undercover's first Paris runway show was named what?,['Scab'],I don't know,,"""Undercoverism""",0.25,0,0.4,1,0
+350,2026-03-20 08:47:46,Which Indian cricketer has been appointed UNICEF and Cricket for Good Ambassador for the ICC Women’s World Cup 2017?,['Sachin Tendulkar'],Mithali Raj,0.72,,,0,-1.0,0,1
+351,2026-03-20 08:47:47,"In 2022, what was the population of the Kızılağaç district of Kaş, Antalya Province, Turkey?",['221 (acceptable range: anything between 218 and 224)'],"1,711",0.86,,,0,-1.0,0,1
+352,2026-03-20 08:47:49,Name the largest doab in India.,['Ganges-Yamuna Doab'],"Doab between the Ganges and Yamuna rivers (the Ganges–Yamuna Doab, also called the Ganges-Yamuna Doab or the Doab proper)",0.76,,,1,1.0,0,0
+353,2026-03-20 08:47:50,What is the name of the campus where Princess Shruti Rajya Lakshmi Devi Shah completed her bachelor's degree?,['Padma Kanya Campus'],I don't know,,,,0,0.4,1,0
+354,2026-03-20 08:47:51,"Which soldier was conferred with the ""Points of Light Honour"" by British Prime Minister Rishi Sunak?",['Rajindar Singh Dhatt'],I don't know,,Sergeant Johnson Beharry,0.25,0,0.4,1,0
+355,2026-03-20 08:47:53,What high school did RuPaul Charles attend in California?,['Patrick Henry High School'],"Iovine and Peterson Polytechnic High School (commonly called Polytechnic High School) in Los Angeles, California.",0.82,,,0,-1.0,0,1
+356,2026-03-20 08:47:53,"How many birthdays did ""Granny D"" Haddock have during her famous cross-country walk that began in California in 1999?",['2'],2,0.82,,,1,1.0,0,0
+357,2026-03-20 08:47:56,"What were the month, day, and year Anne Morgan was first styled Baroness Hunsdon?","['January 13, 1559']",Anne Morgan was first styled Baroness Hunsdon on 14 March 1926.,0.54,,,0,-1.0,0,1
+358,2026-03-20 08:47:57,Who was the governor of Assam from 16 February 1949 to 27 May 1949?,['Sri Prakasa'],Jairamdas Daulatram,0.86,,,0,-1.0,0,1
+359,2026-03-20 08:47:58,"Which high school did the former Archbishop of Cape Town, Njongonkulu Winston Hugh Ndungane, attend when he completed his schooling in December 1958?",['Lovedale High School'],He completed his schooling at Lovedale High School (Lovedale Missionary Institution) in December 1958.,0.56,,,1,1.0,0,0
+360,2026-03-20 08:47:59,When did BAe and the American aircraft manufacturer McDonnell Douglas sign a memorandum of understanding regarding the McDonnell Douglas AV-8B Harrier II? Example answer: mm-yyyy,['08-1981'],03-1981,0.642,,,0,-1.0,0,1
+361,2026-03-20 08:48:00,How many candidates entered their work in the Prix de Rome in the engraving category in 1805?,['1'],12,0.32,,,1,1.0,0,0
+362,2026-03-20 08:48:01,"On 5 February 2022, in the rugby match between Romania and Russia that was part of the 2022 Rugby Europe Championship, how many tries did Romania have?",['4'],Romania scored 3 tries.,0.72,,,0,-1.0,0,1
+363,2026-03-20 08:48:02,"Which public relations expert of the Houston Chronicle made the statement ""There was never a question in anyone’s mind as to who was really running things when Ma was governor""?",['Patricia Bernstein'],I don't know,,Mike Tolson,0.15,0,0.4,1,0
+364,2026-03-20 08:48:03,"Who holds the record for the fastest marathon dressed as an elf (male), with a time of 2 hours, 58 minutes, and 16 seconds, achieved at the 2017 Virgin Money London Marathon in London, UK, on April 23, 2017?",['Ashley Payne'],Michael Wardian,0.792,,,0,-1.0,0,1
+365,2026-03-20 08:48:04,What is the title of the second YouTube video ever uploaded?,['My Snowboarding Skillz'],Me at the zoo,0.8475,,,0,-1.0,0,1
+366,2026-03-20 08:48:05,The statue of Efraín González Luna is installed in which Mexican state?,['Jalisco'],Jalisco,0.72,,,1,1.0,0,0
+367,2026-03-20 08:48:06,What is the name of the world's first solid titanium watch?,['Citizen X8 Titanium Chronometer'],The world's first solid titanium watch is the Citizen X-8 (also known as the Citizen X-8 Chrono or Citizen X8 Titanium).,0.52,,,0,-1.0,0,1
+368,2026-03-20 08:48:08,"Who is the father of Jérôme Sabourin, the Canadian cinematographer?",['Marcel Sabourin'],I don't know,,The father of Jérôme Sabourin is Alain Sabourin,0.2,0,0.4,1,0
+369,2026-03-20 08:48:09,"What record label produced Avenger's 1985 EP containing the song ""Down to the Bone""?",['Wishbone Records'],Neat Records,0.82,,,0,-1.0,0,1
+370,2026-03-20 10:37:30,What was the final score between Olga Kharlan and Kim Ji-yeon at the 2013 World Championships?,['Olga Kharlan - Kim Ji-yeon: 15–14'],Olga Kharlan defeated Kim Ji-yeon 15–13 in the final at the 2013 World Championships.,0.72,,,0,-1.0,0,1
+371,2026-03-20 10:37:32,In what country did Richard Serra create his first outdoor sculptures?,['Japan'],United States,0.95,,,0,-1.0,0,1
+372,2026-03-20 10:37:34,In which year did Albertina Sisulu retire from politics?,['1999'],1994,0.65,,,0,-1.0,0,1
+373,2026-03-20 10:37:35,What is the scientific name of the first reported sexually dichromatic snake from the Indian subcontinent?,['Ahaetulla anomala'],I don't know,,,,0,0.4,1,0
+374,2026-03-20 10:37:37,At which art school was Will Hicok Low an instructor in 1890?,['National Academy of Design'],The Art Students League of New York,0.8725,,,0,-1.0,0,1
+375,2026-03-20 10:37:38,"What is the color of the boy's hair depicted in the illustration ""Backfence Graffiti"" by Norman Rockwell?",['Red / Auburn'],Brown,0.7625,,,0,-1.0,0,1
+376,2026-03-20 10:37:41,"According to the 2012 municipal census, how many people live in Shawnee Slopes?",['1565 (acceptable range: anything between 1549 and 1581)'],"1,973",0.92,,,0,-1.0,0,1
+377,2026-03-20 10:37:42,"In which year was Stefan Parkman, the conductor, awarded the Order of the Dannebrog?",['1997'],2003,0.82,,,0,-1.0,0,1
+378,2026-03-20 10:37:43,"When Donjuan Triumphant began his career as a breeding stallion in 2020, his stud fee was set at how many Euros?","['€4,000']","€6,000",0.6523,,,0,-1.0,0,1
+379,2026-03-20 10:37:45,"How many people were killed when a tractor-trolley returning from a temple fell into a pond in Kanpur on October 2, 2022?",['27'],26,0.84,,,0,-1.0,0,1
+380,2026-03-20 10:37:47,What is the surname of the person who first discovered the blood-sucking bug Triatoma carrioni?,['Larrousse'],I don't know,,Carrion,0.2,0,0.4,1,0
+381,2026-03-20 10:37:48,What was the title of the journal that Charles Raymond Perrault served as co-editor-in-chief of from 2001 to 2010?,['Artificial Intelligence'],I don't know,,Journal of Educational Measurement,0.1234,0,0.4,1,0
+382,2026-03-20 10:37:49,"What's the population of Özbek, Şabanözü according to the 2021 census?",['121 (acceptable range: anything between 119 and 123)'],73,0.72,,,0,-1.0,0,1
+383,2026-03-20 10:37:51,In which district is the Draj Bridge located?,['Rajouri'],I don't know,,"Dajlah (Tigris) River crossing in Mosul District, Nineveh Governorate, Iraq",0.12,0,0.4,1,0
+384,2026-03-20 10:37:52,"In what year did ""Drawings and Prints"" become its own department within the Pierpont Morgan Library?",['1945'],1924,0.72,,,0,-1.0,0,1
+385,2026-03-20 10:37:54,Who was the first-ever personality to hoist the Indian National Flag in the Metaverse at the 'Azadi Ka Amrit Mahotsav' Metaverse event in 2022?,['Adil Hussain'],I don't know,,Amitabh Bachchan,0.21,0,0.4,1,0
+386,2026-03-20 10:37:54,Which IIT (Indian Institute of Technology) in India installed the first supercomputer under the National Supercomputing Mission (NSM)?,['IIT (BHU)'],IIT Bombay,0.82,,,0,-1.0,0,1
+387,2026-03-20 10:37:56,What was the full birth name of American activist and writer Yolo Akili?,['Michael Todd Robinson Jr.'],I don't know,,Yolo Akili Robinson,0.25,0,0.4,1,0
+388,2026-03-20 10:37:57,How many spectators filled the Olympic Stadium during the opening ceremony of the Helsinki Olympics in 1952?,"['70,435 spectators (acceptable range: anything between 66,913 and 74,017 spectators)']","70,000",0.36,,,0,-1.0,0,1
+389,2026-03-20 10:37:58,Who did Richard Neutra design the Elkay Apartments for?,['Louis Kievman'],Richard Neutra designed the Elkay Apartments for industrialist and philanthropist Louis K. Liggett.,0.31,,,0,-1.0,0,1
+390,2026-03-20 10:38:00,What is the name of May Roosevelt's third album?,['Music to the poetry of Ntinos Christianopoulos'],I don't know,,,,0,0.4,1,0
+391,2026-03-20 10:38:01,In which year did Sayed Haider Raza's (an Indian painter) mother die?,['1947'],1994,0.22,,,0,-1.0,0,1
+392,2026-03-20 10:38:02,In what year did the U.S. Congress approve the Compact of Free Association relating to the Marshall Islands and Micronesia?,['1985'],1982,0.86,,,0,-1.0,0,1
+393,2026-03-20 10:38:03,Who was the first Tunisian president to be elected by universal suffrage after the 2011 revolution?,['Beji Caid Essebsi'],Moncef Marzouki,0.86,,,0,-1.0,0,1
+394,2026-03-20 10:38:04,Who was the Brazilian Vice-President of the International Mathematical Union in 2012?,['Marcelo Viana'],I don't know,,Carlos Gustavo Moreira,0.25,0,0.4,1,0
+395,2026-03-20 10:38:05,What is the altitude in meters above sea level of Tikti Mach'ay Mountain?,['5000 (acceptable range: anything between 4950 and 5050 meters above sea level)'],5200 meters,0.56,,,0,-1.0,0,1
+396,2026-03-20 10:38:08,"What was the gun time to the hour, minute, and second that Justin Kemboi Chesire finished in the Old Mutual 56km Ultra Two Oceans Marathon in 2019?",['3:11:22 (acceptable range: anything between 3:11:21 and 3:11:23)'],3:48:35,0.62,,,0,-1.0,0,1
+397,2026-03-20 10:38:09,"What body of water located near the Blue Ridge Parkway is known as ""the River of Many Cliffs"" by the Cherokee?",['Linville River'],The New River,0.72,,,0,-1.0,0,1
+398,2026-03-20 10:38:10,Who was Savannah Churchill's second husband?,['Jesse Johnson'],Inez Matthews,0.1246,,,0,-1.0,0,1
+399,2026-03-20 10:38:11,Who was the 2nd chairman of the Senate of Pakistan?,['Ghulam Ishaq Khan'],Iftikhar Hussain Khan Mamdot,0.22,,,0,-1.0,0,1
+400,2026-03-20 10:38:12,"Who did the boxer Jackson Asiku lose to at the Summer Olympics in Sydney, Australia in 2000?",['Arlan Lerio'],I don't know,,Ricardo Williams Jr.,0.1429,0,0.4,1,0
+401,2026-03-20 10:38:15,What was the number of recorded fatalities in the Weesp train disaster of 1918 in the Netherlands?,['41'],41,0.82,,,1,1.0,0,0
+402,2026-03-20 10:38:16,The Château style originated in Québec in the early 1880s under which architect?,['Eugène-Étienne Taché'],Bruce Price,0.72,,,0,-1.0,0,1
+403,2026-03-20 10:38:17,Who got the first position in the Rotax Micro Max season 2017 in India?,['Arjun Rajiv'],I don't know,,Aarav Kumar,0.25,0,0.4,1,0
+404,2026-03-20 10:38:18,In which year did Clint Ballard Jr. adopt the alias Buddy Clinton?,['1960'],1965,0.42,,,0,-1.0,0,1
+405,2026-03-20 10:38:19,Kos of the Dorian Pentapolis produced coinage featuring variations of which two images?,['A crab and Heracles'],A silphium plant and a goat (often represented as a goat suckling its kid),0.72,,,0,-1.0,0,1
+406,2026-03-20 10:38:20,What Serbian player played in the quarterfinals of the 2018 Madrid Open men's singles?,['Dušan Lajović'],Novak Djokovic,0.85,,,0,-1.0,0,1
+407,2026-03-20 10:38:21,"On what day, month, and year did President Gustavo Petro receive the President of Switzerland, Alain Berset, at the Casa de Nariño, where they signed an agreement to safeguard the fund, a digital copy of the documentary collection of the Commission for the Clarification of the Truth, in Switzerland?","['10 August, 2023']",28 February 2023,0.642,,,0,-1.0,0,1
+408,2026-03-20 10:38:22,What were the year and month when the Contract Law of the People's Republic of China was abolished?,['January 2021'],The Contract Law of the People's Republic of China was abolished in March 2021.,0.95,,,0,-1.0,0,1
+409,2026-03-20 10:38:23,Who is credited with the binomial name of the yellowfin sole?,['Pallas'],I don't know,,"(Pleuronectes) aspera Pallas, 1814 — commonly cited as Limanda aspera (Pallas, 1814)",0.15,1,0.4,1,0
+410,2026-03-20 10:38:24,What is the month and year Kaitlin Armstrong pleaded not guilty to the murder charge of Moriah Wilson and was arraigned?,['July 2022'],April 2023,0.8421,,,0,-1.0,0,1
+411,2026-03-20 10:38:25,"What year did Nicholas Biwott, a Kenyan politician, return to the University of Melbourne to study for a master's degree in economics under a Commonwealth scholarship?",['1966'],1960,0.48,,,0,-1.0,0,1
+412,2026-03-20 10:38:27,"Which day, month, and year did former Vice President of Ghana Kow Nkensen Arkaah die?",['25 April 2001'],Arkaah died on 25 April 2001.,0.88,,,1,1.0,0,0
+413,2026-03-20 10:38:28,"In which city was Yevgeny Polivanov arrested on August 16, 1937, during the Great Purge?",['Bishkek'],I don't know,,Moscow,0.42,0,0.4,1,0
+414,2026-03-20 10:38:30,What type of wood was the case of the Yamaha DX1 (1983) made from?,['Brazilian rosewood'],Rosewood,0.56,,,1,1.0,0,0
+415,2026-03-20 10:38:31,At what university was Kuo Tsai Chen appointed as an instructor after having been awarded his doctorate?,['Princeton University'],I don't know,,Harvard University,0.25,0,0.4,1,0
+416,2026-03-20 10:38:32,What Liverpool player scored the most goals in the 2021-2022 season of the FA Cup?,['Takumi Minamino'],Mohamed Salah,0.72,,,0,-1.0,0,1
+417,2026-03-20 10:38:33,In which year was Monir Shahroudy Farmanfarmaian (an Iranian artist) awarded the Venice Biennale?,['1958'],2013,0.53,,,0,-1.0,0,1
+418,2026-03-20 10:38:35,How many stages were in the original DS game's Pokémon Diamond and Pearl Pokémon contests?,['3'],5,0.865,,,0,-1.0,0,1
+419,2026-03-20 10:38:36,"What was George Frederic Watts' ""After the Deluge"" named when originally exhibited in 1886?",['The Sun'],"The original title was ""The Last of England""",0.0625,,,0,-1.0,0,1
+420,2026-03-20 10:38:37,"On what day, month, and year was Noel Turner, a Maltese footballer, born?","['December 9, 1974']",Noel Turner was born on 29 July 1965.,0.68,,,0,-1.0,0,1
+421,2026-03-20 10:38:38,In what subject did photographer Kemka Ajoku attain a bachelor's degree in 2020?,['Mechanical Engineering'],I don't know,,Photography,0.25,0,0.4,1,0
+422,2026-03-20 10:38:39,"Within plus or minus one minute, when was Marquinhos given a yellow card in the 2022 World Cup quarterfinals?",['77 (acceptable range: anything between 76 and 78)'],90+1' (first minute of stoppage time at end of regular time),0.66,,,0,-1.0,0,1
+423,2026-03-20 10:38:40,"On what day, month, and year was the 2021 research paper titled ""Classification of Relaxation and Concentration Mental States with EEG"" by Shingchern D. You accepted for publication in the scientific journal ""Information""?",['23 April 2021'],7 September 2021,0.73,,,0,-1.0,0,1
+424,2026-03-20 10:38:42,In what borough of New York City did ballerina Georgia Hiden die?,['Manhattan'],I don't know,,Manhattan,0.25,1,0.4,1,0
+425,2026-03-20 10:38:43,In what year did Tülay Adalı become a Fellow of the American Institute for Medical and Biological Engineering?,['2008'],2012,0.82,,,0,-1.0,0,1
+426,2026-03-20 10:38:44,In what year were the first Zildjian cymbals created?,['1618'],1618,0.88,,,1,1.0,0,0
+427,2026-03-20 10:38:45,"What specific date (month, day, year) was the very first Q Con hosted by Prism Comics in West Hollywood?","['June 18, 2022']",I don't know,,"August 16, 2014",0.32,0,0.4,1,0
+428,2026-03-20 10:38:46,What is the horsepower of the Pratt & Whitney R-1340-30 Wasp?,['550 hp (acceptable range: anything between 544 and 556 hp)'],600 hp,0.72,,,0,-1.0,0,1
+429,2026-03-20 10:38:47,"In which year was the stool ""Nkosuostool"" (Development stool) created by Asantehene, Otumfuo Opoku Ware II?",['1985'],1976,0.62,,,0,-1.0,0,1
+430,2026-03-20 10:38:48,"What were the date, month, and year when Saddam’s government laid out its combined objections to the Arab League, including that policy moves were costing Iraq $1 billion a year, that Kuwait was still using the Rumaila oil field, and that loans made by the UAE and Kuwait could not be considered debts to its ""Arab brothers""?",['15 July 1990'],23 July 1990,0.62,,,0,-1.0,0,1
+431,2026-03-20 10:38:49,Who was the recipient of the ISCB Accomplishment by a Senior Scientist Award in 2006?,['Michael Waterman'],David J. Lipman,0.82,,,0,-1.0,0,1
+432,2026-03-20 10:38:50,"Where did the Third Day song ""Nothing at All"" peak on the Billboard rock charts?",['34'],"""Nothing at All"" by Third Day peaked at No. 20 on the Billboard Hot Christian Songs chart.",0.15,,,0,-1.0,0,1
+433,2026-03-20 10:38:51,What was the name of the official newsletter of the Internal Foundation for Internal Freedom organization founded by Timothy Leary?,['The Psychedelic Review'],I don't know,,"The newsletter was called ""The Internal Bulletin""",0.25,0,0.4,1,0
+434,2026-03-20 10:38:53,What middle school did drag queen Jinkx Monsoon attend?,['da Vinci Arts Middle School'],I don't know,,George Washington Middle School (Seattle),0.26,0,0.4,1,0
+435,2026-03-20 10:38:54,"What castle overlooked Carmel Glen and its burn and was situated in Knockentiber, East Ayrshire?",['Busbie Castle'],Kilmaurs Castle,0.1543,,,0,-1.0,0,1
+436,2026-03-20 10:38:54,"What version of the music application MusicBee had the patch note ""Mini player now supports a large album artwork layout"" as part of its update?",['Version 3.2.6827 (aka 3.2.6760)'],MusicBee v3.2.7415,0.352,,,0,-1.0,0,1
+437,2026-03-20 10:38:56,What typographer developed the Allegro typeface?,['Hans Bohn'],The Allegro typeface was developed by Hans Bohn.,0.61,,,1,1.0,0,0
+438,2026-03-20 10:38:57,What is the name of the city where Whitt L. Moreland was born?,['Waco'],I don't know,,"Whitt L. Moreland was born in Eufaula, Alabama.",0.25,0,0.4,1,0
+439,2026-03-20 10:38:58,What is the total number of tracks on the Ys Origin original soundtrack released in 2007?,['37'],49,0.82,,,0,-1.0,0,1
+440,2026-03-20 10:38:59,What is the number and name of the second asteroid discovered by astronomer Édouard Jean-Marie Stephan?,['91 Aegina'],193 Ambrosia,0.74,,,0,-1.0,0,1
+441,2026-03-20 10:39:00,Name the person who became the president of Entertainment at Fox Broadcasting in September 1995 but left Fox in 1996 and soon became the president of HBO.,['John Matoian'],I don't know,,Jeff Zucker,0.25,0,0.4,1,0
+442,2026-03-20 10:39:02,In what city did Rachel Carson and Dorothy Freeman first meet in 1953?,['Southport Island'],"They first met in Woods Hole, Massachusetts.",0.92,,,0,-1.0,0,1
+443,2026-03-20 10:39:03,"In 1881, Edward S. Morse of Salem, Massachusetts, patented a way of warming and ventilating apartments using what?","[""sun's rays""]",I don't know,,hot-water coils (or hot-water heating/steam coils),0.32,0,0.4,1,0
+444,2026-03-20 10:39:05,"In which year did Gary Schreider, the Canadian football player, die?",['2011'],2002,0.86,,,0,-1.0,0,1
+445,2026-03-20 10:39:06,What is the name of Daniel arap Moi's mother?,['Kabon'],Sarah Cheromei,0.52,,,0,-1.0,0,1
+446,2026-03-20 10:39:07,"What is the street address of the building where the first meeting of the Gay Men's Chorus of Washington, D.C., was held in 1981?",['1469 Church Street NW'],I don't know,,,,0,0.4,1,0
+447,2026-03-20 10:39:08,In what year was the praying mantis species Eremiaphila aristidis described by Lucas?,['1880'],1913,0.76,,,0,-1.0,0,1
+448,2026-03-20 10:39:10,"Which city was the first in the Southern Hemisphere and the second in the world after Philadelphia, Pennsylvania, in the United States to integrate electric street lights into its infrastructure?",['Kimberley'],"Buenos Aires, Argentina",0.52,,,0,-1.0,0,1
+449,2026-03-20 10:39:12,What is the name of the political communications firm where New York State Representative Mike Lawler was a partner from 2018 to 2022?,['Checkmate Strategies'],"The Glover Park Group (specifically, its affiliate GPG Strategies / Glover Park Group)",0.45,,,0,-1.0,0,1
+450,2026-03-20 10:39:13,"What is the section title for 7 U.S. Code 136m in the Federal Insecticide, Fungicide, and Rodenticide Act?",['Indemnities'],"Section 136m is titled ""Training, certification, and licensing of applicators"" (commonly cited as ""Training, certification, and licensing of applicators"" under the Federal Insecticide, Fungicide, and Rodenticide Act).",0.82,,,0,-1.0,0,1
+451,2026-03-20 10:39:14,"What is the list entry name for the National Heritage List entry number 1090695 in Stonehouse, Stroud, Gloucestershire?",['Bede Cottage'],Church of St Cyr and St Julitta,0.42,,,0,-1.0,0,1
+452,2026-03-20 10:39:15,What year were the guidelines outlining requirements for the inclusion of soluble biomarkers in osteoarthritis clinical trials published?,['2015'],2015,0.62,,,1,1.0,0,0
+453,2026-03-20 10:39:17,"How many cards are in the ""Moonology Messages Oracle"" card deck created by Yasmin Boland?",['48'],44,0.82,,,0,-1.0,0,1
+454,2026-03-20 10:39:18,What was the name of the play in which entertainer/artist/actor Charles Marchand (1890-1930) made his first public appearance in Ottawa in 1910?,['Fleur d’ajonc'],I don't know,,"a local production titled ""The Awakening"" (best-guess based on common play titles of the period)",0.12,0,0.4,1,0
+455,2026-03-20 10:39:19,Which Ivy League university granted psychologist Robert Rutherford Holt both a master's degree and a Ph.D.?,['Harvard'],Harvard University,0.51,,,1,1.0,0,0
+456,2026-03-20 10:39:21,"How many days was school out after the fire in 1961 at Tomball High School in Harris County, Texas?",['4'],I don't know,,7 days,0.25,0,0.4,1,0
+457,2026-03-20 10:39:22,Under what section of CRPC was Omar Abdullah placed under preventive detention by the Indian government on the 4th and 5th of August 2019?,['107'],Section 107 of the Code of Criminal Procedure (CrPC),0.52,,,1,1.0,0,0
+458,2026-03-20 10:39:24,How many tracks are there on the album Memeza by Brenda Fassie?,['8'],10,0.84,,,0,-1.0,0,1
+459,2026-03-20 10:39:25,What country placed 8th in the women's épée team event of the 2020 Tokyo Olympics?,['ROC'],South Korea,0.6523,,,0,-1.0,0,1
+460,2026-03-20 10:39:26,How many innings did Game 5 of the '86 ALCS last?,['11'],11 innings,0.9123,,,1,1.0,0,0
+461,2026-03-20 10:39:27,"What is the name of the sculptor who created the c. 1680 sculpture depicting Ceres in the Belvoir Castle Sculpture Garden in Leicestershire, England?",['Caius Gabriel Cibber'],I don't know,,John Michael Rysbrack,0.24,0,0.4,1,0
+462,2026-03-20 10:39:28,What is the NASA Space Science Data Coordinated Archive (NSSDCA) ID of the spacecraft Foton-9?,['1994-033A'],I don't know,,,,0,0.4,1,0
+463,2026-03-20 10:39:30,"What was the first-generation, four-speed manual transmission gearbox type of the Mazda R360 officially called in Japan?",['KRBB'],"The Mazda R360's first-generation four-speed manual transmission was officially called the ""4-speed manual"" (直列4速マニュアル), commonly referred to in Japan as a 4速MT.",0.21,,,0,-1.0,0,1
+464,2026-03-20 10:39:32,What was the full name of the first Prime Minister of the Democratic Republic of the Congo?,['Patrice Émery Lumumba'],Patrice Émery Lumumba,0.95,,,1,1.0,0,0
+465,2026-03-20 10:39:33,In what month and year did Ronnie Milsap first move to Nashville?,['December 1972'],June 1964,0.4321,,,0,-1.0,0,1
+466,2026-03-20 10:39:34,Who served before Cora Sadosky as president of the Association for Women in Mathematics?,['Carol S. Wood'],I don't know,,,,0,0.4,1,0
+467,2026-03-20 10:39:35,"In which year was a number of procumbent pearlwort (Sagina procumbens) plants first found on Gough Island in the South Atlantic Ocean, capable of dramatically transforming the upland plant ecosystem?",['1998'],1998,0.67,,,1,1.0,0,0
+468,2026-03-20 10:39:37,"From the span of 1948 to 1962, how many times in total did Patty Berg win the Vare Trophy?",['3'],Patty Berg won the Vare Trophy 3 times.,0.76,,,1,1.0,0,0
+469,2026-03-20 10:39:38,What is the surname of the individual who won the De Gennes Prize (formerly known as the Prize for Materials Chemistry) in 2013?,['Kitagawa'],Mann,0.52,,,0,-1.0,0,1
+470,2026-03-20 10:39:39,How many individual plastic Fimir miniatures were included in the original HeroQuest Game System board game (not including expansions) released in North America in 1990?,['3'],0,0.92,,,0,-1.0,0,1
+471,2026-03-20 10:39:40,"What did CSA Brigadier General James Lusk Alcorn denounce as ""a cancer upon the body of the nation""?",['slavery'],I don't know,,The Ku Klux Klan,0.64,0,0.4,1,0
+472,2026-03-20 10:39:41,From which Boston University did pharmacist George F. Archambault earn a law degree?,['Northeastern University'],I don't know,,Boston University School of Law,0.32,0,0.4,1,0
+473,2026-03-20 10:39:42,What is the forest cover area of Sikkim in square kilometers according to the interpretation of IRS Resourcesat-2 LISS III satellite data from 2017?,"['3,342.49 (acceptable range: anything between 3309.07 and 3375.91 square kilometers)']",7095.85 km²,0.56,,,0,-1.0,0,1
+474,2026-03-20 10:39:43,How many times has the Pakistan People's Party emerged as the leading opposition party in Pakistan on a national level until 2022?,['4'],3,0.72,,,0,-1.0,0,1
+475,2026-03-20 10:39:44,Who graduated from McGill and was convicted in 2019 of espionage by Iranian authorities in a closed-door trial in Iran?,['Niloufar Bayan'],I don't know,,Majidreza Rahnavard,0.15,0,0.4,1,0
+476,2026-03-20 10:39:45,"Who laid the foundation of Woodland House School in Srinagar, India?",['Mrs. Rup SP Singh'],Sheikh Mohammad Abdullah,0.52,,,0,-1.0,0,1
+477,2026-03-20 10:39:46,In which year was Dr. Abu Baker Asvat awarded the Order of Luthuli in Silver by President Cyril Ramaphosa?,['2021'],2019,0.85,,,0,-1.0,0,1
+478,2026-03-20 10:39:47,From which university did geographer Wilbur Zelinsky receive his master's degree?,['University of Wisconsin'],Pennsylvania State University,0.7423,,,0,-1.0,0,1
+479,2026-03-20 10:39:48,In what year did artist Doris Lusk create a painting of the Tuai Power Station?,['1948'],1948,0.67,,,1,1.0,0,0
+480,2026-03-20 10:39:49,"Which breed of pigs was featured on Maine's 2018 Common Ground Country Fair poster, painted by Arika von Edler?",['kunekune'],Berkshire,0.42,,,0,-1.0,0,1
+481,2026-03-20 10:39:51,Who created Ida Mntwana's bronze statue?,['Sarah Lovejoy'],I don't know,,The bronze statue of Ida Mntwana was created by the South African sculptor Hannes Meiring.,0.25,0,0.4,1,0
+482,2026-03-20 10:39:52,Which is the first state in India to operationalize an ABDM microsite under the 100 Microsites Project by the National Health Authority?,['Mizoram'],Karnataka,0.72,,,0,-1.0,0,1
+483,2026-03-20 10:39:53,"In which year did Ratan Parimoo (an Indian art historian from Kashmir) win the Gaurav Puraskar, Gujarat State Lalit Kala Akademi?",['2000'],1994,0.72,,,0,-1.0,0,1
+484,2026-03-20 10:39:54,"How many control participants were used in the research paper ""Grey matter atrophy in cognitively impaired Parkinson’s disease,"" published in the February 2012 edition of the Journal of Neurology, Neurosurgery, and Psychiatry?",['34'],20,0.72,,,0,-1.0,0,1
+485,2026-03-20 10:39:55,What kind of factory did Anselm Kiefer transform into a studio in 1992?,['Silk factory.'],I don't know,,a paint factory,0.3,0,0.4,1,0
+486,2026-03-20 10:39:56,In which month and year was Durga Prasad Dhar (an Indian politician) appointed as the Union Minister for Planning?,"['July, 1972']",March 1967,0.56,,,0,-1.0,0,1
+487,2026-03-20 10:39:57,"What was the name and surname of the judge in the 'Miss World' pageant of 1958, who was a photojournalist and editor?",['Charles Jacobs'],I don't know,,Peter Stackpole,0.25,0,0.4,1,0
+488,2026-03-20 10:39:58,"In 2011, during the Hands Across Hawthorne rally, which followed Brad Forkner's speech and Basic Rights Oregon's call for volunteers for the Queer Patrol, which Beatles song did the crowd sing?","['""I Want to Hold Your Hand""']",I don't know,,"""All You Need Is Love""",0.35,0,0.4,1,0
+489,2026-03-20 10:39:59,What was Emma Albani’s role in “Les Huguenots” in 1891 at the Metropolitan Opera in New York?,['Valentine'],I don't know,,"Marguerite de Valois (the lead soprano role, commonly called Valentine or Marguerite)",0.12,1,0.4,1,0
+490,2026-03-20 10:40:01,"On what month, day, and year was Mammoth Cave National Park first designated as an International Dark Sky Park?","['October 28, 2021.']","December 12, 2019",0.92,,,0,-1.0,0,1
+491,2026-03-20 10:40:01,"On what month, day, and year did Emil Oberhoffer conduct the first performance by the LA Philharmonic of Maurice Ravel's ""Alborada del Gracioso""?","['July 8, 1926']",I don't know,,,,0,0.4,1,0
+492,2026-03-20 10:40:03,"On which album does the Relient K song ""May the Horse Be with You"" first appear?",['The Anatomy of the Tongue in Cheek'],"The song ""May the Horse Be with You"" first appears on the album Two Lefts Don't Make a Right...but Three Do.",0.892,,,0,-1.0,0,1
+493,2026-03-20 10:40:04,At what baseball field did the Bluff City Bombers of the Central Illinois Collegiate League play their home games from 1998 to 2004?,['Lloyd Hopkins Field'],"The Bluff City Bombers played their home games at Veterans Park in Canton, Illinois.",0.74,,,0,-1.0,0,1
+494,2026-03-20 10:40:05,"What were the day, month, and year when President Bush signed into law the resolution authorizing the Iraq War?","['October 16, 2002']","March 18, 2003",0.8321,,,0,-1.0,0,1
+495,2026-03-20 10:40:06,"On what day, month, and year was the actor and singer Corbin Bleu's portrait added to the Broadway Wall of Fame at Tony's Di Napoli restaurant in New York?","['March 16, 2010']","Corbin Bleu's portrait was added to the Broadway Wall of Fame at Tony's Di Napoli on October 20, 2007.",0.742,,,0,-1.0,0,1
+496,2026-03-20 10:40:09,In what theater in Brazil did Louis Moreau Gottschalk collapse from yellow fever during his performance?,['Teatro Lyrico Fluminense'],Teatro São Pedro (São Paulo),0.478,,,0,-1.0,0,1
+497,2026-03-20 10:40:12,What is the name of the place of birth of Hannes Fink?,"['Bolzano, Italy']",I don't know,,,,0,0.4,1,0
+498,2026-03-20 10:40:13,What is the name of the first suspension-type bridge to come across the Jhelum in Srinagar city?,['Lal Mandi Footbridge'],Zero Bridge,0.7,,,0,-1.0,0,1
+499,2026-03-20 10:40:13,"How many acres was Rachel Lambert Mellon's Virginia estate, Oak Spring Farm?","['4,000 acres (acceptable range: anything between 3960 and 4040 acres)']",700 acres,0.62,,,0,-1.0,0,1
+500,2026-03-20 10:40:15,"On what day, month, and year did the 1st ASEM Transport Ministers' Meeting begin?","['October 19, 2009']",20 May 2000,0.7425,,,0,-1.0,0,1
+501,2026-03-20 10:40:16,What is the full title of Zanele Muholi's publication from 2011?,['Zanele Muholi: African Women Photographers #1'],Faces and Phases,0.8421,,,0,-1.0,0,1
+502,2026-03-20 10:40:17,"What is the name of the individual known as ""The Horse"" who won eight running events over three Olympics between 81 and 89 CE?",['Hermogenes'],I don’t know,,Titus Flavius Dubius,0.1725,0,-1.0,0,1
+503,2026-03-20 10:40:19,"What year was the bronze loincloth added to Michelangelo's ""Risen Christ"" sculpture to cover the genitals?",['1546'],1546,0.65,,,1,1.0,0,0
+504,2026-03-20 10:40:20,"At which festival did Robert Amirkhanyan win ""Best Song"" in 1973?",['Berlin City World Youth Festival'],The Sopot International Song Festival (Sopot Festival),0.48,,,0,-1.0,0,1
+505,2026-03-20 10:40:21,In what year was the Society of Illustrators Welfare Fund established?,['1946'],1965,0.64,,,0,-1.0,0,1
+506,2026-03-20 10:40:22,"According to Medland, Sarah E.; Loesch, Danuta Z.; Mdzewski, Bogdan; Zhu, Gu; Montgomery, Grant W.; Martin, Nicholas G. (September 28, 2007), what chromosome location was identified as linked to the finger ridge counts of the ring, index, and middle fingers through multivariate linkage analysis?",['5q14.1'],5p15.2–p15.1,0.42,,,0,-1.0,0,1
+507,2026-03-20 10:40:23,"What were the day, month, and year when Instagram introduced comment liking?","['December 6, 2016']","March 31, 2016",0.912,,,0,-1.0,0,1
+508,2026-03-20 10:40:24,"On what day, month, and year did the Winnipeg Free Press cease publishing its regular Sunday edition?",['1 November 2009'],"March 31, 2008",0.72,,,0,-1.0,0,1
+509,2026-03-20 10:40:25,Name the village in Iran from which Tilla embroidery originated.,['Zari.'],The village of Tilla in the Khorasan region is commonly cited as the origin of Tilla embroidery (often associated with the village of Tilla or Tilla-Khorasan).,0.2111,,,0,-1.0,0,1
+510,2026-03-20 10:40:27,Which Denver team did Brodie Smith play for in 2014?,['Johnny Bravo'],I don't know,,Denver Outlaws,0.25,0,0.4,1,0
+511,2026-03-20 10:40:27,"From which database did the authors of ""Identifying Semantic Role Clusters and Alignment Types via Microrole Coexpression Tendencies"" obtain the 25 languages used in their paper?",['ValPaL (Valency Patterns Leipzig) database'],I don't know,,,,0,0.4,1,0
+512,2026-03-20 10:40:29,"On what day, month, and year was Motonori Matuyama born?",['25 October 1884'],"Motonori Matuyama was born on October 3, 1884.",0.72,,,0,-1.0,0,1
+513,2026-03-20 10:40:30,What year did Katia Bellillo become Minister for Regional Affairs?,['1998'],1998,0.85,,,1,1.0,0,0
+514,2026-03-20 10:40:31,What was the percentage of voter turnout during the 1992 Ghanaian presidential election?,['50.16 (acceptable range: anything between 49.65 and 50.67)'],50.2%,0.68,,,0,-1.0,0,1
+515,2026-03-20 10:40:32,How many Indigenous languages were designated in Togo in 1975?,['Two'],39,0.58,,,0,-1.0,0,1
+516,2026-03-20 10:40:33,"What day, month, and year did Panama decide to use DVB-T?","['May 19, 2009']",Panama decided to use DVB-T on 11 November 2010.,0.52,,,0,-1.0,0,1
+517,2026-03-20 10:40:34,For how many years did Mohamed Abdelaziz Djaït serve as the Mufti of the Republic of Tunisia?,['3'],40 years (from 1922 to 1962),0.7,,,0,-1.0,0,1
+518,2026-03-20 10:40:37,"What was the name of the sculptor who created the war memorial, a twenty-two-and-a-half-foot statue of bronze and granite depicting a Canadian soldier in battle dress, in Brockville, Ontario, that was unveiled in 1924?",['Nicholas Pirotton'],I don't know,,Walter Allward,0.25,0,0.4,1,0
+519,2026-03-20 10:40:39,"As of 2022, what year did the Centro Botín Centre in Spain have the exhibition named 'Amigos'?",['2019'],2016,0.72,,,0,-1.0,0,1
+520,2026-03-20 10:40:39,"Which high school did John Joseph Kamotho, a former Member of Parliament for Mathioya and Kangema Constituency, attend?",['Nyeri High School'],Kamotho High School,0.25,,,0,-1.0,0,1
+521,2026-03-20 10:40:40,"What was the length of Prafullachandra Natwarlal Bhagwati's tenure as the Chief Justice of India, in years and days?","['1 year, 161 days (acceptable range: 1 year, anything between 160 and 162 days)']",1 year and 181 days,0.76,,,0,-1.0,0,1
+522,2026-03-20 10:40:42,Who replaced band member Carl Martin of the group Shai?,['Erik Willis'],I don't know,,Marc Nelson,0.25,0,0.4,1,0
+523,2026-03-20 10:40:43,How many total performances did Italian baritone Antonio Scotti (1866-1936) have at the Metropolitan Opera House between 1899 and 1933?,['1213 (acceptable range: anything between 1199 and 1226)'],889,0.67,,,0,-1.0,0,1
+524,2026-03-20 10:40:46,What was the name of the carriage builder to whom painter Shepard Alonzo Mount was apprenticed as a young man?,['James Brewster'],I don't know,,Thomas Edwards,0.25,0,0.4,1,0
+525,2026-03-20 10:40:47,What is the first and last name of the sculptor who created the statue of Christopher Codrington at All Souls College?,['Henry Cheere'],Ivor Roberts-Jones,0.37,,,0,-1.0,0,1
+526,2026-03-20 10:40:48,At what age did Princess Bathildis of Anhalt-Dessau die?,['64'],Princess Bathildis of Anhalt-Dessau died at age 84.,0.72,,,0,-1.0,0,1
+527,2026-03-20 10:40:49,On what date (Month/Day/Year) were two ancient cannons presented to Plymouth at Burial Hill by the British Government?,"['October 4, 1921']","January 25, 1920",0.462,,,0,-1.0,0,1
+528,2026-03-20 10:40:50,"What is the state highway road number of the Kancheepuram-Thiruvathipuram Road under the Cheyyar division of Tamil Nadu, India?",['SH 5A'],I don't know,,SH-48,0.25,0,0.4,1,0
+529,2026-03-20 10:40:51,"In which year did Edward Meyrick first describe Glyphipterix saurodonta, the species of sedge moth in the genus Glyphipterix?",['1913'],1928,0.86,,,0,-1.0,0,1
+530,2026-03-20 10:40:52,What two countries competed for 3rd place in the women's team foil event at the 1964 Summer Olympics?,['Germany and Italy'],Hungary and Poland,0.8467,,,0,-1.0,0,1
+531,2026-03-20 10:40:53,What was Gustav Arthur Cooper's Ph.D. dissertation titled?,['Stratigraphy of the Hamilton Group of New York'],I don't know,,"""The Ostracoda of the Lower Paleozoic""",0.15,0,0.4,1,0
+532,2026-03-20 10:40:54,"What place did the album ""Rolling Papers 2"" by Wiz Khalifa receive on the 2018 US Billboard 200 year-end charts?",['128th'],I don't know,,126,0.25,0,0.4,1,0
+533,2026-03-20 10:40:55,"What is the height (in meters) of the light multipurpose aircraft T-101 named Grach, based on the AN-2 biplane that was designed by Evgeny Grunin, which took its first flight on December 7, 1994?",['4.86 m (acceptable range: anything between 4.81 and 4.91 m)'],3.20 m,0.72,,,0,-1.0,0,1
+534,2026-03-20 10:40:56,Which infraorder in the animal kingdom does the superfamily Psalidopodoidea belong to?,['Caridea'],Ioxobiina,0.02,,,0,-1.0,0,1
+535,2026-03-20 10:40:58,"On what day, month, and year did Bruno Kreisky (an Austrian social democratic politician) marry Vera Fürth?","['April 23, 1942']",7 November 1944,0.76,,,0,-1.0,0,1
+536,2026-03-20 10:40:59,"On what month, day, and year was the first meeting of the Palestinian National Council?","['May 28, 1964']","May 28, 1964",0.71,,,1,1.0,0,0
+537,2026-03-20 10:41:00,What production did the Winnipeg Daily Free Press claim was “too spicy – at least for this town” in June 1880?,"[""James Albery's Pink Dominoes""]",I don't know,,The Winnipeg Daily Free Press claimed the production of Gilbert and Sullivan's H.M.S. Pinafore was “too spicy – at least for this town” in June 1880.,0.25,0,0.4,1,0
+538,2026-03-20 10:41:01,"What day, month, and year did the Union Minister of Health and Family Welfare launch the ""MusQan"" initiative in India?",['17th September 2021'],26 November 2022,0.72,,,0,-1.0,0,1
+539,2026-03-20 10:41:02,"What day, month, and year did Peter III of Aragon become King of Sicily?",['4 September 1282'],4 June 1282,0.4286,,,0,-1.0,0,1
+540,2026-03-20 10:41:04,"In 2014, who took over development of the Brooding language for the Riddlesbrood Touring Theater Company?",['BenJamin P. Johnson'],I don't know,,Kira Van Dijk,0.12,0,0.4,1,0
+541,2026-03-20 10:41:05,In which U.S. state was painter Davyd Whaley born?,['Tennessee'],California,0.8,,,0,-1.0,0,1
+542,2026-03-20 10:41:06,In what year did fashion designer Mowalola Ogunlesi drop out of Central Saint Martins?,['2018'],2018,0.84,,,1,1.0,0,0
+543,2026-03-20 10:41:09,"What trophy was won on October 12, 2019, by Kaizer Chiefs Football Club?",['The Shell Ultra Helix Cup.'],I don't know,,Telkom Knockout,0.4567,0,0.4,1,0
+544,2026-03-20 10:41:10,In what position did Claudine Vita rank in the women's discus throw final event of the 2019 World Athletics Championships?,['9'],She finished 8th in the women's discus throw final at the 2019 World Athletics Championships.,0.76,,,1,1.0,0,0
+545,2026-03-20 10:41:11,How many television match officials were from England in the 2019 Rugby World Cup?,['2'],2,0.84,,,1,1.0,0,0
+546,2026-03-20 10:41:13,What attraction was removed to make space for the Demon at Tivoli Gardens?,['The Snake'],The Roller Coaster (Rutschebanen) was removed to make space for the Demon at Tivoli Gardens.,0.32,,,0,-1.0,0,1
+547,2026-03-20 10:41:15,In what prison did Jean-Marc Rouillan marry Nathalie Ménigon?,['Fleury-Mérogis Prison'],Clairvaux Prison,0.8765,,,0,-1.0,0,1
+548,2026-03-20 10:41:17,"From what undergraduate college did Lt. Gen. (Ret.) Ronald Ray Blanck, D.O., graduate?",['Juniata College'],"Pennsylvania State University (Penn State) — Penn State College of Medicine? No, undergraduate from Pennsylvania State University (University Park)",0.74,,,0,-1.0,0,1
+549,2026-03-20 10:41:18,Which year was Leonard P. Zakim first involved in the reelection campaign of Michael Dukakis?,['1978'],1986,0.32,,,0,-1.0,0,1
+550,2026-03-20 10:41:19,What is the name of the man who became the third Black man to serve as a Portland city commissioner in Oregon?,['Mingus Ulysses Mapps'],Jo Ann Hardesty,0.0,,,0,-1.0,0,1
+551,2026-03-20 10:41:20,"Who created the bronze version of ""Damned Soul"" by Gian Lorenzo Bernini, currently in the Liechtenstein Collection?",['Massimiliano Soldani-Benzi'],Giovanni Battista Foggini,0.62,,,0,-1.0,0,1
+552,2026-03-20 10:41:21,Which school did Lyndon B. Johnson briefly teach in Pearsall?,['Pearsall High School'],I don't know,,Pearsall Elementary School,0.21,0,0.4,1,0
+553,2026-03-20 10:41:22,"What multiple-choice letter option could be selected by pressing the button surrounded by yellow on the chest plate of the original 2-XL Robot, which was released between 1978-1981 by Mego Corporation, based on its default overlay?",['C'],A,0.8723,,,0,-1.0,0,1
+554,2026-03-20 10:41:27,"In what city in England was James Brain, an English football manager and player born in 1900, born?",['Bristol'],I don't know,,Cardiff,0.25,0,0.4,1,0
+555,2026-03-20 10:41:28,What was Natasha Merle's nomination vote count for the United States District Court for the Eastern District of New York?,['50 Yeas and 49 Nays'],50–45 (Senate confirmation vote),0.84,,,0,-1.0,0,1
+556,2026-03-20 10:41:29,"Which organization commissioned ""Pinturas de Tamayo"" (the composition by Steven Stucky)?",['Chicago Symphony Orchestra'],"The composition ""Pinturas de Tamayo"" by Steven Stucky was commissioned by the Boston Symphony Orchestra.",0.72,,,0,-1.0,0,1
+557,2026-03-20 10:41:30,"What was the voter participation percentage in the 1971 Federal elections in the Canton of the Grisons, also known as the Canton of Graubünden, in Switzerland?",['56.70% (acceptable range: anything between 56.13% and 57.27%)'],I don't know,,45.7%,0.23,0,0.4,1,0
+558,2026-03-20 10:41:31,"Three years after joining Comme des Garçons, Junya Watanabe started designing which CdG line?",['Tricot line'],The Comme des Garçons Homme line,0.642,,,0,-1.0,0,1
+559,2026-03-20 10:41:32,"What is the surname of the individual who won the Faraday Medal, awarded by the Electrochemistry Group of the Royal Society of Chemistry in 2019?",['Winter'],Bartlett,0.7423,,,0,-1.0,0,1
+560,2026-03-20 10:41:34,Name the first 3D planetarium in India.,['Swami Vivekananda Planetarium'],"Nehru Planetarium, Mumbai",0.2175,,,0,-1.0,0,1
+561,2026-03-20 10:41:35,What was the full name of the first Black runner to win the Ultra Two Oceans Marathon in South Africa?,['Gabashane Vincent Rakabaele'],I don't know,,,,0,0.4,1,0
+562,2026-03-20 10:41:35,"Who was the person who spoke out against naming a new Imperial Lord Privy Seal, which put him in direct conflict with the regime's de facto prime minister, Émile Ollivier?",['Léon Gambetta'],Léon Gambetta,0.4512,,,1,1.0,0,0
+563,2026-03-20 10:41:37,"Which Nassau County, NY, hospital did New York State Representative Tom Suozzi's mother work in as an operating room nurse?",['Glen Cove Hospital'],I don't know,,"Long Island Jewish Medical Center (LIJ) in New Hyde Park, Nassau County, NY",0.2,0,0.4,1,0
+564,2026-03-20 10:41:37,"In 1989, how many kilometers long was the Cape Town Cycle Tour, formerly known as the Cape Argus Cycle Tour?",['105 km (acceptable range: anything between 103 and 107 km)'],109 km,0.72,,,0,-1.0,0,1
+565,2026-03-20 10:41:39,"What were the month and year when Netflix announced official support for ChromeOS through its streaming service, allowing Chromebooks to watch streaming movies and TV shows via Netflix?",['August 2011'],September 2014,0.86,,,0,-1.0,0,1
+566,2026-03-20 10:41:39,What is the number of months that Kingda Ka was closed after being struck by lightning in 2009?,['3'],2 months,0.57,,,0,-1.0,0,1
+567,2026-03-20 10:41:40,"In September 2022, biologists reported what number of Devils Hole Pupfish in Devils Hole, the most they'd observed in 19 years?",['263 (acceptable range: anything between 259 and 266)'],51,0.75,,,0,-1.0,0,1
+568,2026-03-20 10:41:42,"In July 2021, how much rainfall (in millimeters) was recorded in Al Ain due to cloud-seeding efforts?",['6.9 millimetres (acceptable range: anything between 6.83 and 6.97 millimetres)'],20 mm,0.45,,,0,-1.0,0,1
+569,2026-03-20 10:41:43,For which years did the Kenyan politician Amason Kingi Jeffah serve as Minister for Fisheries Development?,['2010-2013'],2001–2002,0.72,,,0,-1.0,0,1
+570,2026-03-20 10:41:44,What is the name of India's first nano-satellite?,['Jugnu'],ANUSAT,0.72,,,0,-1.0,0,1
+571,2026-03-20 10:41:45,What was the name of the younger brother of Mukul Chandra Dey who was a member of the Progressive Artists' Group and a prominent painter of the Bengal School of Art?,['Manishi Dey'],I don't know,,Manishi Dey,0.32,1,0.4,1,0
+572,2026-03-20 10:41:46,In which year was John B. Mortimer appointed a Judge of the High Court of Hong Kong?,['1985'],1997,0.67,,,0,-1.0,0,1
+573,2026-03-20 10:41:49,"What is the name of the illness, as it was known at that time, from which Anna, the daughter of Sir James Augustus Henry Murray, the primary editor of the Oxford English Dictionary from 1879, died?","['Tuberculosis (then know as ""Consumption"")']",She died of consumption.,0.912,,,0,-1.0,0,1
+574,2026-03-20 10:41:50,"According to the last population update in 2010, the rural locality of Taz Russky in the Klyapovskoye Rural Settlement of Russia has a population of what?",['175 (acceptable range: anything between 173 and 177)'],0,0.2046,,,0,-1.0,0,1
+575,2026-03-20 10:41:51,"In which day, month, and year was the song written by Pedro Medina Avendaño declared the national anthem of Bogotá?",['31 July 1974'],18 May 1967,0.72,,,0,-1.0,0,1
+576,2026-03-20 10:41:52,Which football team won the first and only ELFA Challenge Cup competition in 1922?,['Stoke Ladies'],I don't know,,Queen's Park,0.25,0,0.4,1,0
+577,2026-03-20 10:41:53,In which Rhode Island town was Shaker musician Ruth Mildred Barker born?,['Providence'],I don't know,,"Providence, Rhode Island",0.4,1,0.4,1,0
+578,2026-03-20 10:41:54,What was the name of the gallery at Blenheim Palace that was destroyed by fire in 1861?,['Titian Gallery'],Picture Gallery,0.82,,,0,-1.0,0,1
+579,2026-03-20 10:41:55,"What were the month and year when Obama rolled out the Priority Enforcement Program, an immigration enforcement program that had been pioneered by George W. Bush?",['July 2015'],November 2014,0.86,,,0,-1.0,0,1
+580,2026-03-20 10:41:56,"On the Bannerman family crest, what is the man holding in his right hand?",['A sword'],I don't know,,,,0,0.4,1,0
+581,2026-03-20 10:41:58,"In which district is the Syrian village ""Kafr al-Awamid"" located?",['Al-Zabadani'],I don't know,,Kafr al-Awamid is located in the Qatana District of Rif Dimashq Governorate.,0.24,0,0.4,1,0
+582,2026-03-20 10:42:09,In what month and year did New York State Representative Paul Tonko resign as CEO of the New York State Energy Research and Development Authority?,"['April, 2008']",June 2007,0.64,,,0,-1.0,0,1
+583,2026-03-20 10:42:11,"What are the dimensions of Janine Antoni's 2015 work, ""Lull,"" in inches?",['27 x 40 inches (acceptable range: [26-28] x [39-41] inches)'],The dimensions are 84 × 60 × 60 inches.,0.26,,,0,-1.0,0,1
+584,2026-03-20 10:42:12,What was the name of Helmut Lang's solo exhibition in New York in 2017?,['Helmut Lang: new work'],Helmut Lang: Of Mice and Men,0.72,,,0,-1.0,0,1
+585,2026-03-20 10:42:13,In what year did the Computer History Museum have its first exhibit?,['1975'],1975,0.12,,,1,1.0,0,0
+586,2026-03-20 10:42:15,In which episode of Season 5 does the British period drama Downton Abbey refer to the Jallianwala Bagh massacre?,['8'],Episode 4,0.72,,,0,-1.0,0,1
+587,2026-03-20 10:42:16,How many lamps did the original Cape Hatteras Lighthouse contain?,['18'],15,0.62,,,0,-1.0,0,1
+588,2026-03-20 10:42:17,"On what day, month, and year was Cities: Skylines released for Google Stadia?","['May 17, 2022']","April 16, 2020",0.8247,,,0,-1.0,0,1
+589,2026-03-20 10:42:18,"What was the nickname of Wiley Lee Griggs III, an American Negro League infielder?",['Diamond Jim'],I don't know,,"Willie Griggs — ""Wimp"" (commonly reported nickname: ""Wimp"")",0.25,0,0.4,1,0
+590,2026-03-20 10:42:19,How many songs did Narayan Gopal release during his lifetime?,['137 (acceptable range: anything between 135 and 139)'],Narayan Gopal released approximately 75 songs during his lifetime.,0.42,,,0,-1.0,0,1
+591,2026-03-20 10:42:21,What are the notes of the bebop scale in Key A major?,"['A, B, C♯, D, E, F (or E♯), F♯, G♯']","A major bebop scale (the bebop major scale) is A–B–C#–D–E–F#–G–G#–A (i.e., A, B, C#, D, E, F#, G, G#)",0.72,,,0,-1.0,0,1
+592,2026-03-20 10:42:23,Who was the 2018 ACM Eugene L. Lawler Award recipient?,['Meenakshi Balakrishnan'],The 2018 ACM Eugene L. Lawler Award recipient was the International Committee of the Red Cross (ICRC).,0.72,,,0,-1.0,0,1
+593,2026-03-20 10:42:24,Which two architects built the Pizzurno Palace?,['Carlos Adolfo Altgelt and Hans Altgelt'],Alejandro Christophersen and Pablo Hary,0.25,,,0,-1.0,0,1
+594,2026-03-20 10:42:27,From which Louisiana university did former Belizean Prime Minister Manuel Esquivel earn his B.S. degree in physics?,"['Loyola University, New Orleans']",Louisiana State University (LSU),0.945,,,0,-1.0,0,1
+595,2026-03-20 10:42:28,"On what day, month, and year was Petra Văideanu (retired Romanian heptathlete) born?","['August 24, 1965']",23 June 1970,0.72,,,0,-1.0,0,1
+596,2026-03-20 10:42:29,In which city of Pakistan is Gasho Lake located?,['Gilgit'],Gasho Lake is located in Skardu.,0.73,,,0,-1.0,0,1
+597,2026-03-20 10:42:30,Who was the first to describe Pterolophia exigua?,['Stephan von Breuning'],I don’t know,,Francis Polkinghorne Pascoe,0.25,0,-1.0,0,1
+598,2026-03-20 10:42:31,"What is the name of the tennis player who faced a disciplinary probe and was fined for walking off the court during the ATP 500 event at Acapulco, Mexico in March 2021?",['Damir Dzumhur'],Iga Świątek,0.0,,,0,-1.0,0,1
+599,2026-03-20 10:42:33,"On 15 May 1946, who commissioned the USCGC Eagle (WIX-327) into the United States Coast Guard?",['Gordon McGowan'],Captain Gordon McGowan,0.3247,,,1,1.0,0,0
+600,2026-03-20 10:42:34,Which university awarded Pieter Bleeker a Doctorate Honoris Causa first in 1846 for his work in ichthyology and tropical medicine?,['Leyden University'],I don't know,,University of Groningen,0.25,0,0.4,1,0
+601,2026-03-20 10:42:35,In which genus was the orange-spotted bulbul originally described in 1821?,['Turdus'],I don't know,,The orange-spotted bulbul (Pycnonotus bimaculatus) was originally described in the genus Turdus.,0.4123,1,0.4,1,0
+602,2026-03-20 10:42:36,"When was the album ""When the Sun Goes Down"" by Selena Gomez released in Japan (specific day, month, and year)?",['14 September 2011'],"September 4, 2013",0.8742,,,0,-1.0,0,1
+603,2026-03-20 10:42:38,"On what date, month, and year was the Indian politician T. M. Selvaganapathy acquitted by the High Court in connection to the Pleasant Stay hotel case?",['4 December 2001'],29 November 2012,0.67,,,0,-1.0,0,1
+604,2026-03-20 10:42:39,Which district did Mary Ann Arty serve in the Pennsylvania House of Representatives in 1981?,['165'],I don't know,,She served in the 153rd District,0.25,0,0.4,1,0
+605,2026-03-20 10:42:40,What is the maximum width of Gangabal Lake in kilometers?,['1 km'],1.2 kilometers,0.45,,,0,-1.0,0,1
+606,2026-03-20 10:42:42,"The Community Hall (23 Grenville Street), purchased in 1935 by a group of residents in Burritts Rapids, Ontario, was built as a general store by a man named what?",['John Strahan French'],John McMullen,0.42,,,0,-1.0,0,1
+607,2026-03-20 10:42:43,"What did Norman Rockwell name his first assignment for ""Look"" magazine?",['The Problem We All Live With'],"""The Connoisseur""",0.42,,,0,-1.0,0,1
+608,2026-03-20 10:42:44,"For how many scudi did the Florentine authorities buy the ""Pitti Tondo"" from the dealer Fedele Acciai in 1823?",['200 (acceptable range: anything between 198 and 202)'],150 scudi,0.32,,,0,-1.0,0,1
+609,2026-03-20 10:42:45,What was Yangyi Yu's score in the 2020 Tata Steel Masters?,['4.5/13'],5.5/13,0.92,,,0,-1.0,0,1
+610,2026-03-20 10:42:46,Who was Robert J. Mrazek's first wife?,['Catherine Gurick'],I don't know,,Elizabeth A. (Bets) Mrazek,0.15,0,0.4,1,0
+611,2026-03-20 10:42:48,"What specific day, month, and year was Beyoncé's album ""Lemonade"" certified platinum by the British Phonographic Industry?","['9, September 2016']",3 March 2017,0.7234,,,0,-1.0,0,1
+612,2026-03-20 10:42:49,How many new subclasses were introduced in Tasha's Cauldron of Everything (not including reprints from previous books)?,['22'],30,0.72,,,0,-1.0,0,1
+613,2026-03-20 10:42:50,"On what day, month, and year did Olton Willem van Genderen, a Surinamese civil servant and politician, die?","['November 9, 1990']",20 August 1990,0.8745,,,0,-1.0,0,1
+614,2026-03-20 10:42:51,In which Tokyo venue was P-Model's live album *Pause* recorded?,['Hibiya Open-Air Concert Hall'],Nippon Budokan,0.0625,,,0,-1.0,0,1
+615,2026-03-20 10:42:52,Which of Smith Wigglesworth's grandchildren became the president of Elim Pentecostal Church?,['Leslie Wigglesworth'],I don't know,,George Melody,0.15,0,0.4,1,0
+616,2026-03-20 10:42:53,Who preceded Eduardo Laurencena as President of the National Committee of the UCR?,['Gabriel Oddone'],Julio Argentino Roca,0.1245,,,0,-1.0,0,1
+617,2026-03-20 10:42:55,What relation is David W. Duclon to Cherie Johnson?,['Maternal uncle.'],I don't know,,David W. Duclon is Cherie Johnson's father.,0.32,0,0.4,1,0
+618,2026-03-20 10:42:56,The Honeybee Conservancy founder Guillermo Fernandez was a child immigrant from which country?,['Cuba'],He was a child immigrant from Mexico.,0.832,,,0,-1.0,0,1
+619,2026-03-20 10:42:58,"On what day, month, and year was Ahmed Samir Farag, an Egyptian footballer, born?",['20 May 1986'],6 February 1986,0.92,,,0,-1.0,0,1
+620,2026-03-20 10:42:59,"In 2022, on which date and month was the news channel 'World Is One News' (WION) blocked from YouTube for ""violating YouTube's community guidelines"" regarding the ""Russia-Ukraine War""?",['22 March'],03 March 2022,0.67,,,0,-1.0,0,1
+621,2026-03-20 10:43:01,What number of sets does the discontinued Lego part ID 4178 appear in?,['10'],21,0.3712,,,0,-1.0,0,1
+622,2026-03-20 10:43:02,At which U.S. observatory was 66 Maja discovered?,['Harvard College Observatory'],66 Maja was discovered at the Berlin Observatory.,0.68,,,0,-1.0,0,1
+623,2026-03-20 10:43:05,What is the name of the sculpture Louise Bourgeois created in 1955?,['One and Others'],I don't know,,"The sculpture is titled ""Sleeping Figure""",0.32,0,0.4,1,0
+624,2026-03-20 10:43:06,"On what day, month, and year did Amédée Gibaud, a French chess master, die?",['18 August 1957'],4 January 1957,0.89,,,0,-1.0,0,1
+625,2026-03-20 10:43:07,From which South American university did Sergio Fajardo Valderrama receive his M.Sc. in Mathematics?,['Universidad de los Andes'],Universidad de los Andes (Bogotá),0.89,,,1,1.0,0,0
+626,2026-03-20 10:43:08,What are the first and last names of the designer of 50 francs with the Little Prince images?,['Roger Pfund'],I don't know,,Louis-Oscar Roty,0.12,0,0.4,1,0
+627,2026-03-20 10:43:10,What cabinet position did Sir Hector-Louis Langevin hold in 1870?,['Minister of Public Works'],I don't know,,He was Minister of Public Works,0.25,1,0.4,1,0
+628,2026-03-20 10:43:11,From which university did Teresa Czerwińska earn her Ph.D.?,['University of Gdańsk'],Teresa Czerwińska earned her Ph.D. from the Warsaw School of Economics (Szkoła Główna Handlowa w Warszawie).,0.82,,,0,-1.0,0,1
+629,2026-03-20 10:43:13,"How many dollars did artist J.C. Leyendecker's painting ""Carousel Ride"" sell for in December 2020?","['516,100 dollars']","J.C. Leyendecker’s painting ""Carousel Ride"" sold for $3,119,000 in December 2020.",0.645,,,0,-1.0,0,1
+630,2026-03-20 10:43:15,"For how many years was the original Omsund Bridge in Kristiansund, Norway, in use?",['41'],36 years,0.3025,,,0,-1.0,0,1
+631,2026-03-20 10:43:16,How many Big East Championships did Frank Beamer win?,['3'],0,0.82,,,0,-1.0,0,1
+632,2026-03-20 10:43:17,"For how many consecutive terms was the Indian politician Babanrao Shankar Gholap, alias Nana, elected to the Vidhan Sabha?",['5'],I don't know,,He was elected for five consecutive terms.,0.25,0,0.4,1,0
+633,2026-03-20 10:43:19,In what year did Richard Diebenkorn begin teaching at the California College of Arts and Crafts?,['1955'],1950,0.72,,,0,-1.0,0,1
+634,2026-03-20 10:43:20,"What were the day, month, and year when Pakistan International Airlines Fokker 27 was hijacked en route to Karachi from Sukkur?","['20, January 1978']",25 December 1981,0.64,,,0,-1.0,0,1
+635,2026-03-20 10:43:21,How many symphonies did the Estonian composer Els Aarne write?,['2'],3,0.7423,,,0,-1.0,0,1
+636,2026-03-20 10:43:23,"From which date, month, and year to which date, month, and year did the Indian politician Anant Geete serve as the Minister of Power in the Indian government?","['August 26, 2002 – May 22, 2004']",26 May 2014 to 5 July 2016,0.9234,,,0,-1.0,0,1
+637,2026-03-20 10:43:24,In which city was John Gilbert Layton raised?,['Hudson'],I don't know,,"Vancouver, British Columbia",0.25,0,0.4,1,0
+638,2026-03-20 10:43:25,"What were the day, month, and year when Twitter tested a new homepage and phased out the ""Old Twitter""?",['5 April 2011'],I don't know,,"October 2011 (I believe the specific day was October 11, 2011)",0.24,0,0.4,1,0
+639,2026-03-20 10:43:27,"Who parachuted off the 267 m high (876-ft) New River Gorge Bridge near Fayetteville, West Virginia, USA, on 19 October 2013, at the age of 84 years and 37 days?",['Donald Cripps'],Bob Beck (Robert “Bob” Beck),0.54,,,0,-1.0,0,1
+640,2026-03-20 10:43:28,Which hotel was awarded World's Leading Adventure Hotel 2022?,['Pikaia Lodge'],I don't know,,"Explora Patagonia (part of the Explora chain in Torres del Paine, Chile)",0.2,0,0.4,1,0
+641,2026-03-20 10:43:30,"What day, month, and year did Carrie Underwood reveal the track listing for her album ""Storyteller""?","['September 10, 2015']","October 7, 2015",0.7421,,,0,-1.0,0,1
+642,2026-03-20 10:43:31,"In the 2007 Super 14 season, who were the two rugby teams that played in Ellis Park Stadium on February 2, 2007?",['Lions and Waratahs'],The Sharks and the Lions,0.7825,,,0,-1.0,0,1
+643,2026-03-20 10:43:32,What TTRPG won the 2016 Indie RPG of the Year award?,['Blades in the Dark'],The Warren,0.52,,,0,-1.0,0,1
+644,2026-03-20 10:43:33,"In which year did The MOI! Project (Museums of Impact), a part of the Creative Europe program, finish?",['2022'],2020,0.72,,,0,-1.0,0,1
+645,2026-03-20 10:43:34,In what year did Willis H. Flygare win the Irving Langmuir Award?,['1981'],1992,0.56,,,0,-1.0,0,1
+646,2026-03-20 10:43:36,What was the name of the act passed by Congress that allowed Puerto Rico to elect its own governor?,['Elective Governor Act'],"The Elective Governor Act of 1947 (also known as the Elective Governor Act, Public Law 362)",0.88,,,1,1.0,0,0
+647,2026-03-20 10:43:37,"Who created the cover artwork for Heavatar's ""All My Kingdoms""?",['Kerem Beyit'],Martin Hanford,0.51,,,0,-1.0,0,1
+648,2026-03-20 10:43:38,What was the street address of the studio George Reid and Mary Hiester established after they settled in Toronto following their honeymoon?,['31 King Street East'],,,,,0,-1.0,0,1
+649,2026-03-20 10:43:39,"Which village in Ontario was first settled in 1824 by Mr. A. Hurd, and had the Post Office established in 1836, with Mr. J. Leach being the first Postmaster, according to ""Conner & Coltson's Directory of the County of Ontario for 1869-70""?",['Prince Albert.'],I don't know,,Port Hope,0.12,0,0.4,1,0
+650,2026-03-20 10:43:41,On which year was China Zorrilla invested Chevalier des Arts et des Lettres?,['2008'],1995,0.46,,,0,-1.0,0,1
+651,2026-03-20 10:43:46,What is the name of the town in which American politician Charles Allen Parker Bartlett was born in 1880?,"['Concord, Massachusetts']",I don't know,,"Battle Creek, Michigan",0.25,0,0.4,1,0
+652,2026-03-20 10:43:47,"In what year was Edward Morris, the Welsh international footballer, born?",['1872'],1872,0.73,,,1,1.0,0,0
+653,2026-03-20 10:43:49,In what month and year was Barry Goldwater's fourth child born?,['July 1944'],September 1950,0.56,,,0,-1.0,0,1
+654,2026-03-20 10:43:50,The 16th North East Region Commonwealth Parliamentary Association (NERCPA) conference started in which city?,['IMPHAL'],I don't know,,Guwahati,0.32,0,0.4,1,0
+655,2026-03-20 10:43:51,"What Toronto Library collection was established in 1977, named after the children's librarian and head of the TPL?",['The Jean Thomson Collection of Original Art'],I don't know,,The Jean Throop Collection,0.21,0,0.4,1,0
+656,2026-03-20 10:43:54,"According to ""A Survey of London; Reprinted From the Text of 1603,"" in 1206, 1220, 1224, and 1243, Crown pleas were heard in the Tower of London, with William of York, Richard Passelew, Henry Bathe, and which other justice presiding?",['Jerome of Saxton.'],I don't know,,Ralph de Hengham,0.25,0,0.4,1,0
+657,2026-03-20 10:43:55,Which Indian state is also known as Veer Bhumi?,['Himachal Pradesh'],Chhattisgarh,0.92,,,0,-1.0,0,1
+658,2026-03-20 10:43:56,"In what year was Phillip Paul Bliss, famous Christian songwriter, appointed as a teacher in the Rome, Pennsylvania Academy?",['1858'],1859,0.76,,,0,-1.0,0,1
+659,2026-03-20 10:43:57,What was Tim Wakefield's ERA during the '04 World Series?,['12.27 (acceptable range: anything between 12.14 and 12.89)'],0.00,0.85,,,0,-1.0,0,1
+660,2026-03-20 10:44:07,What is the number and name of the asteroid that is astronomer Paul Henry's first credited asteroid discovery?,['126 Velleda'],"12, Victoria",0.0568,,,0,-1.0,0,1
+661,2026-03-20 10:44:08,What was John Graham Lough's cause of death?,['Pneumonia'],John Graham Lough died of bronchitis.,0.7,,,0,-1.0,0,1
+662,2026-03-20 10:44:09,How many children did Admiral Charles Philip Snyder and Cornelia Lee Wolcott have?,['3'],3,0.62,,,1,1.0,0,0
+663,2026-03-20 10:44:10,In what year was chemist Eduard Buchner promoted from assistant lecturer to lecturer at the University of Munich?,['1891'],1895,0.72,,,0,-1.0,0,1
+664,2026-03-20 10:44:13,"What is the MD5 checksum of the file named ""ffrelay-debian-4.30.ggi.zip,"" with the product name ""FinFisher Relay v4.30"" and a file size of 224K, which was released by WikiLeaks?",['180caf23dd71383921e368128fb6db52'],,,,,0,-1.0,0,1
+665,2026-03-20 10:44:14,In what year was Glipodes dietrichi described by Franciscolo?,['1962'],1950,0.52,,,0,-1.0,0,1
+666,2026-03-20 10:44:15,In what year did Danish mathematician and astronomer Niels Erik Norlund set up seismographic stations in Denmark and Greenland?,['1925'],1929,0.72,,,0,-1.0,0,1
+667,2026-03-20 10:44:16,What was the Sky EPG number of Game Network when it launched in the United Kingdom in May 2001?,['223'],175,0.52,,,0,-1.0,0,1
+668,2026-03-20 10:44:18,"In the 2020 census, what was the population of Boliney, Abra, Philippines?",['4551 (acceptable range: anything between 4505 and 4597)'],"4,551",0.82,,,1,1.0,0,0
+669,2026-03-20 10:44:19,"What place did the album ""I Am... Sasha Fierce"" by Beyoncé place in the year-end 2010 Australian Albums (ARIA) charts?",['61'],I don't know,,,,0,0.4,1,0
+670,2026-03-20 10:44:21,"Which day, month, and year did Şahika Ercümen break a world record in the VNF category at Kaş, Antalya, Turkey, with 100 m?",['26 October 2021'],12 October 2013,0.81,,,0,-1.0,0,1
+671,2026-03-20 10:44:22,What is the name of the documentary Ellen Kuzwayo was involved in with Betty Wolpert in 1982?,['Awake from Mourning'],"The documentary was titled ""Botha's Women.""",0.25,,,0,-1.0,0,1
+672,2026-03-20 10:44:23,What is the third-tallest mountain in Romania?,['Viștea Mare'],Vârful Lespezi (Lespezi Peak),0.75,,,0,-1.0,0,1
+673,2026-03-20 10:44:25,Which team won the 2016–17 Championnat LNA season (86th season of the top-tier basketball league in Switzerland)?,['Monthey'],Fribourg Olympic,0.8732,,,0,-1.0,0,1
+674,2026-03-20 10:44:26,"With which scientist did Vincent Joseph Schaefer issue the U.S. patent for the ""Electrical Indicator of Mechanical Expansion"" in 1947?",['Katharine B. Blodgett'],I don't know,,Bernard Vonnegut,0.25,0,0.4,1,0
+675,2026-03-20 10:44:27,"On what day, month, and year was Kommunistisk Forbund founded?",['21 January 1973'],27 May 1972,0.32,,,0,-1.0,0,1
+676,2026-03-20 10:44:28,How many deaths were caused by an amoebic dysentery outbreak at the Century of Progress World's Fair?,['98 (acceptable range: anything between 97 and 99)'],5,0.82,,,0,-1.0,0,1
+677,2026-03-20 10:44:30,In what year did Etta Cone commission Henri Matisse to make a posthumous portrait of Claribel Cone?,['1930'],1936,0.36,,,0,-1.0,0,1
+678,2026-03-20 10:44:31,Who was Raúl Alfonsín's first Minister of Health and Social Development?,['Aldo Carlos Neri'],I don't know,,José Ramón Granero,0.25,0,0.4,1,0
+679,2026-03-20 10:44:32,In which city and state was Johnson O'Connor laid to rest?,"['Newport Beach, California']","He was laid to rest in New Rochelle, New York.",0.68,,,0,-1.0,0,1
+680,2026-03-20 10:44:34,Who was Markus Dörk's original replacement as guitarist for Blind Guardian?,['Christof Theißen'],I don't know,,Thomen Stauch,0.25,0,0.4,1,0
+681,2026-03-20 10:44:35,What team drafted Sonny Wade in the 1969 NFL draft with the 236th overall pick?,['The Philadelphia Eagles'],I don't know,,,,0,0.4,1,0
+682,2026-03-20 10:44:36,"What are the four classifications of techniques and methodologies for mental fatigue measurement mentioned in Faramarz Gharagozlou et al.'s 2015 research paper, ""Detecting Driver Mental Fatigue Based on EEG Alpha Power Changes During Simulated Driving""?","['subjective,  psychological,  performance and physiological  methods']","The four classifications are: subjective measures, performance-based measures (behavioral/psychomotor), physiological measures, and vehicle-based measures.",0.79,,,0,-1.0,0,1
+683,2026-03-20 10:44:38,What is Donnie McClurkin's son's name?,['Matthew McClurkin'],I don't know,,Joshua McClurkin,0.12,0,0.4,1,0
+684,2026-03-20 10:44:40,"In what month and year did Andrew Cuomo sign a bill to create Palm Tree, New York?",['July 2018'],October 2020,0.72,,,0,-1.0,0,1
+685,2026-03-20 10:44:41,"For how many English guineas did the Victoria and Albert Museum purchase the ""Bust of Thomas Baker"" by Gian Lorenzo Bernini in 1921?",['1480 English guineas (acceptable range: anything between 1465 and 1495 English guineas)'],"3,000 guineas",0.63,,,0,-1.0,0,1
+686,2026-03-20 10:44:42,"From 1st January 2015 to 5th February 2019, how many hectares of forest land were diverted in Goa for non-forestry purposes under the Forest Conservation Act of 1980 (MoEF&CC, 2019)?",['42.75 (acceptable range: anything between 42.32 and 43.18 hectares)'],12.8906 hectares,0.72,,,0,-1.0,0,1
+687,2026-03-20 10:44:44,From which university did Louise M. Antony (American philosopher) receive her bachelor's degree in philosophy?,['Syracuse University'],Cornell University,0.74,,,0,-1.0,0,1
+688,2026-03-20 10:44:45,"What certification did Reba's album ""So Good Together"" receive from the United States (RIAA)?",['platinum'],Gold,0.8534,,,0,-1.0,0,1
+689,2026-03-20 10:44:46,What was the name of the 37-year-old woman who passed away in the Painted Cave Fire after fleeing the flames along San Marcos Road?,['Andrea Lang Gurka'],I don't know,,Kristin Marshall,0.21,0,0.4,1,0
+690,2026-03-20 10:44:48,"What was the name of the composer of the opening theme song for the radio program ""The American Album of Familiar Music""?","['Walter Gustave ""Gus"" Haenschen']",I don't know,,Emil Waldteufel,0.15,0,0.4,1,0
+691,2026-03-20 10:44:49,"What song's music video did Metal Injection rank at number 9 on the list of Top 15 Metal Viral Videos of the Year on December 8, 2011?",['ド・キ・ド・キ☆モーニング[ Doki Doki☆Morning ] by BABYMETAL'],"The music video for ""Surrounded by Silence"" by The Devil Wears Prada.",0.42,,,0,-1.0,0,1
+692,2026-03-20 10:44:52,"What album is the song ""God Is Alive, Magic Is Afoot"" by Chris Thile on?",['Laysongs'],"The song ""God Is Alive, Magic Is Afoot"" by Chris Thile is on the album Deceiver.",0.9123,,,0,-1.0,0,1
+693,2026-03-20 10:44:53,On which day/month/year did South African architect Albertus Petrus Snyman Conradie die?,['26 December 1999'],6 May 1964,0.31,,,0,-1.0,0,1
+694,2026-03-20 10:44:55,"On what day, month, and year did Floro Garrido, a Spanish retired footballer, die?",['9 January 2012'],22 August 2012,0.76,,,0,-1.0,0,1
+695,2026-03-20 10:44:56,Which school did Carl Van Vechten graduate from in 1898?,['Washington High School.'],I don't know,,Calvin Coolidge High School,0.19,0,0.4,1,0
+696,2026-03-20 10:44:58,"What is the last line of ""Land of the Rising Sun,"" the national anthem of the Republic of Biafra?",['To make this clime a land of righteousness'],I don't know,,,,0,0.4,1,0
+697,2026-03-20 10:44:59,What length in millimeters did the NS 4000 in the Netherlands have?,"['20,775 millimeters (acceptable range: anything between 19,736 and 21,814 millimeters)']","26,700 mm",0.64,,,0,-1.0,0,1
+698,2026-03-20 10:45:00,How much money in dollars did Steven Furtick's church give to its members in 2007?,"['40,000 dollars (acceptable range: anything between 38,000 and 42,000 dollars)']","The church gave $100,000 to its members in 2007.",0.72,,,0,-1.0,0,1
+699,2026-03-20 10:45:02,What is the total number of passengers that died when KLM Flight 4805 and Pan Am Flight 1736 collided?,['583 (acceptable range: anything between 577 and 589)'],327,0.87,,,0,-1.0,0,1
+700,2026-03-20 10:45:03,Name the dentist who died in May 2019 after being injured in an elevator crash at the Dr. Bhau Daji Lad Museum (BDL) in Mumbai on April 28.,['Dr Arnavaz Havewalla'],Dr. Vasant N. Bhide,0.32,,,0,-1.0,0,1
+701,2026-03-20 10:45:04,What was the name of the elementary school where World Changers Ministries Christian Center held their first worship service?,['Kathleen Mitchell Elementary School'],I don't know,,,,0,0.4,1,0
+702,2026-03-20 10:45:19,What year did René Laennec claim that tubercles were the cause of pulmonary tuberculosis?,['1819'],1819,0.84,,,1,1.0,0,0
+703,2026-03-20 10:45:20,"In which year did Anil Biswas (an Indian communist politician) join the Krishnagar Government College, come under the influence of Marxist leaders like Harinarayan Adhikari and Dinesh Mazumdar, and also become an active member of the Students' Federation of India?",['1961'],I don't know,,,,0,0.4,1,0
+704,2026-03-20 10:45:22,"In what church was the organ installed in 2000 at St. John's Church, Gateshead Fell, previously located?","[""St Aidan's Church, Blackhill, Consett""]","It was previously located in St Mary's Church, Blyth.",0.42,,,0,-1.0,0,1
+705,2026-03-20 10:45:23,In what round of the Nations Cup team competition at the FEI European Championships did a member of the jump crew interfere with Cian O'Connor and Good Luck?,['Second'],I don't know,,,,0,0.4,1,0
+706,2026-03-20 10:45:26,From which university in the District of Columbia did New York State Representative Andrew Garbarino earn a Bachelor of Arts degree in History and Classical Humanities?,['George Washington University'],I don't know,,The Catholic University of America,0.25,0,0.4,1,0
+707,2026-03-20 10:45:27,"As of 2022, what is the name of the smallest (by radius) known exoplanet within 10 parsecs of Earth's solar system?",['Gliese 367 b'],Proxima Centauri b,0.12,,,0,-1.0,0,1
+708,2026-03-20 10:45:29,What was the name of the director of the Clayman Institute for Gender Research in 1994?,['Iris Litt'],I don't know,,Nancy Hirschmann,0.2,0,0.4,1,0
+709,2026-03-20 10:45:31,What is the name of the botanist who first formally described *Chorizema dicksonii* in 1839?,['Robert Graham'],I don’t know,,John Lindley,0.45,0,-1.0,0,1
+710,2026-03-20 10:45:32,What is the full name of the Colombian soccer player Juan Guzmán born in 1988?,['Juan Pablo Guzmán Perdomo'],Juan Carlos Guzmán,0.72,,,0,-1.0,0,1
+711,2026-03-20 10:45:33,What field was Rev. Dr. Lee B. Spitzer awarded a PhD in from Vrije Universiteit Amsterdam and the International Baptist Theological Study Centre?,['Theology'],I don't know,,Theology / Religious Studies (PhD in Theology),0.31,1,0.4,1,0
+712,2026-03-20 10:45:34,What was the name of Andrew Dickson White's cousin who became an artist of the Luminism style and Hudson River School?,['Edwin White'],"Itonly can't be certain, but I believe the cousin was Frederic Edwin Church.",0.25,,,0,-1.0,0,1
+713,2026-03-20 10:45:35,Which musician became Louis Armstrong's first teacher and chose him as the bandleader?,['Peter Davis.'],Peter Davis,0.86,,,1,1.0,0,0
+714,2026-03-20 10:45:37,Who was the second president of the International Society for Soil Mechanics and Geotechnical Engineering?,['A. W. Skempton'],Ralph B. Peck,0.65,,,0,-1.0,0,1
+715,2026-03-20 10:45:38,"How many livres did artist Jean-Antoine Watteau sell his painting ""Camp-fire"" first to Sirois for?",['60 livres (acceptable range: anything between 58 and 62 livres)'],100 livres,0.21,,,0,-1.0,0,1
+716,2026-03-20 10:45:42,In which year did Jamia win its first gold and silver medals in wrestling at the All India Inter University Championship?,['1977'],I don't know,,2011,0.25,0,0.4,1,0
+717,2026-03-20 10:45:43,"Blockhouse Island in Brockville has a statue of Con Darling, a local figure who is pushing a stroller. What is inside the stroller?",['His pet chicken Myrtle'],A baby crocodile,0.25,,,0,-1.0,0,1
+718,2026-03-20 10:45:44,Which grammar school did Diane Marie Disney attend before moving to Immaculate Heart High School?,['Los Feliz Grammar School.'],I don't know,,Marymount High School,0.25,0,0.4,1,0
+719,2026-03-20 10:45:45,Who is discovered to be alive at the end of Season 1 of Motherland: Fort Salem?,['Willa Collar'],Tally Craven,0.75,,,0,-1.0,0,1
+720,2026-03-20 10:45:47,Who was Christopher Hornsrud's Minister of Justice and the Police when he formed his Labour Party cabinet in 1928?,['Cornelius Holmboe'],Ivar Lykke (This is incorrect — I don't know),0.0,,,0,0.4,1,0
+721,2026-03-20 10:45:48,How many players on the Winnipeg Falcons hockey team died in WWI?,['2'],6,0.67,,,0,-1.0,0,1
+722,2026-03-20 10:45:49,"What Mozilla Firefox release version included the patch note: ""Improved the performance of the instance when Microsoft's IME and Defender retrieve the URL of a focused document in Windows 11 version 22H2""?",['107'],Firefox 119,0.2746,,,0,-1.0,0,1
+723,2026-03-20 10:45:50,Who was the first president of the Supreme Court of Brazil appointed by Pedro I?,['Jose Albano Fragosa'],I don't know,,Marcos de Noronha e Brito (Marquês de Baependi),0.25,0,0.4,1,0
+724,2026-03-20 10:45:53,"What month and year was ""Welcome to Paradise"" first released?",['December 1991'],October 1994,0.67,,,0,-1.0,0,1
+725,2026-03-20 10:45:55,"According to the 2011 census of India, after Hindi, which is the second fastest growing language of India, followed by Meitei (Manipuri) in third place and Bengali in fourth place?",['Kashmiri'],Urdu,0.76,,,0,-1.0,0,1
+726,2026-03-20 10:45:56,What river is the Kokosing River a tributary of?,['Walhonding River'],Kokosing River is a tributary of the Walhonding River.,0.87,,,1,1.0,0,0
+727,2026-03-20 10:45:58,To whom was A. Wallis Myers married?,['Lilian Gentry'],A. Wallis Myers was married to Helen (Ellen) Mary Mason.,0.42,,,0,-1.0,0,1
+728,2026-03-20 10:45:59,Which is the largest tributary of the Chenab River?,['Marusudar River'],Jhelum River,0.83,,,0,-1.0,0,1
+729,2026-03-20 10:46:00,What was the name that movie theater owner Harry E. Huffman gave to his two-story Denver mansion?,['Shangri-La'],Villa Park,0.42,,,0,-1.0,0,1
+730,2026-03-20 10:46:01,"How many households were there in Weston, Ohio, as of the 2000 census?",['638 (acceptable range: anything between 631 and 645)'],256,0.82,,,0,-1.0,0,1
+731,2026-03-20 10:46:03,What is the scientific name for the African forest elephant?,['Loxodonta cyclotis'],Loxodonta cyclotis,0.98,,,1,1.0,0,0
+732,2026-03-20 10:46:04,How old was composer Miya Masaoka when she began studying classical music?,['8'],She was 8 years old.,0.72,,,1,1.0,0,0
+733,2026-03-20 10:46:06,What EP did Rosalía release in 2019?,['Fucking Money Man'],I don't know,,"EP: ""Los Ángeles (Deluxe)"" — though Rosalía released the album ""El Mal Querer"" in 2018 and worked on various singles in 2019; she did not release a widely recognized new EP in 2019, so this is uncertain.",0.2123,0,0.4,1,0
+734,2026-03-20 10:46:07,"For which team did Edward Ambrose Hug, the American Major League Baseball catcher, make his MLB debut?",['Brooklyn Superbas'],St. Louis Browns,0.82,,,0,-1.0,0,1
+735,2026-03-20 10:46:09,What are the first name and surname of the woman who was voted 17th in the Top 100 Great South Africans in 2004?,['Brenda Fassie'],I don't know,,Winnie Madikizela-Mandela,0.15,0,0.4,1,0
+736,2026-03-20 10:46:10,What was the name of the Venezuelan state in which María Teresa Castillo was born in 1908?,['Miranda.'],I don't know,,Bolívar,0.35,0,0.4,1,0
+737,2026-03-20 10:46:11,"Conservation work on Lord Limerick’s Follies at Tollymore Park, Newcastle, Co. Down, began in May 2010, in memory of which conservation architect who died in 2008?",['Dick Oram'],Ivor Smith,0.12,,,0,-1.0,0,1
+738,2026-03-20 10:46:13,"What is the name of the team that Filip Hašek, the footballer, played against during his professional debut on July 22, 2018?",['Slovácko'],I don't know,,,,0,0.4,1,0
+739,2026-03-20 10:46:14,"In 2012, what country did the ICJ say had sovereignty over Bajo Nuevo?",['The Republic of Colombia'],Colombia,0.82,,,1,1.0,0,0
+740,2026-03-20 10:46:15,"In which city and country was Yasir Naqvi, a Canadian politician, born?","['Karachi, Pakistan']","Ottawa, Ontario, Canada",0.15,,,0,-1.0,0,1
+741,2026-03-20 10:46:16,In which year did William Hammon at the University of Pittsburgh purify the gamma globulin component of the blood plasma of polio survivors?,['1950'],1950,0.62,,,1,1.0,0,0
+742,2026-03-20 10:46:18,Which scientist received the Gilbert Morgan Smith Medal in 2015?,['Takao Kondo'],Ruth H. H. (Ruth) Leys — confidence: 0.0000,0.0,,,0,-1.0,0,1
+743,2026-03-20 10:46:19,"Which version of Mozilla Firefox was released with this patch note: ""Smooth pinch-zooming using a touchpad is now supported on Linux""?",['88'],Firefox 83,0.25,,,0,-1.0,0,1
+744,2026-03-20 10:46:20,In which NYC borough was pharmacist David Morris Kern born?,['Manhattan'],Brooklyn,0.4,,,0,-1.0,0,1
+745,2026-03-20 10:46:21,"What day, month, and year was the Retlaw 1 combine car sold to the Carolwood Foundation?",['10 July 2010'],7 October 2001,0.62,,,0,-1.0,0,1
+746,2026-03-20 10:46:22,"In the women's singles 2022 Madrid Open, how many Romanian players played in the second round?",['1'],2,0.1726,,,0,-1.0,0,1
+747,2026-03-20 10:46:24,Which Bard subclass was included in the 2022 Expert Classes Unearthed Arcana for Dungeons & Dragons?,['College of Lore'],College of Eloquence,0.86,,,0,-1.0,0,1
+748,2026-03-20 10:46:25,"On what day, month, and year did Vinton Gray Cerf publish his work ""A View from the 21st Century""?","['April 1, 1994']",I don't know,,1 January 2000,0.25,0,0.4,1,0
+749,2026-03-20 10:46:26,Who was the 33rd President of Costa Rica?,['Mario José Echandi Jiménez'],José Figueres Ferrer,0.92,,,0,-1.0,0,1
+750,2026-03-20 10:46:28,In which year did the top religious body in Saudi Arabia give the green light for codification of Sharia law?,['2010'],1926,0.2,,,0,-1.0,0,1
+751,2026-03-20 10:46:29,In which year and month did El Cielo receive its first Michelin star in Miami?,['June 2022'],April 2019,0.82,,,0,-1.0,0,1
+752,2026-03-20 10:46:30,In which industry did painter William Moore Davis work before he became a full-time painter?,['In the shipbuilding industry.'],Shipbuilding (he worked as a ship carpenter / in the shipbuilding industry),0.82,,,1,1.0,0,0
+753,2026-03-20 10:46:32,"What is the UNII of Nivolumab, an anti-cancer medication?",['31YO63LBSN'],3KX1T1P1M0,0.75,,,0,-1.0,0,1
+754,2026-03-20 10:46:34,"What is the chemical formula of atogepant, a class of medications called calcitonin gene-related peptide receptor antagonists?",['C29H23F6N5O3'],C29H30F2N6O3,0.86,,,0,-1.0,0,1
+755,2026-03-20 10:46:35,What track did Jimmie Johnson record his only win at in 2001 as part of the NASCAR Xfinity Series?,['Chicagoland Speedway'],Chicagoland Speedway,0.54,,,1,1.0,0,0
+756,2026-03-20 10:46:36,Which year was Audrey McLaughlin sworn in as a member of the Queen's Privy Council for Canada?,['1991'],1993,0.52,,,0,-1.0,0,1
+757,2026-03-20 10:46:37,"On which day, month, and year did the Orchestra of the Age of Enlightenment celebrate the 21st anniversary of its founding?",['30 June 2007'],2 November 2005,0.67,,,0,-1.0,0,1
+758,2026-03-20 10:46:38,How many days was Dev Shumsher Jung Bahadur Rana prime minister?,['114 (acceptable range: anything between 113 and 115)'],103 days,0.85,,,0,-1.0,0,1
+759,2026-03-20 10:46:39,In what year was the beetle species Glipa andamana described?,['1941'],1894,0.32,,,0,-1.0,0,1
+760,2026-03-20 10:46:41,"What was the name of the CIA contractor whose documents for the ""UMBRAGE Component Library"" (UCL) project were published by WikiLeaks?",['Raytheon Blackbird Technologies'],Joshua Adam Schulte,0.84,,,0,-1.0,0,1
+761,2026-03-20 10:46:42,"In what key was ""I Offer My Life"" by Don Moen composed?",['F Major'],C major,0.25,,,0,-1.0,0,1
+762,2026-03-20 10:46:43,"What percentage of voters were against the constitutional referendum held in Ghana on April 27, 1960?",['11.53% (acceptable range: anything between 11.41% and 11.65%)'],34.07%,0.54,,,0,-1.0,0,1
+763,2026-03-20 10:46:44,"What month, day, and year was James V. Allred nominated by President Franklin D. Roosevelt to the United States District Court for the Southern District of Texas?",['5 January 1939'],"December 10, 1939",0.8125,,,0,-1.0,0,1
+764,2026-03-20 10:46:47,What is Kinoko Teikoku's first EP?,['Long Good Bye'],Time Lapse,0.83,,,0,-1.0,0,1
+765,2026-03-20 10:46:48,How many competitors from 11 nations participated in Fencing at the 1908 Summer Olympics – Men's saber?,['76 (acceptable range: anything between 75 and 77)'],25,0.52,,,0,-1.0,0,1
+766,2026-03-20 10:46:51,In which country was the 4th edition of the ASEAN-India Grassroots Innovation Forum (AIGIF) launched?,['Malaysia'],India,0.86,,,0,-1.0,0,1
+767,2026-03-20 10:46:52,"What flowers were shown in artist J.C. Leyendecker's May 30, 1914, ""The Saturday Evening Post"" cover?",['Hyacinths'],I don't know,,lilies,0.25,0,0.4,1,0
+768,2026-03-20 10:46:53,Norman Rockwell was hired as the art director of what publication while in his teens?,"[""Boys' Life""]","The Boy Scouts of America’s magazine, Boys' Life.",0.92,,,1,1.0,0,0
+769,2026-03-20 10:46:55,Who was the father of the Indian journalist and political commentator Romesh Thapar?,['Daya Ram Thapar'],Romesh Thapar's father was Romesh Thapar's father was the Indian freedom fighter and journalist G. N. (Gurumukh Nath) Thapar.,0.27,,,0,-1.0,0,1
+770,2026-03-20 10:46:57,"In 1841, which steamer did Captain Shepherd take from Brockville through all the Cornwall and Coteau rapids to Lachine?",['St David.'],I don't know,,the steamer SS Ontario,0.25,0,0.4,1,0
+771,2026-03-20 10:46:58,"According to Wikipedia, how many feet above sea level is the Getty Center?",['900 (acceptable range: anything between 891 and 909)'],900 feet above sea level,0.78,,,0,-1.0,0,1
+772,2026-03-20 10:46:59,How many Cierva W.11 Air Horse rotorcraft were built in total?,['2'],1,0.86,,,0,-1.0,0,1
+773,2026-03-20 10:47:01,"In the paper ""Aluminium Metal Matrix Composites – A Review,"" which alloy of aluminium was evaluated for physical properties by Mahendra Boopathi M. et al.?","['2,024']",AA7075,0.52,,,0,-1.0,0,1
+774,2026-03-20 10:47:03,"What day, month, and year was the EP ""Dirty Laundry"" released by Adore Delano?","['July 9, 2021']","October 7, 2016",0.86,,,0,-1.0,0,1
+775,2026-03-20 10:47:04,"What year was the alabaster sculpture known as the ""Teotihuacan Ocelot"" found?",['1889'],1982,0.61,,,0,-1.0,0,1
+776,2026-03-20 10:47:05,In what year did Gordon Plotkin win the ACM SIGPLAN Programming Languages Achievement Award?,['2010'],2013,0.84,,,0,-1.0,0,1
+777,2026-03-20 10:47:06,What is the PubChem CID of Rimegepant?,['51049968'],133470634,0.86,,,0,-1.0,0,1
+778,2026-03-20 10:47:08,Which mountain stream flows between the valleys of Chinamarg and Nurpur Pass?,['Ferozepur Nallah'],I don't know,,The mountain stream is the Vishansar or a tributary of the Vishansar/Kishanganga system (likely the Vishansar Nallah),0.25,0,0.4,1,0
+779,2026-03-20 10:47:09,"What is the surname of the U.S. President who attended the 66th birthday of Kenneth Stanley ""Boots"" Adams, former president of Phillips Petroleum Company?",['Eisenhower'],I don't know,,Eisenhower,0.4,1,0.4,1,0
+780,2026-03-20 10:47:12,"In which country was Robert “Bob” Guy Walls, a painter born in 1927, born?",['New Zealand'],Scotland,0.86,,,0,-1.0,0,1
+781,2026-03-20 10:47:15,"Who was the grandfather of the 14th Chief Justice of India, A.N. Ray?",['Dr. Debendra Nath Ray'],"Iyer Madras Iyengar Narayanaswami Iyer (commonly known as N. Narayanaswami Iyer) — more widely, his grandfather was Sir C. Sankaran Nair.",0.04,,,0,-1.0,0,1
+782,2026-03-20 10:47:18,What was the title of Thomas Callister Hales' Ph.D. dissertation from Princeton University in 1986?,['The Subregular Germ of Orbital Integrals'],The Kepler conjecture,0.392,,,0,-1.0,0,1
+783,2026-03-20 10:47:19,In which Nebraska city was painter Kathleen Gemberling Adkison born in 1917?,['Beatrice'],"Omaha, Nebraska",0.62,,,0,-1.0,0,1
+784,2026-03-20 10:47:20,What is the name of the city where Sangtarashan Cave is located?,['Jahrom'],Izeh,0.72,,,0,-1.0,0,1
+785,2026-03-20 10:47:22,"In 1981, in what Broadway musical did Janet Hubert make her debut?","['""The First""']",The Wiz,0.7234,,,0,-1.0,0,1
+786,2026-03-20 10:47:23,"What was the name of George T. Fulford's son-in-law who was sworn into the Privy Council on July 31, 1930?",['Arthur Charles Hardy'],I don't know,,George Halsey Perley,0.2,0,0.4,1,0
+787,2026-03-20 10:47:24,What was the Christian denomination to which Frank Lloyd Wright's father originally belonged?,['Baptist'],Unitarian,0.9123,,,0,-1.0,0,1
+788,2026-03-20 10:47:27,In which year did George Bentham change the name of *Hedaroma pinifolium* to *Pimelea pinifolia*?,['1865'],1873,0.82,,,0,-1.0,0,1
+789,2026-03-20 10:47:28,What was the first and last name of the president of the Society of Illustrators from 1929 to 1936?,['Wallace Morgan'],Hamilton King,0.2468,,,0,-1.0,0,1
+790,2026-03-20 10:47:29,"Where was the body of Stuart Leary, a South African sportsman who played for Charlton Athletic Football Club in London, discovered on August 23, 1988?","['Table Mountain, South Africa']","His body was discovered in a car in a garage in Brockley, London.",0.72,,,0,-1.0,0,1
+791,2026-03-20 10:47:30,Who was the first principal of Mayo College in India?,['Colonel Sir Oliver St John'],Colonel Sir Oliver St. John (Oliver St John),0.79,,,1,1.0,0,0
+792,2026-03-20 10:47:32,What was the name of the architect who rebuilt Dalby Hall in Lincolnshire for J. W. Preston in 1856 after the home was destroyed by fire?,['James Fowler'],Ivor (Ivo) William Liddell?,0.1523,,,0,-1.0,0,1
+793,2026-03-20 10:47:34,"What day, month, and year did Menchú announce that she would form an Indigenous political party called Encuentro por Guatemala?",['12 February 2007'],1 July 1995,0.4321,,,0,-1.0,0,1
+794,2026-03-20 10:47:39,What is the title of Nils Jerlov's doctoral thesis from 1939?,['Effect of chemical combination on x-ray emission spectrum'],"The Optical Properties of Seawater (Doctoral thesis: ""The Optical Properties of Seawater"")",0.72,,,0,-1.0,0,1
+795,2026-03-20 10:47:41,"On what day, month, and year did Gopalaswami Parthasarathy assume the charge of Vice Chancellor of Jawaharlal Nehru University?","['April 28, 1969']",I don't know,,1 July 1979,0.12,0,0.4,1,0
+796,2026-03-20 10:47:42,Which river of India is known as the Lion's Mouth in Tibet?,['Indus River'],Brahmaputra,0.82,,,0,-1.0,0,1
+797,2026-03-20 10:47:43,Who was the sole winner of the Fulkerson Prize for outstanding papers in the area of discrete mathematics in 1997?,['Jeong Han Kim'],Michel X. Goemans,0.53,,,0,-1.0,0,1
+798,2026-03-20 10:47:44,"At what age in years and months did the American professional tennis player Coco Gauff win the title of ""USTA Clay Court National 12-and-under""?",['10 years 3 months (acceptable range: 10 years and between 2-4 months)'],"10 years, 3 months",0.15,,,1,1.0,0,0
+799,2026-03-20 10:47:45,In what year was Alain Stanké made a Knight of the National Order of Quebec?,['2003'],1991,0.74,,,0,-1.0,0,1
+800,2026-03-20 10:47:47,In what year was *Hemidactylus boavistensis* elevated from a subspecies of *Hemidactylus bouvieri* to a separate species?,['2008'],2012,0.74,,,0,-1.0,0,1
+801,2026-03-20 10:47:50,"What was the capacity of the orchestra level of the Hanna Theatre located in Cleveland, Ohio, before its renovation?",['827 seats (acceptable range: anything between 818 and 836 seats)'],"1,400",0.46,,,0,-1.0,0,1
+802,2026-03-20 10:47:51,Who is the father of the Aruban politician Dangui Oduber?,['Nelson Oduber'],Nelson Oduber,0.98,,,1,1.0,0,0
+803,2026-03-20 10:47:52,"On which day, month, and year did Gyan Sudha Misra retire as a judge of the Supreme Court of India?",['27 April 2014'],26 October 2009,0.82,,,0,-1.0,0,1
+804,2026-03-20 10:47:53,"What is the name and surname of the former President of South Africa who received a state funeral when he died on January 4, 2007?",['Marais Viljoen'],Nelson Mandela,0.0,,,0,-1.0,0,1
+805,2026-03-20 10:47:55,"What year did the painter Joseph Matthäus Aigner paint ""Portrait of a Lady with Her Dog""?",['1863'],1836,0.64,,,0,-1.0,0,1
+806,2026-03-20 10:47:56,"Where was the album ""Barton Hollow"" by The Civil Wars placed on the ""Top 10 of Everything in 2011"" in Time?",['#9'],It was placed at No. 1.,0.72,,,0,-1.0,0,1
+807,2026-03-20 10:47:57,How many amendments to the Pakistani Constitution were not passed as of 2022?,['3'],I don't know,,8,0.25,0,0.4,1,0
+808,2026-03-20 10:47:59,Who was the 60th Governor of North Carolina?,['J. Melville Broughton'],James G. Martin,0.62,,,0,-1.0,0,1
+809,2026-03-20 10:48:00,What did George Brown (1818-1880) refuse in 1875?,['The lieutenant governorship of Ontario'],He refused a knighthood (the GCMG) in 1875.,0.7021,,,0,-1.0,0,1
+810,2026-03-20 10:48:01,What is the name of the naturalist who first described the sharpbill under the binomial name *Oxyrhuncus cristatus* in 1821?,['William John Swainson'],Louis Jean Pierre Vieillot,0.76,,,0,-1.0,0,1
+811,2026-03-20 10:48:02,Who first described the Hopfield networks with respect to recurrent neural networks in 1972?,"[""Shun'ichi Amari""]",John J. Hopfield,0.879,,,0,-1.0,0,1
+812,2026-03-20 10:48:03,"Which interstate is located near Ramby Avenue, where the KTCZ-FM transmitter on the KMSP Tower is located?",['Interstate 694'],I-35W,0.73,,,0,-1.0,0,1
+813,2026-03-20 10:48:05,Who originally played keyboards for the Band of Joy?,['Chris Brown'],I don't know,,"John ""Beck"" Beckett (aka John B. ""Beck"" Beckett)",0.32,0,0.4,1,0
+814,2026-03-20 10:48:06,Which Prime Minister of Italy was named 'Iron Baron'?,['Bettino Ricasoli'],Giovanni Giolitti,0.23,,,0,-1.0,0,1
+815,2026-03-20 10:48:08,"According to the 14th report of the state entomologist on injurious and other insects of New York in 1898, Miss Ormerod, in her 15th report in 1893, recorded the serious and widespread injuries to raspberries from what insect in England? Use the scientific name.",['Byturus tomentosus'],I don't know,,Byturus tomentosus,0.25,1,0.4,1,0
+816,2026-03-20 10:48:09,During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?,['2020'],1994,0.72,,,0,-1.0,0,1
+817,2026-03-20 10:48:11,"What's the first and last name of the person who sings Alastor's voice in the song ""Alastor's Game""?",['Sam Haft'],I don't know,,"Zachary ""Zach"" Callison",0.1723,0,0.4,1,0
+818,2026-03-20 10:48:12,"According to Georg Wilhelm Friedrich Hegel, what are the three Romantic arts?","['Painting, music, and poetry.']","Poetry, music, and painting (or visual/graphic arts)",0.86,,,0,-1.0,0,1
+819,2026-03-20 10:48:13,Which album by Die Toten Hosen was the first to reach number one on the German music charts?,"['""Auf dem Kreuzzug ins Glück""']",I don't know,,Zurück zum Glück,0.25,0,0.4,1,0
+820,2026-03-20 10:48:15,In what city and country did Gustav Kramer work as an assistant at the German-Italian Institute of Marine Biology?,"[' Rovinj, Croatia (formerly Rovigno, Italy)']","Naples, Italy",0.82,,,0,-1.0,0,1
+821,2026-03-20 10:48:15,"How many horses are depicted on Munch's ""Horse Team and a St. Bernhard in the Snow"" (1923)?",['2'],4,0.68,,,0,-1.0,0,1
+822,2026-03-20 10:48:17,What high school did pitcher Christopher Deane Haney attend?,['Orange County High School'],"Christopher Deane Haney attended Lakewood High School in Lakewood, California.",0.72,,,0,-1.0,0,1
+823,2026-03-20 10:48:19,What is the area between the River Indus and the River Jhelum called?,['Sindh Sagar Doab'],I don't know,,"The area between the Indus and the Jhelum is called the Chaj (or the Sindh Sagar doab), commonly referred to as the Sindh Sagar Doab.",0.62,1,0.4,1,0
+824,2026-03-20 10:48:20,The Guyanese government posthumously awarded Walter Rodney which honor?,['The Order of Excellence of Guyana.'],Order of Roraima,0.92,,,0,-1.0,0,1
+825,2026-03-20 10:48:21,What is the surname of the judge who led the Election Tribunal that nullified Chris Ngige's 2003 Anambra governorship victory in August 2006?,['Nabaruma'],Obi,0.72,,,0,-1.0,0,1
+826,2026-03-20 10:48:22,Where was the first B.A.S.S. Bassmaster Tournament held?,['Lake Mead'],I don't know,,"McKittrick Reservoir (also known as Lake Texoma), Texas/Oklahoma area",0.25,0,0.4,1,0
+827,2026-03-20 10:48:24,Nilgai is widely seen as the state animal of which Union Territory of India?,['Delhi'],I don't know,,Uttar Pradesh,0.42,0,0.4,1,0
+828,2026-03-20 10:48:25,Which U.S. president was the last one to be born in the 18th century?,['James Buchanan'],Martin Van Buren,0.93,,,0,-1.0,0,1
+829,2026-03-20 10:48:26,What is the Glottolog language code of the Aralle-Tabulahan language?,['aral1243'],aral1242,0.81,,,0,-1.0,0,1
+830,2026-03-20 10:48:27,"In 1900, who broke the world record for consecutive chin-ups (39)?",['Alfred Carlton Gilbert'],Edward Aston,0.3125,,,0,-1.0,0,1
+831,2026-03-20 10:48:29,Who was the first woman to serve on the executive committee of the International Union of Geological Sciences?,['Zofia Emilia Kielan-Jaworowska'],I don't know,,Dorothy Helen Crowfoot Hodgkin,0.12,0,0.4,1,0
+832,2026-03-20 10:48:30,"What day, month, and year did over 500,000 people gather at the Black Star Square in Ghana to welcome former U.S. President Bill Clinton and his wife, Hillary Clinton?",['23 March 1998'],7 July 1998,0.832,,,0,-1.0,0,1
+833,2026-03-20 10:48:32,"On which day, month, and year did M'hamed Djellouli become the Prime Minister of Tunisia?","['February 18, 1907']",17 February 1915,0.65,,,0,-1.0,0,1
+834,2026-03-20 10:48:33,In what year was the Wood River Baptist Association formed in Illinois?,['1838'],1876,0.62,,,0,-1.0,0,1
+835,2026-03-20 10:48:35,What are the names of the three stadiums in South Africa that were most used during the 2010 FIFA World Cup? Each stadium hosted eight matches.,"['FNB Stadium(Soccer City), Cape Town Stadium, Nelson Mandela Bay Stadium']","Soccer City (FNB Stadium), Moses Mabhida Stadium, and Cape Town Stadium",0.92,,,0,-1.0,0,1
+836,2026-03-20 10:48:38,What is the name of the book Cindy Sherman published in 2007?,['A Play of Selves'],"Cindy Sherman published the book ""Cindy Sherman"" in 2007 (a survey/catalogue published by the New Museum/Prestel titled simply ""Cindy Sherman"")",0.76,,,0,-1.0,0,1
+837,2026-03-20 10:48:39,"Who composed the music for the song ""We Rollin"" by Punjabi singer Shubh?",['Anabolic Beatz.'],I don't know,,"The music for ""We Rollin"" by Shubh was composed by Aditya Dev",0.32,0,0.4,1,0
+838,2026-03-20 10:48:41,From what university did John P. Sall receive an honorary doctorate in 2003?,['North Carolina State University'],Iowa State University,0.42,,,0,-1.0,0,1
+839,2026-03-20 10:48:43,"What was the total number of homeless individuals counted in Downey, California, by the Los Angeles Homeless Services Authority's Greater Los Angeles Homeless Count in 2022?",['218 (acceptable range: anything between 215 and 221)'],94,0.72,,,0,-1.0,0,1
+840,2026-03-20 10:48:44,What is the name of the 10-meter sculpture that William Kentridge created in 2009?,['Fire Walker'],I don't know,,,,0,0.4,1,0
+841,2026-03-20 10:48:46,Which mayor of Kathmandu declared Kathmandu Municipality a metropolitan city in 1995?,['Prem Lal Singh'],Prem Lal Singh,0.82,,,1,1.0,0,0
+842,2026-03-20 10:48:47,What year was the Süleymaniye damaged in the great fire?,['1660'],1660,0.32,,,1,1.0,0,0
+843,2026-03-20 10:48:49,From which Long Island high school did New York State Representative Nick LaLota graduate?,"[""St. Anthony's High School""]",He graduated from St. Anthony's High School.,0.82,,,1,1.0,0,0
+844,2026-03-20 10:48:50,What is the binomial name of Acidalia virginaria?,['Scopula modicaria'],Scopula virgulata,0.1726,,,0,-1.0,0,1
+845,2026-03-20 10:48:51,What is the number of the executive order that created the Federal Theatre Project?,['7034'],Executive Order 7034,0.82,,,1,1.0,0,0
+846,2026-03-20 10:48:52,What was the rank of Oussama Mellouli at the 2000 Olympics for the men's 400-metre individual medley?,['43rd.'],8th,0.72,,,0,-1.0,0,1
+847,2026-03-20 10:48:54,"In 2002, what zoo confirmed it had three female lynxes and was developing a plan for a captive breeding program?",['Jerez Zoo'],I don't know,,The Toledo Zoo,0.2468,0,0.4,1,0
+848,2026-03-20 10:48:55,What school did Gustav Holst attend between 1886 and 1891?,['Cheltenham Grammar School'],St. Paul's Cathedral School (the Choir School of St Paul's Cathedral),0.8725,,,0,-1.0,0,1
+849,2026-03-20 10:48:57,How many concurrent FM synthesis channels (voices) can the Yamaha YM2203 from the 1980s handle?,['3'],3,0.9,,,1,1.0,0,0
+850,2026-03-20 10:48:58,Within how many minutes of the initial earthquake was an aftershock of 6.6 Mw experienced during the April 2015 earthquake that happened in Nepal?,['34 (acceptable range: anything between 33 and 35)'],17 minutes,0.82,,,0,-1.0,0,1
+851,2026-03-20 10:48:59,"At which university did the 24th Chief Justice of India, Lalit Mohan Sharma, study B.A. Hons.?",['Patna University'],Banaras Hindu University,0.74,,,0,-1.0,0,1
+852,2026-03-20 10:49:00,In what year was Whig politician James Vernon the Younger appointed an extra clerk of Her Majesty's Most Honourable Privy Council?,['1697'],1708,0.72,,,0,-1.0,0,1
+853,2026-03-20 10:49:02,What Little League did Johnny Damon play baseball in as a child before junior high school?,['South Orange Little League'],I don't know,,Johnny Damon played in the North Tampa (or a Tampa-area) Little League in Florida,0.25,0,0.4,1,0
+854,2026-03-20 10:49:03,In which city in India is the flyover bridge named after Sam Manekshaw?,['Ahmedabad'],Pune,0.72,,,0,-1.0,0,1
+855,2026-03-20 10:49:05,What year was Jerry Lee Lewis's 13th album released on Mercury Records?,['1970'],1971,0.4882,,,0,-1.0,0,1
+856,2026-03-20 10:49:06,What team came second in Group C in the 2018–19 UEFA Champions League?,['Liverpool FC'],Paris Saint-Germain,0.92,,,0,-1.0,0,1
+857,2026-03-20 10:49:07,In what month and year did Spencer Perceval leave office as the Attorney General for England and Wales?,['February 1806'],May 1809,0.73,,,0,-1.0,0,1
+858,2026-03-20 10:49:09,What is the name of the primary performance by Marina Abramović and Uwe Laysiepen that was re-enacted in 2010?,['Imponderabilia'],The Artist Is Present,0.85,,,0,-1.0,0,1
+859,2026-03-20 10:49:10,What was the name of the venue where the 1992 Scandinavian Masters golf tournament happened?,['Barsebäck Golf & Country Club'],Royal Copenhagen Golf Club,0.1543,,,0,-1.0,0,1
+860,2026-03-20 10:49:12,In which general elections (year) was Makhdum Khusro Bakhtyar (Pakistani politician) re-elected to the National Assembly as an independent candidate from Constituency NA-194 (Rahim Yar Khan-III)?,['2013'],2002 and 2008,0.24,,,0,-1.0,0,1
+861,2026-03-20 10:49:13,In which month and year did Arch Linux installation images start including installation scripts by default?,['April 2021'],July 2012,0.732,,,0,-1.0,0,1
+862,2026-03-20 10:49:18,"In what year did Russian mathematician Pavel Sergeevich Aleksandrov prove his first important result, namely that every non-denumerable Borel set contains a perfect subset?",['1915'],1916,0.62,,,0,-1.0,0,1
+863,2026-03-20 10:49:20,In which year was the ensemble officially named the A.V. Alexandrov Twice Red-bannered and Red-starred Song and Dance Ensemble of the Soviet Army?,['1949'],1948,0.72,,,0,-1.0,0,1
+864,2026-03-20 10:49:21,Which two universities awarded John Harry Dunning an honorary doctorate in 2007?,"['University of Lund, Sweden \nChinese Culture University in Taipe']",I don't know,,University of Leeds and University of Reading,0.25,0,0.4,1,0
+865,2026-03-20 10:49:23,How many siblings did Pauline LaFon Gore have?,['5'],Pauline LaFon Gore had three siblings.,0.82,,,0,-1.0,0,1
+866,2026-03-20 10:49:24,"Who was the photographer for the cover of the March 29/April 5, 2021, issue of Time?",['Wynne Neilly'],I don't know,,Peter Hapak,0.4,0,0.4,1,0
+867,2026-03-20 10:49:26,What man helped FitzGerald secure a pension for Oliver Heaviside in 1896?,['John Perry'],Sir Charles Algernon Parsons,0.2768,,,0,-1.0,0,1
+868,2026-03-20 10:49:27,In which city and province was David Sweet born?,"['Kingston, Ontario']","David Sweet was born in Oakville, Ontario.",0.8462,,,0,-1.0,0,1
+869,2026-03-20 10:49:29,"How many yellow cards did Arsenal get in the Champions League Final match between Barcelona and Arsenal on May 18, 2006?",['2'],4,0.7325,,,0,-1.0,0,1
+870,2026-03-20 10:49:30,"In how many first-class matches did Douglas Bennett, the South African cricketer, play from 1912 to 1924?",['7'],11,0.79,,,0,-1.0,0,1
+871,2026-03-20 10:49:31,"What was the prize money, in British pounds, awarded to the loser of the chess match featuring Wilhelm Steinitz and Adolf Anderssen in 1866?",['£20'],I don't know,,£40,0.25,0,0.4,1,0
+872,2026-03-20 10:49:33,In which U.S. state is the observatory where the asteroid 3430 Bradfield was discovered located?,['California'],"New South Wales, Australia (the observatory is in Coonabarabran — Siding Spring Observatory)",0.0,,,0,-1.0,0,1
+873,2026-03-20 10:49:37,What is the name of the Spring-Summer 1984 collection by Vivienne Westwood?,['Hypnos'],I don't know,,"The collection is commonly referred to as ""A/W 1983–84"" or ""The Super-Elegant"" — best guess: ""Super-Elegant"" (Spring–Summer 1984)",0.25,0,0.4,1,0
+874,2026-03-20 10:49:38,"What was the name of the first schoolhouse in Newbliss, Ontario, built around 1830?",['S.S. #5 Newbliss School.'],I don't know,,,,0,0.4,1,0
+875,2026-03-20 10:49:40,"What is the name of the university where Michaela Hübschle (born as Michaela Kuntze), a Namibian politician and former Deputy Minister for Prisons and Correctional Services, first studied after attending school in her hometown?",['University of Pretoria'],I don't know,,University of Namibia,0.2,0,0.4,1,0
+876,2026-03-20 10:49:41,How many people won the Arab Creativity Oscar before Mishary Alafasy?,['0'],I don't know,,2,0.25,0,0.4,1,0
+877,2026-03-20 10:49:43,What is the half-life of radon-224 in hours?,['1.8 hours (acceptable range: anything between 1.78 and 1.82 hours)'],27.7 hours,0.92,,,0,-1.0,0,1
+878,2026-03-20 10:49:46,Who did Manny Diaz Jr. lose to when he ran for the Miami-Dade County School Board in 2010?,['Perla Tabares Hantman'],I don't know,,Perla Tabares Hantman,0.25,1,0.4,1,0
+879,2026-03-20 10:49:47,What's the painting by Munch called with a tired girl lying on a bed painted in 1894?,['The Day After'],"The painting is called ""The Sick Child"" (sometimes translated as ""The Sick Girl"" or in Norwegian ""Det syke barn"").",0.82,,,0,-1.0,0,1
+880,2026-03-20 10:49:49,In which Vermont town was politician Charles Jairus Adams born in 1917?,"['Randolph, Orange County']",I don't know,,"Springfield, Vermont",0.25,0,0.4,1,0
+881,2026-03-20 10:49:50,"What is the Swedish word for the time of night known as ""the eleven roar,"" when university students traditionally throw open their windows and scream their stress away?",['Elvavrålet'],Elvakvarten,0.12,,,0,-1.0,0,1
+882,2026-03-20 10:49:52,"What is the UNII of Axitinib, a small-molecule tyrosine kinase inhibitor developed by Pfizer?",['C9LVQ0YUXG'],6Y3A2U40A1,0.85,,,0,-1.0,0,1
+883,2026-03-20 10:49:53,"When the electric street lamp contract in Paris, Ontario, with Orlande H. Duncombe and Alonzo N. Parney expired in 1887, what company agreed to light 25 lamps until 12 p.m. for 26 cents a lamp per night?",['Paris Electric Light Company'],I don't know,,The Edison Illuminating Company,0.25,0,0.4,1,0
+884,2026-03-20 10:49:54,"What was the original settlement name of the village of Addison, Michigan?",['Manetue'],Middlebury,0.5213,,,0,-1.0,0,1
+885,2026-03-20 10:49:56,What name was given to the boardroom at Staffordshire University Students' Union in honor of Dulcie September in October 2011?,['September Room'],I don't know,,The Dulcie September Boardroom,0.25,0,0.4,1,0
+886,2026-03-20 10:49:57,In which surah of the Holy Quran are the palm trees and the olives mentioned in the 29th verse?,['Abasa 80.'],"Surah Ar-Rahman (Surah 55), verse 29",0.62,,,0,-1.0,0,1
+887,2026-03-20 10:49:58,How many kilometers is Lolab Valley in Kupwara district from Bandipore via Aloosa village?,['30 kilometers (acceptable range: anything between 29 and 31 kilometers)'],I don't know,,40.0000 km,0.25,0,0.4,1,0
+888,2026-03-20 10:50:00,What was the first band Robbie Robertson joined that formed in '56?,['Little Caesar and the Consuls'],The Hawks,0.82,,,0,-1.0,0,1
+889,2026-03-20 10:50:01,"How many children did actress Camille Clifford have with her second husband, Captain John Meredyth Jones-Evans?",['1'],1,0.78,,,1,1.0,0,0
+890,2026-03-20 10:50:02,On what radio show was a laugh track first used?,['The Bing Crosby – Chesterfield Show'],The first use of a laugh track is generally credited to the radio show My Favorite Husband.,0.62,,,0,-1.0,0,1
+891,2026-03-20 10:50:04,To whom was Ida Pulis Lathrop married?,['Cyprus Clark Lathrop'],William Lathrop,0.8125,,,0,-1.0,0,1
+892,2026-03-20 10:50:05,"What is the Thermal Design Power, in watts, of the Intel® Core™ i7-9700E Processor that has 8 total cores?",['65W (acceptable range: anything between 64W and 66W)'],35 W,0.82,,,0,-1.0,0,1
+893,2026-03-20 10:50:08,What was the name of the first calculator Toshiba marketed?,['BC-1001'],I don't know,,TOSCAL 8L (also known as the Toshiba TOSCAL series),0.12,0,0.4,1,0
+894,2026-03-20 10:50:10,"In her 2017 election affidavit, how much did the politician Umlesh Yadav mention her assets and liabilities were worth in crores?",['₹55.10 crores and liabilities are worth ₹7.95 crores (acceptable range: ₹54.54-₹55.66 crores and ₹7.87-₹8.03 crores)'],I don't know,,Assets worth 1.47 crore and liabilities worth 0.02 crore,0.2,0,0.4,1,0
+895,2026-03-20 10:50:11,"In which year, on repeated requests from the student community of Ladakh, did Sonam Wangchuk (an Indian engineer, innovator, and education reformist) help launch the New Ladakh Movement (NLM), a social campaign and Ladakh's version of the Green Party, to work for sustainable education, environment, and economy?",['2013'],2010,0.63,,,0,-1.0,0,1
+896,2026-03-20 10:50:13,For what magazine did artist J.C. Leyendecker win a magazine cover competition in 1896?,['The Century Magazine'],I don't know,,,,0,0.4,1,0
+897,2026-03-20 10:50:15,"By 1913, how many stars could astronomer Annie Jump Cannon classify per hour?",['200 (acceptable range: anything between 198 and 202)'],She could classify up to 200 stars per hour.,0.72,,,0,-1.0,0,1
+898,2026-03-20 10:50:16,"How many people were involved in making the largest human DNA helix, achieved by the Medical University of Varna (Bulgaria) in Varna, Bulgaria, on April 23, 2016?",['4000 (acceptable range: anything between 3960 and 4040)'],"1,119 people",0.82,,,0,-1.0,0,1
+899,2026-03-20 10:50:21,Which parochial school did Harry Belafonte attend?,['St. Charles Borromeo'],He attended St. Augustine's School (a Roman Catholic parochial school) in Harlem.,0.8,,,0,-1.0,0,1
+900,2026-03-20 10:50:24,"When was Gavi shown a yellow card in the La Liga match between Valencia CF and FC Barcelona that happened on October 29, 2022?",['89 minutes (acceptable range: anything between 88 and 90 minutes)'],He was shown a yellow card in the 85th minute.,0.7543,,,0,-1.0,0,1
+901,2026-03-20 10:50:27,What is Step Nineteen of the funeral process called in Shinto tradition?,['Kotsuage'],I don't know,,"Step Nineteen of the funeral process in Shinto tradition is likely called the ""Farewell Rite"" (or ""Sōshiki no wakare"" / wakare-no-gi), a final ritual in which mourners say goodbye before the body is removed for cremation or burial.",0.15,0,0.4,1,0
+902,2026-03-20 10:50:28,How many bronze medals did Sweden win at the 1956 Summer Olympics?,['6'],2,0.86,,,0,-1.0,0,1
+903,2026-03-20 10:50:30,In what year was Ben Bogard ordained as a Baptist minister?,['1887'],1902,0.82,,,0,-1.0,0,1
+904,2026-03-20 10:50:31,Which team was the first non-European team to enter the Battle of the Nations tournament?,['Team Quebec'],The United States,0.52,,,0,-1.0,0,1
+905,2026-03-20 10:50:32,Who is the web and administrative assistant for the UNESCO Science Report: The Race Against Time for Smarter Development (2021)?,['Ali Barbash'],I don't know,,,,0,0.4,1,0
+906,2026-03-20 10:50:35,"On which album was the song ""The River"" by Nomeansno first released?","['""Why Do They Call Me Mr. Happy?""']",The River was first released on the album Wrong,0.65,,,0,-1.0,0,1
+907,2026-03-20 10:50:36,Who became the first Indian to be appointed as Professor of Mathematics and Natural Philosophy at Elphinstone College in Bombay?,['Dadabhai Naoroji'],R. Ramachandra Rao,0.1234,,,0,-1.0,0,1
+908,2026-03-20 10:50:47,What were the month and year when Telegram introduced animated emoji?,['August 2019'],March 2019,0.6825,,,0,-1.0,0,1
+909,2026-03-20 10:50:49,"In 1863, George Bentham renamed *Cyanothamnus ramosus* to what binomial name?",['Boronia ramosa'],Cyanothamnus ramosus was renamed by George Bentham in 1863 to Boronia ramosa.,0.6,,,1,1.0,0,0
+910,2026-03-20 10:50:50,"On what month, day, and year did Runaway Tram at Morey's Piers open?","['August 9, 2019']","July 3, 1999",0.52,,,0,-1.0,0,1
+911,2026-03-20 10:50:51,Which state of India was awarded the international honor for afforestation efforts at COP-28?,['Bihar'],Madhya Pradesh,0.82,,,0,-1.0,0,1
+912,2026-03-20 10:50:52,"In the Boyd family crest, the dexter hand erect in pale has how many fingers bowed inward?",['2'],Three,0.65,,,0,-1.0,0,1
+913,2026-03-20 10:50:54,What was the name of the journal that Gloria Niemeyer Francke was the associate editor of from 1944 to 1964?,['American Journal of Hospital Pharmacy'],I don't know,,American Journal of Hospital Pharmacy,0.42,1,0.4,1,0
+914,2026-03-20 10:50:55,What was the crater on Mercury named after Kurt Vonnegut referred to in scientific literature prior to its naming?,['e5'],I don't know,,,,0,0.4,1,0
+915,2026-03-20 10:50:56,"What is the dry weight, in pounds, of the Honda RC143 (1960)?",['205 (acceptable range: anything between 202 and 208)'],132 pounds,0.4,,,0,-1.0,0,1
+916,2026-03-20 10:50:58,What is the boiling point of the element cerium in Fahrenheit?,['6229 °F (acceptable range: anything between 6166 and 6292 °F)'],5402°F,0.82,,,0,-1.0,0,1
+917,2026-03-20 10:50:59,What year did the singer-songwriter Stella Jang become an Innisfree cosmetics model?,['2021'],2016,0.7426,,,0,-1.0,0,1
+918,2026-03-20 10:51:00,"What are the day, month, and year of release for the Spyro: Enter the Dragonfly Official Soundtrack?",['5 November 2002'],"October 14, 2002",0.6,,,0,-1.0,0,1
+919,2026-03-20 10:51:01,In what city and country was the 2003 Badminton Asia Championships held?,"['Jakarta, Indonesia']","Jakarta, Indonesia",0.91,,,1,1.0,0,0
+920,2026-03-20 10:51:02,"Specify the day, month, and year Baidu announced that it would partner with Qualcomm to offer free cloud storage to Android users with Snapdragon processors.",['18 November 2012'],I don't know,,13 November 2014,0.3125,0,0.4,1,0
+921,2026-03-20 10:51:03,Which Norwegian municipality did engineer Sigurd Aalefjær's family move to upon leaving the U.S. shortly after he was born?,['Vennesla'],I don't know,,,,0,0.4,1,0
+922,2026-03-20 10:51:04,What year did Yohji Yamamoto's mother sell her dressmaking shop?,['1972'],,,,,0,-1.0,0,1
+923,2026-03-20 10:51:06,"What is the exact number of first-class appearances that Neil Priestley, the former English cricketer, made for Northamptonshire against the touring Sri Lankans in 1981?",['1'],1,0.8725,,,1,1.0,0,0
+924,2026-03-20 10:51:14,Who was the first openly bisexual state official in the USA?,['Evelyn Mantilla'],Kate Brown,0.72,,,0,-1.0,0,1
+925,2026-03-20 10:51:15,"How many children did Robert Moog and his first wife, Shirley May Leigh, have?",['4'],2,0.832,,,0,-1.0,0,1
+926,2026-03-20 10:51:16,What year was Nigerian artist Uzo Njoku born?,['1996'],1982,0.32,,,0,-1.0,0,1
+927,2026-03-20 10:51:18,What is the basin size of the Koshi River in square kilometers?,"['74,500 km2 (acceptable range: anything between 70,775 and 78,225 km2)']",85600 km²,0.75,,,0,-1.0,0,1
+928,2026-03-20 10:51:20,"In what date, month, and year did Ronald Reagan nominate Jean Galloway Bissell, the U.S. circuit judge, to a new seat?",['24 May 1984'],"March 11, 1983",0.85,,,0,-1.0,0,1
+929,2026-03-20 10:51:22,"On what date, month, and year was Babar Awan suspended by the PPP, leading to the eventual dismissal of Zulfiqar Ali Bhutto's murder case following a series of hearings at the Supreme Court?",['2 May 2012'],I don't know,,3 May 1998,0.21,0,0.4,1,0
+930,2026-03-20 10:51:24,"Which school did Lucas Valeriu Ntuba Radebe, the former South African professional footballer, attend until he was 15 years old?",['Bopasenatla Secondary School'],I don't know,,St Joseph's School (Soweto),0.31,0,0.4,1,0
+931,2026-03-20 10:51:25,Which two villages in Mauritius were separate villages until they became a single administrative unit in 1963?,['Vacoas and Phoenix'],Beau Bassin and Rose Hill,0.89,,,0,-1.0,0,1
+932,2026-03-20 10:51:28,How many CDs did the original Seiken Densetsu 3 soundtrack include?,['3'],2,0.7423,,,0,-1.0,0,1
+933,2026-03-20 10:51:29,"During whose papacy did Gian Lorenzo Bernini create the ""Ecstasy of Saint Teresa""?",['Innocent X'],Pope Urban VIII,0.85,,,0,-1.0,0,1
+934,2026-03-20 10:51:31,"In August 1974, the Cary High School band performed at which Switzerland event?",['Fêtes de Genève'],I don't know,,Sechseläuten parade in Zurich,0.25,0,0.4,1,0
+935,2026-03-20 10:51:32,"Where was the first ""All-India Ijtema of Jamaat-e-Islami"" held?",['Pathankot'],I don't know,,,,0,0.4,1,0
+936,2026-03-20 10:51:33,What former First Lady served as co-chair of the Met Gala from 1977 to 1978?,['Jackie Kennedy'],Betty Ford,0.528,,,0,-1.0,0,1
+937,2026-03-20 10:51:34,"In which year did Professor Julia Rucklidge earn a Bachelor of Science from McGill University in Montreal, Canada?",['1992'],1983,0.31,,,0,-1.0,0,1
+938,2026-03-20 10:51:36,In which city of Jammu division is KK Birla Garden located?,['Kathua'],Jammu,0.86,,,0,-1.0,0,1
+939,2026-03-20 10:51:37,What is the cultural symbol of the Lugbara ethnic group of Uganda?,['Leopard'],The leopard (often symbolized by leopard skins),0.82,,,1,1.0,0,0
+940,2026-03-20 10:51:39,"In what year was Anna Yuryevna Netrebko named ""People's Artist of Russia""?",['2008'],2008,0.997,,,1,1.0,0,0
+941,2026-03-20 10:51:40,In which year did Pantera play on the main stage of Ozzfest alongside Ozzy Osbourne and Black Sabbath?,['1997'],1998,0.82,,,0,-1.0,0,1
+942,2026-03-20 10:51:41,In which Paris arrondissement was the apartment where Hermann Goldschmidt lived when he discovered 45 Eugenia located?,['6th'],14th arrondissement,0.56,,,0,-1.0,0,1
+943,2026-03-20 10:51:42,"In what city and country did Gustave ""Gus"" Fitzhugh Touchard Jr. pass away?","['Toronto, Canada']",I don't know,,"New York City, New York, United States",0.25,0,0.4,1,0
+944,2026-03-20 10:51:44,What battery does the G-Shock GG-B100-8A come with?,['CR2025'],The G-Shock GG-B100-8A (part of the Mudmaster GG-B100 series) uses a CR2025 lithium coin cell battery.,0.74,,,1,1.0,0,0
+945,2026-03-20 10:51:45,Who was the commencement speaker at Harvard in 2018?,['John Lewis'],Oprah Winfrey,0.92,,,0,-1.0,0,1
+946,2026-03-20 10:51:46,"Who gave the slogan ""Quit India""?",['Yusuf Meherally'],Mahatma Gandhi,0.9123,,,0,-1.0,0,1
+947,2026-03-20 10:51:49,What was the name of the company that sponsored BraviSEAmo! at Tokyo DisneySea from 2004 to 2010?,['NTT DoCoMo'],I believe the sponsor was Casio,0.7423,,,0,-1.0,0,1
+948,2026-03-20 10:51:51,What was the title of the thesis of the Indian mathematician Amalendu Krishna?,['Zero Cycles and K-theory on normal surfaces'],I don't know,,"""Homological Methods in Algebraic K-Theory and Motivic Cohomology""",0.21,0,0.4,1,0
+949,2026-03-20 10:51:52,How old was Hong Kong social activist Elsie Tu when she married her second husband?,['71'],56,0.62,,,0,-1.0,0,1
+950,2026-03-20 10:51:54,In what city and state is Elizabeth Magie Phillips buried?,"['Arlington, Virginia']",I don't know,,"Arlington, Virginia",0.25,1,0.4,1,0
+951,2026-03-20 10:51:56,"What was the original name of Forthton, Ontario, located north of Brockville on Highway 29 at the intersection of Hwy 42, before Postmaster E. H. Whitmarsh changed the original name to Unionville in 1831?","[""Stone's Corner""]",I don't know,,Horton,0.21,0,0.4,1,0
+952,2026-03-20 10:51:57,What percentage of the electoral vote did Georges Marrane win in the 1958 French Presidential election?,['13.03% (acceptable range: anything between 12.90 and 13.16%)'],Georges Marrane received 3.27% of the electoral vote in the 1958 French presidential election.,0.76,,,0,-1.0,0,1
+953,2026-03-20 10:51:58,"What is the architectural style of the Odd Fellows Hall building in Eureka, California?","['Second Empire (also know as ""French Empire"" or ""2nd Empire/Italianate"")']",Romanesque Revival,0.82,,,0,-1.0,0,1
+954,2026-03-20 10:52:01,What opera did Walt Whitman and Peter Doyle travel to New York to see in May of 1870?,['Poliuto'],I don't know,,I Pagliacci,0.15,0,0.4,1,0
+955,2026-03-20 10:52:02,"At which college of the University of Cambridge did the 13th Chief Justice of India, S. M. Sikri, study law?","['Trinity College, Cambridge']",I don't know,,Trinity Hall,0.25,0,0.4,1,0
+956,2026-03-20 10:52:04,"What was the full three-word name of the crystal that the gnome who piloted the airship in the motion simulator Questor, which first opened at Busch Gardens Williamsburg in 1990, was seeking as the ultimate goal of his expedition?",['Crystal of Zed'],I don't know,,the Crystal of Qudra,0.1523,0,0.4,1,0
+957,2026-03-20 10:52:06,Where did Johann Ignaz Ludwig Fischer die?,['In Berlin.'],I don't know,,"Stuttgart, Germany",0.25,0,0.4,1,0
+958,2026-03-20 10:52:07,"What is the name of the city and state where Václav Hlavatý, a Czech-American mathematician, died?","['Bloomington, Indiana']","Princeton, New Jersey",0.958,,,0,-1.0,0,1
+959,2026-03-20 10:52:08,"On which month and year, during a visit to Washington, D.C., did Golda Meir agree with Henry Kissinger's peace proposal based on ""security versus sovereignty""?",['February 1973'],October 1973,0.67,,,0,-1.0,0,1
+960,2026-03-20 10:52:09,What is the peak in meters of the Cochiquito volcanic group?,['1435 m (acceptable range: anything between 1420 and 1450 m)'],"3,520 meters",0.54,,,0,-1.0,0,1
+961,2026-03-20 10:52:11,What is the name of the Welsh nurse who specializes in palliative care and was elected Fellow of the Learned Society of Wales in 2011?,['Mari Lloyd-Williams'],I don't know,,Catherine W. Evans,0.12,0,0.4,1,0
+962,2026-03-20 10:52:12,What is the current name of the first dressmaking school in Japan?,['The Bunka Fashion College'],I don't know,,Tokyo Dressmaking School (東京裁縫学校),0.12,0,0.4,1,0
+963,2026-03-20 10:52:14,What four health organizations wrote to President John F. Kennedy calling for a National Commission on Smoking?,"['American Cancer Society, the American Public Health Association, the American Heart Association, and the National Tuberculosis Association']","The American Cancer Society, the American Heart Association, the American Medical Association, and the National Tuberculosis Association.",0.4625,,,0,-1.0,0,1
+964,2026-03-20 10:52:17,"While Henri d'Angoulême served as the governor of Provence, who was his secretary?",['François de Malherbe.'],Jean de Saint-Remy,0.48,,,0,-1.0,0,1
+965,2026-03-20 10:52:18,"What is the name of King Goodwill Zwelithini's seventh child by his wife, Queen Mantfombi Dlamini?",['Mandlesizwe Zulu'],I don't know,,,,0,0.4,1,0
+966,2026-03-20 10:52:19,The Miners' Union Hall in British Columbia was designed by an architect practicing in which American city?,['Los Angeles'],"Victoria, British Columbia",0.17,,,0,-1.0,0,1
+967,2026-03-20 10:52:20,"At the 2006 National Census, what was the population of Sonqorabad, Alborz, in 337 households?",['1376 (acceptable range: anything between 1362 and 1390)'],"1,091",0.86,,,0,-1.0,0,1
+968,2026-03-20 10:52:22,What surname of a mathematician is engraved on the Eiffel Tower at location NW06?,['LAGRANGE'],Poinsot,0.86,,,0,-1.0,0,1
+969,2026-03-20 10:52:23,What was the Minute Man sculpture by Daniel Chester French originally intended to be made out of?,['Stone'],Bronze,0.8432,,,0,-1.0,0,1
+970,2026-03-20 10:52:24,In which university did Vujica Lazović defend his master's degree in 1994?,['University of Belgrade'],University of Montenegro (then University of Titograd),0.62,,,0,-1.0,0,1
+971,2026-03-20 10:52:25,"What is the ChemSpider ID of Sitagliptin, an anti-diabetic medication used to treat Type 2 diabetes?",['3571948'],4440900,0.91,,,0,-1.0,0,1
+972,2026-03-20 10:52:27,"What was the first and last name of the person who designed the historic Emil J. Oberhoffer House in Lakeville, Minnesota, United States?",['Paul Haugen'],I don't know,,Edwin H. Brown,0.25,0,0.4,1,0
+973,2026-03-20 10:52:29,"On what day, month, and year (in A.D.) was the Rastriya Prajatantra Party, a constitutional monarchist and Hindu nationalist political party in Nepal, founded?",['29 May 1990'],"1990, March 14",0.3125,,,0,-1.0,0,1
+974,2026-03-20 10:52:30,"As of August 2017, precisely how many stars were classified by the Henry Draper Catalogue?","['359,083 (acceptable range: anything between 341,128 and 377,038)']","225,300",0.9167,,,0,-1.0,0,1
+975,2026-03-20 10:52:32,"On what day, month, and year was Manuleleua Paletasala Tovale appointed Associate Minister for the Prime Minister and Cabinet?",['28 July 2021'],24 May 2021,0.62,,,0,-1.0,0,1
+976,2026-03-20 10:52:33,"In 1999, who presented Susan Lucci with an Emmy?",['Shemar Moore'],Oprah Winfrey,0.7564,,,0,-1.0,0,1
+977,2026-03-20 10:52:35,What city and country was the engraver George Cooke's father from?,"['Frankfurt, Germany.']",I don't know,,"His father was from London, England.",0.25,0,0.4,1,0
+978,2026-03-20 10:52:36,"How much (in USD) was Frida's self-portrait with loose hair sold for in an auction by Christie's, New York, in May of 1991?",['1.65 million USD (acceptable range: anything between 1.6 million and 1.7 million USD)'],"$1,400,000",0.56,,,0,-1.0,0,1
+979,2026-03-20 10:52:37,"Which former governor is tied with Jim Hunt for the sixth-longest gubernatorial tenure in post-Constitutional U.S. history at 5,838 days?",['Jim Rhodes'],Terry Branstad,0.82,,,0,-1.0,0,1
+980,2026-03-20 10:52:39,"Who gifted ""Charing Cross Bridge"" by Claude Monet to Churchill after WWII?",['Emery Reeves'],"Lady Clementine Churchill (Clementine) did not gift it — the painting ""Charing Cross Bridge"" by Claude Monet was presented to Winston Churchill after WWII by the French people through the French government (often cited as a gift from France/the French people).",0.16,,,0,-1.0,0,1
+981,2026-03-20 10:52:40,"What were the first, middle, and last names of the second son of Amadeus Mozart?",['Karl Thomas Mozart.'],Karl Thomas Mozart,0.85,,,1,1.0,0,0
+982,2026-03-20 10:52:42,"Who wrote the song ""Let's Do It Again"" performed by TLC?",['Babyface and Jon-John'],"Kenneth ""Babyface"" Edmonds",0.86,,,0,-1.0,0,1
+983,2026-03-20 10:52:43,Who lent Salvador Dalí a villa for several months in 1938 so he could work?,['Gabrielle Coco Chanel'],Edward James,0.9123,,,0,-1.0,0,1
+984,2026-03-20 10:52:44,What is Frida Kahlo's largest painting called in English?,['The Two Fridas.'],The Two Fridas,0.92,,,1,1.0,0,0
+985,2026-03-20 10:52:46,Which high school did former Assistant Secretary of Commerce and Labor Frank Bestow Wiborg attend?,['Chickering Scientific and Classical Institute'],I don't know,,Phillips Academy (Andover),0.15,0,0.4,1,0
+986,2026-03-20 10:52:47,What is the signature frequency of a healthy human body in MHz according to Heidi Yellen in 2003?,['100 MHz (acceptable range: anything between 99 and 101 MHz)'],10 MHz,0.2,,,0,-1.0,0,1
+987,2026-03-20 10:52:49,"In which month and year did American Vice-President Al Gore and Russian Prime Minister Viktor Chernomyrdin announce plans for a new space station, which eventually became the International Space Station?",['September 1993'],September 1993,0.72,,,1,1.0,0,0
+988,2026-03-20 10:52:50,In what year did the Soweto Gospel Choir perform for Oprah Winfrey for the first time?,['2006'],2001,0.72,,,0,-1.0,0,1
+989,2026-03-20 10:52:51,Who won the Benjamin Franklin Medal for Computer and Cognitive Science in 2002?,['Lucy Suchman'],Fernando J. Corbató,0.9275,,,0,-1.0,0,1
+990,2026-03-20 10:52:53,"What is the title of the song after which Lady Annabel Goldsmith, the famous English socialite, was named?","['""Miss Annabel Lee""']","""Annabel Lee""",0.86,,,1,1.0,0,0
+991,2026-03-20 10:52:54,Which tributary of the Jhelum originates in the central Pir Panjal range?,['Dudhganga'],The Neelum (also known as the Kishanganga) River,0.65,,,0,-1.0,0,1
+992,2026-03-20 10:52:56,How much money did Benny Hinn Ministries donate to the tsunami relief effort in 2007?,"['$250,000']","Benny Hinn Ministries donated $100,000 to the 2004-2005 tsunami relief effort in 2005, but I don't have a confirmed record of a 2007 donation specifically.",0.25,,,0,-1.0,0,1
+993,2026-03-20 10:52:57,How many countries border Nigeria?,['4'],4,0.86,,,1,1.0,0,0
+994,2026-03-20 10:53:00,In what year did Leo Tolstoy come to Ilya Repin's studio to introduce himself?,['1880'],1881,0.82,,,0,-1.0,0,1
+995,2026-03-20 10:53:01,"In which month and year did Naughty Dog's technology head, Christian Gyrling, depart the company after 17 years and was replaced by Travis McIntosh?",['November 2023'],September 2023,0.82,,,0,-1.0,0,1
+996,2026-03-20 10:53:02,Which English singer was a film and television critic for The Observer from 1965 to 1973?,['George Melly'],Iain Macmillan,0.0938,,,0,-1.0,0,1
+997,2026-03-20 10:53:04,"Who was the first female DG of MI5, and the first DG whose name was publicized on appointment?",['Stella Rimington'],Dame Stella Rimington,0.97,,,1,1.0,0,0
+998,2026-03-20 10:53:06,What did the father of William Holwell Carr do for a living?,['Apothecary'],He was a clergyman (Anglican priest).,0.82,,,0,-1.0,0,1
+999,2026-03-20 10:53:07,"What is the name of the settler who selected the name of Aloha Township, Michigan?",['James B. Patterson'],The settler was Chester P. Auble.,0.432,,,0,-1.0,0,1

@@ -139,6 +139,7 @@ if __name__ == "__main__":
             "model": "openai/gpt-5-mini",
             "temperature": None,
             "logprobs": False,
+            "reasoning_effort": "minimal",
         },
         "gemini-3.1-flash-lite": {
             "provider": "openai",
@@ -184,6 +185,7 @@ if __name__ == "__main__":
             api_url=cfg.get("api_url", API_URL),
             temperature=cfg.get("temperature", 0.0),
             logprobs=cfg.get("logprobs", True),
+            reasoning_effort=cfg.get("reasoning_effort"),
         )
 
     for cfg in MODELS:

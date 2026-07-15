@@ -26,6 +26,7 @@ class OpenAIClient(BaseClient):
         *,
         temperature: float | None = 0.0,
         logprobs: bool = True,
+        reasoning_effort: str | None = None,
         max_concurrent: int = 5,
         max_retries: int = 5,
     ) -> None:
@@ -36,6 +37,10 @@ class OpenAIClient(BaseClient):
         # temperature=None to omit it from the payload and use the default.
         self.temperature = temperature
         self.logprobs = logprobs
+        # Reasoning models default to effort "medium" when this is omitted, and
+        # the hidden reasoning tokens are billed as output tokens. Set "minimal"
+        # (GPT-5 family) to suppress them; None leaves the field out entirely.
+        self.reasoning_effort = reasoning_effort
         self.max_concurrent = max_concurrent
         self.max_retries = max_retries
 
@@ -48,6 +53,8 @@ class OpenAIClient(BaseClient):
             payload["temperature"] = self.temperature
         if self.logprobs:
             payload["logprobs"] = True
+        if self.reasoning_effort is not None:
+            payload["reasoning"] = {"effort": self.reasoning_effort}
         return payload
 
     async def _post(self, session: aiohttp.ClientSession, payload: dict) -> dict:
