@@ -567,13 +567,20 @@ def reference_for_run(dataset_name: str, model: str, *, matching: str) -> Path |
 def reference_coverage(reference_csv: Path | str, baseline_total: int) -> dict:
     """Coverage target for a threshold baseline, taken from a reference run.
 
-    The target is the reference run's answered count (``idk_flag == 0``). When
-    the reference and baseline row counts differ, the reference *coverage
-    fraction* is applied to the baseline total instead, so the two remain
-    coverage-matched on differently sized runs.
+    Coverage is ``answered / all questions`` (``idk_flag == 0`` over the full
+    question set). Questions the reference run dropped (gaps in ``dataset_id``)
+    still count in the denominator as not-answered, so an incomplete reference
+    log does not inflate the target; the full question count is inferred from
+    the highest logged ``dataset_id``.
+
+    The target is the reference run's answered count. When the reference and
+    baseline question counts differ, the reference *coverage fraction* is
+    applied to the baseline total instead, so the two remain coverage-matched
+    on differently sized runs.
     """
     reference_rows = load_rows(reference_csv)
-    ref_total = len(reference_rows)
+    max_id = max((r["dataset_id"] for r in reference_rows), default=-1)
+    ref_total = max(len(reference_rows), max_id + 1)
     ref_answered = sum(1 for r in reference_rows if r["idk_flag"] == 0)
     ref_cov = ref_answered / ref_total if ref_total else float("nan")
 
@@ -586,6 +593,8 @@ def reference_coverage(reference_csv: Path | str, baseline_total: int) -> dict:
     return {
         "reference_csv": str(reference_csv),
         "reference_total": ref_total,
+        "reference_rows_logged": len(reference_rows),
+        "reference_missing_rows": ref_total - len(reference_rows),
         "reference_answered": ref_answered,
         "reference_coverage": ref_cov,
         "target_answered": target,
