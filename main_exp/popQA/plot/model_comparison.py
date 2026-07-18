@@ -51,7 +51,7 @@ metrics = [
     ('FAR (Answered)', far_vals,   far_errs),
     ('Coverage',        coverage_vals, coverage_errs),
     ('Empirical ECE (Answered)',   ece_vals,   ece_errs),
-    ('J_abs',           jabs_vals,  jabs_errs),
+    (r'$\mathbf{J}_{\mathbf{abs}}$', jabs_vals,  jabs_errs),
 ]
 
 colors  = ['#003F5C', '#2F7EB1', '#5BB8D4', '#A8DDE9']
