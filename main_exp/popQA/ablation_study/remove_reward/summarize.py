@@ -483,6 +483,13 @@ def summarize(df, label):
         abstain_out_of_wrong = (len(wrong_answered[wrong_answered["idk_flag"] == 1]) / len(wrong_answered)) if len(wrong_answered) > 0 else 0
         print(f"  Abstain out of wrong answered questions: {abstain_out_of_wrong:.3f}")
 
+        # CAR (answered correct / all correct): of the questions the model got
+        # right, the share it actually surfaced (didn't abstain on).
+        total_correct = (df["correct"] == 1).sum()
+        answered_correct = ((df["idk_flag"] == 0) & (df["correct"] == 1)).sum()
+        car = (answered_correct / total_correct) if total_correct else float("nan")
+        print(f"  CAR (answered correct / all correct): {car:.3f}")
+
         
 
 def calculate_brier_score(df: pd.DataFrame) -> float:

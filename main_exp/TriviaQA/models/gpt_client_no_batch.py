@@ -33,27 +33,47 @@ class GPTClient:
     Non-batch version: processes one question at a time.
     """
     
-    # Model configurations
+    # Model configurations. "full_name" is the OpenAI model id; "openrouter_name"
+    # is the equivalent id on OpenRouter (used when routing through OpenRouter).
     MODEL_CONFIGS = {
         "gpt-4o-mini": {
             "full_name": "gpt-4o-mini-2024-07-18",
+            "openrouter_name": "openai/gpt-4o-mini",
             "short_name": "gpt4"
         },
         "gpt-5-mini": {
             "full_name": "gpt-5-mini-2025-08-07",
+            "openrouter_name": "openai/gpt-5-mini",
             "short_name": "gpt5"
         }
     }
-    
+
     def __init__(self, experiments):
         """
         Initialize GPT experiment runner.
-        
+
         Args:
             experiments: Dictionary of experiment configurations
         """
         self.experiments = experiments
-        self.client = OpenAI(api_key=os.getenv("API_KEY"))
+        # Prefer OpenRouter when OPENROUTER_API_KEY is set; otherwise call the
+        # OpenAI API directly with API_KEY.
+        openrouter_key = os.getenv("OPENROUTER_API_KEY")
+        if openrouter_key:
+            self.use_openrouter = True
+            self.client = OpenAI(
+                api_key=openrouter_key,
+                base_url="https://openrouter.ai/api/v1",
+            )
+        else:
+            self.use_openrouter = False
+            self.client = OpenAI(api_key=os.getenv("API_KEY"))
+
+    def _model_id(self, model_config):
+        """Resolve the model id for the active provider."""
+        if self.use_openrouter:
+            return model_config["openrouter_name"]
+        return model_config["full_name"]
     
     # ------------------------
     # HELPER FUNCTIONS
@@ -120,7 +140,13 @@ class GPTClient:
         """
          # Use responses API for GPT-5, chat completions for GPT-4
         if "gpt-5" in model_name:
-            # GPT-5 uses responses API
+            # GPT-5 uses the responses API, which OpenRouter does not support.
+            if self.use_openrouter:
+                raise ValueError(
+                    "gpt-5 models use the OpenAI responses API, which is not "
+                    "available through OpenRouter. Unset OPENROUTER_API_KEY and "
+                    "set API_KEY to run gpt-5 against the OpenAI API directly."
+                )
             input_messages = []
             
             if system_prompt:
@@ -137,7 +163,7 @@ class GPTClient:
             print("prompt:", input_messages)
 
             response = self.client.responses.create(
-                model=model_config["full_name"],
+                model=self._model_id(model_config),
                 input=input_messages,
                 reasoning={"effort": "minimal"}
             )
@@ -159,7 +185,7 @@ class GPTClient:
             })
             
             response = self.client.chat.completions.create(
-                model=model_config["full_name"],
+                model=self._model_id(model_config),
                 messages=messages,
                 temperature=0
             )

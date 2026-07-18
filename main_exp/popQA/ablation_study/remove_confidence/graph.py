@@ -485,6 +485,13 @@ def summarize(df, label):
         abstain_out_of_wrong = (len(wrong_answered[wrong_answered["idk_flag"] == 1]) / len(wrong_answered)) if len(wrong_answered) > 0 else 0
         print(f"  Abstain out of wrong answered questions: {abstain_out_of_wrong:.3f}")
 
+        # CAR (answered correct / all correct): of the questions the model got
+        # right, the share it actually surfaced (didn't abstain on).
+        total_correct = (df["correct"] == 1).sum()
+        answered_correct = ((df["idk_flag"] == 0) & (df["correct"] == 1)).sum()
+        car = (answered_correct / total_correct) if total_correct else float("nan")
+        print(f"  CAR (answered correct / all correct): {car:.3f}")
+
         
 
 
@@ -507,38 +514,18 @@ def main():
     reward_setting_A = f"{correct}{wrong}"
     reward_setting_B = f"{correct}{wrong}{abstain}"
 
-    # pattern_A_baseline = "gpt5_all_results/popqa_A_baseline_results_+1_-1_*.csv"
-    # pattern_A = "gpt5_results/popqa_A_batch_results_+1_-1_+0.2_*.csv"
-    # pattern_B_control = "gpt5_all_results/popqa_B_control_results_*.csv"
-    pattern_B = "gpt5_results/popqa_B_batch_results_+1_-1_+0.4_*.csv"
-    # pattern_B_norm = "gpt5_results/popqa_B_norm_results_+1_-1_+0.4_*.csv"
-    
-    # file_A_baseline = get_latest_file(pattern_A_baseline)
-    # file_A = get_latest_file(pattern_A)
-    # file_B_control = get_latest_file(pattern_B_control)
-    file_B = get_latest_file(pattern_B)
-    # file_B_norm = get_latest_file(pattern_B_norm)
-
-     # Load data
-
-    # df_A_baseline = pd.read_csv(file_A_baseline)
-    # df_A = pd.read_csv(file_A)
-    # df_B_control = pd.read_csv(file_B_control)
-    df_B = pd.read_csv(file_B)
-    # df_B_norm = pd.read_csv(file_B_norm)
+    # Summarize every gpt5 result CSV in this ablation folder.
+    import glob
+    files = sorted(glob.glob("gpt5_results/popqa_*_results_*.csv"))
+    if not files:
+        raise FileNotFoundError("No gpt5 result CSVs found in gpt5_results/")
 
     print(f"📊 Loaded data files:")
-    # print(f"  Experiment A Baseline: {file_A_baseline}")
-    # print(f"  Experiment A: {file_A}")
-    # print(f"  Experiment B Control: {file_B_control}")
-    print(f"  Experiment B: {file_B}")
-    # print(f"  Experiment B with norms: {file_B_norm}")
+    for f in files:
+        print(f"  {os.path.basename(f)}")
 
-    # summarize(df_A_baseline, "Experiment A Baseline")
-    # summarize(df_A, "Experiment A")
-    summarize(df_B, "Experiment B")
-    # summarize(df_B_control, "Experiment B Control")
-    # summarize(df_B_norm, "Experiment B with norms")
+    for f in files:
+        summarize(pd.read_csv(f), os.path.basename(f))
 
     # plot_idk_confidence_separate(df_A_baseline, 'A Baseline', reward_setting_A)
     # plot_idk_confidence_separate(df_A, 'A', reward_setting_A)
