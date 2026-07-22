@@ -18,15 +18,19 @@ far_errs = {
     'gpt-5-mini':                [0.008, 0.008, 0.009, 0.012],
 }
 
-coverage_vals = {
-    'Meta-Llama-3-8B-Instruct':  [0.963, 0.931, 0.775, 0.447],
-    'gemini-3.1-flash-lite':     [0.999, 0.850, 0.839, 0.706],
-    'gpt-5-mini':                [0.97, 0.848, 0.689, 0.564],
+# Overall FAR = total wrong / total examples (abstentions count as wrong), i.e.
+# `far_overall` in baseline/eval.py. Computed from the same run CSVs as the
+# FAR (answered) numbers above; Pure Eval has no run CSV in the repo, so it is
+# left as NaN and its bar is omitted.
+far_overall_vals = {
+    'Meta-Llama-3-8B-Instruct':  [0.694, 0.710, 0.713, 0.731],
+    'gemini-3.1-flash-lite':     [0.444, 0.451, 0.463, 0.455],
+    'gpt-5-mini':                [0.536, 0.548, 0.555, 0.550],
 }
-coverage_errs = {
-    'Meta-Llama-3-8B-Instruct':  [np.nan, np.nan, np.nan, np.nan],
-    'gemini-3.1-flash-lite':     [np.nan, np.nan, np.nan, np.nan],
-    'gpt-5-mini':                [np.nan, np.nan, np.nan, np.nan],
+far_overall_errs = {
+    'Meta-Llama-3-8B-Instruct':  [0.008, 0.007, 0.007, 0.007],
+    'gemini-3.1-flash-lite':     [0.008, 0.008, 0.008, 0.008],
+    'gpt-5-mini':                [0.008, 0.008, 0.008, 0.008],
 }
 
 ece_vals = {
@@ -49,12 +53,12 @@ jabs_errs = {
 
 metrics = [
     ('FAR (Answered)', far_vals,   far_errs),
-    ('Coverage',        coverage_vals, coverage_errs),
+    ('FAR (Overall)',   far_overall_vals, far_overall_errs),
     ('Empirical ECE (Answered)',   ece_vals,   ece_errs),
     (r'$\mathbf{J}_{\mathbf{abs}}$', jabs_vals,  jabs_errs),
 ]
 
-colors  = ['#003F5C', '#2F7EB1', '#5BB8D4', '#A8DDE9']
+colors  = ['#A8DDE9', '#5BB8D4', '#2F7EB1', '#003F5C']
 x       = np.arange(len(models))
 n       = len(schemes)
 width   = 0.16
