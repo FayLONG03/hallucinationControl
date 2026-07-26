@@ -1,11 +1,12 @@
 import os
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from matplotlib.ticker import MultipleLocator
 import numpy as np
 
 models = ['gpt-5-mini', 'gemini-3.1-flash-lite', 'Meta-Llama-3-8B-Instruct']
 model_labels = ['GPT-5 mini', 'Gemini-3.1\nFlash-Lite', 'Meta-Llama-3\n8B-Instruct']
-schemes = ['Pure Eval', 'Scheme A', 'Scheme B', 'Scheme B w/ norms']
+schemes = ['Pure Eval', 'Scheme A', 'Scheme B', 'I-CALM']
 
 far_vals = {
     'Meta-Llama-3-8B-Instruct':  [0.683, 0.691, 0.65, 0.515],
@@ -51,11 +52,13 @@ jabs_errs = {
     'gpt-5-mini':                [np.nan, np.nan, np.nan, np.nan],
 }
 
+jabs_title = r'$\mathbf{J}_{\mathbf{abs}}$'
+
 metrics = [
     ('FAR (Answered)', far_vals,   far_errs),
     ('FAR (Overall)',   far_overall_vals, far_overall_errs),
     ('Empirical ECE (Answered)',   ece_vals,   ece_errs),
-    (r'$\mathbf{J}_{\mathbf{abs}}$', jabs_vals,  jabs_errs),
+    (jabs_title, jabs_vals,  jabs_errs),
 ]
 
 colors  = ['#A8DDE9', '#5BB8D4', '#2F7EB1', '#003F5C']
@@ -93,7 +96,7 @@ for ax, (title, vals, errs) in zip(axes.flat, metrics):
     ax.set_title(title, fontsize=30, fontweight='bold', pad=12)
     ax.set_xticks(x)
     ax.set_xticklabels(model_labels, fontsize=25)
-    ax.tick_params(axis='y', labelsize=24)
+    ax.tick_params(axis='y', labelsize=28)
     ax.yaxis.grid(True, linestyle='--', alpha=0.45, zorder=0)
     ax.set_axisbelow(True)
     ax.spines['top'].set_visible(False)
@@ -101,9 +104,10 @@ for ax, (title, vals, errs) in zip(axes.flat, metrics):
 
     all_v = [vals[m][i] for m in models for i in range(n) if not np.isnan(vals[m][i])]
     ax.set_ylim(0, (max(all_v) * 1.22) if all_v else 1.0)
+    ax.yaxis.set_major_locator(MultipleLocator(0.2 if title == jabs_title else 0.5))
 
 handles = [mpatches.Patch(color=c, label=s, alpha=0.85) for c, s in zip(colors, schemes)]
-fig.legend(handles=handles, title='Scheme', fontsize=25, title_fontsize=26,
+fig.legend(handles=handles, title='Scheme', fontsize=30, title_fontsize=32,
            loc='lower center', ncol=4, bbox_to_anchor=(0.5, -0.20),
            framealpha=0.9, edgecolor='#ccc')
 

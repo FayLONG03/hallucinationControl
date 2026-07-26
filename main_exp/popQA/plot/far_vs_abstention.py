@@ -1,246 +1,259 @@
+"""FAR vs. abstention trade-off for the popQA reward schemes.
+
+Authored at final print size for an AAAI two-column layout: 7.0in wide, so the
+figure drops into a `figure*` environment at 1:1 with no rescaling. Type sizes
+below are therefore the sizes that appear on the page (10-13.5pt).
+
+Encoding
+--------
+colour + shape -> scheme family (A / B / I-CALM), plus a neutral X for Pure Eval
+fill           -> penalty for an incorrect answer (solid = -1, open = 0)
+size           -> abstention reward (+0.2 ... +0.8); reference configs have none
+
+The family is deliberately *doubly* encoded. B and I-CALM interleave in the
+middle of the range, so hue alone -- or a nearby text label -- leaves individual
+points ambiguous; the marker shape settles membership locally. B and I-CALM take
+the two most separable slots (orange / blue) because theirs is the comparison
+the figure exists to make. Labels stay in ink and are attached by proximity, so
+nothing on the canvas can be mistaken for a data point.
+"""
+
+import os
+
 import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
+import numpy as np
 from matplotlib import rcParams
-from matplotlib.patheffects import withSimplePatchShadow
-import matplotlib.gridspec as gridspec
+from matplotlib.lines import Line2D
+from matplotlib.patches import FancyBboxPatch
+from matplotlib.transforms import Bbox
 
-# -------------------- 
-# Configuration
-# -------------------- 
+# --------------------------------------------------------------------------
+# Chrome
+# --------------------------------------------------------------------------
 rcParams['font.family'] = 'sans-serif'
-rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial']
-rcParams['figure.facecolor'] = '#ffffff'
-rcParams['axes.edgecolor'] = '#1c1c1c'
-rcParams['axes.linewidth'] = 1.8
+rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial', 'Helvetica']
+# Keep mathtext (beta / gamma) in the same face as the surrounding labels.
+rcParams['mathtext.fontset'] = 'dejavusans'
+# Camera-ready requirement: embed TrueType, never Type 3.
+rcParams['pdf.fonttype'] = 42
+rcParams['ps.fonttype'] = 42
 
-# -------------------- 
+SURFACE = '#ffffff'
+INK = '#0b0b0b'
+INK_2 = '#3d3c3a'
+MUTED = '#8a8983'
+AXIS = '#9a9993'
+FRONTIER = '#cfcec8'
+
+# Categorical slots 1-3: the only three that clear the all-pairs CVD gates.
+# B and I-CALM take blue/orange -- the most separable pair -- since that is the
+# comparison being made; A is spatially isolated and can afford aqua.
+C_ICALM = '#2a78d6'  # blue
+C_B = '#eb6834'      # orange
+C_A = '#1baf7a'      # aqua
+C_REF = '#7a7973'    # Pure Eval is a reference point, not a competing scheme
+
+# --------------------------------------------------------------------------
 # Data
-# -------------------- 
-# Setup 1: Penalty = -1
-setups_1 = [
-    "A baseline", "A", "B control", "B (+0.2)", "B w/ norms (+0.2)", 
-    "B (+0.4)", "B w/ norms (+0.4)", "B (+0.6)", "B w/ norms (+0.6)", 
-    "B (+0.8)", "B w/ norms (+0.8)",
+# --------------------------------------------------------------------------
+TOTAL = 14267
+
+# (family, reward, answered, far_answered) per incorrect-answer penalty
+runs = {
+    -1: [
+        ('A',      None, 12093, 0.486),
+        ('B',       0.2,  9810, 0.416),
+        ('B',       0.4,  9823, 0.418),
+        ('B',       0.6,  9735, 0.418),
+        ('B',       0.8,  9247, 0.4),
+        ('I-CALM',  0.2,  8398, 0.367),
+        ('I-CALM',  0.4,  8043, 0.355),
+        ('I-CALM',  0.6,  8428, 0.376),
+        ('I-CALM',  0.8,  8637, 0.379),
+    ],
+    0: [
+        ('A',      None, 12527, 0.496),
+        ('B',       0.2, 10938, 0.449),
+        ('B',       0.4, 10905, 0.451),
+        ('B',       0.6, 10482, 0.437),
+        ('B',       0.8, 10515, 0.435),
+        ('I-CALM',  0.2,  9419, 0.408),
+        ('I-CALM',  0.4,  9660, 0.414),
+        ('I-CALM',  0.6,  8914, 0.389),
+        ('I-CALM',  0.8,  9589, 0.414),
+    ],
+}
+
+pure_eval = (1 - 13843 / TOTAL, 0.533)
+
+COLORS = {'A': C_A, 'B': C_B, 'I-CALM': C_ICALM}
+MARKERS = {'A': 'D', 'B': 'o', 'I-CALM': '^'}
+# Equalise apparent weight across marker shapes.
+MARKER_SCALE = {'D': 0.8, 'o': 1.0, '^': 1.35}
+# Marker areas in pt^2, chosen for print: ~8pt to ~13pt across.
+SIZES = {0.2: 62, 0.4: 92, 0.6: 128, 0.8: 170}
+SIZE_NONE = 112  # A / Pure Eval carry no abstention reward
+SIZE_REF = 150   # Pure Eval's X reads smaller than a disc at equal area
+
+FS_LABEL = 13.5    # axis titles
+FS_TICK = 12       # tick labels
+FS_LEGEND = 9.5    # legend entries
+FS_DIRECT = 11.5   # on-plot scheme labels
+
+
+def abstention(answered):
+    return 1 - answered / TOTAL
+
+
+# --------------------------------------------------------------------------
+# Frontier over every configuration (lower FAR and lower abstention are both
+# better, so the boundary is the running minimum in FAR).
+# --------------------------------------------------------------------------
+all_points = [pure_eval] + [
+    (abstention(ans), far) for rows in runs.values() for _, _, ans, far in rows
 ]
-answered_1 = [13829, 11982, 10737, 9704, 8253, 9683, 7888, 9633, 8282, 9124, 8510]
-far1_1 = [0.524, 0.482, 0.444, 0.410, 0.355, 0.41, 0.342, 0.412, 0.365, 0.392, 0.37]
 
-# Setup 2: Penalty = 0
-setups_2 = [
-    "A baseline", "A", "B control", "B (+0.2)", "B w/ norms (+0.2)", 
-    "B (+0.4)", "B w/ norms (+0.4)", "B (+0.6)", "B w/ norms (+0.6)", 
-    "B (+0.8)", "B w/ norms (+0.8)",
-]
-answered_2 = [13829, 12403, 11165, 10830, 9280, 10788, 9501, 10377, 8774, 10515, 9428]
-far1_2 = [0.522, 0.491, 0.457, 0.444, 0.399, 0.445, 0.404, 0.431, 0.379, 0.435, 0.404]
+frontier = []
+best = float('inf')
+for x, y in sorted(all_points):
+    if y < best:
+        frontier.append((x, y))
+        best = y
+fx, fy = zip(*frontier)
 
-# Convert to proportions, then to abstention rate (1 - proportion answered)
-total_questions = 14267
-abstention_1 = [1 - x / total_questions for x in answered_1]
-abstention_2 = [1 - x / total_questions for x in answered_2]
-
-# Add `Pure eval` data point
-pure_eval_answered = 13843
-pure_eval_far1 = 0.533
-pure_eval_abstention = 1 - pure_eval_answered / total_questions
-
-# Exclude certain labels from the plot (remove A baseline and B control)
-exclude_labels = {"A baseline", "B control"}
-kept_indices_1 = [i for i, lbl in enumerate(setups_1) if lbl not in exclude_labels]
-kept_indices_2 = [i for i, lbl in enumerate(setups_2) if lbl not in exclude_labels]
-
-filtered_setups_1 = [setups_1[i] for i in kept_indices_1]
-filtered_abstention_1 = [abstention_1[i] for i in kept_indices_1]
-filtered_far1_1 = [far1_1[i] for i in kept_indices_1]
-
-filtered_setups_2 = [setups_2[i] for i in kept_indices_2]
-filtered_abstention_2 = [abstention_2[i] for i in kept_indices_2]
-filtered_far1_2 = [far1_2[i] for i in kept_indices_2]
-
-# Combine all points for Pareto frontier (include pure eval)
-abstention_all = filtered_abstention_1 + filtered_abstention_2 + [pure_eval_abstention]
-far1_all = filtered_far1_1 + filtered_far1_2 + [pure_eval_far1]
-
-# -------------------- 
-# Compute Pareto frontier
-# Higher abstention = fewer answers. We want lower FAR1 with lower abstention.
-# Pareto: for increasing abstention, FAR1 should be decreasing.
-# -------------------- 
-points = sorted(zip(abstention_all, far1_all), key=lambda x: x[0])
-pareto_x = []
-pareto_y = []
-best_far1 = float("inf")
-for x, y in points:
-    if y < best_far1:
-        pareto_x.append(x)
-        pareto_y.append(y)
-        best_far1 = y
-
-pareto_x, pareto_y = zip(*sorted(zip(pareto_x, pareto_y)))
-
-# -------------------- 
-# Create figure with extra space for labels
-# -------------------- 
-fig = plt.figure(figsize=(11, 6), dpi=300)
-ax = fig.add_subplot(111)
-
-# Color palette
-color_neg1 = '#0F2F4F'       # Deep navy (Setup 1)
-color_0 = '#D95428'          # Burnt sienna (Setup 2)
-color_pareto = '#8B1D25'     # Burgundy
-color_bg_light = '#faf8f5'
-color_text = '#1c1c1c'
-
-# Background
-ax.set_facecolor(color_bg_light)
-fig.patch.set_facecolor('#ffffff')
-
-# Grid
-ax.grid(True, alpha=0.10, linestyle=':', linewidth=0.3, 
-       color='#e5e1db', zorder=0, which='minor')
+# --------------------------------------------------------------------------
+# Figure
+# --------------------------------------------------------------------------
+fig, ax = plt.subplots(figsize=(7.0, 3.5))
+fig.patch.set_facecolor(SURFACE)
+ax.set_facecolor(SURFACE)
 ax.set_axisbelow(True)
 
-# ==================== SCATTER POINTS ====================
-# Setup 1: Penalty = -1 (circles)
-ax.scatter(filtered_abstention_1, filtered_far1_1, marker='o', s=130, alpha=0.82, 
-          color=color_neg1, edgecolors='#ffffff', linewidth=2.2,
-          label='Penalty for incorrect answers = −1', zorder=5, rasterized=True,
-          path_effects=[withSimplePatchShadow(offset=(0.5, -0.5), 
-                                              shadow_rgbFace='black', 
-                                              alpha=0.1)])
+# The frontier is computed above but left undrawn -- the markers alone carry
+# the trade-off. Re-enable by plotting (fx, fy).
 
-# Setup 2: Penalty = 0 (squares)
-ax.scatter(filtered_abstention_2, filtered_far1_2, marker='s', s=130, alpha=0.82, 
-          color=color_0, edgecolors='#ffffff', linewidth=2.2,
-          label='Penalty for incorrect answers = 0', zorder=5, rasterized=True,
-          path_effects=[withSimplePatchShadow(offset=(0.5, -0.5), 
-                                              shadow_rgbFace='black', 
-                                              alpha=0.1)])
+for penalty, rows in runs.items():
+    for family, reward, answered, far in rows:
+        marker = MARKERS[family]
+        size = SIZES.get(reward, SIZE_NONE) * MARKER_SCALE[marker]
+        if penalty == -1:
+            face, edge, lw = COLORS[family], SURFACE, 1.1
+        else:  # open marker -- surface face keeps overlaps readable
+            face, edge, lw = SURFACE, COLORS[family], 1.5
+        ax.scatter(
+            abstention(answered), far,
+            marker=marker, s=size,
+            facecolors=face, edgecolors=edge, linewidth=lw,
+            zorder=5,
+        )
 
-# ==================== PURE EVAL POINT ====================
-ax.scatter([pure_eval_abstention], [pure_eval_far1], marker='X', s=220, 
-           color='#2E8B57', edgecolors='#ffffff', linewidth=1.6,
-           label='_nolegend_', zorder=6)
-ax.annotate('Pure eval', (pure_eval_abstention, pure_eval_far1),
-           xytext=(pure_eval_abstention + 0.01, pure_eval_far1 + 0.001),
-           textcoords='data', ha='left', va='bottom',
-           fontsize=12, fontweight='600', family='sans-serif',
-           bbox=dict(boxstyle='round,pad=0.3', facecolor='#ffffff',
-                     edgecolor='#d0cdc8', alpha=0.95, linewidth=0.6),
-           arrowprops=dict(arrowstyle='-', lw=0.6, color='#2E8B57',
-                           alpha=0.25, connectionstyle='arc3,rad=0.15',
-                           shrinkA=2, shrinkB=2))
+ax.scatter(*pure_eval, marker='X', s=SIZE_REF, color=C_REF,
+           edgecolors=SURFACE, linewidth=1.1, zorder=5)
+
+# Scheme names are carried by the legend alone -- repeating them on the canvas
+# duplicated every entry and made the text compete with the marks.
+
+# --------------------------------------------------------------------------
+# Axes
+# --------------------------------------------------------------------------
+ax.set_xlabel('Abstention rate (1 - coverage)', fontsize=FS_LABEL,
+              fontweight='bold', labelpad=6, color=INK)
+ax.set_ylabel('FAR (answered)', fontsize=FS_LABEL,
+              fontweight='bold', labelpad=6, color=INK)
+
+ax.set_xlim(0.0, 0.52)
+ax.set_ylim(0.33, 0.55)
+ax.set_xticks(np.arange(0.0, 0.51, 0.05))
+ax.set_yticks(np.arange(0.35, 0.551, 0.05))
+ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f'{v:.2f}'))
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f'{v:.2f}'))
+
+for side in ('top', 'right'):
+    ax.spines[side].set_visible(False)
+for side in ('left', 'bottom'):
+    ax.spines[side].set_color(AXIS)
+    ax.spines[side].set_linewidth(0.8)
+
+ax.tick_params(axis='both', labelsize=FS_TICK, colors=INK_2,
+               length=5.5, width=1.1, pad=3.5, top=False, right=False)
+
+# --------------------------------------------------------------------------
+# Legends -- in the empty lower-left corner, stacked upward
+# --------------------------------------------------------------------------
+def proxy(marker, size, face, edge, lw, label):
+    return Line2D([], [], linestyle='none', marker=marker, markersize=size,
+                  markerfacecolor=face, markeredgecolor=edge,
+                  markeredgewidth=lw, label=label)
 
 
+scheme_handles = [
+    proxy(MARKERS[f], np.sqrt(SIZE_NONE * MARKER_SCALE[MARKERS[f]]),
+          COLORS[f], SURFACE, 1.1, f)
+    for f in ('A', 'B', 'I-CALM')
+] + [proxy('X', np.sqrt(SIZE_REF), C_REF, SURFACE, 1.1, 'Pure Eval')]
 
-# ==================== PARETO FRONTIER ====================
-ax.plot(pareto_x, pareto_y, color=color_pareto, linewidth=2.2, 
-    label='_nolegend_', zorder=4, linestyle='-', alpha=0.95)
+penalty_handles = [
+    proxy('o', np.sqrt(SIZE_NONE), INK_2, SURFACE, 1.1, '$-1$'),
+    proxy('o', np.sqrt(SIZE_NONE), SURFACE, INK_2, 1.5, '$0$'),
+]
+reward_handles = [
+    proxy('o', np.sqrt(SIZES[r]), MUTED, SURFACE, 1.1, f'$+{r}$')
+    for r in (0.2, 0.4, 0.6, 0.8)
+]
 
-# ==================== INTELLIGENT ANNOTATIONS ====================
-annotation_style_1 = dict(
-    fontsize=12, alpha=0.87, family='sans-serif', weight='normal',
-    color=color_neg1,
-    bbox=dict(boxstyle='round,pad=0.3', facecolor='#ffffff',
-              edgecolor='#d0cdc8', alpha=0.90, linewidth=0.6),
-    arrowprops=dict(arrowstyle='-', lw=0.6, color=color_neg1,
-                   alpha=0.25, connectionstyle='arc3,rad=0.15',
-                   shrinkA=2, shrinkB=2)
-)
+# The scheme key sits in the empty top-right corner; the two reward-setting
+# keys stay together in the lower-left. Each cluster gets its own frame.
+legend_specs = [
+    # handles, title, loc, anchor, ncol, columnspacing, cluster
+    (scheme_handles, 'Scheme',
+     'upper right', (0.988, 0.972), 2, 1.4, 'top-right'),
+    (penalty_handles, 'Penalty for an incorrect answer',
+     'lower left', (0.030, 0.145), 2, 1.4, 'lower-left'),
+    (reward_handles, 'Abstention reward',
+     'lower left', (0.030, 0.020), 4, 0.8, 'lower-left'),
+]
+clusters = {}
+for handles, title, loc, anchor, ncol, colspace, cluster in legend_specs:
+    leg = ax.legend(
+        handles=handles, title=title,
+        loc=loc, bbox_to_anchor=anchor, ncol=ncol,
+        bbox_transform=ax.transAxes,
+        fontsize=FS_LEGEND, title_fontsize=FS_LEGEND, frameon=False,
+        handletextpad=0.45, columnspacing=colspace,
+        labelspacing=0.4, borderpad=0.0, handlelength=1.0,
+    )
+    leg.get_title().set_color(INK)
+    leg.get_title().set_fontweight('bold')
+    leg._legend_box.align = 'left'
+    leg.set_zorder(8)
+    for text in leg.get_texts():
+        text.set_color(INK_2)
+    ax.add_artist(leg)
+    clusters.setdefault(cluster, []).append(leg)
 
-annotation_style_2 = dict(
-    fontsize=12, alpha=0.87, family='sans-serif', weight='normal',
-    color=color_0,
-    bbox=dict(boxstyle='round,pad=0.3', facecolor='#ffffff',
-              edgecolor='#d0cdc8', alpha=0.90, linewidth=0.6),
-    arrowprops=dict(arrowstyle='-', lw=0.6, color=color_0,
-                   alpha=0.25, connectionstyle='arc3,rad=0.15',
-                   shrinkA=2, shrinkB=2)
-)
+fig.subplots_adjust(left=0.132, right=0.992, top=0.975, bottom=0.165)
 
-# Define custom offsets for each filtered point
-offsets_1 = {
-    0: (0.010, 0.008, 'left', 'center'),      # A
-    1: (0.015, 0.008, 'left', 'center'),      # B (+0.2)
-    2: (-0.005, 0.001, 'right', 'center'),    # B w/ norm (+0.2)
-    3: (-0.01, 0.017, 'left', 'center'),      # B (+0.4)
-    4: (-0.015, 0.002, 'right', 'center'),    # B w/ norm (+0.4)
-    5: (-0.06, 0.003, 'left', 'center'),       # B (+0.6)
-    6: (0.04, 0.01, 'right', 'center'),      # B w/ norm (+0.6)
-    7: (0.015, -0.001, 'left', 'center'),     # B (+0.8)
-    8: (-0.015, 0.001, 'right', 'center'),    # B w/ norm (+0.8)
-}
+# matplotlib can only frame a single legend, so each cluster gets a patch
+# fitted to the union of its legends' rendered extents.
+fig.canvas.draw()
+renderer = fig.canvas.get_renderer()
+inv = ax.transAxes.inverted()
+pad_x, pad_y = 0.020, 0.030
+for legs in clusters.values():
+    union = Bbox.union([leg.get_window_extent(renderer) for leg in legs])
+    (x0, y0) = inv.transform((union.x0, union.y0))
+    (x1, y1) = inv.transform((union.x1, union.y1))
+    ax.add_patch(FancyBboxPatch(
+        (x0 - pad_x, y0 - pad_y),
+        (x1 - x0) + 2 * pad_x, (y1 - y0) + 2 * pad_y,
+        boxstyle='round,pad=0,rounding_size=0.010',
+        transform=ax.transAxes, facecolor=SURFACE, edgecolor=AXIS,
+        linewidth=0.7, zorder=7, clip_on=False,
+    ))
 
-offsets_2 = {
-    0: (-0.010, -0.003, 'right', 'top'),      # A
-    1: (-0.03, -0.008, 'left', 'center'),     # B (+0.2)
-    2: (-0.001, -0.008, 'right', 'center'),   # B w/ norm (+0.2)
-    3: (0.01, 0.004, 'left', 'center'),       # B (+0.4)
-    4: (0.08, 0.001, 'right', 'center'),      # B w/ norm (+0.4)
-    5: (0.01, 0.008, 'left', 'center'),       # B (+0.6)
-    6: (-0.015, 0.001, 'right', 'center'),    # B w/ norm (+0.6)
-    7: (-0.04, -0.009, 'left', 'center'),     # B (+0.8)
-    8: (-0.01, -0.003, 'right', 'center'),    # B w/ norm (+0.8)
-}
-
-# Annotate Setup 1
-for i, (x, y, label) in enumerate(zip(filtered_abstention_1, filtered_far1_1, filtered_setups_1)):
-    x_offset, y_offset, ha, va = offsets_1.get(i, (0.015, 0, 'left', 'center'))
-    ax.annotate(label, (x, y), xytext=(x + x_offset, y + y_offset),
-               textcoords='data', ha=ha, va=va, **annotation_style_1)
-
-# Annotate Setup 2
-for i, (x, y, label) in enumerate(zip(filtered_abstention_2, filtered_far1_2, filtered_setups_2)):
-    x_offset, y_offset, ha, va = offsets_2.get(i, (0.015, 0, 'left', 'center'))
-    ax.annotate(label, (x, y), xytext=(x + x_offset, y + y_offset),
-               textcoords='data', ha=ha, va=va, **annotation_style_2)
-
-# ==================== AXES & LABELS ====================
-ax.set_xlabel('Abstention Rate', 
-             fontsize=15, fontweight='700', labelpad=14, 
-             color=color_text, family='sans-serif')
-ax.set_ylabel('False Answer Rate (Answered)', 
-             fontsize=15, fontweight='700', labelpad=14, 
-             color=color_text, family='sans-serif')
-
-# Set limits (x is now abstention rate: 0 = answered everything, 1 = answered nothing)
-ax.set_xlim(0.02, 0.46)
-ax.set_ylim(0.335, 0.54)
-
-# Format x-axis as decimal numbers
-ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: '{:.2f}'.format(y)))
-
-# Spines
-for spine in ax.spines.values():
-    spine.set_edgecolor(color_text)
-    spine.set_linewidth(1.8)
-
-# Legend
-legend = ax.legend(loc='upper right', fontsize=12, framealpha=0.98,
-                  edgecolor='#999999', fancybox=False, 
-                  frameon=True, shadow=False,
-                  title_fontsize=12, labelspacing=1.3, handlelength=2.4)
-legend.get_frame().set_linewidth(1.2)
-legend.get_frame().set_facecolor('#ffffff')
-for text in legend.get_texts():
-    text.set_color('#2c2c2c')
-    text.set_fontweight('500')
-legend.get_title().set_color('#0a0a0a')
-legend.get_title().set_fontweight('800')
-
-# Ticks
-ax.tick_params(axis='both', which='major', labelsize=12, 
-              colors=color_text, length=7.5, width=1.4, 
-              top=False, right=False)
-ax.tick_params(axis='both', which='minor', length=4, width=0.9, 
-              top=False, right=False, color=color_text)
-
-for label in ax.get_xticklabels() + ax.get_yticklabels():
-    label.set_fontweight('500')
-
-plt.tight_layout()
-
-# Save
-plt.savefig('far_vs_abstention.png', dpi=300, bbox_inches='tight', 
-           facecolor='#ffffff', edgecolor='none', pad_inches=0.4)
-print("Saved successfully.")
+save_dir = os.path.dirname(os.path.abspath(__file__))
+fig.savefig(os.path.join(save_dir, 'far_vs_abstention.pdf'), facecolor=SURFACE)
+fig.savefig(os.path.join(save_dir, 'far_vs_abstention.png'), dpi=400,
+            facecolor=SURFACE)
+plt.close(fig)
+print('Saved far_vs_abstention.pdf / .png  (7.0 x 3.5 in, AAAI full width)')
