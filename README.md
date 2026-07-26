@@ -11,10 +11,6 @@ asked to report a confidence for whatever it answers. A normative system prompt
 should, without any fine-tuning, extra decoding passes, or access to token
 log-probabilities.
 
-We evaluate against two standard selective-answering baselines (token-probability
-thresholding and self-reported verbal confidence), both **coverage-matched** to
-I-CALM so that abstention rates are held equal and only the error profile differs.
-
 ---
 
 ## Method
@@ -26,7 +22,6 @@ ablations of it.
 | Scheme | Rewards stated in prompt | Confidence asked | Normative system prompt | Role |
 |--------|--------------------------|------------------|-------------------------|------|
 | `pure_eval` | none | no | no | Unincentivized reference — just answer the question |
-| `scheme_a_baseline` | correct, incorrect | yes | no | Rewards without any mention of abstention |
 | `scheme_a` | correct, incorrect | yes | no | Abstention allowed but not rewarded |
 | `scheme_b` | correct, abstain, incorrect | yes | no | Full reward structure, incl. abstention incentive |
 | `scheme_b_norm` | correct, abstain, incorrect | yes | **yes** | **I-CALM** |
@@ -130,12 +125,6 @@ Reported per run, with 95% CIs where applicable:
 - **Hallucination rate** — surfaced wrong answers over all questions.
 - **ECE** (`--num-bins`, default 10) and **Brier score**, answered-only and overall.
 
-If a CSV's derived columns drift from the grading logic (e.g. after a parser fix),
-recompute them in place — `--dry-run` first:
-
-```bash
-python main_exp/popQA/recompute_derived.py <result.csv> --dry-run
-```
 
 ---
 
@@ -157,12 +146,8 @@ methods.
 
 ```bash
 python baseline/run.py                    # generate + evaluate (needs OPENROUTER_API_KEY)
-python baseline/reeval.py <run.csv>       # re-score existing runs, no model calls
 python baseline/eval.py --baseline-csv <csv> --score-col self_confidence --reference-csv <ref.csv>
 ```
-
-See [baseline/README.md](baseline/README.md) for the record schema and how to add
-a model or dataset.
 
 ---
 
@@ -200,27 +185,8 @@ log-probabilities. Details in [preliminary_exp/README.md](preliminary_exp/README
 
 ---
 
-## Figures
 
-- [main_exp/popQA/plot/far_vs_abstention.py](main_exp/popQA/plot/far_vs_abstention.py) — FAR/abstention trade-off across reward settings, sized for a two-column layout.
-- [main_exp/popQA/plot/model_comparison.py](main_exp/popQA/plot/model_comparison.py) — schemes across models.
-- [main_exp/popQA/plot/plot_abstention.py](main_exp/popQA/plot/plot_abstention.py) — abstention rates by setting.
-- [plot/cumulative_false_rate.py](plot/cumulative_false_rate.py) — cumulative false-answer rate vs. uncertainty for I-CALM and both baselines.
 
----
-
-## Cluster runs
-
-[slurm_script/](slurm_script/) has SLURM submission scripts for long runs
-(experiments, baselines, re-evaluation). They `cd` to the submit directory,
-activate `venv/`, and write logs to `slurm_script/slurm_logs/`. API keys come from
-`.env` via the Python entrypoint, not from the job script.
-
-```bash
-sbatch slurm_script/run_triviaqa_gpt4omini_scheme_b_norm.slurm
-```
-
----
 
 ## Repository layout
 
