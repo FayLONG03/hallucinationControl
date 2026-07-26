@@ -1,138 +1,245 @@
-# hallucinationControl
-Incentivizing Confidence-Aware Abstention for LLM Hallucination Control
+# I-CALM
 
-## Overview
+**Incentivizing Confidence-Aware Abstention for LLM Selective Answering**
 
-This project explores methods to control hallucinations in Large Language Models (LLMs) by incentivizing confidence-aware abstention. The system tests whether reward-based prompting can encourage models to say "I don't know" when uncertain, rather than providing incorrect answers.
+Code and experiments for I-CALM, a prompt-level intervention that turns an LLM's
+answer/abstain choice into an explicit decision problem. The model is told the
+payoff of each outcome — a reward for a correct answer, a penalty for an
+incorrect one, and a smaller positive reward for saying *"I don't know"* — and is
+asked to report a confidence for whatever it answers. A normative system prompt
+("constitution") is layered on top. The result is a model that abstains when it
+should, without any fine-tuning, extra decoding passes, or access to token
+log-probabilities.
+
+We evaluate against two standard selective-answering baselines (token-probability
+thresholding and self-reported verbal confidence), both **coverage-matched** to
+I-CALM so that abstention rates are held equal and only the error profile differs.
+
+---
+
+## Method
+
+Every experiment is a *scheme*: a prompt template that varies what the model is
+told about the reward structure. `scheme_b_norm` is I-CALM; the others are
+ablations of it.
+
+| Scheme | Rewards stated in prompt | Confidence asked | Normative system prompt | Role |
+|--------|--------------------------|------------------|-------------------------|------|
+| `pure_eval` | none | no | no | Unincentivized reference — just answer the question |
+| `scheme_a_baseline` | correct, incorrect | yes | no | Rewards without any mention of abstention |
+| `scheme_a` | correct, incorrect | yes | no | Abstention allowed but not rewarded |
+| `scheme_b` | correct, abstain, incorrect | yes | no | Full reward structure, incl. abstention incentive |
+| `scheme_b_norm` | correct, abstain, incorrect | yes | **yes** | **I-CALM** |
+
+Under `scheme_a` / `scheme_b` / `scheme_b_norm` the model may answer *"I don't
+know"*, and is then asked for a **best guess** plus a confidence for it in the
+same response. That second-round guess is what makes the *delta risk* metric
+possible: it measures how much worse the model would have done had it been forced
+to answer the questions it chose to skip.
+
+Prompt templates and the normative system prompt live in
+[main_exp/prompts/prompts.py](main_exp/prompts/prompts.py).
+
+---
 
 ## Installation
-
-### 1. Clone the repository
 
 ```bash
 git clone <repository-url>
 cd hallucinationControl
-```
 
-### 2. Create and activate virtual environment
-
-```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### 3. Install dependencies
-
-```bash
+source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Set up environment variables
+### API keys
 
-Create a `.env` file in the project root:
+Create a `.env` in the repo root. Which keys you need depends on the models you
+run; scripts load it via `python-dotenv`, so **do not** `source .env` yourself.
 
-```bash
-API_KEY=your_openai_api_key_here
-```
+| Variable | Used by |
+|----------|---------|
+| `API_KEY` | OpenAI GPT clients in `main_exp/*/models/gpt_client*.py` (Batch API) |
+| `OPENROUTER_API_KEY` | OpenRouter-routed models (Gemini, baselines in `baseline/`, PopQA ablations) |
+| `HF_TOKEN` | Locally hosted Llama via `models/llama_client.py` |
+| `API_KEY_PROJ` | `preliminary_exp/` and `main_exp/mmlu-pro` runners (override with `--api-key-env`) |
 
-## Experiment Schemes
+---
 
-The project implements five experimental schemes:
+## Main experiments
 
-| Scheme | Description | Rewards Mentioned | System Prompt |
-|--------|-------------|-------------------|---------------|
-| **pure_eval** | Pure evaluation with no reward information | None | No |
-| **scheme_a_baseline** | Simplified baseline with rewards but no IDK mention | Correct, Incorrect | No |
-| **scheme_a** | Rewards excluding IDK from prompt text | Correct, Incorrect, Abstain | No |
-| **scheme_b** | Full rewards including IDK incentive | Correct, Incorrect, Abstain | No |
-| **scheme_b_norm** | Same as scheme_b with normative system prompt | Correct, Incorrect, Abstain | Yes |
+Each dataset has its own runner under `main_exp/<dataset>/run_experiment.py`,
+sharing the same CLI.
 
-## Usage
+| Argument | Short | Default | Description |
+|----------|-------|---------|-------------|
+| `--model` | `-m` | *required* | Model to run (see per-dataset `AVAILABLE_MODELS`) |
+| `--scheme` | `-s` | `scheme_b` | One of the five schemes above |
+| `--samples` | `-n` | full dataset | Number of questions |
+| `--reward-correct` | `-rc` | `0` | Reward for a correct answer |
+| `--reward-abstain` | `-ra` | `0` | Reward for *"I don't know"* (scheme B only) |
+| `--reward-incorrect` | `-ri` | `0` | Penalty for an incorrect answer |
 
-### Available Models
+MMLU-Pro additionally takes `--category/-c` (default `biology`) and
+`--api-key-env`.
 
-- `gpt-4o-mini` - GPT-4o Mini (no reasoning mode)
-- `gpt-5-mini` - GPT-5 Mini (with reasoning mode)
-- `qwen-3` - Qwen-3-8B
-
-
-### Command-Line Arguments
-
-| Argument | Short | Type | Default | Description |
-|----------|-------|------|---------|-------------|
-| `--model` | `-m` | str | required | Model to use |
-| `--scheme` | `-s` | str | scheme_b | Experiment scheme |
-| `--samples` | `-n` | int | None | Number of samples (None = full dataset) |
-| `--reward-correct` | `-rc` | float | 0.0 | Reward for correct answer |
-| `--reward-abstain` | `-ra` | float | 0.0 | Reward for abstaining |
-| `--reward-incorrect` | `-ri` | float | 0.0 | Penalty for incorrect answer |
-
-### Examples
+**Datasets:** PopQA, TriviaQA, SimpleQA, SimpleQA-Verified, MMLU-Pro, GSM8K.
+**Models** vary by dataset; PopQA supports the widest set — `gpt-4o-mini`,
+`gpt-5-mini`, `qwen-3`, `qwen-3.5`, `llama-3`, `gemini-3.1-flash-lite`.
 
 ```bash
-python main_exp/popQA/run_experiment.py --model gpt-5-mini --scheme scheme_b_norm --samples 1000 -rc 1 -ra 0.4 -ri -1
-python3 main_exp/popQA/run_experiment.py --model gpt-4o-mini --scheme scheme_a --samples 10 -rc 1 -ri -1
+# I-CALM on PopQA with the headline reward setting
+python main_exp/popQA/run_experiment.py -m gpt-5-mini -s scheme_b_norm -rc 1 -ra 0.4 -ri -1
+
+# Unincentivized reference run
+python main_exp/popQA/run_experiment.py -m gpt-5-mini -s pure_eval -n 500
+
+# Other datasets, same interface
+python main_exp/TriviaQA/run_experiment.py -m gpt-4o-mini -s scheme_b_norm -rc 1 -ra 0.4 -ri -1
+python main_exp/mmlu-pro/run_experiment.py -m gpt-4o-mini -s scheme_b -c biology -rc 1 -ra 0.4 -ri -1
 ```
+
+Runs are seeded (`SEED = 42`). GPT models go through the OpenAI **Batch API**, so
+a run is submitted and polled; results land in
+`main_exp/<dataset>/outputs/<model>_results/*.csv` (git-ignored) with one row per
+question: the first answer and its confidence, the best guess and its confidence,
+`idk_flag`, `correct`, and `score`.
+
+---
 
 ## Evaluation
 
-**Main experiments (PopQA / MMLU-Pro):** analyze a result CSV and generate plots:
+```bash
+python main_exp/popQA/eval.py           -f <result.csv>
+python main_exp/TriviaQA/eval.py        -f <result.csv>
+python main_exp/simpleQA-verified/eval.py -f <result.csv>
+python main_exp/mmlu-pro/eval.py        -f <result.csv>
+```
+
+Reported per run, with 95% CIs where applicable:
+
+- **Coverage** — fraction of questions answered.
+- **FAR (answered)** — false-answer rate among answered questions.
+- **FAR (guess)** — error rate of the best guesses on abstained questions.
+- **FAR (overall)** — error rate if every abstention were replaced by its guess.
+- **Delta risk** — `FAR (guess) − FAR (answered)`; positive means the model
+  abstained on genuinely harder questions.
+- **Total utility** — realized payoff under the stated reward structure.
+- **ECR / CAR** — abstained-wrong over all-wrong, answered-correct over all-correct.
+- **Hallucination rate** — surfaced wrong answers over all questions.
+- **ECE** (`--num-bins`, default 10) and **Brier score**, answered-only and overall.
+
+If a CSV's derived columns drift from the grading logic (e.g. after a parser fix),
+recompute them in place — `--dry-run` first:
 
 ```bash
-python main_exp/popQA/eval.py -f <path_to_csv>
-python main_exp/mmlu-pro/eval.py -f <path_to_csv>
+python main_exp/popQA/recompute_derived.py <result.csv> --dry-run
 ```
 
-**Preliminary experiments:** run evaluation (ECE, Brier, FAR, correlation) by passing the result file:
+---
+
+## Baselines
+
+[baseline/](baseline/) holds the coverage-matched selective-answering baselines,
+split into transport (`model/`), task (`dataset/`), and metrics (`eval.py`). Two
+experiments per model:
+
+1. **IDK & token probability** — the model answers or says *"I don't know"*, with
+   no verbal confidence. Scored both from its own IDK decision and by ranking on
+   the geometric mean of answer-token probabilities.
+2. **Verbal confidence** — the model self-reports a confidence in [0, 1]; rows are
+   ranked by it. No token probabilities involved.
+
+Both thresholded views are coverage-matched to the corresponding I-CALM run in
+`baseline/reference_data_results/<dataset>/`, so coverage is held fixed across
+methods.
 
 ```bash
-python preliminary_exp/evaluate_PopQA.py -f <path_to_popqa_csv>
-python preliminary_exp/evaluate_MMLU-Pro.py -f <path_to_mmlu_csv>
+python baseline/run.py                    # generate + evaluate (needs OPENROUTER_API_KEY)
+python baseline/reeval.py <run.csv>       # re-score existing runs, no model calls
+python baseline/eval.py --baseline-csv <csv> --score-col self_confidence --reference-csv <ref.csv>
 ```
 
-Optional: `-o <output_dir>` for outputs, `--num-bins <n>` for ECE (default 10).
+See [baseline/README.md](baseline/README.md) for the record schema and how to add
+a model or dataset.
 
+---
 
+## Ablations
 
-## Project Structure
+Under [main_exp/popQA/ablation_study/](main_exp/popQA/ablation_study/), each
+isolating one component of I-CALM:
+
+- `remove_reward/run_no_reward.py` — drop the stated reward structure.
+- `remove_confidence/run_no_confidence.py` — drop the confidence request.
+- `remove_norm/run_remove_norm.py` — vary or remove the normative system prompt.
+
+Related analyses: [empirical_far_control.py](main_exp/popQA/empirical_far_control.py)
+(threshold selection for a target FAR, with a train/test split) and
+[rare_common_facts.py](main_exp/popQA/rare_common_facts.py) (behavior split by
+entity popularity).
+
+---
+
+## Preliminary experiment
+
+[preliminary_exp/](preliminary_exp/) validates self-reported confidence against
+token-level confidence on PopQA and MMLU-Pro — the motivating result for using
+verbalized confidence at all.
+
+```bash
+python preliminary_exp/run_PopQA.py        # parameters are edited in __main__
+python preliminary_exp/evaluate_PopQA.py    -f <popqa.csv>
+python preliminary_exp/evaluate_MMLU-Pro.py -f <mmlu.csv>
+```
+
+Reports ECE, Brier, false-answer rate, and Pearson/Spearman/Kendall correlation
+between self-reported and API-derived confidence. Requires a model that returns
+log-probabilities. Details in [preliminary_exp/README.md](preliminary_exp/README.md).
+
+---
+
+## Figures
+
+- [main_exp/popQA/plot/far_vs_abstention.py](main_exp/popQA/plot/far_vs_abstention.py) — FAR/abstention trade-off across reward settings, sized for a two-column layout.
+- [main_exp/popQA/plot/model_comparison.py](main_exp/popQA/plot/model_comparison.py) — schemes across models.
+- [main_exp/popQA/plot/plot_abstention.py](main_exp/popQA/plot/plot_abstention.py) — abstention rates by setting.
+- [plot/cumulative_false_rate.py](plot/cumulative_false_rate.py) — cumulative false-answer rate vs. uncertainty for I-CALM and both baselines.
+
+---
+
+## Cluster runs
+
+[slurm_script/](slurm_script/) has SLURM submission scripts for long runs
+(experiments, baselines, re-evaluation). They `cd` to the submit directory,
+activate `venv/`, and write logs to `slurm_script/slurm_logs/`. API keys come from
+`.env` via the Python entrypoint, not from the job script.
+
+```bash
+sbatch slurm_script/run_triviaqa_gpt4omini_scheme_b_norm.slurm
+```
+
+---
+
+## Repository layout
 
 ```
-├── main_exp/                           # Main (reward-scheme) experiments
-│   ├── models/
-│   │   └── gpt_client.py               # Generic GPT batch API client
-│   ├── popQA/
-│   │   ├── run_experiment.py           # Main entry for PopQA reward experiments
-│   │   ├── eval.py                     # Evaluation for main_exp PopQA
-│   │   ├── plot/
-│   │   │   ├── plot_abstention.py
-│   │   │   └── far_vs_abstention.py
-│   │   └── ablation_study/
-│   │       ├── remove_reward/run_no_reward.py
-│   │       └── remove_confidence/run_no_confidence.py
-│   ├── prompts/
-│   │   └── prompts.py                  # Experiment prompt templates
-│   ├── utils/
-│   │   ├── response_parser.py          # Parse model responses
-│   │   └── abstain_parser.py           # Detect abstention patterns
-│   ├── rare_common_facts.py
-│   └── example_output/                 # Example run outputs
-├── preliminary_exp/                     # Validity of self-reported confidence
-│   ├── README.md                       # PopQA & MMLU-Pro pipeline docs
-│   ├── run_PopQA.py                    # PopQA API runner (logprobs, IDK/best-guess)
-│   ├── run_MMLU-pro.py                 # MMLU-Pro API runner (no-CoT, repeats)
-│   ├── evaluate_PopQA.py               # ECE, Brier, correlation (numerical only)
-│   ├── evaluate_MMLU-Pro.py            # Same metrics for MMLU-Pro CSVs
-│   ├── utils/
-│   │   ├── README.md
-│   │   ├── api_caller.py               # Concurrent API calls, logprobs
-│   │   └── yaml_parser.py              # YAML load/save
-│   ├── prompts/
-│   │   └── biology/
-│   │       └── biology-1.yaml          # No-CoT prompt template
-│   ├── example_output/                 # Example result CSVs
-│   └── outputs/                        # Result CSVs (create dir; see preliminary_exp/README)
+├── main_exp/                  # I-CALM reward-scheme experiments
+│   ├── prompts/prompts.py     #   scheme prompt templates + normative system prompt
+│   ├── utils/                 #   response parsing, abstention detection
+│   ├── popQA/                 #   runner, eval, ablations, plots, FAR control
+│   ├── TriviaQA/ simpleQA/ simpleQA-verified/ mmlu-pro/ gms8k/
+│   │                          #   same runner/eval interface per dataset
+│   └── */models/              #   gpt (Batch API), qwen, llama, gemini clients
+├── baseline/                  # coverage-matched token-prob & verbal-confidence baselines
+│   ├── model/ dataset/        #   transport and task layers
+│   ├── eval.py run.py reeval.py
+│   ├── reference_data_results/#   I-CALM runs supplying the target coverage
+│   └── outputs/               #   run CSVs + .eval.json
+├── preliminary_exp/           # validity of self-reported confidence
+├── plot/                      # cross-method figures
+├── slurm_script/              # cluster job scripts
 ├── requirements.txt
-├── .env                                # API keys (create this file)
-├── .gitignore
-└── README.md
+└── .env                       # API keys (create this)
 ```
