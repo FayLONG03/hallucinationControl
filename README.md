@@ -205,7 +205,6 @@ log-probabilities. Details in [preliminary_exp/README.md](preliminary_exp/README
 │   └── outputs/               #   run CSVs + .eval.json
 ├── preliminary_exp/           # validity of self-reported confidence
 ├── plot/                      # cross-method figures
-├── slurm_script/              # cluster job scripts
 ├── requirements.txt
 └── .env                       # API keys (create this)
 ```
