@@ -2,104 +2,107 @@
 ===== Scheme A (+1, -1) =====
 
 📊 Scheme A (+1, -1) - Common Facts Summary:
-  Number of Answered Questions: 4066
-  Number of Incorrect Answers: 1345
-  False-Answer Rate - E1: 0.331 ± 0.015
-  False-Answer Rate - E2: 0.403 ± 0.014
+  Coverage: 0.868 (4126/4755)
+  False-Answer Rate - Answered: 0.341 ± 0.015
+  False-Answer Rate - Guess (2nd round): 0.816 ± 0.030
+  False-Answer Rate - Overall: 0.403 ± 0.014
+  Total Utility: 687
+  Answered questions: 4126 out of 4755
+  Wrong answered questions: 1405 out of 4126
+  Total wrong answered questions: 1918
+  ECR (abstained wrong / all wrong): 0.267
+  CAR (answered correct / all correct): 0.959
+  Hallucination Rate (surfaced wrong / total): 0.295
+  Brier Score (overall) = 0.1737 ± 0.0113
+  Brier Score (answered only) = 0.1720 ± 0.0116
+  ECE Answered: 0.0805
+  ECE Overall: 0.0730
 
 📊 Scheme A (+1, -1) - Rare Facts Summary:
-  Number of Answered Questions: 3947
-  Number of Incorrect Answers: 2567
-  False-Answer Rate - E1: 0.650 ± 0.015
-  False-Answer Rate - E2: 0.699 ± 0.013
-
-🏆 Scheme A (+1, -1) - Common Total Reward: 919.00
-🏆 Scheme A (+1, -1) - Rare Total Reward: -1895.00
-
-📉 Scheme A (+1, -1) - Common AER: 0.359
-📉 Scheme A (+1, -1) - Rare AER: 0.243
-
-Scheme A (+1, -1) - Common facts:
-
-Brier Score (overall) = 0.1736 ± 0.0112
-Brier Score (answered only) = 0.1720 ± 0.0116
-
-Scheme A (+1, -1) - Rare facts:
-
-Brier Score (overall) = 0.2139 ± 0.0120
-Brier Score (answered only) = 0.2294 ± 0.0132
-
-Scheme A (+1, -1) – COMMON - ANSWERED ECE: 0.0817
-Scheme A (+1, -1) – COMMON - OVERALL ECE: 0.0727
-Scheme A (+1, -1) – RARE - ANSWERED ECE: 0.2229
-Scheme A (+1, -1) – RARE - OVERALL ECE: 0.2008
+  Coverage: 0.834 (3967/4755)
+  False-Answer Rate - Answered: 0.652 ± 0.015
+  False-Answer Rate - Guess (2nd round): 0.937 ± 0.016
+  False-Answer Rate - Overall: 0.699 ± 0.013
+  Total Utility: -1995
+  Answered questions: 3967 out of 4755
+  Wrong answered questions: 2587 out of 3967
+  Total wrong answered questions: 3325
+  ECR (abstained wrong / all wrong): 0.222
+  CAR (answered correct / all correct): 0.965
+  Hallucination Rate (surfaced wrong / total): 0.544
+  Brier Score (overall) = 0.2139 ± 0.0120
+  Brier Score (answered only) = 0.2294 ± 0.0132
+  ECE Answered: 0.2218
+  ECE Overall: 0.2008
 
 ===== Scheme B (+1, -1, +0.4) =====
 
 📊 Scheme B (+1, -1, +0.4) - Common Facts Summary:
-  Number of Answered Questions: 3461
-  Number of Incorrect Answers: 897
-  False-Answer Rate - E1: 0.259 ± 0.015
-  False-Answer Rate - E2: 0.403 ± 0.014
+  Coverage: 0.743 (3533/4755)
+  False-Answer Rate - Answered: 0.274 ± 0.015
+  False-Answer Rate - Guess (2nd round): 0.775 ± 0.023
+  False-Answer Rate - Overall: 0.403 ± 0.014
+  Total Utility: 2083.8
+  Answered questions: 3533 out of 4755
+  Wrong answered questions: 969 out of 3533
+  Total wrong answered questions: 1916
+  ECR (abstained wrong / all wrong): 0.494
+  CAR (answered correct / all correct): 0.903
+  Hallucination Rate (surfaced wrong / total): 0.204
+  Brier Score (overall) = 0.1695 ± 0.0112
+  Brier Score (answered only) = 0.1631 ± 0.0123
+  ECE Answered: 0.0727
+  ECE Overall: 0.0570
 
 📊 Scheme B (+1, -1, +0.4) - Rare Facts Summary:
-  Number of Answered Questions: 3009
-  Number of Incorrect Answers: 1769
-  False-Answer Rate - E1: 0.588 ± 0.018
-  False-Answer Rate - E2: 0.714 ± 0.013
-
-🏆 Scheme B (+1, -1, +0.4) - Common Total Reward: 2184.60
-🏆 Scheme B (+1, -1, +0.4) - Rare Total Reward: 169.40
-
-📉 Scheme B (+1, -1, +0.4) - Common AER: 0.675
-📉 Scheme B (+1, -1, +0.4) - Rare AER: 0.514
-
-Scheme B (+1, -1, +0.4) - Common facts:
-
-Brier Score (overall) = 0.1695 ± 0.0112
-Brier Score (answered only) = 0.1631 ± 0.0123
-
-Scheme B (+1, -1, +0.4) - Rare facts:
-
-Brier Score (overall) = 0.2141 ± 0.0124
-Brier Score (answered only) = 0.2636 ± 0.0159
-
-Scheme B (+1, -1, +0.4) – COMMON - ANSWERED ECE: 0.0742
-Scheme B (+1, -1, +0.4) – COMMON - OVERALL ECE: 0.0570
-Scheme B (+1, -1, +0.4) – RARE - ANSWERED ECE: 0.2440
-Scheme B (+1, -1, +0.4) – RARE - OVERALL ECE: 0.1957
+  Coverage: 0.639 (3037/4755)
+  False-Answer Rate - Answered: 0.592 ± 0.017
+  False-Answer Rate - Guess (2nd round): 0.930 ± 0.012
+  False-Answer Rate - Overall: 0.714 ± 0.013
+  Total Utility: 130.19999999999996
+  Answered questions: 3037 out of 4755
+  Wrong answered questions: 1797 out of 3037
+  Total wrong answered questions: 3394
+  ECR (abstained wrong / all wrong): 0.471
+  CAR (answered correct / all correct): 0.911
+  Hallucination Rate (surfaced wrong / total): 0.378
+  Brier Score (overall) = 0.2141 ± 0.0124
+  Brier Score (answered only) = 0.2636 ± 0.0159
+  ECE Answered: 0.2418
+  ECE Overall: 0.1957
 
 ===== Scheme B Norms (+1, -1, +0.4) =====
 
 📊 Scheme B Norms (+1, -1, +0.4) - Common Facts Summary:
-  Number of Answered Questions: 2981
-  Number of Incorrect Answers: 631
-  False-Answer Rate - E1: 0.212 ± 0.015
-  False-Answer Rate - E2: 0.395 ± 0.014
+  Coverage: 0.642 (3051/4755)
+  False-Answer Rate - Answered: 0.230 ± 0.015
+  False-Answer Rate - Guess (2nd round): 0.691 ± 0.022
+  False-Answer Rate - Overall: 0.395 ± 0.014
+  Total Utility: 2330.6000000000004
+  Answered questions: 3051 out of 4755
+  Wrong answered questions: 701 out of 3051
+  Total wrong answered questions: 1878
+  ECR (abstained wrong / all wrong): 0.627
+  CAR (answered correct / all correct): 0.817
+  Hallucination Rate (surfaced wrong / total): 0.147
+  Brier Score (overall) = 0.1730 ± 0.0111
+  Brier Score (answered only) = 0.1501 ± 0.0129
+  ECE Answered: 0.0760
+  ECE Overall: 0.0709
 
 📊 Scheme B Norms (+1, -1, +0.4) - Rare Facts Summary:
-  Number of Answered Questions: 2233
-  Number of Incorrect Answers: 1173
-  False-Answer Rate - E1: 0.525 ± 0.021
-  False-Answer Rate - E2: 0.714 ± 0.013
-
-🏆 Scheme B Norms (+1, -1, +0.4) - Common Total Reward: 2428.60
-🏆 Scheme B Norms (+1, -1, +0.4) - Rare Total Reward: 895.80
-
-📉 Scheme B Norms (+1, -1, +0.4) - Common AER: 0.945
-📉 Scheme B Norms (+1, -1, +0.4) - Rare AER: 0.742
-
-Scheme B Norms (+1, -1, +0.4) - Common facts:
-
-Brier Score (overall) = 0.1730 ± 0.0111
-Brier Score (answered only) = 0.1501 ± 0.0129
-
-Scheme B Norms (+1, -1, +0.4) - Rare facts:
-
-Brier Score (overall) = 0.1947 ± 0.0115
-Brier Score (answered only) = 0.2765 ± 0.0186
-
-Scheme B Norms (+1, -1, +0.4) – COMMON - ANSWERED ECE: 0.0778
-Scheme B Norms (+1, -1, +0.4) – COMMON - OVERALL ECE: 0.0709
-Scheme B Norms (+1, -1, +0.4) – RARE - ANSWERED ECE: 0.2550
-Scheme B Norms (+1, -1, +0.4) – RARE - OVERALL ECE: 0.1794
+  Coverage: 0.477 (2269/4755)
+  False-Answer Rate - Answered: 0.533 ± 0.021
+  False-Answer Rate - Guess (2nd round): 0.880 ± 0.012
+  False-Answer Rate - Overall: 0.714 ± 0.013
+  Total Utility: 845.3999999999999
+  Answered questions: 2269 out of 4755
+  Wrong answered questions: 1209 out of 2269
+  Total wrong answered questions: 3397
+  ECR (abstained wrong / all wrong): 0.644
+  CAR (answered correct / all correct): 0.781
+  Hallucination Rate (surfaced wrong / total): 0.254
+  Brier Score (overall) = 0.1947 ± 0.0115
+  Brier Score (answered only) = 0.2765 ± 0.0186
+  ECE Answered: 0.2509
+  ECE Overall: 0.1794

@@ -22,9 +22,9 @@ Z_95 = 1.96
 def load_files(model_name, correct, incorrect, abstain):
     base_dir = f"main_exp/outputs/{model_name}"
     scheme_info = {
-        f"Scheme A ({correct}, {incorrect})": f"popqa_A_{correct}_{incorrect}_*.csv",
-        f"Scheme B ({correct}, {incorrect}, {abstain})": f"popqa_B_{correct}_{incorrect}_{abstain}_*.csv",
-        f"Scheme B Norms ({correct}, {incorrect}, {abstain})": f"popqa_B_norm_{correct}_{incorrect}_{abstain}_*.csv"
+        f"Scheme A ({correct}, {incorrect})": f"popqa_A_results_{correct}_{incorrect}_*.csv",
+        f"Scheme B ({correct}, {incorrect}, {abstain})": f"popqa_B_results_{correct}_{incorrect}_{abstain}_*.csv",
+        f"Scheme B Norms ({correct}, {incorrect}, {abstain})": f"popqa_B_norm_results_{correct}_{incorrect}_{abstain}_*.csv"
     }
     FILES = {}
     for scheme_name, pattern in scheme_info.items():
@@ -263,23 +263,69 @@ def calculate_ci_pm(successes, trials, confidence=0.95):
     return margin
 
 def summarize(df, label, file_handle=None):
+    answered = df["idk_flag"] == 0
+    abstained = df["idk_flag"] == 1
+    total = len(df)
 
-    acc = df["correct"].mean()
-    answered = df["idk_flag"] == 0 
-    far_e1 = df.loc[answered, "false_answer_flag"].sum() / answered.sum()
-    far_e2 = 1 - acc
+    n_answered = answered.sum()
+    n_abstained = abstained.sum()
 
-    far_e1_margin = calculate_ci_pm(df.loc[answered, "false_answer_flag"].sum(), answered.sum())
-    far_e2_margin = calculate_ci_pm(len(df) - df["correct"].sum(), len(df))
+    # First-round answered FAR
+    answered_wrong = ((answered) & (df["correct"] == 0)).sum()
+    far_e1 = answered_wrong / n_answered if n_answered else float("nan")
+    far_e1_margin = calculate_ci_pm(answered_wrong, n_answered)
+
+    # Second-round best-guess FAR: only on abstained rows
+    guess_wrong = ((abstained) & (df["correct"] == 0)).sum()
+    far_guess = guess_wrong / n_abstained if n_abstained else float("nan")
+    far_guess_margin = calculate_ci_pm(guess_wrong, n_abstained)
+
+    # Overall FAR
+    total_wrong = (df["correct"] == 0).sum()
+    far_e2 = total_wrong / total if total else float("nan")
+    far_e2_margin = calculate_ci_pm(total_wrong, total)
+
+    # Other metrics
+    coverage = n_answered / total if total else float("nan")
+    total_utility = df["score"].sum() if "score" in df.columns else float("nan")
+
+    total_correct = (df["correct"] == 1).sum()
+    answered_correct = ((answered) & (df["correct"] == 1)).sum()
+    ecr = guess_wrong / total_wrong if total_wrong else float("nan")
+    car = answered_correct / total_correct if total_correct else float("nan")
+    hallucination_rate = answered_wrong / total if total else float("nan")
+
+    # Overall Brier scores (use first_confidence or best_guess for IDK rows)
+    brier, margin = calculate_brier_score_with_ci(df)
+    # Brier scores restricted to answered rows only (idk_flag == 0)
+    brier_score_answered, margin_answered = calculate_brier_score_with_ci(df, answered_only=True)
+
+    # ECE            
+    results = calculate_calibration_by_category(df, label, num_bins=10)
+    ece_answered = results["answered"]["ECE"] if results["answered"] is not None else float("nan")
+    ece_overall = results["overall"]["ECE"]
 
     summary_text = (
         f"\n📊 {label} Summary:\n"
-        f"  Number of Answered Questions: {answered.sum()}\n"
-        f"  Number of Incorrect Answers: {df.loc[answered, 'false_answer_flag'].sum()}\n"
-        f"  False-Answer Rate - E1: {far_e1:.3f} ± {far_e1_margin:.3f}\n"
-        f"  False-Answer Rate - E2: {far_e2:.3f} ± {far_e2_margin:.3f}\n"
+        f"  Coverage: {coverage:.3f} ({n_answered}/{total})\n"
+        f"  False-Answer Rate - Answered: {far_e1:.3f} ± {far_e1_margin:.3f}\n"
+        f"  False-Answer Rate - Guess (2nd round): {far_guess:.3f} ± {far_guess_margin:.3f}\n"
+        f"  False-Answer Rate - Overall: {far_e2:.3f} ± {far_e2_margin:.3f}\n"
+        f"  Total Utility: {total_utility}\n"
+        f"  Answered questions: {n_answered} out of {total}\n"
+        f"  Wrong answered questions: {answered_wrong} out of {n_answered}\n"
+        f"  Total wrong answered questions: {total_wrong}\n"
+        f"  ECR (abstained wrong / all wrong): {ecr:.3f}\n"
+        f"  CAR (answered correct / all correct): {car:.3f}\n"
+        f"  Hallucination Rate (surfaced wrong / total): {hallucination_rate:.3f}\n"
+
+        f"  Brier Score (overall) = {brier:.4f} ± {margin:.4f}\n"
+        f"  Brier Score (answered only) = {brier_score_answered:.4f} ± {margin_answered:.4f}\n"
+        f"  ECE Answered: {ece_answered:.4f}\n"
+        f"  ECE Overall: {ece_overall:.4f}\n"
     )
-    
+
+    print(summary_text)
     if file_handle is not None:
         file_handle.write(summary_text)
 
@@ -294,20 +340,6 @@ def calculate_total_reward(df, label=""):
     total_reward = df["score"].sum()
 
     return total_reward
-
-def calculate_aer(df, label=""):
-    """
-    Abstention-to-Error Ratio (AER) = #abstain / #incorrect
-    """
-    n_abstain = (df["idk_flag"] == 1).sum()
-    n_incorrect = (df["correct"] == 0).sum()
-
-    if n_incorrect == 0:
-        aer = float("inf")  # or set to 0 if you prefer
-    else:
-        aer = n_abstain / n_incorrect
-
-    return aer
 
 def calculate_brier_score(df: pd.DataFrame) -> float:
     """
@@ -545,60 +577,6 @@ def main():
             # Summaries
             summarize(df_common, f"{scheme_label} - Common Facts", file_handle=f)
             summarize(df_rare, f"{scheme_label} - Rare Facts", file_handle=f)
-
-            # --- Total Reward ---
-            reward_common = calculate_total_reward(df_common, f"{scheme_label} - Common Facts")
-            reward_rare = calculate_total_reward(df_rare, f"{scheme_label} - Rare Facts")
-
-            f.write(f"\n🏆 {scheme_label} - Common Total Reward: {reward_common:.2f}\n")
-            f.write(f"🏆 {scheme_label} - Rare Total Reward: {reward_rare:.2f}\n")
-
-            # --- Abstention-to-Error Ratio (AER) ---
-            aer_common = calculate_aer(df_common, f"{scheme_label} - Common Facts")
-            aer_rare = calculate_aer(df_rare, f"{scheme_label} - Rare Facts")
-
-            f.write(f"\n📉 {scheme_label} - Common AER: {aer_common:.3f}\n")
-            f.write(f"📉 {scheme_label} - Rare AER: {aer_rare:.3f}\n")
-
-            # Overall Brier scores (use first_confidence or best_guess for IDK rows)
-            brier_common, margin_common = calculate_brier_score_with_ci(df_common)
-            brier_rare, margin_rare = calculate_brier_score_with_ci(df_rare)
-
-            # Brier scores restricted to answered rows only (idk_flag == 0)
-            brier_score_common_answered, margin_common_answered = calculate_brier_score_with_ci(df_common, answered_only=True)
-            brier_score_rare_answered, margin_rare_answered = calculate_brier_score_with_ci(df_rare, answered_only=True)
-
-            f.write(f"\n{scheme_label} - Common facts:\n")
-            f.write(f"\nBrier Score (overall) = {brier_common:.4f} ± {margin_common:.4f}\n")
-            f.write(f"Brier Score (answered only) = {brier_score_common_answered:.4f} ± {margin_common_answered:.4f}\n")
-
-            f.write(f"\n{scheme_label} - Rare facts:\n")
-            f.write(f"\nBrier Score (overall) = {brier_rare:.4f} ± {margin_rare:.4f}\n")
-            f.write(f"Brier Score (answered only) = {brier_score_rare_answered:.4f} ± {margin_rare_answered:.4f}\n\n")
-
-            # ECE            
-            # Common facts
-            results_common = calculate_calibration_by_category(df_common, scheme_label, num_bins=10)
-            print_calibration_report(results_common, f"{scheme_label} – COMMON", file_handle=f)
-
-            ece_dir = os.path.join(RESULT_DIR, "ece_reports")
-            os.makedirs(ece_dir, exist_ok=True)
-
-            save_calibration_report_csv(
-                results_common,
-                f"{scheme_label}_COMMON",
-                os.path.join(ece_dir, f"ece_{scheme_label}_common_{TIMESTAMP}.csv")
-            )
-
-            # Rare facts
-            results_rare = calculate_calibration_by_category(df_rare, scheme_label, num_bins=10)
-            print_calibration_report(results_rare, f"{scheme_label} – RARE", file_handle=f)
-
-            save_calibration_report_csv(
-                results_rare,
-                f"{scheme_label}_RARE",
-                os.path.join(ece_dir, f"ece_{scheme_label}_rare_{TIMESTAMP}.csv")
-            )
 
             # Per-scheme confidence plots
             plot_confidence_by_correctness(df_common, scheme_label, "Common")
