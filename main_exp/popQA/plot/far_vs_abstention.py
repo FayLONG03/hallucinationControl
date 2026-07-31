@@ -2,7 +2,7 @@
 
 Authored at final print size for an AAAI two-column layout: 7.0in wide, so the
 figure drops into a `figure*` environment at 1:1 with no rescaling. Type sizes
-below are therefore the sizes that appear on the page (10-13.5pt).
+below are therefore the sizes that appear on the page (12-16pt).
 
 Encoding
 --------
@@ -95,9 +95,9 @@ SIZES = {0.2: 62, 0.4: 92, 0.6: 128, 0.8: 170}
 SIZE_NONE = 112  # A / Pure Eval carry no abstention reward
 SIZE_REF = 150   # Pure Eval's X reads smaller than a disc at equal area
 
-FS_LABEL = 13.5    # axis titles
-FS_TICK = 12       # tick labels
-FS_LEGEND = 9.5    # legend entries
+FS_LABEL = 16      # axis titles
+FS_TICK = 14       # tick labels
+FS_LEGEND = 11     # legend entries
 FS_DIRECT = 11.5   # on-plot scheme labels
 
 
@@ -208,9 +208,9 @@ legend_specs = [
     (scheme_handles, 'Scheme',
      'upper right', (0.988, 0.972), 2, 1.4, 'top-right'),
     (penalty_handles, 'Penalty for an incorrect answer',
-     'lower left', (0.030, 0.145), 2, 1.4, 'lower-left'),
+     'lower left', (0.030, 0.185), 2, 1.4, 'lower-left'),
     (reward_handles, 'Abstention reward',
-     'lower left', (0.030, 0.020), 4, 0.8, 'lower-left'),
+     'lower left', (0.030, 0.035), 4, 0.8, 'lower-left'),
 ]
 clusters = {}
 for handles, title, loc, anchor, ncol, colspace, cluster in legend_specs:
@@ -231,7 +231,7 @@ for handles, title, loc, anchor, ncol, colspace, cluster in legend_specs:
     ax.add_artist(leg)
     clusters.setdefault(cluster, []).append(leg)
 
-fig.subplots_adjust(left=0.132, right=0.992, top=0.975, bottom=0.165)
+fig.subplots_adjust(left=0.152, right=0.992, top=0.975, bottom=0.205)
 
 # matplotlib can only frame a single legend, so each cluster gets a patch
 # fitted to the union of its legends' rendered extents.

@@ -1,5 +1,10 @@
+from pathlib import Path
+
 import pandas as pd
 from scipy.stats import binom
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+POPQA_DIR = SCRIPT_DIR.parents[1]
 
 def calculate_ci_pm(successes, trials, confidence=0.95):
     """Calculate confidence interval margin (plus/minus)"""
@@ -10,8 +15,8 @@ def calculate_ci_pm(successes, trials, confidence=0.95):
     return margin
 
 # Load the two CSV files
-ablation_file = '/Users/binzeli/Desktop/hallucination/Corrigibility-for-Language-Model-Hallucination-Control/experiment_1/ablation_study/remove_confidence/gpt5_results/popqa_B_batch_results_+1_-1_+0.4_20260125_213103.csv'
-initial_file = '/Users/binzeli/Desktop/hallucination/Corrigibility-for-Language-Model-Hallucination-Control/experiment_1/initial_exp/gpt5_all_results/popqa_B_results_+1_-1_+0.4_20260109_122206.csv'
+ablation_file = SCRIPT_DIR / 'gpt5_results' / 'popqa_B_batch_results_+1_-1_+0.4_20260125_213103.csv'
+initial_file = POPQA_DIR / 'outputs' / 'popqa_gpt5mini' / 'popqa_B_results_+1_-1_+0.4_20260109_122206.csv'
 
 ablation_df = pd.read_csv(ablation_file)
 initial_df = pd.read_csv(initial_file)

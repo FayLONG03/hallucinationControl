@@ -5,7 +5,7 @@ from matplotlib.ticker import MultipleLocator
 import numpy as np
 
 models = ['gpt-5-mini', 'gemini-3.1-flash-lite', 'Meta-Llama-3-8B-Instruct']
-model_labels = ['GPT-5 mini', 'Gemini-3.1\nFlash-Lite', 'Meta-Llama-3\n8B-Instruct']
+model_labels = ['GPT-5 mini', 'Gemini-3.1\nFlash-Lite', 'Llama-3\n8B-Instruct']
 schemes = ['Pure Eval', 'Scheme A', 'Scheme B', 'I-CALM']
 
 far_vals = {
@@ -67,7 +67,7 @@ n       = len(schemes)
 width   = 0.16
 offsets = np.linspace(-(n-1)/2, (n-1)/2, n) * (width + 0.01)
 
-fig, axes = plt.subplots(2, 2, figsize=(18, 8))
+fig, axes = plt.subplots(2, 2, figsize=(18, 9))
 
 for ax, (title, vals, errs) in zip(axes.flat, metrics):
     for i, (scheme, color) in enumerate(zip(schemes, colors)):
@@ -95,8 +95,8 @@ for ax, (title, vals, errs) in zip(axes.flat, metrics):
 
     ax.set_title(title, fontsize=30, fontweight='bold', pad=12)
     ax.set_xticks(x)
-    ax.set_xticklabels(model_labels, fontsize=25)
-    ax.tick_params(axis='y', labelsize=28)
+    ax.set_xticklabels(model_labels, fontsize=31)
+    ax.tick_params(axis='y', labelsize=33)
     ax.yaxis.grid(True, linestyle='--', alpha=0.45, zorder=0)
     ax.set_axisbelow(True)
     ax.spines['top'].set_visible(False)
@@ -107,8 +107,8 @@ for ax, (title, vals, errs) in zip(axes.flat, metrics):
     ax.yaxis.set_major_locator(MultipleLocator(0.2 if title == jabs_title else 0.5))
 
 handles = [mpatches.Patch(color=c, label=s, alpha=0.85) for c, s in zip(colors, schemes)]
-fig.legend(handles=handles, title='Scheme', fontsize=30, title_fontsize=32,
-           loc='lower center', ncol=4, bbox_to_anchor=(0.5, -0.20),
+fig.legend(handles=handles, title='Scheme', fontsize=36, title_fontsize=38,
+           loc='lower center', ncol=4, bbox_to_anchor=(0.5, -0.26),
            framealpha=0.9, edgecolor='#ccc')
 
 plt.tight_layout(h_pad=3.0)
