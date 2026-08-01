@@ -40,9 +40,6 @@ Prompt templates and the normative system prompt live in
 ## Installation
 
 ```bash
-git clone <repository-url>
-cd hallucinationControl
-
 python3 -m venv venv
 source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
