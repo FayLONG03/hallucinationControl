@@ -51,6 +51,10 @@ EXPERIMENTS = {
     "pure_eval": {
         "description": "Pure evaluation with no rewards",
         "use_system_prompt": False
+    },
+    "wang_baseline": {
+        "description": "Wang et al. (2026) baseline",
+        "use_system_prompt": False
     }
 }
 

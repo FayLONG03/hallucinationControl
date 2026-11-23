@@ -216,7 +216,9 @@ class GeminiClient:
                 correct = self.is_correct(ans, gold)
 
             if idk_flag:
-                if exp_type.lower().startswith("scheme_b"):
+                if exp_type == "wang_baseline":
+                    score = 0
+                elif exp_type.lower().startswith("scheme_b"):
                     score = reward_abstain
                 else:
                     score = reward_incorrect

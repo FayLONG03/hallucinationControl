@@ -483,6 +483,7 @@ def summarize(df, label):
         surfaced_wrong = df.loc[answered, "false_answer_flag"].sum()
         ecr = (guess_wrong / total_wrong) if total_wrong else float("nan")
         car = (answered_correct / total_correct) if total_correct else float("nan")
+        j_abs = ecr + car - 1
         hallucination_rate = (surfaced_wrong / total) if total else float("nan")
 
         # Printed in the same order as the coverage-matched metrics.
@@ -498,6 +499,7 @@ def summarize(df, label):
         print(f"  Total wrong answered questions: {total_wrong}")
         print(f"  ECR (abstained wrong / all wrong): {ecr:.3f}")
         print(f"  CAR (answered correct / all correct): {car:.3f}")
+        print(f"  J_abs (ECR + CAR - 1): {j_abs:.3f}")
         print(f"  Hallucination Rate (surfaced wrong / total): {hallucination_rate:.3f}")
 
      
@@ -665,9 +667,12 @@ def main():
     df = pd.read_csv(filepath)
     
     # Determine file label for analysis functions
-    if 'baseline' in scheme_name.lower():
-        file_label = f"{scheme_name.replace('_', ' ').title()}"
+    if scheme_name == "scheme_a_baseline":
+        file_label = "Scheme A Baseline"
         analysis_label = "A_Baseline"
+    elif scheme_name == "wang_baseline":
+        file_label = "Wang et al."
+        analysis_label = "WANG_BASELINE"
     else:
         file_label = f"{scheme_name.replace('_', ' ').title()}"
         analysis_label = scheme_name.upper().replace('SCHEME_', '')
@@ -696,11 +701,15 @@ def main():
     print(f"\nBrier Score (overall): {brier_score:.4f} ± {margin:.4f}")
     
     # Only calculate answered-only Brier if not baseline
-    if 'baseline' not in scheme_name.lower():
-        brier_score_answered, margin_answered = calculate_brier_score_with_ci(df, answered_only=True)
-        print(f"Brier Score (answered only): {brier_score_answered:.4f} ± {margin_answered:.4f}")
-
-
+    if scheme_name != "scheme_a_baseline":
+        brier_score_answered, margin_answered = calculate_brier_score_with_ci(
+            df,
+            answered_only=True
+        )
+        print(
+            f"Brier Score (answered only): "
+            f"{brier_score_answered:.4f} ± {margin_answered:.4f}"
+    )
 
 
 if __name__ == "__main__":
