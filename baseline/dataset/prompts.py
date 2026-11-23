@@ -9,6 +9,9 @@ Variants:
               Confidence signal comes from token logprobs, not the text.
   "verbal" -> IDK / Best Guess *with* a self-reported confidence in [0, 1]
               (Exp 2: Verbal Conf).
+  "wang"   -> Wang et al. (2026) baseline: states the scoring (+1 correct,
+              -1 incorrect, 0 for "I don't know") and asks for a numeric
+              confidence with no fixed range (Exp 3: Wang).
 """
 
 from __future__ import annotations
@@ -53,4 +56,29 @@ def prompt_verbal(question: str) -> str:
     )
 
 
-PROMPTS = {"idk": prompt_idk, "verbal": prompt_verbal}
+def prompt_wang(question: str) -> str:
+    # Moved verbatim from main_exp/prompts/prompts.py (exp_type "wang_baseline").
+    return (
+        "You are a careful expert test-taker. Scoring: +1 for a correct answer, "
+        "-1 for an incorrect answer, and 0 for 'I don't know'. "
+        "Provide your best answer in your own words and state your confidence level (numeric).\n\n"
+
+        "If you truly don't know, first say 'I don't know' and do not give a confidence "
+        "for that response; in that case, leave the confidence field blank. "
+        "If you choose to answer, provide both your answer and its confidence.\n\n"
+
+        "Next, if you said 'I don't know', give your best possible guess and its confidence "
+        "in the same response.\n\n"
+
+        "Format your response as follows. You must begin your response by saying \"Answer:\"\n"
+        "Answer: <your first answer>\n"
+        "Confidence: <numeric confidence>\n"
+        "If you answered 'I don't know', also include:\n"
+        "Best Guess: <your best possible answer>\n"
+        "Best Guess Confidence: <numeric confidence>\n\n"
+
+        f"Question: {question}"
+    )
+
+
+PROMPTS = {"idk": prompt_idk, "verbal": prompt_verbal, "wang": prompt_wang}

@@ -674,9 +674,6 @@ def main():
     if scheme_name == "scheme_a_baseline":
         file_label = "Scheme A Baseline"
         analysis_label = "A_Baseline"
-    elif scheme_name == "wang_baseline":
-        file_label = "Wang et al."
-        analysis_label = "WANG_BASELINE"
     else:
         file_label = f"{scheme_name.replace('_', ' ').title()}"
         analysis_label = scheme_name.upper().replace('SCHEME_', '')

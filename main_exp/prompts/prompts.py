@@ -17,29 +17,6 @@ def get_experiment_prompt(reward_correct, reward_abstain, reward_incorrect, ques
         Formatted prompt string
     """
 
-    if exp_type == "wang_baseline":
-        return (
-            "You are a careful expert test-taker. Scoring: +1 for a correct answer, "
-            "-1 for an incorrect answer, and 0 for 'I don't know'. "
-            "Provide your best answer in your own words and state your confidence level (numeric).\n\n"
-
-            "If you truly don't know, first say 'I don't know' and do not give a confidence "
-            "for that response; in that case, leave the confidence field blank. "
-            "If you choose to answer, provide both your answer and its confidence.\n\n"
-
-            "Next, if you said 'I don't know', give your best possible guess and its confidence "
-            "in the same response.\n\n"
-
-            "Format your response as follows. You must begin your response by saying \"Answer:\"\n"
-            "Answer: <your first answer>\n"
-            "Confidence: <numeric confidence>\n"
-            "If you answered 'I don't know', also include:\n"
-            "Best Guess: <your best possible answer>\n"
-            "Best Guess Confidence: <numeric confidence>\n\n"
-
-            f"Question: {question}"
-        )
-    
     # For pure_eval, use minimal prompt with no rewards or confidence
     if exp_type == "pure_eval":
         prompt = (

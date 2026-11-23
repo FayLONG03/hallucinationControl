@@ -754,6 +754,45 @@ def evaluate_verbal_conf(
     }
 
 
+def evaluate_wang(
+    csv_path: Path | str,
+    *,
+    conf_col: str = "self_confidence",
+    num_bins: int = 10,
+    reward_correct: float = 1.0,
+    reward_incorrect: float = -1.0,
+    reward_abstain: float = 0.0,
+    confidence_level: float = 0.95,
+) -> dict:
+    """Exp 3: Wang et al. (2026) baseline.
+
+    The model's own "I don't know" is the abstention decision (as for the IDK
+    policy), so metrics come straight from the result file with no coverage
+    matching. Unlike the IDK baseline it also states a confidence
+    (``self_confidence``: answer confidence, or best-guess confidence when it
+    said IDK), which feeds Brier/ECE and AUROC/AURC/AUARC.
+    """
+    rows = load_rows(csv_path, score_col=conf_col)
+    wang_policy = compute_reference_policy_metrics(
+        rows,
+        num_bins=num_bins,
+        reward_correct=reward_correct,
+        reward_incorrect=reward_incorrect,
+        reward_abstain=reward_abstain,
+        confidence_level=confidence_level,
+    )
+    wang_policy["policy_type"] = "wang_baseline"
+    wang_policy["score_col"] = conf_col
+    _attach_selective(wang_policy, rows, confidence_level=confidence_level)
+    wang_policy["summary"] = summary_row(wang_policy)
+    return {
+        "experiment": "wang",
+        "csv": str(csv_path),
+        "conf_col": conf_col,
+        "wang_policy": wang_policy,
+    }
+
+
 # ---------------------------------------------------------------------------
 # Output helpers + CLI
 # ---------------------------------------------------------------------------

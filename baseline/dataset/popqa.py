@@ -54,7 +54,11 @@ def _confidence_to_01(value, scale: float = 1):
     if value is None or (isinstance(value, float) and value != value):  # NaN
         return None
     v = float(value)
-    if scale == 20:
+    if scale == "auto":
+        # No range given in the prompt (Wang): read values above 1 as percents.
+        if v > 1:
+            v = v / 100.0
+    elif scale == 20:
         v = v / 20.0
     elif scale == 100 or scale in ("percent", "pct"):
         v = v / 100.0
@@ -176,6 +180,12 @@ class PopQADataset(BaseDataset):
 
         api_avg, api_min = _aggregate_logprobs(completion.tokens, idk_flag)
 
+        if self.variant == "wang":
+            # The Wang prompt's own scoring: +1 correct, -1 incorrect, 0 for IDK.
+            score = 0 if idk_flag else (1 if correct else -1)
+        else:
+            score = int(correct)
+
         return {
             "dataset_id": dataset_id,
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -188,7 +198,7 @@ class PopQADataset(BaseDataset):
             "best_guess": best,
             "best_guess_confidence": best_conf_01,
             "correct": int(correct),
-            "score": int(correct),
+            "score": score,
             "idk_flag": int(idk_flag),
             "false_answer_flag": int(not correct),
             "self_confidence": self_conf,

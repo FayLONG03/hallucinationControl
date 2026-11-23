@@ -185,6 +185,31 @@ def run_exp2_verbal_conf(
     return {"csv_path": str(csv_path), "metrics": payload}
 
 
+def run_exp3_wang(
+    client: BaseClient,
+    *,
+    num_questions: int | None = None,
+    batch_size: int = 10,
+    results_folder: Path = Path("baseline/outputs"),
+) -> dict:
+    """Exp 3: run the Wang et al. (2026) prompt (+1 / -1 / 0 for IDK, numeric
+    confidence), then evaluate the model's own IDK policy directly."""
+    # The prompt gives no confidence range; "auto" reads values above 1 as percents.
+    dataset = PopQADataset(confidence_scale="auto", variant="wang")
+    csv_path = generate_csv(
+        client,
+        dataset,
+        tag="wang",
+        num_questions=num_questions,
+        batch_size=batch_size,
+        results_folder=results_folder,
+    )
+    payload = evaluation.evaluate_wang(csv_path)
+    evaluation.print_metrics("Exp 3 - Wang et al. (direct)", payload["wang_policy"])
+    _save_metrics(csv_path, payload)
+    return {"csv_path": str(csv_path), "metrics": payload}
+
+
 if __name__ == "__main__":
     # ------------------------------------------------------------------
     # Configuration (OpenRouter)
@@ -275,9 +300,10 @@ if __name__ == "__main__":
     parser.add_argument(
         "-e",
         "--experiment",
-        choices=["idk", "verbal", "both"],
+        choices=["idk", "verbal", "both", "wang", "all"],
         default="both",
-        help="Which experiment to run: 'idk' (Exp 1), 'verbal' (Exp 2), or both.",
+        help="Which experiment to run: 'idk' (Exp 1), 'verbal' (Exp 2), 'both' "
+        "(Exp 1 + 2), 'wang' (Exp 3: Wang et al.), or 'all' (Exp 1-3).",
     )
     parser.add_argument(
         "-n",
@@ -343,7 +369,7 @@ if __name__ == "__main__":
             # Hand the client whole generate() batches
             batch_size = max(batch_size, args.gen_batch_size)
 
-        if args.experiment in ("idk", "both"):
+        if args.experiment in ("idk", "both", "all"):
             print("\n" + "=" * 70)
             print(f"[{cfg['model']}] Experiment 1: IDK & Token Prob")
             print("=" * 70)
@@ -355,13 +381,24 @@ if __name__ == "__main__":
                 results_folder=RESULTS_FOLDER,
             )
 
-        if args.experiment in ("verbal", "both"):
+        if args.experiment in ("verbal", "both", "all"):
             print("\n" + "=" * 70)
             print(f"[{cfg['model']}] Experiment 2: Verbal Conf")
             print("=" * 70)
             run_exp2_verbal_conf(
                 client,
                 confidence_scale=CONFIDENCE_SCALE,
+                num_questions=args.num_questions,
+                batch_size=batch_size,
+                results_folder=RESULTS_FOLDER,
+            )
+
+        if args.experiment in ("wang", "all"):
+            print("\n" + "=" * 70)
+            print(f"[{cfg['model']}] Experiment 3: Wang et al.")
+            print("=" * 70)
+            run_exp3_wang(
+                client,
                 num_questions=args.num_questions,
                 batch_size=batch_size,
                 results_folder=RESULTS_FOLDER,
