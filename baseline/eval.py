@@ -19,6 +19,10 @@ Metric definitions:
                          + surfaced_wrong * reward_incorrect
                          + abstentions * reward_abstain
 - accepted_only / overall Brier and ECE from the confidence column
+- AUROC / AURC / AUARC over all rows (main_exp/utils/selective_metrics.py),
+  ranked by the confidence column (missing -> 0). Only for the confidence
+  threshold baselines (verbal, token prob); not for the IDK policy, which
+  outputs no confidence.
 
 For synthetic threshold baselines, "surfaced wrong" is counted from accepted
 rows with ``correct == 0``, even if those rows were originally ``idk_flag == 1``
@@ -33,9 +37,14 @@ import argparse
 import csv
 import json
 import math
+import sys
 from pathlib import Path
 from statistics import NormalDist
 from typing import Iterable
+
+# Shared with the main_exp eval scripts.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "main_exp" / "utils"))
+from selective_metrics import selective_metrics  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -298,6 +307,19 @@ def _attach_calibration(
     report["ece_overall"] = report["overall_ece"]
 
 
+def _attach_selective(report: dict, rows: list[dict], *, confidence_level: float) -> None:
+    """AUROC / AURC / AUARC over all rows, ranked by the confidence column.
+    Only for confidence-based baselines; the IDK policy has no confidence."""
+    report.update(
+        selective_metrics(
+            [r["score"] for r in rows],
+            [r["correct"] for r in rows],
+            confidence_level=confidence_level,
+        )
+    )
+    report["selective_score"] = report.get("score_col") or "score"
+
+
 # Canonical results-table order: (column label, value key, ci-margin key or None).
 # Metrics with a margin key are rendered as "value ± margin" (95% CI half-width).
 SUMMARY_FIELDS = [
@@ -318,6 +340,9 @@ SUMMARY_FIELDS = [
     ("ECE (overall)", "ece_overall", None),
     ("brier (answered)", "brier_answered", "brier_answered_ci_pm"),
     ("brier (overall)", "brier_overall", "brier_overall_ci_pm"),
+    ("AUROC ↑", "auroc", "auroc_ci_pm"),
+    ("AURC ↓", "aurc", "aurc_ci_pm"),
+    ("AUARC ↑", "auarc", "auarc_ci_pm"),
 ]
 
 
@@ -422,6 +447,7 @@ def compute_threshold_policy_metrics(
     _attach_calibration(
         report, accepted_rows, rows, num_bins=num_bins, confidence_level=confidence_level
     )
+    _attach_selective(report, rows, confidence_level=confidence_level)
     report["threshold"] = report["threshold_score"]
     report["summary"] = summary_row(report)
     return report
@@ -518,6 +544,19 @@ MODEL_REFERENCE_TAG = {
     "gpt-4o-mini": "gpt4omini",
     "gpt-5-mini": "gpt5mini",
     "gemini-3.1-flash-lite": "gemini",
+    "deepseek-v4.1-flash": "deepseek",
+    "gemma-3-4b-it": "gemma",
+    "ministral-8b-instruct": "ministral",
+    "glm-5.3-flash": "glm",
+    "glm-4-9b-0414": "glm4",
+    "gemma-2-9b-it": "gemma2",
+    "gemma-2-2b-it": "gemma2_2b",
+    "qwen2.5-7b-instruct": "qwen25",
+    "qwen2.5-14b-instruct": "qwen25_14b",
+    "deepseek-v2-lite-chat": "dsv2lite",
+    "gpt-oss-20b": "gptoss20b",
+    "qwen3-14b": "qwen3_14b",
+    "kimi-k2-0905": "kimik2",
 }
 
 

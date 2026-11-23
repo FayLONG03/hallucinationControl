@@ -18,6 +18,8 @@ from models.gpt_client import GPTClient
 from models.qwen_client import QwenClient
 from models.llama_client import LlamaClient
 from models.gemini_client import GeminiClient
+from models.kimi_client import KimiClient
+from models.ministral_client import MinistralClient
 
 
 AVAILABLE_MODELS = {
@@ -27,6 +29,8 @@ AVAILABLE_MODELS = {
     "qwen-3.5": "qwen",
     "llama-3": "llama",
     "gemini-3.1-flash-lite": "gemini",
+    "kimi-k2": "kimi",
+    "ministral-8b": "ministral",
     # Future models can be added here:
     # "claude-3-5-sonnet": "claude",
 }
@@ -113,6 +117,13 @@ Examples:
         help="Reward/penalty for incorrect answer (default: -1.0)"
     )
     
+    parser.add_argument(
+        "--resume",
+        type=str,
+        default=None,
+        help="Results CSV from an earlier run to resume from (kimi only); ids already in it are not re-queried"
+    )
+    
     args = parser.parse_args()
     
     # Get model type
@@ -177,6 +188,24 @@ Examples:
         )
     elif model_type == "gemini":
         runner = GeminiClient(experiments=EXPERIMENTS, model_name=args.model)
+        runner.run_experiment(
+            dataset=dataset,
+            exp_type=args.scheme,
+            reward_correct=args.reward_correct,
+            reward_abstain=args.reward_abstain,
+            reward_incorrect=args.reward_incorrect
+        )
+    elif model_type == "ministral":
+        runner = MinistralClient(experiments=EXPERIMENTS, model_name=args.model)
+        runner.run_experiment(
+            dataset=dataset,
+            exp_type=args.scheme,
+            reward_correct=args.reward_correct,
+            reward_abstain=args.reward_abstain,
+            reward_incorrect=args.reward_incorrect
+        )
+    elif model_type == "kimi":
+        runner = KimiClient(experiments=EXPERIMENTS, model_name=args.model, resume_from=args.resume)
         runner.run_experiment(
             dataset=dataset,
             exp_type=args.scheme,

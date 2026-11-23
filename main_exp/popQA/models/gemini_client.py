@@ -46,6 +46,10 @@ class GeminiClient:
     }
 
     OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+    TRACKING_DIR = "main_exp/popQA/outputs/gemini_batch_files"
+
+    # Extra OpenRouter request fields merged into every payload (e.g. provider routing)
+    EXTRA_PAYLOAD = {}
 
     def __init__(self, experiments, model_name="gemini-3.1-flash-lite"):
         """
@@ -136,6 +140,7 @@ class GeminiClient:
             "messages": messages,
             "temperature": temperature,
             "max_tokens": max_tokens,
+            **self.EXTRA_PAYLOAD,
         }
 
         for attempt in range(1, retries + 1):
@@ -266,9 +271,7 @@ class GeminiClient:
         num_batches = (total_size + batch_size - 1) // batch_size
 
         all_results = []
-        tracking_file = (
-            f"main_exp/popQA/outputs/gemini_batch_files/batch_tracking_{exp_type}.json"
-        )
+        tracking_file = f"{self.TRACKING_DIR}/batch_tracking_{exp_type}.json"
         os.makedirs(os.path.dirname(tracking_file), exist_ok=True)
 
         for i in range(num_batches):

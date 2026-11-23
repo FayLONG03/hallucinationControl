@@ -5,8 +5,19 @@ outputs/
 # Ignore Conda environments
 .conda/
 
-# Ignore virtual environment
+# Ignore virtual environments (venv/ is the old one; .venv/ is CPU-only,
+# .venv-gpu/ has the CUDA build of torch)
 venv/
+.venv/
+.venv-*/
+venv-*/
+env/
+
+# Ignore installed packages and build artifacts
+site-packages/
+build/
+dist/
+wheels/
 
 # Ignore Python configuration files
 *.pyc
@@ -33,3 +44,28 @@ __pycache__/
 .DS_Store
 
 slurm*
+# Exploratory popQA reference runs: kept locally, not pushed
+# (ministral and kimik2 are tracked on purpose)
+baseline/reference_data_results/popQA/popqa_deepseek.csv
+baseline/reference_data_results/popQA/popqa_dsv2lite.csv
+baseline/reference_data_results/popQA/popqa_gemma.csv
+baseline/reference_data_results/popQA/popqa_gemma2.csv
+baseline/reference_data_results/popQA/popqa_gemma2_2b.csv
+baseline/reference_data_results/popQA/popqa_glm.csv
+baseline/reference_data_results/popQA/popqa_glm4.csv
+baseline/reference_data_results/popQA/popqa_gptoss20b.csv
+baseline/reference_data_results/popQA/popqa_qwen25.csv
+baseline/reference_data_results/popQA/popqa_qwen25_14b.csv
+baseline/reference_data_results/popQA/popqa_qwen3_14b.csv
+
+# Local-only model clients (only ministral and kimi are published);
+# run_experiment.py imports these lazily inside their own branch.
+main_exp/popQA/models/deepseek_client.py
+main_exp/popQA/models/deepseek_v2_client.py
+main_exp/popQA/models/gemma_client.py
+main_exp/popQA/models/gemma2_client.py
+main_exp/popQA/models/glm_client.py
+main_exp/popQA/models/glm4_client.py
+main_exp/popQA/models/gptoss_client.py
+main_exp/popQA/models/qwen25_client.py
+main_exp/popQA/models/qwen3_client.py

@@ -29,6 +29,9 @@ class OpenAIClient(BaseClient):
         reasoning_effort: str | None = None,
         max_concurrent: int = 5,
         max_retries: int = 5,
+        empty_retries: int = 3,
+        provider_routing: dict | None = None,
+        max_tokens: int | None = None,
     ) -> None:
         self.api_key = api_key
         self.model = model
@@ -43,6 +46,14 @@ class OpenAIClient(BaseClient):
         self.reasoning_effort = reasoning_effort
         self.max_concurrent = max_concurrent
         self.max_retries = max_retries
+        # Some providers occasionally return a 200 with empty content; re-request
+        # those instead of letting an empty answer be scored as a wrong one.
+        self.empty_retries = empty_retries
+        # OpenRouter provider preferences (e.g. {"order": ["z-ai"],
+        # "allow_fallbacks": False}) sent as the payload's "provider" field.
+        self.provider_routing = provider_routing
+        # Output cap (reasoning tokens included); None leaves the provider default.
+        self.max_tokens = max_tokens
 
     def _build_payload(self, prompt: str) -> dict:
         payload = {
@@ -55,6 +66,10 @@ class OpenAIClient(BaseClient):
             payload["logprobs"] = True
         if self.reasoning_effort is not None:
             payload["reasoning"] = {"effort": self.reasoning_effort}
+        if self.provider_routing is not None:
+            payload["provider"] = self.provider_routing
+        if self.max_tokens is not None:
+            payload["max_tokens"] = self.max_tokens
         return payload
 
     async def _post(self, session: aiohttp.ClientSession, payload: dict) -> dict:
@@ -109,11 +124,16 @@ class OpenAIClient(BaseClient):
 
         async def one(session: aiohttp.ClientSession, prompt: str) -> Completion:
             async with semaphore:
-                try:
-                    raw = await self._post(session, self._build_payload(prompt))
-                    return self._to_completion(raw)
-                except Exception as exc:  # noqa: BLE001
-                    return Completion(error=str(exc))
+                for _ in range(self.empty_retries):
+                    try:
+                        raw = await self._post(session, self._build_payload(prompt))
+                    except Exception as exc:  # noqa: BLE001
+                        return Completion(error=str(exc))
+                    completion = self._to_completion(raw)
+                    # A null content (no error) counts as empty and is retried too
+                    if completion.error is not None or (completion.content or "").strip():
+                        return completion
+                return Completion(raw=raw, error="empty content after retries")
 
         async with aiohttp.ClientSession() as session:
             return await asyncio.gather(*(one(session, p) for p in prompts))

@@ -23,6 +23,15 @@ def extract_fields(text):
     best_conf_match = re.search(r"(?im)^\s*best\s*guess\s*confidence\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*%?\s*$", text)
 
     answer = ans_match.group(1).strip() if ans_match else None
+    if answer is None:
+        # Some models (e.g. DeepSeek-V2-Lite) drop the "Answer:" label and open
+        # with the answer itself ("I don't know\nBest Guess: ..."); take the
+        # first line that is not another field.
+        for line in text.split("\n"):
+            line = line.strip()
+            if line and not re.match(r"(?i)(best\s*guess|confidence)\b", line):
+                answer = line
+                break
     conf = float(conf_match.group(1)) if (conf_match and conf_match.group(1)) else None
     best_guess = best_match.group(1).strip().rstrip(",") if best_match else None
     if best_guess and best_guess.lower() in {"", "none", "n/a"}:

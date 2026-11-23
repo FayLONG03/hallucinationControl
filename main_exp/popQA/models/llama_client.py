@@ -46,6 +46,8 @@ class LlamaClient:
         }
     }
 
+    TRACKING_DIR = "main_exp/popQA/outputs/llama_batch_files"
+
     def __init__(self, experiments, model_name="llama-3"):
         """
         Initialize LLaMA experiment runner.
@@ -302,7 +304,7 @@ class LlamaClient:
         num_batches = (total_size + batch_size - 1) // batch_size
 
         all_results = []
-        tracking_file = f"main_exp/popQA/outputs/llama_batch_files/batch_tracking_{exp_type}.json"
+        tracking_file = f"{self.TRACKING_DIR}/batch_tracking_{exp_type}.json"
 
         os.makedirs(os.path.dirname(tracking_file), exist_ok=True)
 

@@ -239,6 +239,29 @@ if __name__ == "__main__":
             "temperature": 0.0,
             "logprobs": False,
         },
+        # Ministral 8B (instruction-tuned, text-only) run locally on the GPU.
+        # Its chat template adds no default system prompt. Logprobs feed the
+        # IDK experiment's token-prob threshold (they do not change the text).
+        "ministral-8b-instruct": {
+            "provider": "hf",
+            "model_id": "mistralai/Ministral-8B-Instruct-2410",
+            "model": "ministral-8b-instruct",
+            "temperature": 0.0,
+            "logprobs": True,
+        },
+        # Kimi K2 (0905, non-reasoning) via OpenRouter, pinned to Novita (fp8,
+        # the only host) with no fallback. Novita returns no logprobs, so only
+        # the IDK policy and verbal baselines are meaningful.
+        "kimi-k2": {
+            "provider": "openai",
+            "model": "moonshotai/kimi-k2-0905",
+            "temperature": 0.0,
+            "logprobs": False,
+            "batch_size": 500,
+            "max_concurrent": 16,
+            "max_tokens": 1024,
+            "openrouter_provider": {"order": ["novita/fp8"], "allow_fallbacks": False},
+        },
     }
 
     parser = argparse.ArgumentParser(description="Baseline PopQA experiment runner.")
@@ -248,6 +271,27 @@ if __name__ == "__main__":
         choices=[*MODEL_REGISTRY, "all"],
         default="llama-3-8b-instruct",
         help="Which model to run (or 'all' to run every registered model).",
+    )
+    parser.add_argument(
+        "-e",
+        "--experiment",
+        choices=["idk", "verbal", "both"],
+        default="both",
+        help="Which experiment to run: 'idk' (Exp 1), 'verbal' (Exp 2), or both.",
+    )
+    parser.add_argument(
+        "-n",
+        "--num-questions",
+        type=int,
+        default=NUM_QUESTIONS,
+        help="Limit the number of questions (default: full set).",
+    )
+    parser.add_argument(
+        "--gen-batch-size",
+        type=int,
+        default=None,
+        help="Local (hf) models only: prompts per generate() call, overriding the "
+        "registry (default: the registry's value; unset there = one at a time).",
     )
     args = parser.parse_args()
 
@@ -263,7 +307,14 @@ if __name__ == "__main__":
                 model_id=cfg["model_id"],
                 model=cfg.get("model"),
                 temperature=cfg.get("temperature", 0.0),
+                logprobs=cfg.get("logprobs", True),
                 enable_thinking=cfg.get("enable_thinking"),
+                gen_batch_size=args.gen_batch_size or cfg.get("gen_batch_size"),
+                attn_implementation=cfg.get("attn_implementation"),
+                extra_eos_tokens=cfg.get("extra_eos_tokens", ()),
+                max_new_tokens=cfg.get("max_new_tokens", 512),
+                chat_template_kwargs=cfg.get("chat_template_kwargs"),
+                final_channel_marker=cfg.get("final_channel_marker"),
             )
         # OpenAI-compatible provider. A model may override the endpoint/key env
         # (e.g. Gemini via Google's OpenAI-compatible endpoint); otherwise it
@@ -280,29 +331,38 @@ if __name__ == "__main__":
             temperature=cfg.get("temperature", 0.0),
             logprobs=cfg.get("logprobs", True),
             reasoning_effort=cfg.get("reasoning_effort"),
+            max_concurrent=cfg.get("max_concurrent", 5),
+            provider_routing=cfg.get("openrouter_provider"),
+            max_tokens=cfg.get("max_tokens"),
         )
 
     for cfg in MODELS:
         client = build_client(cfg)
+        batch_size = cfg.get("batch_size", BATCH_SIZE)
+        if args.gen_batch_size and cfg.get("provider") == "hf":
+            # Hand the client whole generate() batches
+            batch_size = max(batch_size, args.gen_batch_size)
 
-        print("\n" + "=" * 70)
-        print(f"[{cfg['model']}] Experiment 1: IDK & Token Prob")
-        print("=" * 70)
-        run_exp1_idk_token_prob(
-            client,
-            confidence_scale=CONFIDENCE_SCALE,
-            num_questions=NUM_QUESTIONS,
-            batch_size=BATCH_SIZE,
-            results_folder=RESULTS_FOLDER,
-        )
+        if args.experiment in ("idk", "both"):
+            print("\n" + "=" * 70)
+            print(f"[{cfg['model']}] Experiment 1: IDK & Token Prob")
+            print("=" * 70)
+            run_exp1_idk_token_prob(
+                client,
+                confidence_scale=CONFIDENCE_SCALE,
+                num_questions=args.num_questions,
+                batch_size=batch_size,
+                results_folder=RESULTS_FOLDER,
+            )
 
-        print("\n" + "=" * 70)
-        print(f"[{cfg['model']}] Experiment 2: Verbal Conf")
-        print("=" * 70)
-        run_exp2_verbal_conf(
-            client,
-            confidence_scale=CONFIDENCE_SCALE,
-            num_questions=NUM_QUESTIONS,
-            batch_size=BATCH_SIZE,
-            results_folder=RESULTS_FOLDER,
-        )
+        if args.experiment in ("verbal", "both"):
+            print("\n" + "=" * 70)
+            print(f"[{cfg['model']}] Experiment 2: Verbal Conf")
+            print("=" * 70)
+            run_exp2_verbal_conf(
+                client,
+                confidence_scale=CONFIDENCE_SCALE,
+                num_questions=args.num_questions,
+                batch_size=batch_size,
+                results_folder=RESULTS_FOLDER,
+            )

@@ -8,6 +8,10 @@ from typing import Tuple, Dict
 import glob
 import re
 import argparse
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "utils"))
+from selective_metrics import selective_metrics_from_df, print_report as print_selective_report  # noqa: E402
 
 # Increase default font sizes for readability across all plots
 plt.rcParams.update({
@@ -698,6 +702,10 @@ def main():
     if "baseline" not in scheme_name.lower():
         brier_score_answered, margin_answered = calculate_brier_score_with_ci(df, answered_only=True)
         print(f"Brier Score (answered only): {brier_score_answered:.4f} ± {margin_answered:.4f}")
+
+    ######################### AUROC / AURC / AUARC #########################
+    # Ranks every row by first_confidence (answered) / best_guess_confidence (IDK).
+    print_selective_report(selective_metrics_from_df(df, "icalm"))
 
 
 if __name__ == "__main__":
