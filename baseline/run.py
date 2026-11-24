@@ -76,6 +76,54 @@ async def generate(
     return records
 
 
+async def generate_wu_chaining(
+    client: BaseClient,
+    dataset: PopQADataset,
+    *,
+    num_questions: int | None = None,
+    batch_size: int = 10,
+) -> list[dict]:
+    """Wu et al. (2025) prompt chaining: three sequential calls per question
+    (skill 1 answer -> skill 2 confidence -> skill 3 Y/N decision). A question
+    that fails at any skill is skipped."""
+    examples = dataset.load(num_questions=num_questions)
+    total = len(examples)
+    print(f"Loaded {total} examples from {dataset.name}")
+
+    records: list[dict] = []
+    for start in range(0, total, batch_size):
+        end = min(start + batch_size, total)
+        print(f"\nProcessing {start + 1}-{end} of {total}...")
+        # (dataset_id, example, [skill outputs so far])
+        live = [(start + k, ex, []) for k, ex in enumerate(examples[start:end])]
+
+        for skill in (1, 2, 3):
+            if skill == 1:
+                prompts = [dataset.build_prompt(ex) for _, ex, _ in live]
+            elif skill == 2:
+                prompts = [dataset.wu_skill2_prompt(ex, outs[0]) for _, ex, outs in live]
+            else:
+                prompts = [dataset.wu_skill3_prompt(ex, outs[0], outs[1]) for _, ex, outs in live]
+            completions = await client.complete_batch(prompts)
+            survivors = []
+            for (dataset_id, ex, outs), completion in zip(live, completions):
+                if not completion.ok:
+                    print(f"Question {dataset_id} failed at skill {skill}: {completion.error}")
+                    continue
+                survivors.append((dataset_id, ex, outs + [completion.content]))
+            live = survivors
+
+        for dataset_id, ex, outs in live:
+            record = dataset.parse_wu_chain(dataset_id, ex, *outs)
+            records.append(record)
+            print(
+                f"Question {dataset_id} done. Choice: {record['chain_choice']}, "
+                f"Answer: {record['chain_answer']}"
+            )
+
+    return records
+
+
 def write_csv(records: list[dict], out_path: Path) -> Path:
     if not records:
         raise ValueError("No records to write.")
@@ -97,10 +145,11 @@ def generate_csv(
     num_questions: int | None = None,
     batch_size: int = 10,
     results_folder: Path = Path("baseline/outputs"),
+    generator=generate,
 ) -> Path:
     """Generate records and write them to a tagged CSV; return the path."""
     records = asyncio.run(
-        generate(client, dataset, num_questions=num_questions, batch_size=batch_size)
+        generator(client, dataset, num_questions=num_questions, batch_size=batch_size)
     )
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     model_slug = client.model.replace("/", "_")
@@ -210,6 +259,72 @@ def run_exp3_wang(
     return {"csv_path": str(csv_path), "metrics": payload}
 
 
+def _wu_tag(name: str, rewards: tuple[float, float, float]) -> str:
+    return f"{name}_" + "_".join(f"{r:+g}" for r in rewards)
+
+
+def run_exp4_wu_risk_informing(
+    client: BaseClient,
+    *,
+    rewards: tuple[float, float, float] = (1.0, -1.0, 0.4),
+    num_questions: int | None = None,
+    batch_size: int = 10,
+    results_folder: Path = Path("baseline/outputs"),
+) -> dict:
+    """Exp 4: run the Wu et al. (2025) risk-informing prompt (rewards stated,
+    refuse with N, best guess after a refusal), then evaluate the model's own
+    refusal policy directly."""
+    dataset = PopQADataset(variant="wu_risk_informing", rewards=rewards)
+    csv_path = generate_csv(
+        client,
+        dataset,
+        tag=_wu_tag("wu_risk_informing", dataset.rewards),
+        num_questions=num_questions,
+        batch_size=batch_size,
+        results_folder=results_folder,
+    )
+    rc, ri, ra = dataset.rewards
+    payload = evaluation.evaluate_wu_risk_informing(
+        csv_path, reward_correct=rc, reward_incorrect=ri, reward_abstain=ra
+    )
+    evaluation.print_metrics(
+        "Exp 4 - Wu et al. risk-informing (direct)", payload["wu_risk_informing_policy"]
+    )
+    _save_metrics(csv_path, payload)
+    return {"csv_path": str(csv_path), "metrics": payload}
+
+
+def run_exp5_wu_chaining(
+    client: BaseClient,
+    *,
+    rewards: tuple[float, float, float] = (1.0, -1.0, 0.4),
+    num_questions: int | None = None,
+    batch_size: int = 10,
+    results_folder: Path = Path("baseline/outputs"),
+) -> dict:
+    """Exp 5: run the Wu et al. (2025) prompt chain (answer -> confidence ->
+    expected-value decision), then evaluate the chain's refusal policy directly."""
+    dataset = PopQADataset(variant="wu_chaining", rewards=rewards)
+    csv_path = generate_csv(
+        client,
+        dataset,
+        tag=_wu_tag("wu_chaining", dataset.rewards),
+        num_questions=num_questions,
+        batch_size=batch_size,
+        results_folder=results_folder,
+        generator=generate_wu_chaining,
+    )
+    rc, ri, ra = dataset.rewards
+    payload = evaluation.evaluate_wu_chaining(
+        csv_path, reward_correct=rc, reward_incorrect=ri, reward_abstain=ra
+    )
+    evaluation.print_metrics(
+        "Exp 5 - Wu et al. prompt chaining (direct)", payload["wu_chaining_policy"]
+    )
+    _save_metrics(csv_path, payload)
+    return {"csv_path": str(csv_path), "metrics": payload}
+
+
 if __name__ == "__main__":
     # ------------------------------------------------------------------
     # Configuration (OpenRouter)
@@ -300,10 +415,27 @@ if __name__ == "__main__":
     parser.add_argument(
         "-e",
         "--experiment",
-        choices=["idk", "verbal", "both", "wang", "all"],
+        choices=[
+            "idk", "verbal", "both", "wang",
+            "wu_risk_informing", "wu_chaining", "wu", "all",
+        ],
         default="both",
         help="Which experiment to run: 'idk' (Exp 1), 'verbal' (Exp 2), 'both' "
-        "(Exp 1 + 2), 'wang' (Exp 3: Wang et al.), or 'all' (Exp 1-3).",
+        "(Exp 1 + 2), 'wang' (Exp 3: Wang et al.), 'wu_risk_informing' (Exp 4: "
+        "Wu et al. risk-informing), 'wu_chaining' (Exp 5: Wu et al. prompt "
+        "chaining), 'wu' (Exp 4 + 5), or 'all' (Exp 1-5).",
+    )
+    parser.add_argument(
+        "-rc", "--reward-correct", type=float, default=1.0,
+        help="Wu experiments only: reward for a correct answer (default: 1).",
+    )
+    parser.add_argument(
+        "-ri", "--reward-incorrect", type=float, default=-1.0,
+        help="Wu experiments only: reward for an incorrect answer (default: -1).",
+    )
+    parser.add_argument(
+        "-ra", "--reward-abstain", type=float, default=0.4,
+        help="Wu experiments only: reward for refusing (default: 0.4).",
     )
     parser.add_argument(
         "-n",
@@ -399,6 +531,32 @@ if __name__ == "__main__":
             print("=" * 70)
             run_exp3_wang(
                 client,
+                num_questions=args.num_questions,
+                batch_size=batch_size,
+                results_folder=RESULTS_FOLDER,
+            )
+
+        wu_rewards = (args.reward_correct, args.reward_incorrect, args.reward_abstain)
+
+        if args.experiment in ("wu_risk_informing", "wu", "all"):
+            print("\n" + "=" * 70)
+            print(f"[{cfg['model']}] Experiment 4: Wu et al. risk-informing")
+            print("=" * 70)
+            run_exp4_wu_risk_informing(
+                client,
+                rewards=wu_rewards,
+                num_questions=args.num_questions,
+                batch_size=batch_size,
+                results_folder=RESULTS_FOLDER,
+            )
+
+        if args.experiment in ("wu_chaining", "wu", "all"):
+            print("\n" + "=" * 70)
+            print(f"[{cfg['model']}] Experiment 5: Wu et al. prompt chaining")
+            print("=" * 70)
+            run_exp5_wu_chaining(
+                client,
+                rewards=wu_rewards,
                 num_questions=args.num_questions,
                 batch_size=batch_size,
                 results_folder=RESULTS_FOLDER,

@@ -59,6 +59,16 @@ ways over the same run:
 self-reported confidence in [0, 1]. Rows are ranked by `self_confidence` and the
 top-k accepted to match a target coverage. **No token probability is involved.**
 
+**Wu et al. (2025) baselines** ("Answer, Refuse, or Guess?", arXiv:2503.01332),
+adapted to open-ended PopQA. Both state the rewards in the prompt (`-rc/-ri/-ra`,
+default `+1/-1/+0.4`) and are evaluated directly from the model's own refusals:
+  - `-e wu_risk_informing` (Exp 4): Figure 2 prompt, refuse with `N`, plus a
+    best guess after a refusal. No confidence is asked for, so Brier/ECE and
+    AUROC/AURC/AUARC are not reported.
+  - `-e wu_chaining` (Exp 5): three calls per question (skill 1 answer →
+    skill 2 confidence → skill 3 `Y`/`N` decision). The skill-2 confidence is
+    `self_confidence`.
+
 **Coverage source.** Both threshold baselines are coverage-matched to the
 corresponding **reference run** in `reference_data_results/<dataset>/`, keyed by
 dataset and model (e.g. PopQA + `llama-3-8b-instruct` →

@@ -793,6 +793,77 @@ def evaluate_wang(
     }
 
 
+def evaluate_wu_risk_informing(
+    csv_path: Path | str,
+    *,
+    num_bins: int = 10,
+    reward_correct: float = 1.0,
+    reward_incorrect: float = -1.0,
+    reward_abstain: float = 0.4,
+    confidence_level: float = 0.95,
+) -> dict:
+    """Exp 4: Wu et al. (2025) risk-informing prompt (Figure 2).
+
+    The model's own refusal (ANSWER: N) is the abstention decision, so metrics
+    come straight from the result file. Every row has a candidate answer (the
+    answer, or the best guess after N), so coverage, FAR, ECR, CAR are defined.
+    No confidence is asked for, so Brier/ECE and AUROC/AURC/AUARC are not.
+    """
+    rows = load_rows(csv_path)
+    wu_policy = compute_reference_policy_metrics(
+        rows,
+        num_bins=num_bins,
+        reward_correct=reward_correct,
+        reward_incorrect=reward_incorrect,
+        reward_abstain=reward_abstain,
+        confidence_level=confidence_level,
+    )
+    wu_policy["policy_type"] = "wu_risk_informing_baseline"
+    wu_policy["summary"] = summary_row(wu_policy)
+    return {
+        "experiment": "wu_risk_informing",
+        "csv": str(csv_path),
+        "wu_risk_informing_policy": wu_policy,
+    }
+
+
+def evaluate_wu_chaining(
+    csv_path: Path | str,
+    *,
+    conf_col: str = "self_confidence",
+    num_bins: int = 10,
+    reward_correct: float = 1.0,
+    reward_incorrect: float = -1.0,
+    reward_abstain: float = 0.4,
+    confidence_level: float = 0.95,
+) -> dict:
+    """Exp 5: Wu et al. (2025) prompt chaining (answer -> confidence -> decision).
+
+    The skill-3 choice (N = refuse) is the abstention decision, so metrics come
+    straight from the result file. The skill-2 confidence (``self_confidence``)
+    feeds Brier/ECE and AUROC/AURC/AUARC.
+    """
+    rows = load_rows(csv_path, score_col=conf_col)
+    wu_policy = compute_reference_policy_metrics(
+        rows,
+        num_bins=num_bins,
+        reward_correct=reward_correct,
+        reward_incorrect=reward_incorrect,
+        reward_abstain=reward_abstain,
+        confidence_level=confidence_level,
+    )
+    wu_policy["policy_type"] = "wu_chaining_baseline"
+    wu_policy["score_col"] = conf_col
+    _attach_selective(wu_policy, rows, confidence_level=confidence_level)
+    wu_policy["summary"] = summary_row(wu_policy)
+    return {
+        "experiment": "wu_chaining",
+        "csv": str(csv_path),
+        "conf_col": conf_col,
+        "wu_chaining_policy": wu_policy,
+    }
+
+
 # ---------------------------------------------------------------------------
 # Output helpers + CLI
 # ---------------------------------------------------------------------------
